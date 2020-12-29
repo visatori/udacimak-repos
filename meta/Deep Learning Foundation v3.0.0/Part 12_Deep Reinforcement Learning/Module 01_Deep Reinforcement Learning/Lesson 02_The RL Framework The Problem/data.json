@@ -1,0 +1,1651 @@
+{
+  "data": {
+    "lesson": {
+      "id": 350714,
+      "key": "86acfc34-0551-4cc6-8de4-a1ab2e66b5af",
+      "title": "The RL Framework: The Problem",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how to mathematically formulate tasks as Markov Decision Processes.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/86acfc34-0551-4cc6-8de4-a1ab2e66b5af/350714/1544927061312/The+RL+Framework%3A+The+Problem+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/86acfc34-0551-4cc6-8de4-a1ab2e66b5af/350714/1544927057527/The+RL+Framework%3A+The+Problem+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 356508,
+          "key": "a3fde5d4-c811-4e8b-bc98-40c83493e80e",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461248,
+              "key": "c70ec410-856e-49dc-8fc6-5a7f8e45c71d",
+              "title": "Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X_9l_ZqXXBA",
+                "china_cdn_id": "X_9l_ZqXXBA.mp4"
+              }
+            },
+            {
+              "id": 356796,
+              "key": "ffbe3ad7-2840-4a07-af2d-e5981722d522",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This lesson covers material in **Chapter 3** (especially 3.1-3.3) of the [textbook](http://go.udacity.com/rl-textbook).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 356509,
+          "key": "cad3f391-a2a5-43d0-a340-6cf21442740b",
+          "title": "The Setting, Revisited",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461249,
+              "key": "cc12af5b-cebd-4e8a-b746-355ed8dda1a6",
+              "title": "The Setting, Revisited",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "V6Q1uF8a6kA",
+                "china_cdn_id": "V6Q1uF8a6kA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 356510,
+          "key": "4639f20c-4cbe-48de-988d-45c02b07ae35",
+          "title": "Episodic vs. Continuing Tasks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461250,
+              "key": "4aacafea-c93b-4999-9125-685c617fa107",
+              "title": "Episodic vs. Continuing Tasks",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "E1I-BPanSM8",
+                "china_cdn_id": "E1I-BPanSM8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 380615,
+          "key": "e7e0fd83-096a-4f35-be33-3af2e2d77696",
+          "title": "Quiz: Test Your Intuition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 403113,
+              "key": "f6738b71-05f5-4605-aa55-1828885122fb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Test Your Intuition",
+              "instructor_notes": ""
+            },
+            {
+              "id": 380618,
+              "key": "e5d3a06f-2839-4843-ab3e-a7b8c83fb254",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5907d2e0_chess-game/chess-game.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e5d3a06f-2839-4843-ab3e-a7b8c83fb254",
+              "caption": "",
+              "alt": null,
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 380616,
+              "key": "9219b6af-05be-4e05-80bf-c353caf050d1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Playing Chess\n---\nSay you are an agent, and your goal is to play chess.  At every time step, you choose any __action__ from the set of possible moves in the game.  Your opponent is part of the environment; she responds with her own move, and the __state__ you receive at the next time step is the configuration of the board, when it’s your turn to choose a move again.  The __reward__ is only delivered at the end of the game, and, let’s say, is +1 if you win, and -1 if you lose.\n\nThis is an **episodic task**, where an episode finishes when the game ends.  The idea is that by playing the game many times, or by interacting with the environment in many episodes, you can learn to play chess better and better.\n\nIt's important to note that this problem is exceptionally difficult, because the feedback is only delivered at the very end of the game.  So, if you lose a game (and get a reward of -1 at the end of the episode), it’s unclear when exactly you went wrong: maybe you were so bad at playing that every move was horrible, or maybe instead … you played beautifully for the majority of the game, and then made only a small mistake at the end.\n\nWhen the reward signal is largely uninformative in this way, we say that the task suffers the problem of _sparse rewards_.  There’s an entire area of research dedicated to this problem, and you’re encouraged to read more about it, if it interests you.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 380621,
+              "key": "2568f659-f6ad-4f4c-a4ae-f68cc909d48f",
+              "title": "Playing Chess",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "In chess, what's an example of an action that the agent could take?",
+                "answers": [
+                  {
+                    "id": "a1503940346770",
+                    "text": "Moving a piece",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1503940373581",
+                    "text": "Predicting the opponent's move",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1503940388641",
+                    "text": "Calculating the cost of a given move",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 385886,
+              "key": "25576e1a-e917-489d-92df-7cef4baea8cf",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What's an example of a state in the game?",
+                "answers": [
+                  {
+                    "id": "a1504288413988",
+                    "text": "Whether or not it's the opponent's turn to move",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1504288432874",
+                    "text": "The configuration of the board",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1504288446400",
+                    "text": "The color of the game pieces",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 385892,
+              "key": "f4a67f3a-2295-46ef-a60a-7e26da612890",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Say you just started playing chess against your opponent, and it seems to be going great - you have played 20 moves and already taken five pieces from your opponent.  The game hasn't ended yet, so you're not 100% sure you'll win, but it seems likely.  What cumulative reward have you received so far?",
+                "answers": [
+                  {
+                    "id": "a1504288578479",
+                    "text": "5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1504288687825",
+                    "text": "1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1504288695670",
+                    "text": "0",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1504288710057",
+                    "text": "-1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1504288712038",
+                    "text": "-5",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 380642,
+              "key": "8f81edef-65d8-4ab2-b3cc-cf5269012cfb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/59a453ca_index/index.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8f81edef-65d8-4ab2-b3cc-cf5269012cfb",
+              "caption": "",
+              "alt": null,
+              "width": 300,
+              "height": 168,
+              "instructor_notes": null
+            },
+            {
+              "id": 380627,
+              "key": "59bddbe0-03d8-48e6-9bb6-e41ca8041b72",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Escaping a Maze\n---\nConsider a game in which the agent is located in a maze and trying to find the quickest route to the goal. If all the agent can do is randomly explore the maze, it will not be able to learn anything until it reaches the goal at least once.  ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 380641,
+              "key": "57beafdf-78b0-4168-8f4a-9a833f8be337",
+              "title": "Navigating a Maze",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "In the hedge maze, what's an example of an action that the agent could take?",
+                "answers": [
+                  {
+                    "id": "a1503940962729",
+                    "text": "Moving north in the maze",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1503941322598",
+                    "text": "Deducing the fastest route through the maze",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 380644,
+          "key": "cbceaeb4-62a8-4df1-abc4-0a6bf21875c5",
+          "title": "Quiz: Episodic or Continuing?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 403111,
+              "key": "1a90c136-6604-41ec-ba7a-4ab696ea02e5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Episodic or Continuing?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 380645,
+              "key": "6f5a4f5c-2c46-4a7f-993b-a1d8d63405dc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Remember:\n- A **task** is an instance of the reinforcement learning (RL) problem.\n- **Continuing tasks** are tasks that continue forever, without end.\n- **Episodic tasks** are tasks with a well-defined starting and ending point.\n - In this case, we refer to a complete sequence of interaction, from start to finish, as an **episode**.\n - Episodic tasks come to an end whenever the agent reaches a **terminal state**.\n\nWith these ideas in mind, use the quiz below to classify tasks as continuing or episodic.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403108,
+              "key": "29b0f118-b532-4b79-9a9f-ed9ef22e87d8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c17e2a_go/go.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/29b0f118-b532-4b79-9a9f-ed9ef22e87d8",
+              "caption": "Source: Wikipedia",
+              "alt": "",
+              "width": 400,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 403107,
+              "key": "a5156c40-70ca-4818-a9b5-f379535539df",
+              "title": "Task 1",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Consider an RL agent that would like to learn to [play the board game Go](https://en.wikipedia.org/wiki/AlphaGo).  Is this a continuing or episodic task?",
+                "answers": [
+                  {
+                    "id": "a1505851518595",
+                    "text": "Continuing",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505851932125",
+                    "text": "Episodic",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 403114,
+              "key": "159e895a-b771-4d1e-b904-af0d7a72ec83",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c183d2_pup/pup.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/159e895a-b771-4d1e-b904-af0d7a72ec83",
+              "caption": "Source: Wikipedia",
+              "alt": "",
+              "width": 400,
+              "height": 505,
+              "instructor_notes": null
+            },
+            {
+              "id": 403110,
+              "key": "535e8065-58ec-4a56-be93-88b54f9fdfb0",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Consider an immortal puppy agent that would like to obtain as many treats as possible from its (immortal) owner.  Is this best formulated as a continuing or episodic task?",
+                "answers": [
+                  {
+                    "id": "a1505853285582",
+                    "text": "Continuing",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505853987383",
+                    "text": "Episodic",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 356511,
+          "key": "37c6bce2-2c9b-4e70-b85f-7a3c1ae294b6",
+          "title": "The Reward Hypothesis",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 440662,
+              "key": "7c02f3d3-937f-49f4-ae8e-8f748ec871bb",
+              "title": "The Reward Hypothesis",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uAqNwgZ49JE",
+                "china_cdn_id": "uAqNwgZ49JE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 356512,
+          "key": "891e84b2-aa82-4b52-aa19-60f7c9dca325",
+          "title": "Goals and Rewards, Part 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461251,
+              "key": "2cb70c9c-47dc-42d2-bff3-4633d8fb8bee",
+              "title": "Goals and Rewards, Part 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XPnj3Ya3EuM",
+                "china_cdn_id": "XPnj3Ya3EuM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 373568,
+          "key": "96b16f58-8a3e-4ca2-8275-92b90bdd1e08",
+          "title": "Goals and Rewards, Part 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 440664,
+              "key": "a0290610-5e4c-4dac-91ee-a26ce7d2d653",
+              "title": "Goals and Rewards, Part 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pVIFc72VYH8",
+                "china_cdn_id": "pVIFc72VYH8.mp4"
+              }
+            },
+            {
+              "id": 374794,
+              "key": "3718768a-1f36-40be-8b97-80fec66b0c6c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you'd like to learn more about the research that was done at [DeepMind](https://deepmind.com/), please check out [this link](https://deepmind.com/blog/producing-flexible-behaviours-simulated-environments/).  The research paper can be accessed [here](https://arxiv.org/pdf/1707.02286.pdf).  Also, check out this cool [video](https://www.youtube.com/watch?v=hx_bgoTF7bs&feature=youtu.be)!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 380668,
+          "key": "8a69064b-825b-4e16-b21f-01bfabeb416b",
+          "title": "Quiz: Goals and Rewards",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 403115,
+              "key": "7b825fd3-3e9d-4168-8205-3c4ca606a06b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Goals and Rewards",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406887,
+              "key": "2b83c7bb-a6d5-41d6-be48-0ef6a4e0ee0f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So far, you've seen one example for how to frame an agent's goal as the maximization of expected cumulative reward.  In this quiz, you will investigate several more examples.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406890,
+              "key": "8ec84c6b-cb90-46cc-b7b6-48a92054985c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c33cfe_maze/maze.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8ec84c6b-cb90-46cc-b7b6-48a92054985c",
+              "caption": "Source: Wikipedia",
+              "alt": "",
+              "width": 475,
+              "height": 298,
+              "instructor_notes": null
+            },
+            {
+              "id": 406888,
+              "key": "708e9074-0d51-4a47-b9e9-e76366670fa1",
+              "title": "Escape the Maze",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Consider an agent who would like to learn to escape a maze.  Which reward signals will encourage the agent to escape the maze as quickly as possible?  Select all that apply.",
+                "answers": [
+                  {
+                    "id": "a1505966282116",
+                    "text": "The reward is -1 for every time step that the agent spends inside the maze.  Once the agent escapes, the episode terminates.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505966612892",
+                    "text": "The reward is +1 for every time step that the agent spends inside the maze.  Once the agent escapes, the episode terminates.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505966653139",
+                    "text": "The reward is -1 for every time step that the agent spends inside the maze.  Once the agent escapes, it receives a reward of +10, and the episode terminates.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505966697641",
+                    "text": "The reward is 0 for every time step that the agent spends inside the maze.  Once the agent escapes, it receives a reward of +1, and the episode terminates.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 406891,
+              "key": "68a2edda-1d51-431a-9a0c-3930207a6318",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c33d19_backgammonboard.svg/backgammonboard.svg.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/68a2edda-1d51-431a-9a0c-3930207a6318",
+              "caption": "Source: Wikipedia",
+              "alt": "",
+              "width": 353,
+              "height": 305,
+              "instructor_notes": null
+            },
+            {
+              "id": 406889,
+              "key": "81db2c46-77f3-4249-a298-5464254deba8",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Consider an agent who would like to learn to play a board game (like backgammon, chess, or checkers).  Which reward signals will encourage the agent to win the game?  Select all that apply.",
+                "answers": [
+                  {
+                    "id": "a1505967010340",
+                    "text": "The agent receives a reward only at the end of the game, and receives a reward of +1 if it wins, -1 if it loses, and 0 if the game is a draw.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505967057685",
+                    "text": "The agent receives a reward of -1 for every time step that it is still playing the game; once the game ends, the episode terminates.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505967099013",
+                    "text": "The agent receives a reward only at the end of the game, and receives a reward of -1 if it wins, +1 if it loses, and 0 if the game is a draw.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505967129128",
+                    "text": "The agent receives a reward only at the end of the game, and receives a reward of +10 if it wins, -10 if it loses, and 0 if the game is a draw.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 406893,
+              "key": "8ad1fd20-1fb0-41e5-80fe-dbdd407ed1cc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c33e48_article-2278590-1792e332000005dc-394-634x615/article-2278590-1792e332000005dc-394-634x615.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8ad1fd20-1fb0-41e5-80fe-dbdd407ed1cc",
+              "caption": "Source: http://i.dailymail.co.uk/i/pix/2013/02/14/article-2278590-1792E332000005DC-394_634x615.jpg",
+              "alt": "",
+              "width": 315,
+              "height": 307,
+              "instructor_notes": null
+            },
+            {
+              "id": 406892,
+              "key": "6cc98bfb-428e-47f0-896e-57929c2638cc",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Consider an agent who would like to learn to balance a plate of food on her head.  Which reward signals will encourage the agent to keep the plate balanced for as long as possible?  Select all that apply.",
+                "answers": [
+                  {
+                    "id": "a1505967436359",
+                    "text": "The reward is -1 for every time step that the agent keeps the plate balanced on her head.  If the plate falls, the episode terminates.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505967515485",
+                    "text": "The reward is +1 for every time step that the agent keeps the plate balanced on her head.  If the plate falls, the episode terminates.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505967528992",
+                    "text": "The agent receives a reward only when the plate falls.  If the plate does not break, the agent receives a reward of +1.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 377509,
+          "key": "358a04be-a7d1-47a5-9a65-662cd327a2e5",
+          "title": "Cumulative Reward",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461258,
+              "key": "e93fa19b-08e7-4b5b-8aa5-f500098173e7",
+              "title": "Cumulative Reward",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ysriH65lV9o",
+                "china_cdn_id": "ysriH65lV9o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 356513,
+          "key": "f41e1965-6e8e-4328-86fe-45617374fa72",
+          "title": "Discounted Return",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461259,
+              "key": "c48f1a56-12ef-4640-9fef-d8533bf6129d",
+              "title": "Discounted Return",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "opXGNPwwn7g",
+                "china_cdn_id": "opXGNPwwn7g.mp4"
+              }
+            },
+            {
+              "id": 408071,
+              "key": "29e0ce69-6b44-4a7a-b208-5081e3decbbe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note**: In this course, we will use \"return\" and \"discounted return\" interchangably.  For an arbitrary time step <span class=\"mathquill\">t</span>, both refer to <span class=\"mathquill\">G_t \\doteq R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\ldots = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}</span>, where <span class=\"mathquill\">\\gamma \\in [0,1]</span>.  In particular, when we refer to \"return\", it is not necessarily the case that <span class=\"mathquill\">\\gamma = 1</span>, and when we refer to \"discounted return\", it is not necessarily true that <span class=\"mathquill\">\\gamma < 1</span>.  (_This also holds for the readings in the recommended textbook._)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 385204,
+          "key": "e80e4570-62e2-4caf-a7df-02ea59e38874",
+          "title": "Quiz: Pole-Balancing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 406894,
+              "key": "ad733504-3a1b-4c54-89a2-6eacb1afafb5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Pole-Balancing",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406895,
+              "key": "4598c2ed-f989-499d-b413-7898413bba4b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c3402c_1omsg2-mkguagky1c64uflw/1omsg2-mkguagky1c64uflw.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4598c2ed-f989-499d-b413-7898413bba4b",
+              "caption": "Source: https://medium.com/@tuzzer/cart-pole-balancing-with-q-learning-b54c6068d947",
+              "alt": "",
+              "width": 600,
+              "height": 279,
+              "instructor_notes": null
+            },
+            {
+              "id": 406897,
+              "key": "cf1ee5c1-3c5e-466a-8fca-a56bdfeeb0de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this classic reinforcement learning task, a cart is positioned on a frictionless track, and a pole is attached to the top of the cart.  The objective is to keep the pole from falling over by moving the cart either left or right, and without falling off the track.\n\nIn the [OpenAI Gym implementation](https://gym.openai.com/envs/CartPole-v0/), the agent applies a force of +1 or -1 to the cart at every time step.  It is formulated as an episodic task, where the episode ends when (1) the pole falls more than 20.9 degrees from vertical, (2) the cart moves more than 2.4 units from the center of the track, or (3) when more than 200 time steps have elapsed.  The agent receives a reward of +1 for every time step, including the final step of the episode.  You can read more about this environment in [OpenAI's github](https://github.com/openai/gym/wiki/CartPole-v0).  This task also appears in Example 3.4 of the textbook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406910,
+              "key": "01ddcd5f-fc44-458d-926b-908e96e487c3",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Recall that the agent receives a reward of +1 for every time step, including the final step of the episode.  Which discount rates would encourage the agent to keep the pole balanced for as long as possible?  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506011490603",
+                    "text": "The discount rate is 1.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506011550023",
+                    "text": "The discount rate is 0.9.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506011557015",
+                    "text": "The discount rate is 0.5.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 406908,
+              "key": "70275659-87e1-42e7-97d4-a626750052c4",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Say that the reward signal is amended to only give reward to the agent at the end of an episode.  So, the reward is 0 for every time step, with the exception of the final time step.  When the episode terminates, the agent receives a reward of **-1**.  Which discount rates would encourage the agent to keep the pole balanced for as long as possible?  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506010589234",
+                    "text": "The discount rate is 1.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506010753876",
+                    "text": "The discount rate is 0.9.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506010791315",
+                    "text": "The discount rate is 0.5.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506011008269",
+                    "text": "(None of these discount rates would help the agent, and there is a problem with the reward signal.)",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 406909,
+              "key": "4a4db24d-ce6b-4639-b82e-8cd55c8180e1",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Say that the reward signal is amended to only give reward to the agent at the end of an episode.  So, the reward is 0 for every time step, with the exception of the final time step.  When the episode terminates, the agent receives a reward of **+1**.  Which discount rates would encourage the agent to keep the pole balanced for as long as possible?  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506011149157",
+                    "text": "The discount rate is 1.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506011178437",
+                    "text": "The discount rate is 0.9.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506011183458",
+                    "text": "The discount rate is 0.5.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506011187980",
+                    "text": "(None of these discount rates would help the agent, and there is a problem with the reward signal.)",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 356515,
+          "key": "3240a1ff-2cae-4917-90b1-d7c5c5f75a92",
+          "title": "MDPs, Part 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 671533,
+              "key": "9f193941-ac9c-486b-af72-07b64b35f98a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# MDPs",
+              "instructor_notes": ""
+            },
+            {
+              "id": 671534,
+              "key": "3ec3e43d-511a-45c5-b76e-faa2a3e766dd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Over the next several videos, you'll learn all about how to rigorously define a reinforcement learning problem as a **Markov Decision Process (MDP)**.\n\nTowards this goal, we'll begin with an example!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 440667,
+              "key": "3f6c8e51-d5d8-4970-82e7-72c2d217467e",
+              "title": "MDPs, Part 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NBWbluSbxPg",
+                "china_cdn_id": "NBWbluSbxPg.mp4"
+              }
+            },
+            {
+              "id": 403932,
+              "key": "6ec11428-b24a-4dc7-87ed-67fc41149eff",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Notes\n---\n\nIn general, the state space <span class=\"mathquill\">\\mathcal{S}</span> is the set of **all nonterminal states**.  \n\nIn continuing tasks (like the recycling task detailed in the video), this is equivalent to the set of **all states**.\n\nIn episodic tasks, we use <span class=\"mathquill\">\\mathcal{S}^+</span> to refer to the set of **all states, including terminal states**.\n\nThe action space <span class=\"mathquill\">\\mathcal{A}</span> is the set of possible actions available to the agent.  \n\nIn the event that there are some states where only a subset of the actions are available, we can also use <span class=\"mathquill\">\\mathcal{A}(s)</span> to refer to the set of actions available in state <span class=\"mathquill\">s\\in\\mathcal{S}</span>.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 385201,
+          "key": "6462cdf5-fa3f-435f-82c9-f3271ec404ac",
+          "title": "MDPs, Part 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 440668,
+              "key": "04d7d194-ee86-4ccd-ae1a-297760394c6f",
+              "title": "MDPs, Part 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CUTtQvxKkNw",
+                "china_cdn_id": "CUTtQvxKkNw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 385206,
+          "key": "ae3f662e-faee-470b-bc74-cb6c2db0cf90",
+          "title": "Quiz: One-Step Dynamics, Part 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 406913,
+              "key": "47894d8c-ec6f-41c5-aa1c-da096c1ffda6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: One-Step Dynamics",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406914,
+              "key": "5bf4d1b5-b3b3-4c4c-8cc3-eb79114ef32e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Consider the recycling robot example.  In the previous concept, we described one method that the environment could use to decide the state and reward, at any time step.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406928,
+              "key": "69cb3db0-b028-453a-be53-a7f977c246f8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c3f51a_screen-shot-2017-09-21-at-12.20.30-pm/screen-shot-2017-09-21-at-12.20.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/69cb3db0-b028-453a-be53-a7f977c246f8",
+              "caption": "",
+              "alt": "",
+              "width": 1788,
+              "height": 1122,
+              "instructor_notes": null
+            },
+            {
+              "id": 407006,
+              "key": "1cffb57e-ebf8-43b4-a3ed-0ca9d37e1d9b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Say at an arbitrary time step <span class=\"mathquill\">t</span>, the state of the robot's battery is high (<span class=\"mathquill\">S_t = \\text{high}</span>).  Then, in response, the agent decides to search (<span class=\"mathquill\">A_t = \\text{search}</span>).  You learned in the previous concept that in this case, the environment responds to the agent by flipping a theoretical coin with 70% probability of landing heads.\n- If the coin lands heads, the environment decides that the next state is high (<span class=\"mathquill\">S_{t+1} = \\text{high}</span>), and the reward is 4 (<span class=\"mathquill\">R_{t+1} = 4</span>).\n- If the coin lands tails, the environment decides that the next state is low  (<span class=\"mathquill\">S_{t+1} = \\text{low}</span>), and the reward is 4 (<span class=\"mathquill\">R_{t+1} = 4</span>).\n\nThis is depicted in the figure below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406929,
+              "key": "a745e402-cee8-44e5-a47c-975473b2045a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c3f529_screen-shot-2017-09-21-at-12.20.50-pm/screen-shot-2017-09-21-at-12.20.50-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a745e402-cee8-44e5-a47c-975473b2045a",
+              "caption": "",
+              "alt": "",
+              "width": 1784,
+              "height": 1142,
+              "instructor_notes": null
+            },
+            {
+              "id": 406930,
+              "key": "bd01af9d-6347-441b-b79c-e38cbbe5e687",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In fact, for any state <span class=\"mathquill\">S_{t}</span> and action <span class=\"mathquill\">A_{t}</span>, it is possible to use the figure to determine exactly how the agent will decide the next state <span class=\"mathquill\">S_{t+1}</span> and reward <span class=\"mathquill\">R_{t+1}</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 406937,
+              "key": "ef53f529-f371-44fd-b2d1-27593f2d6dcd",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Say the current state is high, and the agent decides to wait.  How does the environment decide the next state and reward?",
+                "answers": [
+                  {
+                    "id": "a1506014660320",
+                    "text": "With 80% probability, the next state is high, and the reward is -3.  With 20% probability, the next state is low, and the reward is 4.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506014742683",
+                    "text": "The next state is high, and the reward is 1.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506014756384",
+                    "text": "The next state is low, and the reward is 1.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506014791115",
+                    "text": "The next state is high, and the reward is 0.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 406943,
+              "key": "1036ea4a-f848-412f-af4e-1b3db103dbaa",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Say the current state is low, and the agent decides to recharge.  How does the environment decide the next state and reward?",
+                "answers": [
+                  {
+                    "id": "a1506014931302",
+                    "text": "With 80% probability, the next state is high, and the reward is -3.  With 20% probability, the next state is low, and the reward is 4.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506014986646",
+                    "text": "The next state is high, and the reward is 1.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506014991575",
+                    "text": "The next state is low, and the reward is 1.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506014996595",
+                    "text": "The next state is high, and the reward is 0.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 406999,
+          "key": "55ed22d2-2bfc-4a31-91ab-a812d7d02467",
+          "title": "Quiz: One-Step Dynamics, Part 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 407002,
+              "key": "921aa800-5ab1-40e3-b8da-389d093e1b6b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: One-Step Dynamics",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407005,
+              "key": "fc4ddd22-225b-4d76-83cb-5ca33c21dea6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "It will prove convenient to represent the environment's dynamics using mathematical notation.  In this concept, we will introduce this notation (which can be used for any reinforcement learning task) and use the recycling robot as an example.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407009,
+              "key": "ed46d7d8-b489-4382-90f7-4d974143c184",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c40b85_screen-shot-2017-09-21-at-12.20.30-pm/screen-shot-2017-09-21-at-12.20.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ed46d7d8-b489-4382-90f7-4d974143c184",
+              "caption": "",
+              "alt": "",
+              "width": 1788,
+              "height": 1122,
+              "instructor_notes": null
+            },
+            {
+              "id": 407010,
+              "key": "f25773fb-017a-49de-94a3-a3aa112354b9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "At an arbitrary time step <span class=\"mathquill\">t</span>, the agent-environment interaction has evolved as a sequence of states, actions, and rewards\n\n<span class=\"mathquill\">(S_0, A_0, R_1, S_1, A_1, \\ldots, R_{t-1}, S_{t-1}, A_{t-1}, R_t, S_t, A_t)</span>.\n\nWhen the environment responds to the agent at time step <span class=\"mathquill\">t+1</span>, it considers only the state and action at the previous time step (<span class=\"mathquill\">S_t, A_t</span>).  \n\nIn particular, it does not care what state was presented to the agent more than one step prior.  (_In other words_, the environment does not consider any of <span class=\"mathquill\">\\{ S_0, \\ldots, S_{t-1}  \\}</span>.)  \n\nAnd, it does not look at the actions that the agent took prior to the last one.  (_In other words_, the environment does not consider any of <span class=\"mathquill\">\\{ A_0, \\ldots, A_{t-1} \\}</span>.) \n\nFurthermore, how well the agent is doing, or how much reward it is collecting, has no effect on how the environment chooses to respond to the agent.   (_In other words_, the environment does not consider any of <span class=\"mathquill\">\\{ R_0, \\ldots, R_t \\} </span>.) \n\nBecause of this, we can completely define how the environment decides the state and reward by specifying \n\n<span class=\"mathquill\">p(s',r|s,a) \\doteq \\mathbb{P}(S_{t+1}=s', R_{t+1}=r|S_t = s, A_t=a)</span> \n\nfor each possible <span class=\"mathquill\">s', r, s, \\text{and } a</span>.  These conditional probabilities are said to specify the **one-step dynamics** of the environment.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407012,
+              "key": "f7bb71c0-44e1-487f-b756-41a200936b2c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## An Example",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407013,
+              "key": "3820353a-af75-497d-bdc8-6da63f4605a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's return to the case that <span class=\"mathquill\">S_t = \\text{high}</span>, and <span class=\"mathquill\">A_t = \\text{search}</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407014,
+              "key": "cbf4707a-f378-4db8-9ef8-8f399df7466d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c40bf7_screen-shot-2017-09-21-at-12.20.50-pm/screen-shot-2017-09-21-at-12.20.50-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cbf4707a-f378-4db8-9ef8-8f399df7466d",
+              "caption": "",
+              "alt": "",
+              "width": 1784,
+              "height": 1142,
+              "instructor_notes": null
+            },
+            {
+              "id": 407011,
+              "key": "d43cea96-232f-4aa9-9283-18c989a97203",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Then, when the environment responds to the agent at the next time step,\n- with 70% probability, the next state is high and the reward is 4.  In other words, <span class=\"mathquill\">p(\\text{high}, 4|\\text{high},\\text{search}) = \\mathbb{P}(S_{t+1}=\\text{high}, R_{t+1}=4|S_{t} = \\text{high}, A_{t}=\\text{search}) = 0.7</span>.\n\n- with 30% probability, the next state is low and the reward is 4.  In other words, <span class=\"mathquill\">p(\\text{low}, 4|\\text{high},\\text{search}) = \\mathbb{P}(S_{t+1}=\\text{low}, R_{t+1}=4|S_{t} = \\text{high}, A_{t}=\\text{search}) = 0.3</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407018,
+              "key": "b6d54cb1-3dd8-4087-bf56-eb1ac7aec924",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question 1",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407020,
+              "key": "d1fa976b-8c1e-4fc1-80fb-97b839461ad6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "What is <span class=\"mathquill\">p(\\text{high}, -3|\\text{low},\\text{search})</span>?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407021,
+              "key": "257b1293-b2f9-4659-9872-c9945a2109cb",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Enter the correct numerical value.",
+                "matchers": [
+                  {
+                    "expression": ".8"
+                  },
+                  {
+                    "expression": "0.8"
+                  },
+                  {
+                    "expression": "8/10"
+                  },
+                  {
+                    "expression": "0.80"
+                  },
+                  {
+                    "expression": ".80"
+                  },
+                  {
+                    "expression": "80%"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 407022,
+              "key": "a1c0abc4-6d85-4c45-8028-507ec0f45165",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question 2",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407023,
+              "key": "c30e9a38-2e51-474d-9b28-e4bc59ff9af9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "What is <span class=\"mathquill\">p(\\text{high}, 0|\\text{low},\\text{recharge})</span>?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407024,
+              "key": "d63bcf35-89f4-4a05-a5aa-410388117ba4",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Enter the correct numerical value.",
+                "matchers": [
+                  {
+                    "expression": "1"
+                  },
+                  {
+                    "expression": "1.0"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 407026,
+              "key": "bae14238-3f30-42f1-af19-db825a07c545",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Questions 3 and 4",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407027,
+              "key": "169e6ccc-2470-42de-ac52-583f17e66f49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Consider the following probabilities:\n- (1) <span class=\"mathquill\">p(\\text{low}, 1|\\text{low},\\text{search})</span>\n- (2) <span class=\"mathquill\">p(\\text{high}, 0|\\text{low},\\text{recharge})</span>\n- (3) <span class=\"mathquill\">p(\\text{high}, 1|\\text{low},\\text{wait})</span>\n- (4) <span class=\"mathquill\">p(\\text{high}, 1|\\text{high},\\text{wait})</span>\n- (5) <span class=\"mathquill\">p(\\text{high}, 1|\\text{high},\\text{search})</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407028,
+              "key": "aa1f5692-8a84-4e5e-ac74-25933a7b9f89",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the above probabilities is equal to 0?  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506021484354",
+                    "text": "(1)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506021488876",
+                    "text": "(2)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506021491215",
+                    "text": "(3)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506021494586",
+                    "text": "(4)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506021497090",
+                    "text": "(5)",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 407031,
+              "key": "69800a20-900c-4f3d-8b1a-c7e01787421b",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the above probabilities is equal to 1?  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506021926940",
+                    "text": "(1)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506021948123",
+                    "text": "(2)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506021950145",
+                    "text": "(3)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506021952447",
+                    "text": "(4)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506021954753",
+                    "text": "(5)",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 385202,
+          "key": "3cb3ffc1-0876-4423-8b40-c6ea558fc54d",
+          "title": "MDPs, Part 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 498382,
+              "key": "8b8cb9b6-88a3-4509-9fac-81c20818fcca",
+              "title": "MDPs, Part 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UlXHFbla3QI",
+                "china_cdn_id": "UlXHFbla3QI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 406911,
+          "key": "ded16999-b166-4fe7-aa98-02cbfea07ba8",
+          "title": "Finite MDPs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 407083,
+              "key": "9a4aedc0-63d9-48af-9d6d-fe29c9539b97",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Finite MDPs",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407069,
+              "key": "1fccc9d6-9985-4cda-8847-569e87c73b16",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use [this link](https://github.com/openai/gym/wiki/Table-of-environments) to peruse the available environments in OpenAI Gym. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407097,
+              "key": "55c92e32-c044-4415-b8fe-7f7e338a3c4e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c41c74_screen-shot-2017-09-21-at-3.08.03-pm/screen-shot-2017-09-21-at-3.08.03-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/55c92e32-c044-4415-b8fe-7f7e338a3c4e",
+              "caption": "",
+              "alt": "",
+              "width": 601,
+              "height": 415,
+              "instructor_notes": null
+            },
+            {
+              "id": 407100,
+              "key": "6841b50a-6ec8-4f2b-b150-f7864b403dbc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The environments are indexed by **Environment Id**, and each environment has corresponding **Observation Space**, **Action Space**, **Reward Range**, **tStepL**, **Trials**, and **rThresh**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407178,
+              "key": "a2c7e680-3cd6-4092-ba75-909863af7d3d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## CartPole-v0\n---\nFind the line in the table that corresponds to the **CartPole-v0** environment.  Take note of the corresponding **Observation Space** (`Box(4,)`) and **Action Space** (`Discrete(2)`).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407181,
+              "key": "122d234e-9606-4c66-afe5-130c4839f3c6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c42093_screen-shot-2017-09-21-at-3.25.10-pm/screen-shot-2017-09-21-at-3.25.10-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/122d234e-9606-4c66-afe5-130c4839f3c6",
+              "caption": "",
+              "alt": "",
+              "width": 880,
+              "height": 97,
+              "instructor_notes": null
+            },
+            {
+              "id": 407192,
+              "key": "7a874aef-194a-4703-84d1-fa0ed84195e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As described in the [OpenAI Gym documentation](https://gym.openai.com/docs/),\n\n> Every environment comes with first-class `Space` objects that describe the valid actions and observations.  \n> - The `Discrete` space allows a fixed range of non-negative numbers.\n> - The `Box` space represents an n-dimensional box, so valid actions or observations will be an array of n numbers.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407270,
+              "key": "12cbc346-445c-4c1c-8f82-26f0eda8f287",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Observation Space\n---\nThe observation space for the CartPole-v0 environment has type `Box(4,)`.  Thus, the observation (or state) at each time point is an array of 4 numbers.  You can look up what each of these numbers represents in [this document](https://github.com/openai/gym/wiki/CartPole-v0).  After opening the page, scroll down to the description of the observation space.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407285,
+              "key": "b5938047-de69-44a7-9f1e-553efdad9882",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c42575_screen-shot-2017-09-21-at-3.46.12-pm/screen-shot-2017-09-21-at-3.46.12-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b5938047-de69-44a7-9f1e-553efdad9882",
+              "caption": "",
+              "alt": "",
+              "width": 353,
+              "height": 238,
+              "instructor_notes": null
+            },
+            {
+              "id": 407288,
+              "key": "5c93e7a3-b717-4d47-baf0-b54ed2bf9234",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Notice the minimum (-Inf) and maximum (Inf) values for both **Cart Velocity** and the **Pole Velocity at Tip**.\n\nSince the entry in the array corresponding to each of these indices can be any real number, the state space <span class=\"mathquill\">\\mathcal{S}^+</span> is infinite!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407364,
+              "key": "a84f0244-baac-4669-ac13-50260a1cba12",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Action Space\n---\nThe action space for the CartPole-v0 environment has type `Discrete(2)`.  Thus, at any time point, there are only two actions available to the agent.  You can look up what each of these numbers represents in [this document](https://github.com/openai/gym/wiki/CartPole-v0) (note that it is the same document you used to look up the observation space!).  After opening the page, scroll down to the description of the action space.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407367,
+              "key": "43582d25-f9a7-498a-9064-e10be648b5e4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c4305c_screen-shot-2017-09-21-at-4.34.08-pm/screen-shot-2017-09-21-at-4.34.08-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/43582d25-f9a7-498a-9064-e10be648b5e4",
+              "caption": "",
+              "alt": "",
+              "width": 215,
+              "height": 165,
+              "instructor_notes": null
+            },
+            {
+              "id": 407368,
+              "key": "bad65820-3774-4b75-9dbe-fc18b462bab6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this case, the action space <span class=\"mathquill\">\\mathcal{A}</span> is a finite set containing only two elements.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407370,
+              "key": "903db130-77aa-4b9d-850b-c66f581b901c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Finite MDPs\n---\nRecall from the previous concept that in a finite MDP, the state space <span class=\"mathquill\">\\mathcal{S}</span> (or <span class=\"mathquill\">\\mathcal{S}^+</span>, in the case of an episodic task) and action space <span class=\"mathquill\">\\mathcal{A}</span> must both be finite.\n\nThus, while the CartPole-v0 environment does specify an MDP, it does not specify a **finite** MDP.  In this course, we will first learn how to solve finite MDPs.  Then, later in this course, you will learn how to use neural networks to solve much more complex MDPs!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 356521,
+          "key": "ee28399b-f809-4e2b-936b-5a88d7297899",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 403919,
+              "key": "b353b027-9f20-4850-85c9-a7a6e707dd8d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403943,
+              "key": "cfff4572-b080-48ab-8872-a96d45468761",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c29f47_screen-shot-2017-09-20-at-12.02.06-pm/screen-shot-2017-09-20-at-12.02.06-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cfff4572-b080-48ab-8872-a96d45468761",
+              "caption": "The agent-environment interaction in reinforcement learning. (Source: Sutton and Barto, 2017)",
+              "alt": "",
+              "width": 738,
+              "height": 274,
+              "instructor_notes": null
+            },
+            {
+              "id": 403918,
+              "key": "da1d7d9a-e964-4c2f-9b0a-00a02cfd1d76",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The Setting, Revisited\n---\n\n- The reinforcement learning (RL) framework is characterized by an **agent** learning to interact with its **environment**.\n- At each time step, the agent receives the environment's **state** (*the environment presents a situation to the agent)*, and the agent must choose an appropriate **action** in response.  One time step later, the agent receives a **reward** (*the environment indicates whether the agent has responded appropriately to the state*) and a new **state**.\n- All agents have the goal to maximize expected **cumulative reward**, or the expected sum of rewards attained over all time steps.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403920,
+              "key": "6b0d44e7-ba92-498f-a130-68fd33e8cb08",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Episodic vs. Continuing Tasks\n---\n\n- A **task** is an instance of the reinforcement learning (RL) problem.\n- **Continuing tasks** are tasks that continue forever, without end.\n- **Episodic tasks** are tasks with a well-defined starting and ending point.\n - In this case, we refer to a complete sequence of interaction, from start to finish, as an **episode**.\n - Episodic tasks come to an end whenever the agent reaches a **terminal state**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403921,
+              "key": "c184cfd3-a2a0-4a50-ab3f-98f1497b1a64",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The Reward Hypothesis\n---\n\n- **Reward Hypothesis**: All goals can be framed as the maximization of (expected) cumulative reward.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403924,
+              "key": "1bcf3bb3-d6a9-477c-a383-2ad55e9554d5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Goals and Rewards\n---\n- (Please see **Part 1** and **Part 2** to review an example of how to specify the reward signal in a real-world problem.)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403926,
+              "key": "b9a68f85-8c8b-4970-a237-f64f0ed69636",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Cumulative Reward\n---\n- The **return at time step  <span class=\"mathquill\">t</span>** is <span class=\"mathquill\">G_t := R_{t+1} + R_{t+2} + R_{t+3} + \\ldots </span>\n- The agent selects actions with the goal of maximizing expected (discounted) return. (*Note: discounting is covered in the next concept.*)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403927,
+              "key": "5a459510-4f49-48f9-a4b1-abe124e8acc9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Discounted Return\n---\n- The **discounted return at time step  <span class=\"mathquill\">t</span>** is <span class=\"mathquill\">G_t := R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\ldots </span>.\n- The **discount rate <span class=\"mathquill\">\\gamma</span>** is something that you set, to refine the goal that you have the agent.  \n - It must satisfy <span class=\"mathquill\">0 \\leq \\gamma \\leq 1</span>.\n - If <span class=\"mathquill\">\\gamma=0</span>, the agent only cares about the most immediate reward.\n - If <span class=\"mathquill\">\\gamma=1</span>, the return is not discounted.\n - For larger values of <span class=\"mathquill\">\\gamma</span>, the agent cares more about the distant future. Smaller values of <span class=\"mathquill\">\\gamma</span> result in more extreme discounting, where - in the most extreme case - agent only cares about the most immediate reward.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403928,
+              "key": "3f783854-6ff3-4c32-86af-a09674294ab4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### MDPs and One-Step Dynamics\n---\n\n- The **state space <span class=\"mathquill\">\\mathcal{S}</span>** is the set of all (_nonterminal_) states.  \n- In episodic tasks, we use <span class=\"mathquill\">\\mathcal{S}^+</span> to refer to the set of all states, including terminal states.\n- The **action space <span class=\"mathquill\">\\mathcal{A}</span>** is the set of possible actions.  (Alternatively, <span class=\"mathquill\">\\mathcal{A}(s)</span> refers to the set of possible actions available in state <span class=\"mathquill\">s \\in \\mathcal{S}</span>.)\n- (Please see **Part 2** to review how to specify the reward signal in the recycling robot example.)\n- The **one-step dynamics** of the environment determine how the environment decides the state and reward at every time step.  The dynamics can be defined by specifying <span class=\"mathquill\">p(s',r|s,a) \\doteq \\mathbb{P}(S_{t+1}=s', R_{t+1}=r|S_{t} = s, A_{t}=a)</span> for each possible <span class=\"mathquill\">s', r, s, \\text{and } a</span>.\n- A **(finite) Markov Decision Process (MDP)** is defined by:\n - a (finite) set of states <span class=\"mathquill\">\\mathcal{S}</span> (or <span class=\"mathquill\">\\mathcal{S}^+</span>, in the case of an episodic task)\n - a (finite) set of actions <span class=\"mathquill\">\\mathcal{A}</span>\n - a set of rewards <span class=\"mathquill\">\\mathcal{R}</span>\n - the one-step dynamics of the environment\n - the discount rate <span class=\"mathquill\">\\gamma \\in [0,1]</span>",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

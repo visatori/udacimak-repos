@@ -1,0 +1,318 @@
+{
+  "data": {
+    "lesson": {
+      "id": 325622,
+      "key": "1411d674-356f-4a26-961e-bc04a059f36e",
+      "title": "Semi-Supervised Learning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Ian Goodfellow leads you through a semi-supervised GAN model, a classifier that can learn from mostly unlabeled data.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/1411d674-356f-4a26-961e-bc04a059f36e/325622/1544457559700/Semi-Supervised+Learning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/1411d674-356f-4a26-961e-bc04a059f36e/325622/1544457553247/Semi-Supervised+Learning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 325623,
+          "key": "9cf982ab-892c-4182-868c-94da40a565de",
+          "title": "Semi-supervised Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325624,
+              "key": "7ff59003-d4a5-4268-a3bc-c85a12c37809",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7ff59003-d4a5-4268-a3bc-c85a12c37809",
+              "caption": "Hello! It's Mat",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 325625,
+              "key": "b20d644d-5dd6-438b-a60c-4942fe62192b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Semi-Supervised Learning\n\nIn this lesson, Ian Goodfellow will lead you through implementing a semi-supervised GAN model in TensorFlow. Semi-supervised models are used when you only have a few labeled data points. These perform surprisingly well even though the amount of labeled data you have is relatively tiny.\n\nHere we'll use the SVHN dataset again and attempt to classify the images with a large proportion of the labels dropped.\n\nAs a heads up, this material is cutting edge and is more difficult to understand and implement than what you've seen before. But, you'll learn a lot and see some really cool results.\n\n## Getting the notebooks\n\nIan will lead you through a set of notebooks, one where you can try implementing the network and another notebook with his solutions. The notebooks are available from our [public GitHub repo](https://github.com/udacity/deep-learning), in the `semi-supervised` folder. Either download the notebooks from there, or do a `git pull` if you already have the repo.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 325626,
+          "key": "14899e3a-239e-4d98-90fe-fc693dd53f1d",
+          "title": "Semi-Supervised Classification with GANs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325631,
+              "key": "bc6f7e4c-32be-487c-a785-7a8ba809465b",
+              "title": "Semi-Supervised Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_LRpHPxZaX0",
+                "china_cdn_id": "_LRpHPxZaX0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325632,
+          "key": "43de99e3-bb4b-4e19-9364-71fac7b5b9b9",
+          "title": "Introducing Semi-Supervised Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325633,
+              "key": "138e0994-a844-41c1-a989-5760c4d2ee27",
+              "title": "Introducing Semi-Supervised Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tnCClNy5z5c",
+                "china_cdn_id": "tnCClNy5z5c.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325627,
+          "key": "93ae8a83-4638-4d54-9679-27da459322b7",
+          "title": "Data Prep",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325634,
+              "key": "7f012fa8-135f-4877-bf05-9454614a9857",
+              "title": "Data Prep",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "P5hOx09mwaM",
+                "china_cdn_id": "P5hOx09mwaM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325628,
+          "key": "50650aae-b25c-48b7-ac1f-0326b199e6fd",
+          "title": "Building The Generator And Discriminator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325635,
+              "key": "eec13dc9-f8e5-4340-bc93-6d0be270074a",
+              "title": "Building The Generator And Discriminator",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OWytckbbeGQ",
+                "china_cdn_id": "OWytckbbeGQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325629,
+          "key": "3bf52eeb-a50a-4734-bd26-d9603b1fcc84",
+          "title": "Model Loss Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325636,
+              "key": "34da0a93-5c7b-405d-b94c-b6e43380dac1",
+              "title": "Model Loss Exercise",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "W7TawMNxBds",
+                "china_cdn_id": "W7TawMNxBds.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325630,
+          "key": "58c49f20-c905-4cd4-b46c-70eac51f8ce1",
+          "title": "Model Optimization Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325637,
+              "key": "5a0588da-3d57-41d7-aaaa-a6aa8d0172de",
+              "title": "Model Optimization Exercise",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wNpI1wUA4Io",
+                "china_cdn_id": "wNpI1wUA4Io.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325638,
+          "key": "90ae6719-8599-4f4b-8d71-ca73726675de",
+          "title": "Training The Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325643,
+              "key": "fb84e846-7819-47cc-9012-762f8be92252",
+              "title": "Training The Network ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "P-LXQPVXl4A",
+                "china_cdn_id": "P-LXQPVXl4A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325639,
+          "key": "e49311c2-330d-4614-a775-b0c2839facfd",
+          "title": "Discriminator Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325644,
+              "key": "756648c0-d9bb-4b83-b39b-7b7093f3310d",
+              "title": "Discriminator Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_X8ssUzu_Bo",
+                "china_cdn_id": "_X8ssUzu_Bo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325640,
+          "key": "880fb238-3049-4504-9b81-8bb2a7be8925",
+          "title": "Model Loss Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325645,
+              "key": "6ca82ee5-a938-4b0f-949a-d4de79c5b53c",
+              "title": "Model Loss Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "r3DtohmychE",
+                "china_cdn_id": "r3DtohmychE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325641,
+          "key": "6f0f8e28-746b-4653-a6bd-91c3701469a1",
+          "title": "Model Optimizer Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325646,
+              "key": "ffa2f39b-3199-42d4-bf4c-c1bac45312b9",
+              "title": "Model Optimizer Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_Qhz9SbR7xY",
+                "china_cdn_id": "_Qhz9SbR7xY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 325642,
+          "key": "4cf889e0-5f4c-462e-9e41-89f798055349",
+          "title": "Trained Semi-Supervised GAN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325647,
+              "key": "c076f33c-f619-48e7-a460-2c9bee02fadb",
+              "title": "Trained Semi-Supervised GAN",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9yWYZDX8-O8",
+                "china_cdn_id": "9yWYZDX8-O8.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

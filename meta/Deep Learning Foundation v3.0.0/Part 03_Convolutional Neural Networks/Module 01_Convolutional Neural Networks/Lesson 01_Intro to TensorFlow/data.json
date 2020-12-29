@@ -1,0 +1,1573 @@
+{
+  "data": {
+    "lesson": {
+      "id": 264811,
+      "key": "6ec4ffd6-4f5c-4b88-bdf6-f169119834f0",
+      "title": "Intro to TensorFlow",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Vincent Vanhoucke, Principal Scientist at Google Brain, introduces you to deep learning and Tensorflow, Google's deep learning framework.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/6ec4ffd6-4f5c-4b88-bdf6-f169119834f0/264811/1544457683973/Intro+to+TensorFlow+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/6ec4ffd6-4f5c-4b88-bdf6-f169119834f0/264811/1544457679486/Intro+to+TensorFlow+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 264839,
+          "key": "8ffbddfd-9e83-4181-b866-61fcd6dcb5a3",
+          "title": "Intro to Vincent ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266901,
+              "key": "19b61e73-9983-4bd2-9234-3f52fcbd7a14",
+              "title": "Intro to Vincent",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0_M6a04ofz8",
+                "china_cdn_id": "0_M6a04ofz8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264840,
+          "key": "eaee8b63-ddca-4165-95e3-88e13012c506",
+          "title": "What is Deep Learning ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266902,
+              "key": "465db32e-1a96-44a5-b325-d3efabed513a",
+              "title": "What Is Deep Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "INt1nULYPak",
+                "china_cdn_id": "INt1nULYPak.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264841,
+          "key": "e2d7384b-b11d-4b34-9afb-f6fab5a034da",
+          "title": "Solving Problems - Big and Small ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266903,
+              "key": "c8c178a5-79f6-4bbc-bb85-c4512e912c03",
+              "title": "Solving Problems - Big And Small",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WHcRQMGSbqg",
+                "china_cdn_id": "WHcRQMGSbqg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264842,
+          "key": "2c0cbc4a-f8ba-45fa-bc35-f51c8da8429d",
+          "title": "Let's Get Started ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266904,
+              "key": "db49205a-13c0-4ffc-995e-7f6014ac3dfe",
+              "title": "Let'S Get Started",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ySIDqaXLhHw",
+                "china_cdn_id": "ySIDqaXLhHw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264858,
+          "key": "dc5ae094-974d-42be-93e9-9f9d182c2b81",
+          "title": "Installing TensorFlow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 264860,
+              "key": "84bba79a-fffe-429e-924b-faf4dd0c6969",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/580acaa6_tensorflow/tensorflow.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/84bba79a-fffe-429e-924b-faf4dd0c6969",
+              "caption": "",
+              "alt": null,
+              "width": 357,
+              "height": 291,
+              "instructor_notes": null
+            },
+            {
+              "id": 264861,
+              "key": "c3afba61-fb8d-4de4-b3fe-0d985b4fa7b1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Throughout this lesson, you'll apply your knowledge of neural networks on real datasets using [TensorFlow](https://www.tensorflow.org/) [(link for China)](http://www.tensorfly.cn/), an open source Deep Learning library created by Google.\n\n\nYou’ll use TensorFlow to classify images from the notMNIST dataset - a dataset of images of English letters from A to J.  You can see a few example images below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264862,
+              "key": "c335bc77-314d-4d38-af5f-e0713989b5dd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/58051e40_notmnist/notmnist.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c335bc77-314d-4d38-af5f-e0713989b5dd",
+              "caption": "",
+              "alt": null,
+              "width": 693,
+              "height": 334,
+              "instructor_notes": null
+            },
+            {
+              "id": 264863,
+              "key": "46e5b4c5-36e6-4192-a65a-8afeb64b6dba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Your goal is to automatically detect the letter based on the image in the dataset.  You’ll be working on your own computer for this lab, so, first things first, install TensorFlow!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264864,
+              "key": "e3a7a55b-31dc-409f-879e-0584a12b92e6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Install\nAs usual, we'll be using Conda to install TensorFlow. You might already have a TensorFlow environment, but check to make sure you have all the necessary packages.\n\n## OS X or Linux\nRun the following commands to setup your environment:\n```sh\nconda create -n tensorflow python=3.5\nsource activate tensorflow\nconda install pandas matplotlib jupyter notebook scipy scikit-learn\npip install tensorflow\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264865,
+              "key": "eeb57c3d-6d07-4fb3-9f05-eef6546f4fc6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Windows\n\nAnd installing on Windows. In your console or Anaconda shell, \n\n```sh\nconda create -n tensorflow python=3.5\nactivate tensorflow\nconda install pandas matplotlib jupyter notebook scipy scikit-learn\npip install tensorflow\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264866,
+              "key": "90a3a278-06b7-456d-a89f-98ba2b84f249",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Hello, world!\nTry running the following code in your Python console to make sure you have TensorFlow properly installed.  The console will print \"Hello, world!\" if TensorFlow is installed.  Don’t worry about understanding what it does.  You’ll learn about it in the next section.\n```python\nimport tensorflow as tf\n\n# Create TensorFlow object called tensor\nhello_constant = tf.constant('Hello World!')\n\nwith tf.Session() as sess:\n    # Run the tf.constant operation in the session\n    output = sess.run(hello_constant)\n    print(output)\n\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 195253,
+          "key": "83f16208-ff1a-4179-aef7-c3f079bb5f9c",
+          "title": "Hello, Tensor World!",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 195257,
+              "key": "e7ea8b55-5e60-4bbc-bbcf-d190654270d6",
+              "title": " ",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Hello, Tensor World!\nLet’s analyze the Hello World script you ran. For reference, I’ve added the code below.\n```python\nimport tensorflow as tf\n\n# Create TensorFlow object called hello_constant\nhello_constant = tf.constant('Hello World!')\n\nwith tf.Session() as sess:\n    # Run the tf.constant operation in the session\n    output = sess.run(hello_constant)\n    print(output)\n```\n## Tensor\nIn TensorFlow, data isn’t stored as integers, floats, or strings.  These values are encapsulated in an object called a tensor.  In the case of `hello_constant = tf.constant('Hello World!')`, `hello_constant` is a 0-dimensional string tensor, but tensors come in a variety of sizes as shown below:\n```python\n# A is a 0-dimensional int32 tensor\nA = tf.constant(1234) \n# B is a 1-dimensional int32 tensor\nB = tf.constant([123,456,789]) \n# C is a 2-dimensional int32 tensor\nC = tf.constant([ [123,456,789], [222,333,444] ])\n```\n[`tf.constant()`](https://www.tensorflow.org/api_docs/python/tf/constant) is one of many TensorFlow operations you will use in this lesson.  The tensor returned by [`tf.constant()`](https://www.tensorflow.org/api_docs/python/tf/constant) is called a constant tensor, because the value of the tensor never changes.\n## Session\nTensorFlow’s api is built around the idea of a [computational graph](https://medium.com/tebs-lab/deep-neural-networks-as-computational-graphs-867fcaa56c9), a way of visualizing a mathematical process.  Let’s take the TensorFlow code you ran and turn that into a graph:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 197716,
+              "key": "33f8ba4e-26f9-4f69-8fd6-7e0500fe4117",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/580feadb_session/session.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/33f8ba4e-26f9-4f69-8fd6-7e0500fe4117",
+              "caption": "",
+              "alt": null,
+              "width": 697,
+              "height": 404,
+              "instructor_notes": null
+            },
+            {
+              "id": 196228,
+              "key": "43ef73c0-07e8-4733-a856-9bbba9eaf9c3",
+              "title": " ",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A \"TensorFlow Session\", as shown above, is an environment for running a graph.  The session is in charge of allocating the operations to GPU(s) and/or CPU(s), including remote machines. Let’s see how you use it.\n```python\nwith tf.Session() as sess:\n    output = sess.run(hello_constant)\n    print(output)\n\n```\nThe code has already created the tensor, `hello_constant`, from the previous lines.  The next step is to evaluate the tensor in a session.\n\n\nThe code creates a session instance, `sess`, using [`tf.Session`](https://www.tensorflow.org/api_docs/python/tf/Session). The [`sess.run()`](https://www.tensorflow.org/api_docs/python/tf/Session#run) function then evaluates the tensor and returns the results.\n\nAfter you run the above, you will see the following printed out:\n\n```sh\n'Hello World!'\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 195266,
+          "key": "a222f778-c0aa-45f0-97bc-7b3caf940f5b",
+          "title": "Quiz: TensorFlow Input",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 195267,
+              "key": "6a189967-0d90-4e9c-85ed-66d86526bdb5",
+              "title": " ",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Input\nIn the last section, you passed a tensor into a session and it returned the result.  What if you want to use a non-constant?  This is where [`tf.placeholder()`](https://www.tensorflow.org/api_docs/python/tf/placeholder) and `feed_dict` come into place.  In this section, you'll go over the basics of feeding data into TensorFlow.\n## tf.placeholder()\nSadly you can’t just set `x` to your dataset and put it in TensorFlow, because over time you'll want your TensorFlow model to take in different datasets with different parameters.  You need [`tf.placeholder()`](https://www.tensorflow.org/api_docs/python/tf/placeholder)!  \n\n[`tf.placeholder()`](https://www.tensorflow.org/api_docs/python/tf/placeholder) returns a tensor that gets its value from data passed to the [`tf.session.run()`](https://www.tensorflow.org/api_docs/python/tf/Session#run) function, allowing you to set the input right before the session runs.\n## Session’s feed_dict\n```python\nx = tf.placeholder(tf.string)\n\nwith tf.Session() as sess:\n    output = sess.run(x, feed_dict={x: 'Hello World'})\n```\nUse the `feed_dict` parameter in [`tf.session.run()`](https://www.tensorflow.org/api_docs/python/tf/Session#run) to set the placeholder tensor.  The above example shows the tensor `x` being set to the string `\"Hello, world\"`.  It's also possible to set more than one tensor using `feed_dict` as shown below.\n```python\nx = tf.placeholder(tf.string)\ny = tf.placeholder(tf.int32)\nz = tf.placeholder(tf.float32)\n\nwith tf.Session() as sess:\n    output = sess.run(x, feed_dict={x: 'Test String', y: 123, z: 45.67})\n```\n**Note:** If the data passed to the `feed_dict` doesn’t match the tensor type and can’t be cast into the tensor type, you’ll get  the error “`ValueError: invalid literal for`...”.\n## Quiz\nLet's see how well you understand [`tf.placeholder()`](https://www.tensorflow.org/api_docs/python/tf/placeholder) and `feed_dict`.  The code below throws an error, but I want you to make it return the number `123`.  Change line 11, so that the code returns the number `123`.\n\n**Note:** The quizzes are running TensorFlow version *0.12.1*.  However, all the code used in this course is compatible with version *1.0*.  We'll be upgrading our in class quizzes to the newest version in the near future.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 197052,
+              "key": "a25242e1-4cbf-4c37-92f0-52a8a54b5cdc",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5878927719530496",
+                "initial_code_files": [
+                  {
+                    "text": "# Solution is available in the other \"solution.py\" tab\nimport tensorflow as tf\n\n\ndef run():\n    output = None\n    x = tf.placeholder(tf.int32)\n\n    with tf.Session() as sess:\n        # TODO: Feed the x tensor 123\n        output = sess.run(x)\n\n    return output\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "# Quiz Solution\n# Note: You can't run code in this tab\nimport tensorflow as tf\n\n\ndef run():\n    output = None\n    x = tf.placeholder(tf.int32)\n\n    with tf.Session() as sess:\n        output = sess.run(x, feed_dict={x: 123})\n\n    return output\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 195274,
+          "key": "0a2cb9ef-1537-4e07-9aa5-e4d07f82122d",
+          "title": "Quiz: TensorFlow Math",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 195279,
+              "key": "a2adc52e-61cc-44c6-8c8b-8d79cb2867d3",
+              "title": " ",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# TensorFlow Math\nGetting the input is great, but now you need to use it.  You're going to use basic math functions that everyone knows and loves - add, subtract, multiply, and divide - with tensors. (There's many more math functions you can check out in the [documentation](https://www.tensorflow.org/api_docs/python/math_ops/).)\n## Addition\n```python\nx = tf.add(5, 2)  # 7\n```\nYou’ll start with the add function.  The [`tf.add()`](https://www.tensorflow.org/api_guides/python/math_ops) function does exactly what you expect it to do.  It takes in two numbers, two tensors, or one of each, and returns their sum as a tensor.\n## Subtraction and Multiplication\nHere’s an example with subtraction and multiplication.\n```python\nx = tf.subtract(10, 4) # 6\ny = tf.multiply(2, 5)  # 10\n```\nThe `x` tensor will evaluate to `6`, because `10 - 4 = 6`.  The `y` tensor will evaluate to `10`, because `2 * 5 = 10`.  That was easy!\n\n## Converting types\n\nIt may be necessary to convert between types to make certain operators work together. For example, if you tried the following, it would fail with an exception:\n```\ntf.subtract(tf.constant(2.0),tf.constant(1))  # Fails with ValueError: Tensor conversion requested dtype float32 for Tensor with dtype int32: \n```\nThat's because the constant `1` is an integer but the constant `2.0` is a floating point value and `subtract` expects them to match.\n\nIn cases like these, you can either make sure your data is all of the same type, or you can cast a value to another type. In this case, converting the `2.0` to an integer before subtracting, like so, will give the correct result:\n```\ntf.subtract(tf.cast(tf.constant(2.0), tf.int32), tf.constant(1))   # 1\n```\n\n## Quiz\nLet's apply what you learned to convert an algorithm to TensorFlow.  The code below is a simple algorithm using division and subtraction.  Convert the following algorithm in regular Python to TensorFlow and print the results of the session.  You can use [`tf.constant()`](https://www.tensorflow.org/api_guides/python/constant_op) for the values `10`, `2`, and `1`.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 195276,
+              "key": "7a80ce08-aeec-4708-8f15-de9b6f59eb8e",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6436851911098368",
+                "initial_code_files": [
+                  {
+                    "text": "# Solution is available in the other \"solution.py\" tab\nimport tensorflow as tf\n\n# TODO: Convert the following to TensorFlow:\nx = 10\ny = 2\nz = x/y - 1\n\n# TODO: Print z from a session\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "# Quiz Solution\n# Note: You can't run code in this tab\nimport tensorflow as tf\n\n# TODO: Convert the following to TensorFlow:\nx = tf.constant(10)\ny = tf.constant(2)\nz = tf.subtract(tf.divide(x,y),tf.cast(tf.constant(1), tf.float64))\n\n# TODO: Print z from a session\nwith tf.Session() as sess:\n    output = sess.run(z)\n    print(output)\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 266920,
+          "key": "ee477cf2-4e45-4b27-b426-75d568dd924b",
+          "title": "Transition to Classification",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266921,
+              "key": "1a8ae995-f050-4928-af55-6ef057f0c067",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a4fb36_06-l-supervised-classification-391-1/06-l-supervised-classification-391-1.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1a8ae995-f050-4928-af55-6ef057f0c067",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 266922,
+              "key": "d4290eb4-b654-40d3-8e0b-3337c51f4429",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Good job!  You've accomplished a lot. In particular, you did the following:\n - Ran operations in [`tf.Session`](https://www.tensorflow.org/api_docs/python/tf/Session).\n - Created a constant tensor with [`tf.constant()`](https://www.tensorflow.org/api_docs/python/tf/constant).\n - Used [`tf.placeholder()`](https://www.tensorflow.org/api_docs/python/tf/placeholder) and `feed_dict` to get input.\n - Applied the [`tf.add()`](https://www.tensorflow.org/api_docs/python/tf/add), [`tf.subtract()`](https://www.tensorflow.org/api_docs/python/tf/subtract), [`tf.multiply()`](https://www.tensorflow.org/api_docs/python/tf/multiply), and [`tf.divide()`](https://www.tensorflow.org/api_docs/python/tf/divide) functions using numeric data.\n - Learned about casting between types with [`tf.cast()`](https://www.tensorflow.org/api_docs/python/tf/cast)\n\nYou know the basics of TensorFlow, so let's take a break and get back to the theory of neural networks. In the next few videos, you're going to learn about one of the most popular applications of neural networks - classification.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 264843,
+          "key": "62ed3900-27a9-4136-b798-d279e890382c",
+          "title": "Supervised Classification",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266905,
+              "key": "a59d638f-9e54-4879-8029-988e9a38d91a",
+              "title": "Supervised Classification",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XTGsutypAPE",
+                "china_cdn_id": "XTGsutypAPE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264845,
+          "key": "5bc4bc2c-fc33-4d75-b562-6732999a9cef",
+          "title": "Training Your Logistic Classifier ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266906,
+              "key": "ccacdbf3-26ff-4dde-ae4c-174cbea90c7a",
+              "title": "Training Your Logistic Classifier",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WQsdr1EJgz8",
+                "china_cdn_id": "WQsdr1EJgz8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 265082,
+          "key": "baf36422-c1b4-4005-960f-63a550e635d4",
+          "title": "Quiz: TensorFlow Linear Function",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266807,
+              "key": "180fc021-5604-4805-88bc-5f58b0e09e2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Linear functions in TensorFlow\n\nThe most common operation in neural networks is calculating the linear combination of inputs, weights, and biases. As a reminder, we can write the output of the linear operation as",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266815,
+              "key": "d264f44e-8d50-459a-8664-3a4499772afa",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a4d8b3_linear-equation/linear-equation.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d264f44e-8d50-459a-8664-3a4499772afa",
+              "caption": "",
+              "alt": null,
+              "width": 164,
+              "height": 28,
+              "instructor_notes": null
+            },
+            {
+              "id": 266823,
+              "key": "c540b5a2-94f2-4dd5-9c60-afd11b6567ca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here, <span class='mathquill'>\\mathbf{W}</span> is a matrix of the weights connecting two layers. The output <span class='mathquill'>\\mathbf{y}</span>, the input <span class='mathquill'>\\mathbf{x}</span>, and the biases <span class='mathquill'>\\mathbf{b}</span>  are all vectors.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 265084,
+              "key": "e388fe05-c0fe-443f-a110-870769a596d5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Weights and Bias in TensorFlow\nThe goal of training a neural network is to modify weights and biases to best predict the labels.  In order to use weights and bias, you'll need a Tensor that can be modified.  This leaves out [`tf.placeholder()`](https://www.tensorflow.org/api_docs/python/tf/placeholder) and [`tf.constant()`](https://www.tensorflow.org/api_docs/python/tf/constant), since those Tensors can't be modified.  This is where [`tf.Variable`](https://www.tensorflow.org/api_docs/python/tf/Variable) class comes in.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 265085,
+              "key": "728d870e-b980-404e-aaf4-a96818b087bb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### tf.Variable()\n```python\nx = tf.Variable(5)\n```\nThe [`tf.Variable`](https://www.tensorflow.org/api_docs/python/tf/Variable) class creates a tensor with an initial value that can be modified, much like a normal Python variable.  This tensor stores its state in the session, so you must initialize the state of the tensor manually.  You'll use the [`tf.global_variables_initializer()`](https://www.tensorflow.org/api_docs/python/tf/global_variables_initializer) function to initialize the state of all the Variable tensors.\n#####  Initialization\n``` python\ninit = tf.global_variables_initializer()\nwith tf.Session() as sess:\n    sess.run(init)\n```\nThe [`tf.global_variables_initializer()`](https://www.tensorflow.org/api_docs/python/tf/global_variables_initializer) call returns an operation that will initialize all TensorFlow variables from the graph.  You call the operation using a session to initialize all the variables as shown above.  Using the [`tf.Variable`](https://www.tensorflow.org/api_docs/python/tf/Variable) class allows us to change the weights and bias, but an initial value needs to be chosen.\n\nInitializing the weights with random numbers from a normal distribution is good practice.  Randomizing the weights helps the model from becoming stuck in the same place every time you train it. You'll learn more about this in the next lesson, when you study gradient descent.\n\nSimilarly, choosing weights from a normal distribution prevents any one weight from overwhelming other weights.  You'll use the [`tf.truncated_normal()`](https://www.tensorflow.org/api_docs/python/tf/truncated_normal) function to generate random numbers from a normal distribution.\n### tf.truncated_normal()\n```python\nn_features = 120\nn_labels = 5\nweights = tf.Variable(tf.truncated_normal((n_features, n_labels)))\n```\nThe [`tf.truncated_normal()`](https://www.tensorflow.org/api_docs/python/tf/truncated_normal) function returns a tensor with random values from a normal distribution whose magnitude is no more than 2 standard deviations from the mean.  \n\nSince the weights are already helping prevent the model from getting stuck, you don't need to randomize the bias.  Let's use the simplest solution, setting the bias to 0.\n### tf.zeros()\n```python\nn_labels = 5\nbias = tf.Variable(tf.zeros(n_labels))\n```\nThe [`tf.zeros()`](https://www.tensorflow.org/api_docs/python/tf/zeros) function returns a tensor with all zeros.\n## Linear Classifier Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 265086,
+              "key": "77bfd550-04e2-4696-ad4f-6864ce0655c0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/582cf7a7_mnist-012/mnist-012.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/77bfd550-04e2-4696-ad4f-6864ce0655c0",
+              "caption": "A subset of the MNIST dataset",
+              "alt": null,
+              "width": 584,
+              "height": 110,
+              "instructor_notes": null
+            },
+            {
+              "id": 265087,
+              "key": "2a4d00a8-270f-4a41-b534-76c7de4f0bb3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You'll be classifying the handwritten numbers `0`, `1`, and `2` from the MNIST dataset using TensorFlow.  The above is a small sample of the data you'll be training on.  Notice how some of the `1`s are written with a [serif](https://en.wikipedia.org/wiki/Serif) at the top and at different angles.  The similarities and differences will play a part in shaping the weights of the model.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 265088,
+              "key": "f908ef55-44d6-4e1f-89d1-658e5e35918a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/582ce9ef_weights-0-1-2/weights-0-1-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f908ef55-44d6-4e1f-89d1-658e5e35918a",
+              "caption": "Left: Weights for labeling 0. Middle: Weights for labeling 1. Right: Weights for labeling 2.",
+              "alt": null,
+              "width": 3360,
+              "height": 1120,
+              "instructor_notes": null
+            },
+            {
+              "id": 265089,
+              "key": "f88d5243-4256-44d5-926b-672d81a9e778",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The images above are trained weights for each label (`0`, `1`, and `2`).  The weights display the unique properties of each digit they have found.  Complete this quiz to train your own weights using the MNIST dataset.\n\n### Instructions\n1. Open quiz.py.\n  1. Implement `get_weights` to return a [`tf.Variable`](https://www.tensorflow.org/api_docs/python/tf/Variable) of weights\n  2. Implement `get_biases` to return a [`tf.Variable`](https://www.tensorflow.org/api_docs/python/tf/Variable) of biases\n  3. Implement `xW + b` in the `linear` function\n2. Open sandbox.py\n  1. Initialize all weights\n\nSince `xW` in `xW + b` is matrix multiplication, you have to use the [`tf.matmul()`](https://www.tensorflow.org/api_docs/python/tf/matmul) function instead of [`tf.multiply()`](https://www.tensorflow.org/api_docs/python/tf/multiply).  Don't forget that order matters in matrix multiplication, so `tf.matmul(a,b)` is not the same as `tf.matmul(b,a)`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266693,
+              "key": "11b7e882-5c21-46cc-9d20-0969c2ca4e2c",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5307071735136256",
+                "initial_code_files": [
+                  {
+                    "text": "# Solution is available in the other \"sandbox_solution.py\" tab\nimport tensorflow as tf\nfrom tensorflow.examples.tutorials.mnist import input_data\nfrom quiz import get_weights, get_biases, linear\n\n\ndef mnist_features_labels(n_labels):\n    \"\"\"\n    Gets the first <n> labels from the MNIST dataset\n    :param n_labels: Number of labels to use\n    :return: Tuple of feature list and label list\n    \"\"\"\n    mnist_features = []\n    mnist_labels = []\n\n    mnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)\n\n    # In order to make quizzes run faster, we're only looking at 10000 images\n    for mnist_feature, mnist_label in zip(*mnist.train.next_batch(10000)):\n\n        # Add features and labels if it's for the first <n>th labels\n        if mnist_label[:n_labels].any():\n            mnist_features.append(mnist_feature)\n            mnist_labels.append(mnist_label[:n_labels])\n\n    return mnist_features, mnist_labels\n\n\n# Number of features (28*28 image is 784 features)\nn_features = 784\n# Number of labels\nn_labels = 3\n\n# Features and Labels\nfeatures = tf.placeholder(tf.float32)\nlabels = tf.placeholder(tf.float32)\n\n# Weights and Biases\nw = get_weights(n_features, n_labels)\nb = get_biases(n_labels)\n\n# Linear Function xW + b\nlogits = linear(features, w, b)\n\n# Training data\ntrain_features, train_labels = mnist_features_labels(n_labels)\n\nwith tf.Session() as session:\n    # TODO: Initialize session variables\n    \n    # Softmax\n    prediction = tf.nn.softmax(logits)\n\n    # Cross entropy\n    # This quantifies how far off the predictions were.\n    # You'll learn more about this in future lessons.\n    cross_entropy = -tf.reduce_sum(labels * tf.log(prediction), reduction_indices=1)\n\n    # Training loss\n    # You'll learn more about this in future lessons.\n    loss = tf.reduce_mean(cross_entropy)\n\n    # Rate at which the weights are changed\n    # You'll learn more about this in future lessons.\n    learning_rate = 0.08\n\n    # Gradient Descent\n    # This is the method used to train the model\n    # You'll learn more about this in future lessons.\n    optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)\n\n    # Run optimizer and get loss\n    _, l = session.run(\n        [optimizer, loss],\n        feed_dict={features: train_features, labels: train_labels})\n\n# Print loss\nprint('Loss: {}'.format(l))\n",
+                    "name": "sandbox.py"
+                  },
+                  {
+                    "text": "# Solution is available in the other \"quiz_solution.py\" tab\nimport tensorflow as tf\n\ndef get_weights(n_features, n_labels):\n    \"\"\"\n    Return TensorFlow weights\n    :param n_features: Number of features\n    :param n_labels: Number of labels\n    :return: TensorFlow weights\n    \"\"\"\n    # TODO: Return weights\n    pass\n\n\ndef get_biases(n_labels):\n    \"\"\"\n    Return TensorFlow bias\n    :param n_labels: Number of labels\n    :return: TensorFlow bias\n    \"\"\"\n    # TODO: Return biases\n    pass\n\n\ndef linear(input, w, b):\n    \"\"\"\n    Return linear function in TensorFlow\n    :param input: TensorFlow input\n    :param w: TensorFlow weights\n    :param b: TensorFlow biases\n    :return: TensorFlow linear function\n    \"\"\"\n    # TODO: Linear Function (xW + b)\n    pass",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "# Quiz Solution\n# Note: You can't run code in this tab\nimport tensorflow as tf\n\ndef get_weights(n_features, n_labels):\n    \"\"\"\n    Return TensorFlow weights\n    :param n_features: Number of features\n    :param n_labels: Number of labels\n    :return: TensorFlow weights\n    \"\"\"\n    # TODO: Return weights\n    return tf.Variable(tf.truncated_normal((n_features, n_labels)))\n\n\ndef get_biases(n_labels):\n    \"\"\"\n    Return TensorFlow bias\n    :param n_labels: Number of labels\n    :return: TensorFlow bias\n    \"\"\"\n    # TODO: Return biases\n    return tf.Variable(tf.zeros(n_labels))\n\n\ndef linear(input, w, b):\n    \"\"\"\n    Return linear function in TensorFlow\n    :param input: TensorFlow input\n    :param w: TensorFlow weights\n    :param b: TensorFlow biases\n    :return: TensorFlow linear function\n    \"\"\"\n    # TODO: Linear Function (xW + b)\n    return tf.add(tf.matmul(input, w), b)",
+                    "name": "quiz_solution.py"
+                  },
+                  {
+                    "text": "import tensorflow as tf\n# Sandbox Solution\n# Note: You can't run code in this tab\nfrom tensorflow.examples.tutorials.mnist import input_data\nfrom quiz import get_weights, get_biases, linear\n\n\ndef mnist_features_labels(n_labels):\n    \"\"\"\n    Gets the first <n> labels from the MNIST dataset\n    :param n_labels: Number of labels to use\n    :return: Tuple of feature list and label list\n    \"\"\"\n    mnist_features = []\n    mnist_labels = []\n\n    mnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)\n\n    # In order to make quizzes run faster, we're only looking at 10000 images\n    for mnist_feature, mnist_label in zip(*mnist.train.next_batch(10000)):\n\n        # Add features and labels if it's for the first <n>th labels\n        if mnist_label[:n_labels].any():\n            mnist_features.append(mnist_feature)\n            mnist_labels.append(mnist_label[:n_labels])\n\n    return mnist_features, mnist_labels\n\n\n# Number of features (28*28 image is 784 features)\nn_features = 784\n# Number of labels\nn_labels = 3\n\n# Features and Labels\nfeatures = tf.placeholder(tf.float32)\nlabels = tf.placeholder(tf.float32)\n\n# Weights and Biases\nw = get_weights(n_features, n_labels)\nb = get_biases(n_labels)\n\n# Linear Function xW + b\nlogits = linear(features, w, b)\n\n# Training data\ntrain_features, train_labels = mnist_features_labels(n_labels)\n\nwith tf.Session() as session:\n    session.run(tf.global_variables_initializer())\n\n    # Softmax\n    prediction = tf.nn.softmax(logits)\n\n    # Cross entropy\n    # This quantifies how far off the predictions were.\n    # You'll learn more about this in future lessons.\n    cross_entropy = -tf.reduce_sum(labels * tf.log(prediction), reduction_indices=1)\n\n    # Training loss\n    # You'll learn more about this in future lessons.\n    loss = tf.reduce_mean(cross_entropy)\n\n    # Rate at which the weights are changed\n    # You'll learn more about this in future lessons.\n    learning_rate = 0.08\n\n    # Gradient Descent\n    # This is the method used to train the model\n    # You'll learn more about this in future lessons.\n    optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)\n\n    # Run optimizer and get loss\n    _, l = session.run(\n        [optimizer, loss],\n        feed_dict={features: train_features, labels: train_labels})\n\n# Print loss\nprint('Loss: {}'.format(l))\n",
+                    "name": "sandbox_solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 262749,
+          "key": "8ee4c905-fa9c-40a4-9fd7-427a155b81b4",
+          "title": "ReLU and Softmax Activation Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 262754,
+              "key": "36d8d236-a6ce-4eba-8b5f-fc385f0973ed",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Activation functions\n\nPreviously, we've been using the sigmoid function as the activation function on our hidden units and, in the case of classification, on the output unit. However, this is not the only activation function you can use  and actually has some drawbacks.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263029,
+              "key": "473d8fff-eb0d-4262-b7ea-0356252a4dcb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/5893d15c_sigmoids/sigmoids.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/473d8fff-eb0d-4262-b7ea-0356252a4dcb",
+              "caption": "",
+              "alt": null,
+              "width": 1500,
+              "height": 600,
+              "instructor_notes": null
+            },
+            {
+              "id": 263030,
+              "key": "cd4435e8-8273-4dce-9688-80e9bd8f0a9a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As noted in the backpropagation material, the derivative of the sigmoid maxes out at 0.25 (see above). This means when you're performing backpropagation with sigmoid units, the errors going back into the network will be shrunk by at least 75% at every layer. For layers close to the input layer, the weight updates will be tiny if you have a lot of layers and those weights will take a really long time to train. Due to this, sigmoids have fallen out of favor as activations on hidden units.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262755,
+              "key": "4b0bc80a-223d-417b-9bf2-313fb697a007",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Enter Rectified Linear Units\n\nInstead of sigmoids, most recent deep learning networks use **rectified linear units** (ReLUs) for the hidden layers. A rectified linear unit has output 0 if the input is less than 0, and raw output otherwise. That is, if the input is greater than 0, the output is equal to the input. Mathematically, that looks like\n\n<span class='mathquill'> f(x) = \\mathrm{max}(x, 0)</span>.\n\nThe output of the function is either the input, <span class='mathquill'> x </span>, or <span class='mathquill'> 0 </span>, whichever is larger. So if <span class='mathquill'> x = -1 </span>, then <span class='mathquill'> f(x) = 0 </span> and if <span class='mathquill'> x =0.5 </span>, then <span class='mathquill'> f(x) = 0.5 </span>. Graphically, it looks like:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262759,
+              "key": "1e33c195-9796-4d18-8752-bc956f5ddc10",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58915ae8_relu/relu.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1e33c195-9796-4d18-8752-bc956f5ddc10",
+              "caption": "",
+              "alt": null,
+              "width": 1500,
+              "height": 1200,
+              "instructor_notes": null
+            },
+            {
+              "id": 262762,
+              "key": "1a7ddbb2-49a2-4cc1-a013-e704ae2ff8f8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "ReLU activations are the simplest non-linear activation function you can use. When the input is positive, the derivative is 1, so there isn't the vanishing effect you see on backpropagated errors from sigmoids. [Research has shown](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf) that ReLUs result in much faster training for large networks. Most frameworks like TensorFlow and TFLearn make it simple to use ReLUs on the the hidden layers, so you won't need to implement them yourself.\n\n### Drawbacks\n\nIt's possible that a large gradient can set the weights such that a ReLU unit will always be 0. These \"dead\" units will always be 0 and a lot of computation will be wasted in training.\n\nFrom [Andrej Karpathy's CS231n course](http://cs231n.github.io/neural-networks-1/#nn):\n\n> Unfortunately, ReLU units can be fragile during training and can “die”. For example, a large gradient flowing through a ReLU neuron could cause the weights to update in such a way that the neuron will never activate on any datapoint again. If this happens, then the gradient flowing through the unit will forever be zero from that point on. That is, the ReLU units can irreversibly die during training since they can get knocked off the data manifold. For example, you may find that as much as 40% of your network can be “dead” (i.e. neurons that never activate across the entire training dataset) if the learning rate is set too high. With a proper setting of the learning rate this is less frequently an issue.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262769,
+              "key": "3a34f994-1f8c-4415-b863-e561ca75532c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Softmax\n\nPreviously we've seen neural networks used for regression (bike riders) and binary classification (graduate school admissions). Often you'll find you want to predict if some input belongs to one of many classes. This is a classification problem, but a sigmoid is no longer the best choice. Instead, we use the [**softmax**](https://en.wikipedia.org/wiki/Softmax_function) function. The softmax function squashes the outputs of each unit to be between 0 and 1, just like a sigmoid. It also divides each output such that the total sum of the outputs is equal to 1. The output of the softmax function is equivalent to a categorical probability distribution, it tells you the probability that any of the classes are true.\n\nThe only real difference between this and a normal sigmoid is that the softmax normalizes the outputs so that they sum to one. In both cases you can put in a vector and get out a vector where the outputs are a vector of the same size, but all the values are squashed between 0 and 1. You would use a sigmoid with one output unit for binary classification. But if you’re doing multinomial classification, you’d want to use multiple output units (one for each class) and the softmax activation on the output.\n\nFor example if you have three inputs to a softmax function, say for a network with three output units, it'd look like:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263172,
+              "key": "6ea53f11-b47e-4508-9172-c853d8f60574",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58950908_softmax-input-output/softmax-input-output.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6ea53f11-b47e-4508-9172-c853d8f60574",
+              "caption": "",
+              "alt": null,
+              "width": 317,
+              "height": 130,
+              "instructor_notes": null
+            },
+            {
+              "id": 263245,
+              "key": "2e379620-c076-4b68-ae66-107ab7de94b6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Mathematically the softmax function is shown below,  where <span class='mathquill'>\\mathbf{z}</span> is a vector of the inputs to the output layer (if you have 10 output units, then there are 10 elements in <span class='mathquill'>\\mathbf{z}</span>). And again, <span class='mathquill'>j</span> indexes the output units.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262980,
+              "key": "ffb9dc37-c2e9-458a-98da-fd799b186a66",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58938e9e_softmax-math/softmax-math.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ffb9dc37-c2e9-458a-98da-fd799b186a66",
+              "caption": "",
+              "alt": null,
+              "width": 390,
+              "height": 62,
+              "instructor_notes": null
+            },
+            {
+              "id": 263171,
+              "key": "042ec3c3-d6a7-4e04-b5f8-6b075e5045c4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This admittedly looks daunting to understand, but it's actually quite simple and it's fine if you don't get the math. Just remember that the outputs are squashed and they sum to one. \n\nTo understand this better, think about training a network to recognize and [classify handwritten digits](http://yann.lecun.com/exdb/mnist/) from images. The network would have ten output units, one for each digit 0 to 9. Then if you fed it an image of a number 4 (see below), the output unit corresponding to the digit 4 would be activated.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262821,
+              "key": "5b02829b-fe39-43d5-850c-debc2987564f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58925a28_z93yz2vrgdaacqjowbaabie8yaaackcwmaaadshdeaaabpwhgaaia0yqwaaecamayaacbngamaajamjaeaaegtxgaaakqjywaaankemqaaagncgaaagdrhdaaaqjowbgaaie0yawaakcamaqaasbpgaaaapaljaaaa0oqxaaaaaciyaacangemaabamjagaaagtrgdaacqjowbaabie8yaaackcwmaaadshdeaaabpwhgaaia0yqwaaeca/z93yz2vrgdaacqjowbaabie8yaaackcwmaaadshdeaaabpwhgaaia0yqwaaecamayaacbngamaajamjaeaaegtxgaaakqjywaaankemqaaagncgaaagdrhdaaaqjowbgaaie0yawaakcamaqaasbpgaaaapaljaaaa0oqxaaaaaciyaacangemaabamjagaaagtrgdaacqjowbaabie8yaaackcwmaaadshdeaaabpwhgaaia0yqwaaeca.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5b02829b-fe39-43d5-850c-debc2987564f",
+              "caption": "Image from the [MNIST dataset](http://yann.lecun.com/exdb/mnist/)",
+              "alt": null,
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 262957,
+              "key": "edd83347-3361-438d-a2f0-a1643cee5959",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Building a network like this requires 10 output units, one for each digit. Each training image is labeled with the true digit and the goal of the network is to predict the correct label. So, if the input is an image of the digit 4, the output unit corresponding to 4 would be activated, and so on for the rest of the units. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262979,
+              "key": "7d647cd4-b9c7-4e0c-8e41-efb2f696b676",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For the example image above, the output of the softmax function might look like: ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262824,
+              "key": "4cf90d89-3114-41ab-9172-cc0effc7d15d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58925c7f_softmax/softmax.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4cf90d89-3114-41ab-9172-cc0effc7d15d",
+              "caption": "Example softmax output for a network predicting the digit shown above",
+              "alt": null,
+              "width": 600,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 262771,
+              "key": "6deca539-2e1a-49c5-adab-3caeabfe4bd4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The image looks the most like the digit 4, so you get a lot of probability there. However, this digit also looks somewhat like a 7 and a little bit like a 9 without the loop completed. So, you get the most probability that it's a 4, but also some probability that it's a 7 or a 9.\n\nThe softmax can be used for any number of classes. As you'll see next, it will be used to predict two classes of sentiment, positive or negative. It's also used for hundreds and thousands of classes, for example in object recognition problems where there are hundreds of different possible objects.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 266695,
+          "key": "bb19eec1-3fb2-413c-8043-9e514c4e3396",
+          "title": "Quiz: TensorFlow Softmax",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266699,
+              "key": "5ee7b865-583e-4724-83b3-62ba2e63ae49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# TensorFlow Softmax\n\nThe softmax function squashes it's inputs, typically called **logits** or **logit scores**, to be between 0 and 1 and also normalizes the outputs such that they all sum to 1. This means the output of the softmax function is equivalent to a categorical probability distribution. It's the perfect function to use as the output activation for a network predicting multiple classes.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266698,
+              "key": "e249ce82-8329-45d3-a91c-7b85f18149ed",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58950908_softmax-input-output/softmax-input-output.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e249ce82-8329-45d3-a91c-7b85f18149ed",
+              "caption": "Example of the softmax function at work.",
+              "alt": null,
+              "width": 423,
+              "height": 168,
+              "instructor_notes": null
+            },
+            {
+              "id": 266697,
+              "key": "3da4c0e2-c66c-4597-8e69-8ad99fad29d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## TensorFlow Softmax\nWe're using TensorFlow to build neural networks and, appropriately, there's a function for calculating softmax.\n\n```python\nx = tf.nn.softmax([2.0, 1.0, 0.2])\n```\n\nEasy as that!  [`tf.nn.softmax()`](https://www.tensorflow.org/api_docs/python/tf/nn/softmax) implements the softmax function for you.  It takes in logits and returns softmax activations.\n## Quiz\nUse the softmax function in the quiz below to return the softmax of the logits.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266701,
+              "key": "e0222555-cced-4e65-9db0-f93a1cb59ab3",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4652365274808320",
+                "initial_code_files": [
+                  {
+                    "text": "# Solution is available in the other \"solution.py\" tab\nimport tensorflow as tf\n\n\ndef run():\n    output = None\n    logit_data = [2.0, 1.0, 0.1]\n    logits = tf.placeholder(tf.float32)\n    \n    # TODO: Calculate the softmax of the logits\n    # softmax =     \n    \n    with tf.Session() as sess:\n        # TODO: Feed in the logit data\n        # output = sess.run(softmax,    )\n\n    return output\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "# Quiz Solution\n# Note: You can't run code in this tab\nimport tensorflow as tf\n\n\ndef run():\n    output = None\n    logit_data = [2.0, 1.0, 0.1]\n    logits = tf.placeholder(tf.float32)\n\n    softmax = tf.nn.softmax(logits)\n\n    with tf.Session() as sess:\n        output = sess.run(softmax, feed_dict={logits: logit_data})\n\n    return output\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 264846,
+          "key": "1a016b4a-015f-4c8e-a190-303e0499c918",
+          "title": "One-Hot Encoding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266907,
+              "key": "a8d9d0be-f5a3-4266-ba3c-7989b5cf53f3",
+              "title": "13 L One Hot Encoding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "phYsxqlilUk",
+                "china_cdn_id": "phYsxqlilUk.mp4"
+              }
+            },
+            {
+              "id": 266945,
+              "key": "a82399a1-0a24-4ce5-a6ff-4fb66aedb090",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# One-Hot Encoding with scikit-learn\n\nTransforming your labels into one-hot encoded vectors is pretty simple with scikit-learn using [`LabelBinarizer`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelBinarizer.html). Check it out below!\n\n```python\nimport numpy as np\nfrom sklearn import preprocessing\n\n# Example labels\nlabels = np.array([1,5,3,2,1,4,2,1,3])\n\n# Create the encoder\nlb = preprocessing.LabelBinarizer()\n\n# Here the encoder finds the classes and assigns one-hot vectors \nlb.fit(labels)\n\n# And finally, transform the labels into one-hot encoded vectors\nlb.transform(labels)\n>>> array([[1, 0, 0, 0, 0],\n           [0, 0, 0, 0, 1],\n           [0, 0, 1, 0, 0],\n           [0, 1, 0, 0, 0],\n           [1, 0, 0, 0, 0],\n           [0, 0, 0, 1, 0],\n           [0, 1, 0, 0, 0],\n           [1, 0, 0, 0, 0],\n           [0, 0, 1, 0, 0]])\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 263009,
+          "key": "205e1949-576a-4b04-90f8-7e186daa0f2a",
+          "title": "Categorical Cross-Entropy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 263010,
+              "key": "9fe319cb-57f7-4edb-b2f5-55f73e51a60d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Categorical Cross-Entropy\n\nPreviously we've been using the sum of squared errors as the cost function in our networks, but in those cases we only have singular (scalar) output values.\n\nWhen you're using softmax, however, your output is a *vector*. One vector is the probability values from the output units. You can also express your data labels as a vector using what's called **one-hot encoding**. \n\nThis just means that you have a vector the length of the number of classes, and the label element is marked with a 1 while the other labels are set to 0. In the case of classifying digits from before, our label vector for the image of the number 4 would be:\n\n<span class='mathquill'>\\mathbf{y} = [0,0,0,0,1,0,0,0,0,0]\n\nAnd our output prediction vector could be something like\n\n<span class='mathquill'>\\mathbf{\\hat y} = [ 0.047,  0.048,  0.061,  0.07,  0.330,0.062,  0.001,  0.213,  0.013,  0.150]</span>.\n\nWe want our error to be proportional to how far apart these vectors are. To calculate this distance, we'll use the [cross entropy](https://en.wikipedia.org/wiki/Cross_entropy). Then, our goal when training the network is to make our prediction vectors as close as possible to the label vectors by minimizing the cross entropy. The cross entropy calculation is shown below:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263877,
+              "key": "262d2f72-4eb7-427c-9e35-f1803b4a0315",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589b18f5_cross-entropy-diagram/cross-entropy-diagram.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/262d2f72-4eb7-427c-9e35-f1803b4a0315",
+              "caption": "Cross entropy calculation",
+              "alt": null,
+              "width": 1076,
+              "height": 426,
+              "instructor_notes": null
+            },
+            {
+              "id": 263022,
+              "key": "f31f3769-4eb0-42da-baf4-0a3914af9b69",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you can see above, the cross entropy is the sum of the label elements times the natural log of the prediction probabilities. Note that this formula is not symmetric! Flipping the vectors is a bad idea because the label vector has a lot of zeros and taking the log of zero will cause an error.\n\nWhat's cool about using one-hot encoding for the label vector is that <span class=\"mathquill\">y_j</span> is 0 except for the one true class. Then, all terms in that sum except for where <span class=\"mathquill\">y_j = 1</span> are zero and the cross entropy is simply <span class=\"mathquill\">D = - \\ln \\hat{y} </span> for the true label. For example, if your input image is of the digit 4 and it's labeled 4, then only the output of the unit corresponding to 4 matters in the cross entropy cost.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263023,
+              "key": "d3e08eed-1bd7-455a-8e17-7f606ec62402",
+              "title": "Cross Entropy",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "If your label vector is [0, 0, 0, 1, 0] and the predicted probabilities are [0.27,  0.11, 0.33, 0.10, 0.19], what is the cross entropy?",
+                "answers": [
+                  {
+                    "id": "a1486075721376",
+                    "text": "-0.10",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1486076112090",
+                    "text": "2.3",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1486076117676",
+                    "text": "-2.3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1486076313514",
+                    "text": "1.8",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 266712,
+          "key": "b6f63b94-90e3-463b-8f40-5a5bf3bfcfb9",
+          "title": "Quiz: TensorFlow Cross Entropy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266717,
+              "key": "a5c27332-e497-4acf-b63b-0cffca512afb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Cross Entropy in TensorFlow\n\nAs with the softmax function, TensorFlow has a function to do the cross entropy calculations for us.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266713,
+              "key": "8e5b99b1-48df-4d80-b394-9ff15c6eba89",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589b18f5_cross-entropy-diagram/cross-entropy-diagram.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8e5b99b1-48df-4d80-b394-9ff15c6eba89",
+              "caption": "Cross entropy loss function",
+              "alt": null,
+              "width": 1076,
+              "height": 426,
+              "instructor_notes": null
+            },
+            {
+              "id": 266714,
+              "key": "5ee86b2b-9cec-4082-879d-a04fb491794e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's take what you learned from the video and create a cross entropy function in TensorFlow.  To create a cross entropy function in TensorFlow, you'll need to use two new functions:\n - [`tf.reduce_sum()`](https://www.tensorflow.org/api_docs/python/tf/reduce_sum)\n - [`tf.log()`](https://www.tensorflow.org/api_docs/python/tf/log)\n\n## Reduce Sum\n```python\nx = tf.reduce_sum([1, 2, 3, 4, 5])  # 15\n```\nThe [`tf.reduce_sum()`](https://www.tensorflow.org/api_docs/python/tf/reduce_sum) function takes an array of numbers and sums them together.\n## Natural Log\n```python\nx = tf.log(100.0)  # 4.60517\n```\nThis function does exactly what you would expect it to do.  [`tf.log()`](https://www.tensorflow.org/api_docs/python/tf/log) takes the natural log of a number.\n## Quiz\nPrint the cross entropy using `softmax_data` and `one_hot_encod_label`.\n\n[(Alternative link for users in China.)](http://www.tensorfly.cn)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266716,
+              "key": "0e813aa0-1167-4a93-9b0c-34a6b9240ba7",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5641167409643520",
+                "initial_code_files": [
+                  {
+                    "text": "# Solution is available in the other \"solution.py\" tab\nimport tensorflow as tf\n\nsoftmax_data = [0.7, 0.2, 0.1]\none_hot_data = [1.0, 0.0, 0.0]\n\nsoftmax = tf.placeholder(tf.float32)\none_hot = tf.placeholder(tf.float32)\n\n# TODO: Print cross entropy from session\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "# Quiz Solution\n# Note: You can't run code in this tab\nimport tensorflow as tf\n\nsoftmax_data = [0.7, 0.2, 0.1]\none_hot_data = [1.0, 0.0, 0.0]\n\nsoftmax = tf.placeholder(tf.float32)\none_hot = tf.placeholder(tf.float32)\n\n# ToDo: Print cross entropy from session\ncross_entropy = -tf.reduce_sum(tf.multiply(one_hot, tf.log(softmax)))\n\nwith tf.Session() as sess:\n    print(sess.run(cross_entropy, feed_dict={softmax: softmax_data, one_hot: one_hot_data}))\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 80445,
+          "key": "63798118270923",
+          "title": "Minimizing Cross Entropy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268106,
+              "key": "921b1e99-d355-4d80-a1d0-1aadacd162bb",
+              "title": "16 L Minimizing Cross-Entropy",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YrDMXFhvh9E",
+                "china_cdn_id": "YrDMXFhvh9E.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 71065,
+          "key": "63798118280923",
+          "title": "Practical Aspects of Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306099,
+              "key": "778ae763-caa3-4dd1-9dba-8bdf514d8254",
+              "title": "17 L Transition Into Practical Aspects Of Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bKqkRFOOKoA",
+                "china_cdn_id": "bKqkRFOOKoA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 195350,
+          "key": "4da33923-945b-4dc4-b13d-920e7c14f684",
+          "title": "Quiz: Numerical Stability",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 267023,
+              "key": "9b3307bf-54e2-4a10-bb19-b4c6a780db35",
+              "title": "Numerical Stability",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_SbGcOS-jcQ",
+                "china_cdn_id": "_SbGcOS-jcQ.mp4"
+              }
+            },
+            {
+              "id": 195352,
+              "key": "45b9ad7a-9c54-4488-8d92-308e6f210676",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4788487754743808",
+                "initial_code_files": [
+                  {
+                    "text": "a = 1000000000\nfor i in range(1000000):\n    a = a + 1e-6\nprint(a - 1000000000)\n",
+                    "name": "quiz.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 264849,
+          "key": "fd329872-bae5-44e9-8611-150dc24a50f0",
+          "title": "Normalized Inputs and Initial Weights ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266909,
+              "key": "7fb80813-2449-4c97-9f05-32b6d2d716a4",
+              "title": "Normalized Inputs And Initial Weights",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WaHQ9-UXIIg",
+                "china_cdn_id": "WaHQ9-UXIIg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264850,
+          "key": "4cbf3b86-5a26-4ad0-82cd-8e146b0bbb16",
+          "title": "Measuring Performance ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268668,
+              "key": "488bf07a-167e-40bb-8a5f-c0ffd26d96f8",
+              "title": "21 L Measuring Performance",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "byP0DJImOSk",
+                "china_cdn_id": "byP0DJImOSk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 60762,
+          "key": "63798118380923",
+          "title": "Optimizing a Logistic Classifier",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268110,
+              "key": "21b01e49-6a3b-4a7a-9d05-6429a3b401f8",
+              "title": "29 L Optimizing A Logistic Classifier",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "U_7nO1dm2tY",
+                "china_cdn_id": "U_7nO1dm2tY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 96679,
+          "key": "63798118390923",
+          "title": "Stochastic Gradient Descent",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268111,
+              "key": "c0e22629-fb9a-4786-baec-f3586c704d4a",
+              "title": "30 L Stochastic Gradient Descent",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "U9iEGUd9kJ0",
+                "china_cdn_id": "U9iEGUd9kJ0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264851,
+          "key": "54176624-77aa-4b9a-97b5-942125b96c9e",
+          "title": "Momentum and Learning Rate Decay",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266911,
+              "key": "de92ffeb-e7ca-4a99-8183-fb5da55389be",
+              "title": "31 L Momentum And Learning Rate Decay",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "O3QYdmQjXds",
+                "china_cdn_id": "O3QYdmQjXds.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264852,
+          "key": "fec87475-5c6b-4cbb-82dd-4049a99af708",
+          "title": "Parameter Hyperspace ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266912,
+              "key": "842171ae-f528-4063-8141-459a7f002378",
+              "title": "32 L Parameter Hyperspace!",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5a3-iIhdguc",
+                "china_cdn_id": "5a3-iIhdguc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 220356,
+          "key": "12ced01a-7de9-436b-9a7b-c13e67f2097b",
+          "title": "Quiz: Mini-batch",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 220357,
+              "key": "b64df245-045b-4401-9070-5d8427da553e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Mini-batching\nIn this section, you'll go over what mini-batching is and how to apply it in TensorFlow. \n\nMini-batching is a technique for training on subsets of the dataset instead of all the data at one time.  This provides the ability to train a model, even if a computer lacks the memory to store the entire dataset.\n\nMini-batching is computationally inefficient, since you can't calculate the loss simultaneously across all samples.  However, this is a small price to pay in order to be able to run the model at all.\n\nIt's also quite useful combined with SGD. The idea is to randomly shuffle the data at the start of each epoch, then create the mini-batches. For each mini-batch, you train the network weights with gradient descent. Since these batches are random, you're performing SGD with each batch.\n\nLet's look at the MNIST dataset with weights and a bias to see if your machine can handle it.\n```python\nfrom tensorflow.examples.tutorials.mnist import input_data\nimport tensorflow as tf\n\nn_input = 784  # MNIST data input (img shape: 28*28)\nn_classes = 10  # MNIST total classes (0-9 digits)\n\n# Import MNIST data\nmnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)\n\n# The features are already scaled and the data is shuffled\ntrain_features = mnist.train.images\ntest_features = mnist.test.images\n\ntrain_labels = mnist.train.labels.astype(np.float32)\ntest_labels = mnist.test.labels.astype(np.float32)\n\n# Weights & bias\nweights = tf.Variable(tf.random_normal([n_input, n_classes]))\nbias = tf.Variable(tf.random_normal([n_classes]))\n```\n### Question 1\nCalculate the memory size of `train_features`, `train_labels`, `weights`, and `bias` in bytes.  Ignore memory for overhead, just calculate the memory required for the stored data.\n\nYou may have to look up how much memory a float32 requires, using [this link](https://en.wikipedia.org/wiki/Single-precision_floating-point_format).\n\n*train_features  Shape: (55000, 784) Type: float32*\n\n*train_labels Shape: (55000, 10) Type: float32*\n\n*weights Shape: (784, 10) Type: float32*\n\n*bias Shape: (10,) Type: float32*",
+              "instructor_notes": ""
+            },
+            {
+              "id": 220358,
+              "key": "0f175ef8-bbd2-440a-9922-a45747fafbc6",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How many bytes of memory does `train_features` need?",
+                "matchers": [
+                  {
+                    "expression": "172480000"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 220359,
+              "key": "0ae13bf9-3ccb-434c-a865-f71dcde240ad",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How many bytes of memory does `train_labels` need?",
+                "matchers": [
+                  {
+                    "expression": "2200000"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 220360,
+              "key": "6357cc88-0549-413e-b9db-408b232ef546",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How many bytes of memory does `weights` need?",
+                "matchers": [
+                  {
+                    "expression": "31360"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 220361,
+              "key": "f0abca1d-8126-4d14-b9e6-ae6167cab9ef",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How many bytes of memory does `bias` need?",
+                "matchers": [
+                  {
+                    "expression": "40"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 220362,
+              "key": "5d210b78-cb04-43e3-853d-182cc530209f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The total memory space required for the inputs, weights and bias is around 174 megabytes, which isn't that much memory.  You could train this whole dataset on most CPUs and GPUs.  \n\nBut larger datasets that you'll use in the future measured in gigabytes or more. It's possible to purchase more memory, but it's expensive. A Titan X GPU with 12 GB of memory costs over $1,000. \n\nInstead, in order to run large models on your machine, you'll learn how to use mini-batching.\n\nLet's look at how you implement mini-batching in TensorFlow.\n## TensorFlow Mini-batching\nIn order to use mini-batching, you must first divide your data into batches. \n\nUnfortunately, it's sometimes impossible to divide the data into batches of exactly equal size.  For example, imagine you'd like to create batches of 128 samples each from a dataset of 1000 samples. Since 128 does not evenly divide into 1000, you'd wind up with 7 batches of 128 samples, and 1 batch of 104 samples. (7\\*128 + 1\\*104 = 1000)\n\nIn that case, the size of the batches would vary, so you need to take advantage of TensorFlow's [`tf.placeholder()`](https://www.tensorflow.org/api_docs/python/tf/placeholder) function to receive the varying batch sizes.\n\nContinuing the example, if each sample had `n_input = 784` features and `n_classes = 10` possible labels, the dimensions for `features` would be `[None, n_input]` and `labels` would be `[None, n_classes]`.\n```python\n# Features and Labels\nfeatures = tf.placeholder(tf.float32, [None, n_input])\nlabels = tf.placeholder(tf.float32, [None, n_classes])\n```\nWhat does `None` do here?\n\nThe `None` dimension is a placeholder for the batch size. At runtime, TensorFlow will accept any batch size greater than 0.\n\nGoing back to our earlier example, this setup allows you to feed `features` and `labels` into the model as either the batches of 128 samples or the single batch of 104 samples.\n### Question 2\nUse the parameters below, how many batches are there, and what is the last batch size?\n\n*features is (50000, 400)*\n\n*labels is (50000, 10)*\n\n*batch_size is 128*",
+              "instructor_notes": ""
+            },
+            {
+              "id": 220365,
+              "key": "b4a0301d-585b-4ed1-bd6c-9a325a015705",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How many batches are there?",
+                "matchers": [
+                  {
+                    "expression": "391"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 220366,
+              "key": "114b2e44-d54f-41df-89c4-cf19d78a2f5c",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What is the last batch size?",
+                "matchers": [
+                  {
+                    "expression": "80"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 220367,
+              "key": "a983f5c0-6d6f-4dbb-91e4-e3f2c41daf1d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that you know the basics, let's learn how to implement mini-batching.\n\n### Question 3\nImplement the `batches` function to batch `features` and `labels`.  The function should return each batch with a maximum size of `batch_size`.  To help you with the quiz, look at the following example output of a working `batches` function.\n```python\n# 4 Samples of features\nexample_features = [\n    ['F11','F12','F13','F14'],\n    ['F21','F22','F23','F24'],\n    ['F31','F32','F33','F34'],\n    ['F41','F42','F43','F44']]\n# 4 Samples of labels\nexample_labels = [\n    ['L11','L12'],\n    ['L21','L22'],\n    ['L31','L32'],\n    ['L41','L42']]\n\nexample_batches = batches(3, example_features, example_labels)\n```\nThe `example_batches` variable would be the following:\n```python\n[\n    # 2 batches:\n    #   First is a batch of size 3.\n    #   Second is a batch of size 1\n    [\n        # First Batch is size 3\n        [\n            # 3 samples of features.\n            # There are 4 features per sample.\n            ['F11', 'F12', 'F13', 'F14'],\n            ['F21', 'F22', 'F23', 'F24'],\n            ['F31', 'F32', 'F33', 'F34']\n        ], [\n            # 3 samples of labels.\n            # There are 2 labels per sample.\n            ['L11', 'L12'],\n            ['L21', 'L22'],\n            ['L31', 'L32']\n        ]\n    ], [\n        # Second Batch is size 1.\n        # Since batch size is 3, there is only one sample left from the 4 samples.\n        [\n            # 1 sample of features.\n            ['F41', 'F42', 'F43', 'F44']\n        ], [\n            # 1 sample of labels.\n            ['L41', 'L42']\n        ]\n    ]\n]\n```\nImplement the `batches` function in the \"quiz.py\" file below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 220372,
+              "key": "8b2618eb-cd58-47ca-8877-186867a9d067",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5190243160555520",
+                "initial_code_files": [
+                  {
+                    "text": "from quiz import batches\nfrom pprint import pprint\n\n# 4 Samples of features\nexample_features = [\n    ['F11','F12','F13','F14'],\n    ['F21','F22','F23','F24'],\n    ['F31','F32','F33','F34'],\n    ['F41','F42','F43','F44']]\n# 4 Samples of labels\nexample_labels = [\n    ['L11','L12'],\n    ['L21','L22'],\n    ['L31','L32'],\n    ['L41','L42']]\n\n# PPrint prints data structures like 2d arrays, so they are easier to read\npprint(batches(3, example_features, example_labels))\n",
+                    "name": "sandbox.py"
+                  },
+                  {
+                    "text": "import math\ndef batches(batch_size, features, labels):\n    \"\"\"\n    Create batches of features and labels\n    :param batch_size: The batch size\n    :param features: List of features\n    :param labels: List of labels\n    :return: Batches of (Features, Labels)\n    \"\"\"\n    assert len(features) == len(labels)\n    # TODO: Implement batching\n    pass\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "import math\ndef batches(batch_size, features, labels):\n    \"\"\"\n    Create batches of features and labels\n    :param batch_size: The batch size\n    :param features: List of features\n    :param labels: List of labels\n    :return: Batches of (Features, Labels)\n    \"\"\"\n    assert len(features) == len(labels)\n    # TODO: Implement batching\n    output_batches = []\n    \n    sample_size = len(features)\n    for start_i in range(0, sample_size, batch_size):\n        end_i = start_i + batch_size\n        batch = [features[start_i:end_i], labels[start_i:end_i]]\n        output_batches.append(batch)\n        \n    return output_batches\n",
+                    "name": "quiz_solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 220451,
+              "key": "f743c392-f883-4cdf-b7ba-1c72a04af8ca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's use mini-batching to feed batches of MNIST features and labels into a linear model.\n\nSet the batch size and run the optimizer over all the batches with the `batches` function.  The recommended batch size is 128.  If you have memory restrictions, feel free to make it smaller.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 220450,
+              "key": "a33bdb4f-d60c-4478-a316-350ef18a0158",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4746665649111040",
+                "initial_code_files": [
+                  {
+                    "text": "from tensorflow.examples.tutorials.mnist import input_data\nimport tensorflow as tf\nimport numpy as np\nfrom helper import batches\n\nlearning_rate = 0.001\nn_input = 784  # MNIST data input (img shape: 28*28)\nn_classes = 10  # MNIST total classes (0-9 digits)\n\n# Import MNIST data\nmnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)\n\n# The features are already scaled and the data is shuffled\ntrain_features = mnist.train.images\ntest_features = mnist.test.images\n\ntrain_labels = mnist.train.labels.astype(np.float32)\ntest_labels = mnist.test.labels.astype(np.float32)\n\n# Features and Labels\nfeatures = tf.placeholder(tf.float32, [None, n_input])\nlabels = tf.placeholder(tf.float32, [None, n_classes])\n\n# Weights & bias\nweights = tf.Variable(tf.random_normal([n_input, n_classes]))\nbias = tf.Variable(tf.random_normal([n_classes]))\n\n# Logits - xW + b\nlogits = tf.add(tf.matmul(features, weights), bias)\n\n# Define loss and optimizer\ncost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=labels))\noptimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cost)\n\n# Calculate accuracy\ncorrect_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(labels, 1))\naccuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))\n\n\n# TODO: Set batch size\nbatch_size = None\nassert batch_size is not None, 'You must set the batch size'\n\ninit = tf.global_variables_initializer()\n\nwith tf.Session() as sess:\n    sess.run(init)\n    \n    # TODO: Train optimizer on all batches\n    # for batch_features, batch_labels in ______\n    sess.run(optimizer, feed_dict={features: batch_features, labels: batch_labels})\n\n    # Calculate accuracy for test dataset\n    test_accuracy = sess.run(\n        accuracy,\n        feed_dict={features: test_features, labels: test_labels})\n\nprint('Test Accuracy: {}'.format(test_accuracy))\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "import math\ndef batches(batch_size, features, labels):\n    \"\"\"\n    Create batches of features and labels\n    :param batch_size: The batch size\n    :param features: List of features\n    :param labels: List of labels\n    :return: Batches of (Features, Labels)\n    \"\"\"\n    assert len(features) == len(labels)\n    outout_batches = []\n    \n    sample_size = len(features)\n    for start_i in range(0, sample_size, batch_size):\n        end_i = start_i + batch_size\n        batch = [features[start_i:end_i], labels[start_i:end_i]]\n        outout_batches.append(batch)\n        \n    return outout_batches\n",
+                    "name": "helper.py"
+                  },
+                  {
+                    "text": "from tensorflow.examples.tutorials.mnist import input_data\nimport tensorflow as tf\nimport numpy as np\nfrom helper import batches\n\nlearning_rate = 0.001\nn_input = 784  # MNIST data input (img shape: 28*28)\nn_classes = 10  # MNIST total classes (0-9 digits)\n\n# Import MNIST data\nmnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)\n\n# The features are already scaled and the data is shuffled\ntrain_features = mnist.train.images\ntest_features = mnist.test.images\n\ntrain_labels = mnist.train.labels.astype(np.float32)\ntest_labels = mnist.test.labels.astype(np.float32)\n\n# Features and Labels\nfeatures = tf.placeholder(tf.float32, [None, n_input])\nlabels = tf.placeholder(tf.float32, [None, n_classes])\n\n# Weights & bias\nweights = tf.Variable(tf.random_normal([n_input, n_classes]))\nbias = tf.Variable(tf.random_normal([n_classes]))\n\n# Logits - xW + b\nlogits = tf.add(tf.matmul(features, weights), bias)\n\n# Define loss and optimizer\ncost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=labels))\noptimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cost)\n\n# Calculate accuracy\ncorrect_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(labels, 1))\naccuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))\n\n\n# TODO: Set batch size\nbatch_size = 128\nassert batch_size is not None, 'You must set the batch size'\n\ninit = tf.global_variables_initializer()\n\nwith tf.Session() as sess:\n    sess.run(init)\n    \n    # TODO: Train optimizer on all batches\n    for batch_features, batch_labels in batches(batch_size, train_features, train_labels):\n        sess.run(optimizer, feed_dict={features: batch_features, labels: batch_labels})\n\n    # Calculate accuracy for test dataset\n    test_accuracy = sess.run(\n        accuracy,\n        feed_dict={features: test_features, labels: test_labels})\n\nprint('Test Accuracy: {}'.format(test_accuracy))\n",
+                    "name": "quiz_solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 220373,
+              "key": "6f51aad5-64ec-407f-8b15-b87dbfcf7614",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The accuracy is low, but you probably know that you could train on the dataset more than once.  You can train a model using the dataset multiple times.  You'll go over this subject in the next section where we talk about \"epochs\".\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 220477,
+          "key": "cbcb68d7-7575-442c-82d4-f796ad82b00a",
+          "title": "Epochs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 220478,
+              "key": "a6b00eb3-eebb-4c78-9960-5dfae0383c27",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Epochs\nAn epoch is a single forward and backward pass of the whole dataset.  This is used to increase the accuracy of the model without requiring more data.  This section will cover epochs in TensorFlow and how to choose the right number of epochs.\n\nThe following TensorFlow code trains a model using 10 epochs.\n```python\nfrom tensorflow.examples.tutorials.mnist import input_data\nimport tensorflow as tf\nimport numpy as np\nfrom helper import batches  # Helper function created in Mini-batching section\n\n\ndef print_epoch_stats(epoch_i, sess, last_features, last_labels):\n    \"\"\"\n    Print cost and validation accuracy of an epoch\n    \"\"\"\n    current_cost = sess.run(\n        cost,\n        feed_dict={features: last_features, labels: last_labels})\n    valid_accuracy = sess.run(\n        accuracy,\n        feed_dict={features: valid_features, labels: valid_labels})\n    print('Epoch: {:<4} - Cost: {:<8.3} Valid Accuracy: {:<5.3}'.format(\n        epoch_i,\n        current_cost,\n        valid_accuracy))\n\nn_input = 784  # MNIST data input (img shape: 28*28)\nn_classes = 10  # MNIST total classes (0-9 digits)\n\n# Import MNIST data\nmnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)\n\n# The features are already scaled and the data is shuffled\ntrain_features = mnist.train.images\nvalid_features = mnist.validation.images\ntest_features = mnist.test.images\n\ntrain_labels = mnist.train.labels.astype(np.float32)\nvalid_labels = mnist.validation.labels.astype(np.float32)\ntest_labels = mnist.test.labels.astype(np.float32)\n\n# Features and Labels\nfeatures = tf.placeholder(tf.float32, [None, n_input])\nlabels = tf.placeholder(tf.float32, [None, n_classes])\n\n# Weights & bias\nweights = tf.Variable(tf.random_normal([n_input, n_classes]))\nbias = tf.Variable(tf.random_normal([n_classes]))\n\n# Logits - xW + b\nlogits = tf.add(tf.matmul(features, weights), bias)\n\n# Define loss and optimizer\nlearning_rate = tf.placeholder(tf.float32)\ncost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=labels))\noptimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cost)\n\n# Calculate accuracy\ncorrect_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(labels, 1))\naccuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))\n\ninit = tf.global_variables_initializer()\n\nbatch_size = 128\nepochs = 10\nlearn_rate = 0.001\n\ntrain_batches = batches(batch_size, train_features, train_labels)\n\nwith tf.Session() as sess:\n    sess.run(init)\n\n    # Training cycle\n    for epoch_i in range(epochs):\n\n        # Loop over all batches\n        for batch_features, batch_labels in train_batches:\n            train_feed_dict = {\n                features: batch_features,\n                labels: batch_labels,\n                learning_rate: learn_rate}\n            sess.run(optimizer, feed_dict=train_feed_dict)\n\n        # Print cost and validation accuracy of an epoch\n        print_epoch_stats(epoch_i, sess, batch_features, batch_labels)\n\n    # Calculate accuracy for test dataset\n    test_accuracy = sess.run(\n        accuracy,\n        feed_dict={features: test_features, labels: test_labels})\n\nprint('Test Accuracy: {}'.format(test_accuracy))\n```\nRunning the code will output the following:\n```\nEpoch: 0    - Cost: 11.0     Valid Accuracy: 0.204\nEpoch: 1    - Cost: 9.95     Valid Accuracy: 0.229\nEpoch: 2    - Cost: 9.18     Valid Accuracy: 0.246\nEpoch: 3    - Cost: 8.59     Valid Accuracy: 0.264\nEpoch: 4    - Cost: 8.13     Valid Accuracy: 0.283\nEpoch: 5    - Cost: 7.77     Valid Accuracy: 0.301\nEpoch: 6    - Cost: 7.47     Valid Accuracy: 0.316\nEpoch: 7    - Cost: 7.2      Valid Accuracy: 0.328\nEpoch: 8    - Cost: 6.96     Valid Accuracy: 0.342\nEpoch: 9    - Cost: 6.73     Valid Accuracy: 0.36 \nTest Accuracy: 0.3801000118255615\n```\nEach epoch attempts to move to a lower cost, leading to better accuracy.  \n\nThis model continues to improve accuracy up to Epoch 9.  Let's increase the number of epochs to 100.\n```\n...\nEpoch: 79   - Cost: 0.111    Valid Accuracy: 0.86\nEpoch: 80   - Cost: 0.11     Valid Accuracy: 0.869\nEpoch: 81   - Cost: 0.109    Valid Accuracy: 0.869\n....\nEpoch: 85   - Cost: 0.107    Valid Accuracy: 0.869\nEpoch: 86   - Cost: 0.107    Valid Accuracy: 0.869\nEpoch: 87   - Cost: 0.106    Valid Accuracy: 0.869\nEpoch: 88   - Cost: 0.106    Valid Accuracy: 0.869\nEpoch: 89   - Cost: 0.105    Valid Accuracy: 0.869\nEpoch: 90   - Cost: 0.105    Valid Accuracy: 0.869\nEpoch: 91   - Cost: 0.104    Valid Accuracy: 0.869\nEpoch: 92   - Cost: 0.103    Valid Accuracy: 0.869\nEpoch: 93   - Cost: 0.103    Valid Accuracy: 0.869\nEpoch: 94   - Cost: 0.102    Valid Accuracy: 0.869\nEpoch: 95   - Cost: 0.102    Valid Accuracy: 0.869\nEpoch: 96   - Cost: 0.101    Valid Accuracy: 0.869\nEpoch: 97   - Cost: 0.101    Valid Accuracy: 0.869\nEpoch: 98   - Cost: 0.1      Valid Accuracy: 0.869\nEpoch: 99   - Cost: 0.1      Valid Accuracy: 0.869\nTest Accuracy: 0.8696000006198883\n```\n\n\nFrom looking at the output above, you can see the model doesn't increase the validation accuracy after epoch 80.  Let's see what happens when we increase the learning rate.\n\n*learn_rate = 0.1*\n```\nEpoch: 76   - Cost: 0.214    Valid Accuracy: 0.752\nEpoch: 77   - Cost: 0.21     Valid Accuracy: 0.756\nEpoch: 78   - Cost: 0.21     Valid Accuracy: 0.756\n...\nEpoch: 85   - Cost: 0.207    Valid Accuracy: 0.756\nEpoch: 86   - Cost: 0.209    Valid Accuracy: 0.756\nEpoch: 87   - Cost: 0.205    Valid Accuracy: 0.756\nEpoch: 88   - Cost: 0.208    Valid Accuracy: 0.756\nEpoch: 89   - Cost: 0.205    Valid Accuracy: 0.756\nEpoch: 90   - Cost: 0.202    Valid Accuracy: 0.756\nEpoch: 91   - Cost: 0.207    Valid Accuracy: 0.756\nEpoch: 92   - Cost: 0.204    Valid Accuracy: 0.756\nEpoch: 93   - Cost: 0.206    Valid Accuracy: 0.756\nEpoch: 94   - Cost: 0.202    Valid Accuracy: 0.756\nEpoch: 95   - Cost: 0.2974   Valid Accuracy: 0.756\nEpoch: 96   - Cost: 0.202    Valid Accuracy: 0.756\nEpoch: 97   - Cost: 0.2996   Valid Accuracy: 0.756\nEpoch: 98   - Cost: 0.203    Valid Accuracy: 0.756\nEpoch: 99   - Cost: 0.2987   Valid Accuracy: 0.756\nTest Accuracy: 0.7556000053882599\n```\n\nLooks like the learning rate was increased too much.  The final accuracy was lower, and it stopped improving earlier.  Let's stick with the previous learning rate, but change the number of epochs to 80.\n```\nEpoch: 65   - Cost: 0.122    Valid Accuracy: 0.868\nEpoch: 66   - Cost: 0.121    Valid Accuracy: 0.868\nEpoch: 67   - Cost: 0.12     Valid Accuracy: 0.868\nEpoch: 68   - Cost: 0.119    Valid Accuracy: 0.868\nEpoch: 69   - Cost: 0.118    Valid Accuracy: 0.868\nEpoch: 70   - Cost: 0.118    Valid Accuracy: 0.868\nEpoch: 71   - Cost: 0.117    Valid Accuracy: 0.868\nEpoch: 72   - Cost: 0.116    Valid Accuracy: 0.868\nEpoch: 73   - Cost: 0.115    Valid Accuracy: 0.868\nEpoch: 74   - Cost: 0.115    Valid Accuracy: 0.868\nEpoch: 75   - Cost: 0.114    Valid Accuracy: 0.868\nEpoch: 76   - Cost: 0.113    Valid Accuracy: 0.868\nEpoch: 77   - Cost: 0.113    Valid Accuracy: 0.868\nEpoch: 78   - Cost: 0.112    Valid Accuracy: 0.868\nEpoch: 79   - Cost: 0.111    Valid Accuracy: 0.868\nEpoch: 80   - Cost: 0.111    Valid Accuracy: 0.869\nTest Accuracy: 0.86909999418258667\n```\nThe accuracy only reached 0.86, but that could be because the learning rate was too high.  Lowering the learning rate would require more epochs, but could ultimately achieve better accuracy.\n\nIn the upcoming TensorFLow Lab, you'll get the opportunity to choose your own learning rate, epoch count, and batch size to improve the model's accuracy.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 266917,
+          "key": "e4714423-634e-45ed-abb8-37df8b5b30bd",
+          "title": "Lab: TensorFlow Neural Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 266918,
+              "key": "947065bc-deb4-4607-8a61-eecc2830efa9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# TensorFlow Neural Network Lab\n\n[<img src=\"http://yaroslavvb.com/upload/notMNIST/nmn.png\" alt=\"notMNIST dataset samples\" />](http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266925,
+              "key": "297b4f5f-1c52-41a1-b124-2bf23a1dbf8e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# TensorFlow Lab\nWe've prepared a Jupyter notebook that will guide you through the process of creating a single layer neural network in TensorFlow. You'll implement data normalization, then build and train the network with TensorFlow.\n\n\n## Getting the notebook\n\nThe notebook and all related files are available from [our GitHub repository](https://github.com/udacity/deep-learning). Either clone the repository or download it as a Zip file.\n\nUse Git to clone the repository.\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nIf you're unfamiliar with Git and GitHub, I highly recommend checking out [our course](https://www.udacity.com/course/how-to-use-git-and-github--ud775). If you'd rather not use Git, you can download the repository as a Zip archive. You can find [the repo here](https://github.com/udacity/deep-learning).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266930,
+              "key": "f5acfc3c-0fc0-4ab6-8951-1e5447b97896",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a505e5_download-repo/download-repo.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f5acfc3c-0fc0-4ab6-8951-1e5447b97896",
+              "caption": "Download the repository contents as a Zip file using the green button on the top right.",
+              "alt": null,
+              "width": 2212,
+              "height": 1174,
+              "instructor_notes": null
+            },
+            {
+              "id": 266928,
+              "key": "a71efbf0-f40f-4943-aea3-19fd98706f5c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you download the Zip file, be sure to extract it (usually just double clicking). The most recent versions of all our code will be available from the repository, so it's the best place to get up-to-date files.\n\nOnce you have the repo cloned or downloaded, change directories into the repo, then the `intro-to-tensorflow` directory. In there you'll find the lab notebook, as well as Conda environment files for installing all the necessary packages.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266923,
+              "key": "1eb54f1c-54a3-41a1-be42-c62d11db5193",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n\n## Windows Instructions\n\nWe've provided a Conda environment file for you to easily install all the necessary packages. In the `intro-to-tensorflow` directory, enter\n\n```bash\nconda env create -f environment_win.yml\n```\n\nThis will create an environment called `dlnd-tf-lab`. You can enter the environment with the command\n\n```bash\nactivate dlnd-tf-lab\n```\n\nAll the necessary packages should be installed for you.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266926,
+              "key": "a432b62a-3b87-46f4-ac88-697d51f4bdbd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## OS X and Linux Instructions\n\nWe've provided a Conda environment file for you to easily install all the necessary packages. In the `intro-to-tensorflow` directory, enter\n\n```bash\nconda env create -f environment.yml\n```\n\nThis will create an environment called `dlnd-tf-lab`. You can enter the environment with the command\n\n```bash\nsource activate dlnd-tf-lab\n```\n\nAll the necessary packages should be installed for you.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 266924,
+              "key": "d7ec5622-8e60-400d-93d6-b9fb1c499a87",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## View The Notebook\nIn the directory with the notebook file, start your Jupyter notebook server\n\n```bash\njupyter notebook\n```\n\nThis should open a browser window for you. If it doesn't, go to [http://localhost:8888/tree](http://localhost:8888/tree). Although, the port number might be different if you have other notebook servers running, so try 8889 instead of 8888 if you can't find the right server.\n\nYou should see the notebook `intro_to_tensorflow.ipynb`, this is the notebook you'll be working on.  The notebook has 3 problems for you to solve:\n - Problem 1: Normalize the features\n - Problem 2: Use TensorFlow operations to create features, labels, weight, and biases tensors\n - Problem 3: Tune the learning rate, number of steps, and batch size for the best accuracy\n\nThis is a self-assessed lab.  Compare your answers to the solutions [here](https://github.com/udacity/deep-learning/blob/master/intro-to-tensorflow/intro_to_tensorflow_solution.ipynb).  If you have any difficulty completing the lab, Udacity provides a few services to answer any questions you might have.\n\n## Help\nRemember that you can get assistance from your mentor, the Forums (click the link on the left side of the classroom), or the Slack channel. You can also review the concepts from the previous lessons.\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "data": {
+    "lesson": {
+      "id": 280114,
+      "key": "afd30dc6-0fcd-4dfa-8e95-4fe1d90572b8",
+      "title": "Weight Initialization",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you'll learn how to find good initial weights for a neural network. Having good initial weights can place the neural network close to the optimal solution. This allows the neural network to come to the best solution quicker.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/afd30dc6-0fcd-4dfa-8e95-4fe1d90572b8/280114/1544457455262/Weight+Initialization+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/afd30dc6-0fcd-4dfa-8e95-4fe1d90572b8/280114/1544457452587/Weight+Initialization+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 282684,
+          "key": "0a26b275-bdb9-4f25-8cf9-5c909d407c87",
+          "title": "Weight Initialization Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283285,
+              "key": "62066df8-abc0-4f7c-8b4e-7ed68de59bb8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/62066df8-abc0-4f7c-8b4e-7ed68de59bb8",
+              "caption": "Hi, it's Mat again!",
+              "alt": null,
+              "width": 200,
+              "height": 200,
+              "instructor_notes": null
+            },
+            {
+              "id": 282687,
+              "key": "2a82a807-5214-4e19-a88b-61a680a6a79d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, we'll be covering weight initialization.  You'll learn how to find good initial weights for a neural network. Having good initial weights can place the neural network close to the optimal solution. This allows the neural network to come to the best solution quicker. You can get the notebook files from our [public GitHub repo](https://github.com/udacity/deep-learning), in the `weight-initialization ` folder. Download the files from Github, or clone the repo\n```sh\ngit clone https://github.com/udacity/deep-learning.git\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 282685,
+          "key": "eb15c483-79ac-491e-ab85-a0e06c875509",
+          "title": "Ones and Zeros",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283701,
+              "key": "5cb50818-b5fa-4e84-b67b-acc049891156",
+              "title": "Weight Initialization 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6vXMYu_TQIA",
+                "china_cdn_id": "6vXMYu_TQIA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 283278,
+          "key": "a18ea324-0372-4eef-91e1-4f7a0049f28c",
+          "title": "Uniform Distribution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283702,
+              "key": "15ec1c04-f523-403b-b04d-ddd37a5f6404",
+              "title": "Weight Initialization 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BI3f0Cdc_nU",
+                "china_cdn_id": "BI3f0Cdc_nU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 283281,
+          "key": "97b3119b-9841-4a0c-961f-9bff1aea7864",
+          "title": "Too Small",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283703,
+              "key": "f35d6cb4-59d2-4154-be67-e3bf52664358",
+              "title": "Weight Initialization 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JIQl0jMpdsI",
+                "china_cdn_id": "JIQl0jMpdsI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 283284,
+          "key": "9f8d4d27-e632-4337-8787-a69dc510ac3a",
+          "title": "Normal Distribution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283705,
+              "key": "dc3a5622-4940-4960-85e7-1dad3ece0a7c",
+              "title": "Weight Initialization 4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FM6t7AsodGQ",
+                "china_cdn_id": "FM6t7AsodGQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 282686,
+          "key": "4ac042b5-d74d-4c7e-97e1-99a1f017b30c",
+          "title": "Additional Material",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283332,
+              "key": "3e6c3e41-4cbe-4447-9f9f-7d44175aceb1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Additional Material\nNew techniques for dealing with weights are discovered every few years. We've provided the most popular papers in this field over the years.\n- [Understanding the difficulty of training deep feedforward neural networks](http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf)\n- [Delving Deep into Rectifiers:\nSurpassing Human-Level Performance on ImageNet Classification](https://arxiv.org/pdf/1502.01852v1.pdf)\n- [Batch Normalization: Accelerating Deep Network Training by\nReducing Internal Covariate Shift](https://arxiv.org/pdf/1502.03167v2.pdf)",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

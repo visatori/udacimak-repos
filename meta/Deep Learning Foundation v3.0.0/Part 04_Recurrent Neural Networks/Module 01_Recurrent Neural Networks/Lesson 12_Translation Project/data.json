@@ -1,0 +1,78 @@
+{
+  "data": {
+    "lesson": {
+      "id": 280071,
+      "key": "c3083133-7194-454c-99c2-a1405d8fbd04",
+      "title": "Translation Project",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Use a neural network to translate from one language to another.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/c3083133-7194-454c-99c2-a1405d8fbd04/280071/1544457712116/Translation+Project+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/c3083133-7194-454c-99c2-a1405d8fbd04/280071/1544457709804/Translation+Project+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "31cf37b5-9a9f-4976-90b8-f4b2c0555e6c",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 30240,
+        "semantic_type": "Project",
+        "title": "Translation Project",
+        "description": "# Language Translation\n### Introduction\nIn this project, you’re going to take a peek into the realm of neural network machine translation.  You’ll be training a sequence to sequence model on a dataset of English and French sentences that can translate new sentences from English to French.\n\n### Getting the project files\nThe project files can be found in our [public GitHub repo](https://github.com/udacity/deep-learning/tree/master/), in the `language-translation` folder. You can download the files from there, but it's better to clone the repository to your computer\n\nThis way you can stay up to date with any changes we make by pulling the changes to your local repository with `git pull`.\n\n### Submission\n1. Ensure you've passed all the unit tests in the notebook.\n2. Ensure you pass all points on [the rubric](https://review.udacity.com/#!/rubrics/826/view).\n3. When you're done with the project, please save the notebook as an HTML file. You can do this by going to the **File** menu in the notebook and choosing \"Download as\" > HTML. ** Ensure you submit both the Jupyter Notebook and it's HTML version together. **\n4. Package the \"dlnd_language_translation.ipynb\", \"helper.py\", \"problem_unittests.py\", and the HTML file into a zip archive, or push the files from your GitHub repo.\n5. Hit Submit Project below! ",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "c/nd101-Project-4",
+        "rubric_id": "826",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://d17h27t6h515a5.cloudfront.net/topher/2017/April/58e6baa4_p4-hero-image/p4-hero-image.jpeg",
+          "width": 1200,
+          "height": 900
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 280073,
+          "key": "719449c2-10c7-4580-a775-e77378b130c9",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 293278,
+              "key": "ae11110b-0af4-45f5-8ed0-18e958b71c8e",
+              "title": "Machine Translation Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5thBwpcYoiI",
+                "china_cdn_id": "5thBwpcYoiI.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "data": {
+    "lesson": {
+      "id": 292507,
+      "key": "65d517be-57d8-453a-9efd-a31c3932071d",
+      "title": "Reinforcement Learning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Here you'll learn about using reinforcement learning to train an AI agent to play games.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/65d517be-57d8-453a-9efd-a31c3932071d/292507/1544186134957/Reinforcement+Learning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/65d517be-57d8-453a-9efd-a31c3932071d/292507/1544186132758/Reinforcement+Learning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 293852,
+          "key": "9a69da9b-32b2-401b-a947-87552c701aea",
+          "title": "Reinforcement Learning Lesson",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 293854,
+              "key": "f15a9364-9ffa-4b0f-bba4-cf1682648001",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f15a9364-9ffa-4b0f-bba4-cf1682648001",
+              "caption": "It's Mat again, hello!",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 293856,
+              "key": "a45b842a-5b15-4878-86cd-5c201e268db3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Reinforcement Learning\n\nThis lesson is a brief introduction to reinforcement learning. This branch of machine learning is about training an agent by giving it rewards for performing correct actions. We could build a whole course on reinforcement learning, but here we don't really have time to cover all the different methods. Instead, I'll be showing you one particular method called **Q-learning**.\n\n## Things to Read\n\nHere are some more resources for you to learn from:\n* Series of blog posts on [reinforcement learning](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0)\n* [Human-level control through deep reinforcement\nlearning](http://www.davidqiu.com:8888/research/nature14236.pdf)\n* An implementation of [Deep Q-Network in TensorFlow](https://github.com/devsisters/DQN-tensorflow)\n* Blog post on [Q-learning and the Cart-Pole game](https://medium.com/@tuzzer/cart-pole-balancing-with-q-learning-b54c6068d947)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 293845,
+          "key": "12ed4350-eb60-4f29-9c84-3383476e355e",
+          "title": "Reinforcement Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 293850,
+              "key": "3092730a-f605-4d82-8bd6-558ba6101292",
+              "title": "01 Q-Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Npu9gyD6-4o",
+                "china_cdn_id": "Npu9gyD6-4o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 293846,
+          "key": "264f7655-7adb-4f92-94a8-89a1ee319ffe",
+          "title": "Q-Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 293849,
+              "key": "8e81866b-84e1-4667-a1f3-fa75b71cf168",
+              "title": "02 Q-Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WQgdnzzhSLM",
+                "china_cdn_id": "WQgdnzzhSLM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 293847,
+          "key": "e03820b3-8358-4735-b590-35b485bf05f3",
+          "title": "Deep Q-Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 293851,
+              "key": "3c765222-c31a-4866-9332-678643c43497",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Deep Q-Learning\n\nIn this notebook, I'll show you how to use a neural network with Q-learning to train an agent to play a simple game. We'll be using [OpenAI Gym](https://gym.openai.com/), an awesome package of games to train agents on. Specifically, we'll be training an agent to play the [Cart-Pole game](https://gym.openai.com/envs/CartPole-v0).\n\nAs usual, you can get the notebook from our public repo. Either clone the repository\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nor download the most recent files if you have the repo cloned already\n\n```bash\ngit pull\n```\nThe notebook and other contents are in the `reinforcement` directory. I've included the OpenAI Gym source code in the repo. To install it for use in the notebook:\n\n```bash\ngit submodule update --init --recursive\ncd gym\npip install -e . \n```\n\nThe basic idea behind deep Q-learning is that you replace the Q-table with a neural network. This game is pretty simple, but the same model has been used to train agents to play a variety of Atari games. However, in practice, it takes _many_ hours to train on Atari games. Feel free to try it out on more complex games. But for this lesson, we'll stick to a simple game to get it to train quickly, even without a GPU.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

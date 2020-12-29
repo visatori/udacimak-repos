@@ -1,0 +1,1555 @@
+{
+  "data": {
+    "lesson": {
+      "id": 354382,
+      "key": "37492b45-ee34-4dc3-a2e8-076149f92562",
+      "title": "Convolutional Neural Networks",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Alexis explains the theory behind Convolutional Neural Networks and how they help us dramatically improve performance in image classification.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/37492b45-ee34-4dc3-a2e8-076149f92562/354382/1544443764889/Convolutional+Neural+Networks+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/37492b45-ee34-4dc3-a2e8-076149f92562/354382/1544443759661/Convolutional+Neural+Networks+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 278934,
+          "key": "603cdafb-4378-4f13-898a-e7efe44464ff",
+          "title": "Introducing Alexis",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791812,
+              "key": "b82f43f9-ec70-4e00-84a4-64d522ee23a5",
+              "title": "Apresentando Alexis",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "38ExGpdyvJI",
+                "china_cdn_id": "38ExGpdyvJI.mp4"
+              }
+            },
+            {
+              "id": 300614,
+              "key": "ee431a5c-3e73-4327-8571-7ed6745a9fe5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Find me on Twitter! [@alexis_b_cook](https://twitter.com/alexis_b_cook)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289616,
+          "key": "e7190f8c-c824-4936-89ff-db6230fd3d12",
+          "title": "Applications of CNNs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791813,
+              "key": "716ef683-110b-4f9a-80a6-a181cdc5c9cb",
+              "title": "Aplicações de CNNs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HrYNL_1SV2Y",
+                "china_cdn_id": "HrYNL_1SV2Y.mp4"
+              }
+            },
+            {
+              "id": 289634,
+              "key": "3efe8acd-2306-4944-bf2a-85ffb59cf57b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resources\n\n- Read about the [WaveNet](https://deepmind.com/blog/wavenet-generative-model-raw-audio/) model.\n - Why train an A.I. to talk, when you can train it to sing ;)?  In April 2017, researchers used a variant of the WaveNet model to generate songs.  The original paper and demo can be found [here](http://www.creativeai.net/posts/W2C3baXvf2yJSLbY6/a-neural-parametric-singing-synthesizer).\n\n- Learn about CNNs [for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/).\n * You might like to sign up for the author's [Deep Learning Newsletter](https://www.getrevue.co/profile/wildml)!\n\n- Read about Facebook's [novel CNN approach](https://code.facebook.com/posts/1978007565818999/a-novel-approach-to-neural-machine-translation/) for language translation that achieves state-of-the-art accuracy at nine times the speed of RNN models. \n\n\n- Play [Atari games](https://deepmind.com/research/dqn/) with a CNN and reinforcement learning.  You can [download](https://sites.google.com/a/deepmind.com/dqn/) the code that comes with this paper.\n * If you would like to play around with some beginner code (for deep reinforcement learning), you're encouraged to check out Andrej Karpathy's [post](http://karpathy.github.io/2016/05/31/rl/). \n\n- Play [pictionary](https://quickdraw.withgoogle.com/#) with a CNN!\n * Also check out all of the other cool implementations on the [A.I. Experiments](https://aiexperiments.withgoogle.com/) website.  Be sure not to miss [AutoDraw](https://www.autodraw.com/)!\n\n- Read more about [AlphaGo](https://deepmind.com/research/alphago/).\n * Check out [this article](https://www.technologyreview.com/s/604273/finding-solace-in-defeat-by-artificial-intelligence/?set=604287), which asks the question: _If mastering Go “requires human intuition,” what is it like to have a piece of one’s humanity challenged?_\n\n- Check out these _really cool_ videos with drones that are powered by CNNs.\n * Here's an interview with a startup - [Intelligent Flying Machines (IFM)](https://www.youtube.com/watch?v=AMDiR61f86Y).\n * Outdoor autonomous navigation is typically accomplished through the use of the [global positioning system (GPS)](http://www.droneomega.com/gps-drone-navigation-works/), but here's a demo with a CNN-powered [autonomous drone](https://www.youtube.com/watch?v=wSFYOw4VIYY). \n\n- If you're excited about using CNNs in self-driving cars, you're encouraged to check out:\n * our [Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013), where we classify signs in the [German Traffic Sign](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) dataset in [this project](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project).\n * our [Machine Learning Engineer Nanodegree](https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009), where we classify house numbers from the [Street View House Numbers](http://ufldl.stanford.edu/housenumbers/) dataset in [this project](https://github.com/udacity/machine-learning/tree/master/projects/digit_recognition).\n * this [series of blog posts](https://pythonprogramming.net/game-frames-open-cv-python-plays-gta-v/) that details how to train a CNN in Python to produce a self-driving A.I. to play Grand Theft Auto V.  \n\n- Check out some additional applications not mentioned in the video.\n - Some of the world's most famous paintings have been [turned into 3D](http://www.businessinsider.com/3d-printed-works-of-art-for-the-blind-2016-1) for the visually impaired.  Although the article does not mention _how_ this was done, we note that it is possible to use a CNN to [predict depth](https://www.cs.nyu.edu/~deigen/depth/) from a single image.\n - Check out [this research](https://research.googleblog.com/2017/03/assisting-pathologists-in-detecting.html) that uses CNNs to localize breast cancer.\n - CNNs are used to [save endangered species](https://blogs.nvidia.com/blog/2016/11/04/saving-endangered-species/?adbsc=social_20170303_70517416)!\n - An app called [FaceApp](http://www.digitaltrends.com/photography/faceapp-neural-net-image-editing/) uses a CNN to make you smile in a picture or change genders.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 797542,
+              "key": "06d2b119-450e-4abd-89d2-a963fc624c87",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289633,
+          "key": "5be87087-3029-4988-bfa8-ed30c4207fec",
+          "title": "How Computers Interpret Images",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 310139,
+              "key": "0e254fd5-3730-4743-8a22-91930e60e768",
+              "title": "How Computers Interpret Images",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "V4f6p6uRhu8",
+                "china_cdn_id": "V4f6p6uRhu8.mp4"
+              }
+            },
+            {
+              "id": 291860,
+              "key": "89a57bd5-e291-49d4-ab10-623bac6a1914",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you follow along this lesson, you are encouraged to open the referenced Jupyter notebooks.  We will present a solution to you, but please try creating your own deep learning models! Much of the value in this experience will come from playing around with the code in your own way. \n\nIn order to get up and running, please clone the materials from [the GitHub repository](https://github.com/udacity/aind2-cnn.git) by executing the following command in the terminal: `git clone https://github.com/udacity/aind2-cnn.git`.  Follow the instructions in the [repository](https://github.com/udacity/aind2-cnn) to set up the Conda environment and install the necessary dependencies.\n\nTo open the notebook referenced in this video, navigate to the __mnist-mlp/__ folder and open __mnist_mlp.ipynb__.\n\n### Additional Note\n\nThe MNIST database is arguably the most famous database in the field of deep learning!  Check out [this figure](https://www.kaggle.com/benhamner/d/benhamner/nips-papers/popular-datasets-over-time/code) that shows datasets referenced over time in [NIPS](https://nips.cc/) papers.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 293762,
+          "key": "87712da9-5e20-4d75-b067-aa5f354e4a85",
+          "title": "MLPs for Image Classification",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308623,
+              "key": "b6288816-4b20-4e09-98d4-e6c8cdaaeb4e",
+              "title": "MLPs For Image Classification",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TIFStebu530",
+                "china_cdn_id": "TIFStebu530.mp4"
+              }
+            },
+            {
+              "id": 300025,
+              "key": "269c4a8a-c854-4ddc-96ce-f03d781e292d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resources\n\n- Check out the [first research paper](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf) to propose dropout as a technique for overfitting.\n- Here's the Keras [documentation](https://keras.io/layers/core/#flatten) for the Flatten layer.\n- If you'd like more information on activation functions, check out this [website](http://cs231n.github.io/neural-networks-1/#actfun).  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 293842,
+          "key": "445cb9aa-c16e-43c9-85ba-588748a029f9",
+          "title": "Categorical Cross-Entropy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309066,
+              "key": "c4d25e4c-b5ce-42e4-ba27-79026e6a2cf6",
+              "title": "Categorical Cross-Entropy",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3sDYifgjFck",
+                "china_cdn_id": "3sDYifgjFck.mp4"
+              }
+            },
+            {
+              "id": 300065,
+              "key": "a832bc38-a7d7-4883-88ae-3fc2c0a328f6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resources\n\n- If you'd like more details about fully connected layers in Keras, check out the [documentation](https://keras.io/layers/core/) for the Dense layer.  You can change the way the weights are initialized through supplying values for the `kernel_initializer` and `bias_initializer` parameters.  Note that the default values are `'glorot_uniform'`, and `'zeros'`, respectively.  You can read more about how each of these initializers work in the corresponding Keras [documentation](https://keras.io/initializers/).  \n- There are many different [loss functions](https://keras.io/losses/) in Keras.  For this lesson, we will only use `categorical_crossentropy`.\n- Check out the [list of available optimizers](https://keras.io/optimizers/) in Keras.  The optimizer is specified when you compile the model (in Step 7 of the notebook).  \n - `'sgd'` : SGD\n - `'rmsprop'` : RMSprop\n - `'adagrad'` : Adagrad\n - `'adadelta'` : Adadelta\n - `'adam'` : Adam\n - `'adamax'` : Adamax\n - `'nadam'` : Nadam\n - `'tfoptimizer'` : TFOptimizer",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 297567,
+          "key": "d9c540fb-31c0-43d3-9e54-a0523a4d8ed7",
+          "title": "Model Validation in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309349,
+              "key": "f928e63d-bc71-410e-922c-75b3a9c07c21",
+              "title": "Model Validation in Keras",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "002jNXSM6CU",
+                "china_cdn_id": "002jNXSM6CU.mp4"
+              }
+            },
+            {
+              "id": 300081,
+              "key": "6bd4006b-8384-42e0-9c67-bb2ac3f18ac5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resource\n\n-  There are many callbacks (such as ModelCheckpoint) that you can use to monitor your model during the training process.  If you'd like, check out the [details](https://keras.io/callbacks/#modelcheckpoint) here.  You're encouraged to begin with learning more about the EarlyStopping callback.  If you'd like to see another code example of ModelCheckpoint, check out [this blog](http://machinelearningmastery.com/check-point-deep-learning-models-keras/).\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 293763,
+          "key": "6bc88353-5110-4c94-aab0-ca19f1aa2208",
+          "title": "When do MLPs (not) work well? ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309067,
+              "key": "70c77073-8791-4227-9689-f4846daa9bd4",
+              "title": "When do MLPs (not) work well?",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "deMeuLdZN3Q",
+                "china_cdn_id": "deMeuLdZN3Q.mp4"
+              }
+            },
+            {
+              "id": 300106,
+              "key": "684478e9-fabb-4db3-8004-665d9e6f3bd8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resource\n* Check out the performance of [other classifiers](http://yann.lecun.com/exdb/mnist/).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290229,
+          "key": "c428b49c-4014-4627-a88d-0feb23ab30dd",
+          "title": "Mini Project: Training an MLP on MNIST",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290230,
+              "key": "4b3b9839-5515-4d32-a7bc-1bb053feb51f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Mini Project: Training an MLP on MNIST\n\nDeep learning is [not well-understood](https://www.technologyreview.com/s/604087/the-dark-secret-at-the-heart-of-ai/), and the practice is ahead of the theory in many cases.  If you are new to deep learning, you are strongly encouraged to experiment with many models, to develop intuition about why models work.  [Starter code](https://github.com/udacity/aind2-cnn) is provided on github.\n\nIn this mini project, you'll modify the neural network in [mnist_mlp.ipynb](https://github.com/udacity/aind2-cnn/blob/master/mnist-mlp/mnist_mlp.ipynb) and compare the resultant model configurations.  \n\n__Remember__: Overfitting is detected by comparing the validation loss to the training loss.  If the training loss is much lower than the validation loss, then the model might be overfitting.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 300116,
+              "key": "a0198907-73c1-463b-b945-6cc90f76a9d9",
+              "title": "Instructions",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "tasks": [
+                "Increase (or decrease) the number of nodes in each of the hidden layers.  Do you notice evidence of overfitting (or underfitting)?",
+                "Increase (or decrease) the number of hidden layers.  Do you notice evidence of overfitting (or underfitting)?",
+                "Remove the dropout layers in the network.  Do you notice evidence of overfitting?",
+                "Remove the ReLU activation functions.  Does the test accuracy decrease?",
+                "Remove the image pre-processing step with dividing every pixel by 255.  Does the accuracy decrease?",
+                "Try a different optimizer, such as stochastic gradient descent.",
+                "Increase (or decrease) the batch size."
+              ],
+              "positive_feedback": "Great job!  Now, you're ready to learn about Convolutional Neural Networks (CNNs)!",
+              "video_feedback": null,
+              "description": "Take note of the validation loss and test accuracy for the model resulting from each of the below changes.  (Try out each amendment in a separate model.)"
+            },
+            {
+              "id": 300369,
+              "key": "4911b637-7fec-4836-b9f4-58a30adc3950",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resource\n\nIf you're interested in learning how to do a more systematic hyperparameter search in your neural networks, please check out this [blog post](http://machinelearningmastery.com/grid-search-hyperparameters-deep-learning-models-python-keras/).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289648,
+          "key": "37c9b535-0daa-4d48-ba99-4deaa837f5fc",
+          "title": "Local Connectivity",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791827,
+              "key": "11dc4720-effe-4d3b-8a45-4b27f84add7c",
+              "title": "Local Connectivity",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "z9wiDg0w-Dc",
+                "china_cdn_id": "z9wiDg0w-Dc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 289649,
+          "key": "a74cd79d-bc91-4712-8a63-35805a023a84",
+          "title": "Convolutional Layers (Part 1)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309348,
+              "key": "7006088e-9f2c-4201-a96d-7101e4f73da6",
+              "title": "Convolutional Layers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "h5R_JvdUrUI",
+                "china_cdn_id": "h5R_JvdUrUI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 293803,
+          "key": "e6e271bf-d148-4e56-9320-04a07797f318",
+          "title": "Convolutional Layers (Part 2)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791831,
+              "key": "44be1673-3260-4d34-a88f-e1dca236abb4",
+              "title": "Camadas convolucionais",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RnM1D-XI--8",
+                "china_cdn_id": "RnM1D-XI--8.mp4"
+              }
+            },
+            {
+              "id": 300267,
+              "key": "a0cf3abf-f1c9-46ad-a962-82ebca5efb11",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The Jupyter notebook described in the video can be accessed from the `deep-learning-v2-pytorch` GitHub respository linked [here](https://github.com/udacity/deep-learning-v2-pytorch/tree/master/convolutional-neural-networks).  Navigate to the __conv-visualization/__ folder and open __conv_visualization.ipynb__.\n\n### Optional Resource\n\n- Check out [this website](http://setosa.io/ev/image-kernels/), which allows you to create your own filter.  You can then use your webcam as input to a convolutional layer and visualize the corresponding activation map!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 309524,
+          "key": "5d3711e1-601d-4b3c-a1d1-bcc2e267bbaa",
+          "title": "Stride and Padding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 458684,
+              "key": "170c82a4-4718-4f9b-a13f-caeee4f25bfb",
+              "title": "Stride and Padding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0r9o8hprDXQ",
+                "china_cdn_id": "0r9o8hprDXQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 289651,
+          "key": "5e62ce5f-26bb-4f84-91c1-4791b9d3aa53",
+          "title": "Convolutional Layers in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289912,
+              "key": "66fd64c5-754f-4ce7-b47f-185687265cc6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e4221f_full-padding-no-strides-transposed/full-padding-no-strides-transposed.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/66fd64c5-754f-4ce7-b47f-185687265cc6",
+              "caption": "__Convolution with 3x3 window and stride 1__\n\nImage source: http://iamaaditya.github.io/2016/03/one-by-one-convolution/",
+              "alt": "",
+              "width": 276,
+              "height": 314,
+              "instructor_notes": null
+            },
+            {
+              "id": 289909,
+              "key": "c54d1e18-85fc-4ddf-aa1d-53fb549d2f59",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Convolutional Layers in Keras\n\nTo create a convolutional layer in Keras, you must first import the necessary module:\n\n```python\nfrom keras.layers import Conv2D\n```\n\nThen, you can create a convolutional layer by using the following format:\n\n```python\nConv2D(filters, kernel_size, strides, padding, activation='relu', input_shape)\n```\n\n### Arguments\n\nYou must pass the following arguments:\n- `filters` - The number of filters.\n- `kernel_size` - Number specifying both the height and width of the (square) convolution window.\n\nThere are some additional, optional arguments that you might like to tune:\n- `strides` - The stride of the convolution.  If you don't specify anything, `strides` is set to `1`.\n- `padding` - One of `'valid'` or `'same'`.  If you don't specify anything, `padding` is set to `'valid'`.\n- `activation` - Typically `'relu'`. If you don't specify anything, no activation is applied.  You are __strongly encouraged__ to add a ReLU activation function to __every__ convolutional layer in your networks.\n\n__NOTE__: It is possible to represent both `kernel_size` and `strides` as either a number or a tuple.\n\nWhen using your convolutional layer as the first layer (appearing after the input layer) in a model, you must provide an additional `input_shape` argument:\n- `input_shape` - Tuple specifying the height, width, and depth (in that order) of the input.\n\n__NOTE__: Do *__not__* include the `input_shape` argument if the convolutional layer is *not* the first layer in your network.\n\nThere are many other tunable arguments that you can set to change the behavior of your convolutional layers.  To read more about these, we recommend perusing the official [documentation](https://keras.io/layers/convolutional/).\n\n### Example #1\n\nSay I'm constructing a CNN, and my input layer accepts grayscale images that are 200 by 200 pixels (corresponding to a 3D array with height 200, width 200, and depth 1).  Then, say I'd like the next layer to be a convolutional layer with 16 filters, each with a width and height of 2.  When performing the convolution, I'd like the filter to jump two pixels at a time.  I also don't want the filter to extend outside of the image boundaries; in other words, I don't want to pad the image with zeros.  Then, to construct this convolutional layer, I would use the following line of code:\n```python\nConv2D(filters=16, kernel_size=2, strides=2, activation='relu', input_shape=(200, 200, 1))\n```\n\n### Example #2\n\nSay I'd like the next layer in my CNN to be a convolutional layer that takes the layer constructed in Example 1 as input.  Say I'd like my new layer to have 32 filters, each with a height and width of 3.  When performing the convolution, I'd like the filter to jump 1 pixel at a time.  I want the convolutional layer to see all regions of the previous layer, and so I don't mind if the filter hangs over the edge of the previous layer when it's performing the convolution.  Then, to construct this convolutional layer, I would use the following line of code:\n```python\nConv2D(filters=32, kernel_size=3, padding='same', activation='relu')\n```\n\n### Example #3\n\nIf you look up code online, it is also common to see convolutional layers in Keras in this format:\n```python\nConv2D(64, (2,2), activation='relu')\n```\nIn this case, there are 64 filters, each with a size of 2x2, and the layer has a ReLU activation function.  The other arguments in the layer use the default values, so the convolution uses a stride of 1, and the padding has been set to 'valid'.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 309657,
+          "key": "a044de29-c60f-47d8-a82d-aae7b8f24732",
+          "title": "Quiz: Dimensionality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309661,
+              "key": "e2b648e7-06f3-4ef9-bea4-7e2758547f47",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5913f852_convolution-schematic/convolution-schematic.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e2b648e7-06f3-4ef9-bea4-7e2758547f47",
+              "caption": "__Convolution with 3x3 window and stride 1__\n\nImage source: http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution",
+              "alt": null,
+              "width": 390,
+              "height": 288,
+              "instructor_notes": null
+            },
+            {
+              "id": 309658,
+              "key": "fbc90fc9-4e06-46f3-9867-b6b3ac8cb6a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Dimensionality\n\nJust as with neural networks, we create a CNN in Keras by first creating a `Sequential` model.\n\nWe add layers to the network by using the `.add()` method.\n\nCopy and paste the following code into a Python executable named `conv-dims.py`:\n```python\nfrom keras.models import Sequential\nfrom keras.layers import Conv2D\n\nmodel = Sequential()\nmodel.add(Conv2D(filters=16, kernel_size=2, strides=2, padding='valid', \n\tactivation='relu', input_shape=(200, 200, 1)))\nmodel.summary()\n```\n\nWe will not train this CNN; instead, we'll use the executable to study how the dimensionality of the convolutional layer changes, as a function of the supplied arguments.\n\nRun `python path/to/conv-dims.py` and look at the output. It should appear as follows:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309659,
+              "key": "71dd0ff2-d193-4cbf-a800-a9c532660025",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5913f6c3_conv-dims/conv-dims.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/71dd0ff2-d193-4cbf-a800-a9c532660025",
+              "caption": "",
+              "alt": null,
+              "width": 788,
+              "height": 226,
+              "instructor_notes": null
+            },
+            {
+              "id": 309660,
+              "key": "cd3594c5-51fb-443b-819b-fa89112dcd96",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Do the dimensions of the convolutional layer line up with your expectations?  \n\nFeel free to change the values assigned to the arguments (`filters`, `kernel_size`, etc) in your `conv-dims.py` file.  \n\nTake note of  how the __number of parameters__ in the convolutional layer changes. This corresponds to the value under `Param #` in the printed output.  In the figure above, the convolutional layer has `80` parameters.\n\nAlso notice how the __shape__ of the convolutional layer changes.  This corresponds to the value under `Output Shape` in the printed output.  In the figure above, `None` corresponds to the batch size, and the convolutional layer has a height of `100`, width of `100`, and depth of `16`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309665,
+              "key": "9e0276f9-7212-4de5-bbb8-b9be7d8c0275",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Formula: Number of Parameters in a Convolutional Layer\n\nThe number of parameters in a convolutional layer depends on the supplied values of `filters`, `kernel_size`, and `input_shape`.  Let's define a few variables:\n- `K` - the number of filters in the convolutional layer \n- `F` - the height and width of the convolutional filters\n- `D_in` - the depth of the previous layer\n\nNotice that `K` = `filters`, and `F` = `kernel_size`.  Likewise, `D_in` is the last value in the `input_shape` tuple.\n\nSince there are `F*F*D_in` weights per filter, and the convolutional layer is composed of `K` filters, the total number of weights in the convolutional layer is `K*F*F*D_in`.  Since there is one bias term per filter, the convolutional layer has `K` biases.  Thus, the __ number of parameters__ in the convolutional layer is given by `K*F*F*D_in + K`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309674,
+              "key": "5d719e19-d877-4eda-a18a-1f8edcdc2a30",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Formula: Shape of a Convolutional Layer\n\nThe shape of a convolutional layer depends on the supplied values of `kernel_size`, `input_shape`, `padding`, and `stride`.  Let's define a few variables:\n- `K` - the number of filters in the convolutional layer\n- `F` - the height and width of the convolutional filters\n- `S` - the stride of the convolution\n- `H_in` - the height of the previous layer \n- `W_in` - the width of the previous layer\n\nNotice that `K` = `filters`, `F` = `kernel_size`, and `S` = `stride`.  Likewise, `H_in` and `W_in` are the first and second value of the `input_shape` tuple, respectively.\n\nThe __depth__ of the convolutional layer will always equal the number of filters `K`. \n\nIf `padding = 'same'`, then the spatial dimensions of the convolutional layer are the following:\n- __height__ = ceil(float(`H_in`) / float(`S`))\n- __width__ = ceil(float(`W_in`) / float(`S`))\n\nIf `padding = 'valid'`, then the spatial dimensions of the convolutional layer are the following:\n- __height__ = ceil(float(`H_in` - `F` + 1) / float(`S`))\n- __width__ = ceil(float(`W_in` - `F` + 1) / float(`S`))",
+              "instructor_notes": ""
+            },
+            {
+              "id": 310184,
+              "key": "470447dd-1a2b-4d66-ab30-e67cd6bd4364",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz\n\nPlease change the `conv-dims.py` file, so that it appears as follows:\n\n```python\nfrom keras.models import Sequential\nfrom keras.layers import Conv2D\n\nmodel = Sequential()\nmodel.add(Conv2D(filters=32, kernel_size=3, strides=2, padding='same', \n    activation='relu', input_shape=(128, 128, 3)))\nmodel.summary()\n```\n\nRun `python path/to/conv-dims.py`, and use the output to answer the questions below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 310178,
+              "key": "c6ecf430-cd84-4eb6-afe0-f90478dcfc14",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How many parameters does the convolutional layer have?",
+                "answers": [
+                  {
+                    "id": "a1494523970948",
+                    "text": "902",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494523979905",
+                    "text": "306",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494523984948",
+                    "text": "896",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1494523993610",
+                    "text": "1034",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 310180,
+              "key": "91aebcb4-c32a-4539-b6c4-129f04c124c7",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What is the depth of the convolutional layer?",
+                "answers": [
+                  {
+                    "id": "a1494524042602",
+                    "text": "3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494524071259",
+                    "text": "16",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494524073167",
+                    "text": "32",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1494524074579",
+                    "text": "64",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 310182,
+              "key": "b69eaa05-baff-4bc5-93ac-28cc186e0e12",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What is the width of the convolutional layer?",
+                "answers": [
+                  {
+                    "id": "a1494524146228",
+                    "text": "3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494524158985",
+                    "text": "16",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494524165039",
+                    "text": "32",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494524166160",
+                    "text": "64",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 289652,
+          "key": "65c0a599-ce95-4bfc-a00e-16d37e48a5cf",
+          "title": "Pooling Layers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308634,
+              "key": "d5ca5083-58c3-483e-8877-841eedd987a3",
+              "title": "Pooling Layers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OkkIZNs7Cyc",
+                "china_cdn_id": "OkkIZNs7Cyc.mp4"
+              }
+            },
+            {
+              "id": 300362,
+              "key": "f4989b33-5ed7-4ecb-9af9-48b0e78b39aa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resource\n\n- Check out the Keras [documentation](https://keras.io/layers/pooling/) on different types of pooling layers!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289653,
+          "key": "6e12c61e-7a45-4f64-b255-84e464bf8633",
+          "title": "Max Pooling Layers in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289948,
+              "key": "23b82900-48fd-4b99-9944-1ee5b28ec700",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e423f1_maxpool/maxpool.jpeg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/23b82900-48fd-4b99-9944-1ee5b28ec700",
+              "caption": "__Max pooling with 2x2 window and stride 2__\n\nImage source: http://cs231n.github.io/convolutional-networks/",
+              "alt": null,
+              "width": 787,
+              "height": 368,
+              "instructor_notes": null
+            },
+            {
+              "id": 289910,
+              "key": "9ac394ee-3a03-4db1-9f8d-7ae88a9b498b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Max Pooling Layers in Keras\n\nTo create a max pooling layer in Keras, you must first import the necessary module:\n\n```\nfrom keras.layers import MaxPooling2D\n```\n\nThen, you can create a convolutional layer by using the following format:\n\n```\nMaxPooling2D(pool_size, strides, padding)\n```\n\n### Arguments\n\nYou must include the following argument:\n- `pool_size` - Number specifying the height and width of the pooling window.\n\nThere are some additional, optional arguments that you might like to tune:\n- `strides` - The vertical and horizontal stride.  If you don't specify anything, `strides` will default to `pool_size`.\n- `padding` - One of `'valid'` or `'same'`.  If you don't specify anything, `padding` is set to `'valid'`.\n\n__NOTE__: It is possible to represent both `pool_size` and `strides` as either a number or a tuple.\n\nYou are also encouraged to read the official [documentation](https://keras.io/layers/pooling/#maxpooling2d).\n\n### Example\n\nSay I'm constructing a CNN, and I'd like to reduce the dimensionality of a convolutional layer by following it with a max pooling layer.  Say the convolutional layer has size `(100, 100, 15)`, and I'd like the max pooling layer to have size `(50, 50, 15)`.  I can do this by using a 2x2 window in my max pooling layer, with a stride of 2, which could be constructed in the following line of code:\n```\n    MaxPooling2D(pool_size=2, strides=2)\n```\nIf you'd instead like to use a stride of 1, but still keep the size of the window at 2x2, then you'd use:\n```\n    MaxPooling2D(pool_size=2, strides=1)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308555,
+              "key": "cd3bfd5e-d0fe-4beb-bdbe-f00505365b86",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Checking the Dimensionality of Max Pooling Layers\n\nCopy and paste the following code into a Python executable named `pool-dims.py`:\n```python\nfrom keras.models import Sequential\nfrom keras.layers import MaxPooling2D\n\nmodel = Sequential()\nmodel.add(MaxPooling2D(pool_size=2, strides=2, input_shape=(100, 100, 15)))\nmodel.summary()\n```\nRun `python path/to/pool-dims.py` and look at the output. It should appear as follows:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308557,
+              "key": "39808d71-9aa9-40f8-93e6-da03004a26b3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910d4eb_pooling-dims/pooling-dims.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/39808d71-9aa9-40f8-93e6-da03004a26b3",
+              "caption": "",
+              "alt": null,
+              "width": 786,
+              "height": 220,
+              "instructor_notes": null
+            },
+            {
+              "id": 308558,
+              "key": "e69d6ee6-7917-402d-a873-2d6414b64339",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Feel free to change the arguments in your `pool-dims.py` file, and check how the shape of the max pooling layer changes.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 292932,
+          "key": "9cf863c1-e33a-41c8-a3de-43eb6e536071",
+          "title": "CNNs for Image Classification",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348650,
+              "key": "8fc6530a-c535-4700-9ef4-d8472091d247",
+              "title": "CNNs For Image Classification",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "l9vg_1YUlzg",
+                "china_cdn_id": "l9vg_1YUlzg.mp4"
+              }
+            },
+            {
+              "id": 300364,
+              "key": "e19740e2-cf8a-48f9-8fdb-5f1b8be2f10a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Just as with neural networks, we create a CNN in Keras by first creating a `Sequential` model.\n\n```python\nfrom keras.models import Sequential\n```\nWe import several layers, including layers that are familiar from neural networks, and new layers that we learned about in this lesson.\n\n```python\nfrom keras.layers import Conv2D, MaxPooling2D, Flatten, Dense\n```\n\nAs with neural networks, we add layers to the network by using the `.add()` method:\n\n```python\nmodel = Sequential()\nmodel.add(Conv2D(filters=16, kernel_size=2, padding='same', activation='relu', input_shape=(32, 32, 3)))\nmodel.add(MaxPooling2D(pool_size=2))\nmodel.add(Conv2D(filters=32, kernel_size=2, padding='same', activation='relu'))\nmodel.add(MaxPooling2D(pool_size=2))\nmodel.add(Conv2D(filters=64, kernel_size=2, padding='same', activation='relu'))\nmodel.add(MaxPooling2D(pool_size=2))\nmodel.add(Flatten())\nmodel.add(Dense(500, activation='relu'))\nmodel.add(Dense(10, activation='softmax'))\n```\n\nThe network begins with a sequence of three convolutional layers, followed by max pooling layers.  These first six layers are designed to take the input array of image pixels and convert it to an array where all of the spatial information has been squeezed out, and only information encoding the content of the image remains.  The array is then flattened to a vector in the seventh layer of the CNN.  It is followed by two dense layers designed to further elucidate the content of the image.  The final layer has one entry for each object class in the dataset, and has a softmax activation function, so that it returns probabilities.\n\n__NOTE__: In the video, you might notice that convolutional layers are specified with `Convolution2D` instead of `Conv2D`.  Either is fine for Keras 2.0, but `Conv2D` is preferred.\n\n### Things to Remember\n\n- Always add a ReLU activation function to the `Conv2D` layers in your CNN.  With the exception of the final layer in the network, `Dense` layers should also have a ReLU activation function.\n- When constructing a network for classification, the final layer in the network should be a `Dense` layer with a softmax activation function.  The number of nodes in the final layer should equal the total number of classes in the dataset.\n- Have fun!  If you start to feel discouraged, we recommend that you check out [Andrej Karpathy's tumblr](https://lossfunctions.tumblr.com/) with user-submitted loss functions, corresponding to models that gave their owners some trouble.  Recall that the loss is supposed to decrease during training.  These plots show very different behavior :).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289655,
+          "key": "1ded75bd-7399-41cc-b491-f031218e9606",
+          "title": "CNNs in Keras: Practical Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308636,
+              "key": "0908a7e4-c6b2-4732-896a-c3aedcc9422f",
+              "title": "CNNs in Keras: Practical Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "faFvmGDwXX0",
+                "china_cdn_id": "faFvmGDwXX0.mp4"
+              }
+            },
+            {
+              "id": 293706,
+              "key": "b9f9d86b-ad9d-4b2a-aa1a-0d948a2eab9f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you have not yet launched a GPU-enabled server with AWS, you are strongly encouraged to do so before running the notebooks from this video.  While it is possible to train the notebooks on your CPU, an AWS GPU instance will be much faster.\n\nThe Jupyter notebooks described in the video can be accessed from the `aind2-cnn` GitHub [repository](https://github.com/udacity/aind2-cnn).  Navigate to the __cifar10-classification/__ folder and open __cifar10_mlp.ipynb__ and __cifar10_cnn.ipynb__.\n\n### A Note on the Validation Set\n\n[Earlier in the lesson](https://github.com/udacity/aind2-cnn/blob/master/mnist-mlp/mnist_mlp.ipynb), we trained a neural network with validation by setting the `validation_split` argument in `model.fit` to 0.2.  This removed the final 20% of the training data, which was instead used as validation data.  In the notebook for this video, instead of having Keras split off the validation set for us, we hard-code the split ourselves.  \n\n### Optional Resources\n- Here's a [cheat sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Keras_Cheat_Sheet_Python.pdf) for specifying neural networks (including CNNs!) in Keras.\n- Check out the CIFAR-10 Competition's [winning architecture](http://blog.kaggle.com/2015/01/02/cifar-10-competition-winners-interviews-with-dr-ben-graham-phil-culliton-zygmunt-zajac/)!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308205,
+          "key": "7c124a8e-4e7a-49f3-b4e5-5081b7e13e0a",
+          "title": "Mini Project: CNNs in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308206,
+              "key": "b3d4d116-d3e2-4b36-a5fa-13df6315b750",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Mini Project: CNNs in Keras\nIn this mini project, you'll modify the architecture of the neural network in [cifar10_cnn.ipynb](https://github.com/udacity/aind2-cnn/blob/master/cifar10-classification/cifar10_cnn.ipynb).  [Starter code](https://github.com/udacity/aind2-cnn) is provided on Github.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308207,
+              "key": "779c18a3-e9aa-48c9-8e67-93b27440f459",
+              "title": "Instructions",
+              "semantic_type": "ReflectAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "title": null,
+                "semantic_type": "TextQuestion",
+                "evaluation_id": null,
+                "text": "Specify a new CNN architecture in __Step 5: Define the Model Architecture__ in the notebook.  If you need more inspiration, check out [this link](https://github.com/fchollet/keras/blob/master/examples/cifar10_cnn.py).\n\nTrain your new model.  Once you've finished, check the accuracy on the test dataset, and report the percentage in the text box below.\n\n_Feel free to amend other parts of the notebook: for instance, what happens when you use a different [optimizer](https://keras.io/optimizers/)?_  "
+              },
+              "answer": {
+                "text": "Thank you for completing the mini project!",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 289656,
+          "key": "1a89db76-f327-43aa-b3f0-8fcceb561d68",
+          "title": "Image Augmentation in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309065,
+              "key": "cb48b464-0b24-4333-9d69-e4d124d41d7b",
+              "title": "Image Augmentation in Keras",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "odStujZq3GY",
+                "china_cdn_id": "odStujZq3GY.mp4"
+              }
+            },
+            {
+              "id": 290450,
+              "key": "e25a6e9e-83e1-444a-99e7-2729b2dea049",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you have not yet launched a GPU-enabled server with AWS, you are strongly encouraged to do so before running the notebook from this video.  While it is possible to train the notebook on your CPU, an AWS GPU instance will be much faster.\n\nThe Jupyter notebook described in the video can be accessed from the `aind2-cnn` GitHub [repository](https://github.com/udacity/aind2-cnn).  Navigate to the __cifar10-augmentation/__ folder and open __cifar10_augmentation.ipynb__.\n\n### Note on `steps_per_epoch`\n\nRecall that `fit_generator` took many parameters, including\n\n```python\nsteps_per_epoch = x_train.shape[0] / batch_size\n```\nwhere `x_train.shape[0]` corresponds to the number of unique samples in the training dataset `x_train`.  By setting `steps_per_epoch` to this value, we ensure that the model sees `x_train.shape[0]` augmented images in each epoch.\n\n### Optional Resources\n\n* Read this [great blog post](http://machinelearningmastery.com/image-augmentation-deep-learning-keras/) that visualizes augmentations of the MNIST dataset.\n* Check out this [detailed implementation](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) that uses augmentation to boost performance on a Kaggle dataset.\n* Read the Keras [documentation](https://keras.io/preprocessing/image/) on the ImageDataGenerator class.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 303854,
+          "key": "16a83ecf-dd95-4bbe-8760-57ccc8f26df7",
+          "title": "Mini Project: Image Augmentation in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 303855,
+              "key": "34e17861-e209-4fc3-9f08-6854f1a05c0d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Mini Project: Image Augmentation in Keras\n\nRead more about data augmentation in Keras by perusing the [documentation](https://keras.io/preprocessing/image/).  \n\nIn this mini-project, you'll modify the data augmentation in [cifar10_augmentation.ipynb](https://github.com/udacity/aind2-cnn/blob/master/cifar10-augmentation/cifar10_augmentation.ipynb) and examine how the accuracy of your network changes. [Starter code](https://github.com/udacity/aind2-cnn) is provided on Github.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 303856,
+              "key": "40f7afa2-cbf9-436e-b1eb-7818588c2ac8",
+              "title": "Instructions",
+              "semantic_type": "ReflectAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "title": null,
+                "semantic_type": "TextQuestion",
+                "evaluation_id": null,
+                "text": "Modify __Step 5: Create and Configure Augmented Image Generator__ in the notebook to use different settings for data augmentation.  You can peruse the list of available arguments [here](https://keras.io/preprocessing/image/).  \n\nOnce you've changed the settings, train the model. Check the accuracy on the test dataset, and report the percentage in the text box below."
+              },
+              "answer": {
+                "text": "Thank you for completing the mini project!",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 289657,
+          "key": "a2bd1e2d-ad39-406f-a8de-81b599d22afb",
+          "title": "Groundbreaking CNN Architectures",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 310453,
+              "key": "54539796-cb91-4fe5-9982-d72f35a2ea1d",
+              "title": "Groundbreaking CNN Architectures",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ddrB-mhMfkY",
+                "china_cdn_id": "ddrB-mhMfkY.mp4"
+              }
+            },
+            {
+              "id": 292374,
+              "key": "c80c72ec-b0ff-49cd-adb7-4e86a854860e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resources\n- Check out the [AlexNet](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) paper!\n- Read more about [VGGNet](https://arxiv.org/pdf/1409.1556.pdf) here.\n- The [ResNet](https://arxiv.org/pdf/1512.03385v1.pdf) paper can be found here.\n- Here's the Keras [documentation](https://keras.io/applications/) for accessing some famous CNN architectures.\n- Read this [detailed treatment](http://neuralnetworksanddeeplearning.com/chap5.html) of the vanishing gradients problem.\n- Here's a GitHub [repository](https://github.com/jcjohnson/cnn-benchmarks) containing benchmarks for different CNN architectures.\n- Visit the [ImageNet Large Scale Visual Recognition Competition (ILSVRC)](http://www.image-net.org/challenges/LSVRC/) website.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 310146,
+          "key": "86518a21-c85a-400b-a50c-8705ed93ca83",
+          "title": "Visualizing CNNs (Part 1)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791843,
+              "key": "d3164b09-044e-438f-bb0a-98ad808ddb6d",
+              "title": "Visualizando CNNs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mnqS_EhEZVg",
+                "china_cdn_id": "mnqS_EhEZVg.mp4"
+              }
+            },
+            {
+              "id": 310148,
+              "key": "d199b571-1609-495d-9252-25b8b4979290",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### (REALLY COOL) Optional Resources\n\nIf you would like to know more about interpreting CNNs and convolutional layers in particular, you are encouraged to check out these resources:\n\n* Here's a [section](http://cs231n.github.io/understanding-cnn/) from the Stanford's CS231n course on visualizing what CNNs learn.\n* Check out this [demonstration](https://aiexperiments.withgoogle.com/what-neural-nets-see) of a cool [OpenFrameworks](http://openframeworks.cc/) app that visualizes CNNs in real-time, from user-supplied video!\n* Here's a [demonstration](https://www.youtube.com/watch?v=AgkfIQ4IGaM&t=78s) of another visualization tool for CNNs.  If you'd like to learn more about how these visualizations are made, check out this [video](https://www.youtube.com/watch?v=ghEmQSxT6tw&t=5s).\n* Read this [Keras blog post](https://blog.keras.io/how-convolutional-neural-networks-see-the-world.html) on visualizing how CNNs see the world.  In this post, you can find an accessible introduction to Deep Dreams, along with code for writing your own deep dreams in Keras.  When you've read that:\n * Also check out this [music video](https://www.youtube.com/watch?v=XatXy6ZhKZw) that makes use of Deep Dreams (look at 3:15-3:40)!\n * Create your own Deep Dreams (without writing any code!) using this [website](https://deepdreamgenerator.com/).\n\n* If you'd like to read more about interpretability of CNNs:\n * Here's an [article](https://blog.openai.com/adversarial-example-research/) that details some dangers from using deep learning models (that are not yet interpretable) in real-world applications.\n * There's a lot of active research in this area.  [These authors](https://arxiv.org/abs/1611.03530) recently made a step in the right direction.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 811266,
+              "key": "34c349d3-4fd3-4b88-94a9-5222761788d7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289658,
+          "key": "cbf65dc4-c0b4-44c5-81c6-5997e409cb75",
+          "title": "Visualizing CNNs (Part 2)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 292154,
+              "key": "a9078e00-84d0-4684-9268-69641e8c0e7c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Visualizing CNNs\n\nLet’s look at an example CNN to see how it works in action. \n\nThe CNN we will look at is trained on ImageNet as described in [this paper](hhttps://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf) by Zeiler and Fergus. In the images below (from the same paper), we’ll see *what* each layer in this network detects and see *how* each layer detects more and more complex ideas.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292155,
+              "key": "d02fb51e-3aa3-4bfd-a304-d856020529ae",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e91f1e_layer-1-grid/layer-1-grid.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d02fb51e-3aa3-4bfd-a304-d856020529ae",
+              "caption": "Example patterns that cause activations in the first layer of the network. These range from simple diagonal lines (top left) to green blobs (bottom middle).",
+              "alt": null,
+              "width": 165,
+              "height": 171,
+              "instructor_notes": null
+            },
+            {
+              "id": 292156,
+              "key": "6e49a260-f4f5-4b72-82dd-5a0bfb5d2e42",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The images above are from Matthew Zeiler and Rob Fergus' [deep visualization toolbox](https://www.youtube.com/watch?v=ghEmQSxT6tw), which lets us visualize what each layer in a CNN focuses on. \n\nEach image in the above grid represents a pattern that causes the neurons in the first layer to activate - in other words, they are patterns that the first layer recognizes. The top left image shows a -45 degree line, while the middle top square shows a +45 degree line. These squares are shown below again for reference.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292157,
+              "key": "4824ad96-b35c-4784-bad0-74e6054b10c4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e91f83_diagonal-line-1/diagonal-line-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4824ad96-b35c-4784-bad0-74e6054b10c4",
+              "caption": "As visualized here, the first layer of the CNN can recognize -45 degree lines.",
+              "alt": null,
+              "width": 55,
+              "height": 53,
+              "instructor_notes": null
+            },
+            {
+              "id": 292158,
+              "key": "e1a8fe1e-ec63-41e5-a614-9c144300a774",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e91f91_diagonal-line-2/diagonal-line-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e1a8fe1e-ec63-41e5-a614-9c144300a774",
+              "caption": "The first layer of the CNN is also able to recognize +45 degree lines, like the one above.",
+              "alt": null,
+              "width": 58,
+              "height": 58,
+              "instructor_notes": null
+            },
+            {
+              "id": 292159,
+              "key": "c87505ca-ede2-4272-8475-97a94a43f484",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's now see some example images that cause such activations. The below grid of images all activated the -45 degree line. Notice how they are all selected despite the fact that they have different colors, gradients, and patterns.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292160,
+              "key": "dfe07a61-ab59-4f69-b92a-00e6649654f0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e91fd5_grid-layer-1/grid-layer-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dfe07a61-ab59-4f69-b92a-00e6649654f0",
+              "caption": "Example patches that activate the -45 degree line detector in the first layer.",
+              "alt": null,
+              "width": 146,
+              "height": 143,
+              "instructor_notes": null
+            },
+            {
+              "id": 292161,
+              "key": "af12a05a-0086-418e-afa8-cbfb4cc57e8a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So, the first layer of our CNN clearly picks out very simple shapes and patterns like lines and blobs.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292162,
+              "key": "ea684e8a-8782-425c-8bc2-0d16a5c2307d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Layer 2",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292163,
+              "key": "43f6b07b-8b20-4219-986e-7e01d4d7e458",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e92033_screen-shot-2016-11-24-at-12.09.02-pm/screen-shot-2016-11-24-at-12.09.02-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/43f6b07b-8b20-4219-986e-7e01d4d7e458",
+              "caption": "A visualization of the second layer in the CNN. Notice how we are picking up more complex ideas like circles and stripes. The gray grid on the left represents how this layer of the CNN activates (or \"what it sees\") based on the corresponding images from the grid on the right.",
+              "alt": null,
+              "width": 1888,
+              "height": 922,
+              "instructor_notes": null
+            },
+            {
+              "id": 292164,
+              "key": "3d661b3d-9191-40b8-945c-1e9bf9c373e3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The second layer of the CNN  captures complex ideas. \n\nAs you see in the image above, the second layer of the CNN recognizes circles (second row, second column), stripes (first row, second column), and rectangles (bottom right). \n\n**The CNN learns to do this on its own.** There is no special instruction for the CNN to focus on more complex objects in deeper layers. That's just how it normally works out when you feed training data into a CNN.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292165,
+              "key": "d6d4249d-da31-4293-96e3-8d5953bb06b8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Layer 3",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292166,
+              "key": "97255faf-06d5-493c-a395-d21142a18fea",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e920b9_screen-shot-2016-11-24-at-12.09.24-pm/screen-shot-2016-11-24-at-12.09.24-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/97255faf-06d5-493c-a395-d21142a18fea",
+              "caption": "A visualization of the third layer in the CNN. The gray grid on the left represents how this layer of the CNN activates (or \"what it sees\") based on the corresponding images from the grid on the right.",
+              "alt": null,
+              "width": 2294,
+              "height": 848,
+              "instructor_notes": null
+            },
+            {
+              "id": 292167,
+              "key": "f957755c-472f-4fd6-afe4-1107631fc097",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The third layer picks out complex combinations of features from the second layer. These include things like grids, and honeycombs (top left), wheels (second row, second column), and even faces (third row, third column).\n\nWe'll skip layer 4, which continues this progression, and jump right to the fifth and final layer of this CNN.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292168,
+              "key": "239e3388-6221-4cf6-9a53-e503cab9de4f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Layer 5",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292169,
+              "key": "80c7e4f7-d5e5-4733-bfed-b9c6d03c9772",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e9210c_screen-shot-2016-11-24-at-12.08.11-pm/screen-shot-2016-11-24-at-12.08.11-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/80c7e4f7-d5e5-4733-bfed-b9c6d03c9772",
+              "caption": "A visualization of the fifth and final layer of the CNN. The gray grid on the left represents how this layer of the CNN activates (or \"what it sees\") based on the corresponding images from the grid on the right.",
+              "alt": null,
+              "width": 1198,
+              "height": 1484,
+              "instructor_notes": null
+            },
+            {
+              "id": 292170,
+              "key": "f0d1fa5e-f4e7-43a6-8068-1aaa4bed6c6a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The last layer picks out the highest order ideas that we care about for classification, like dog faces, bird faces, and bicycles. \n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289659,
+          "key": "8c202ff3-aab5-46c3-8ed1-0154fa7b566b",
+          "title": "Transfer Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309063,
+              "key": "60bef3fb-bc83-4d1c-a492-d186f181feee",
+              "title": "Transfer Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LHG5FltaR6I",
+                "china_cdn_id": "LHG5FltaR6I.mp4"
+              }
+            },
+            {
+              "id": 290488,
+              "key": "a9dbb85a-3316-40fd-8614-b5a94149688b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Transfer Learning\n\nTransfer learning involves taking a pre-trained neural network and adapting the neural network to a new, different data set. \n\nDepending on both:\n* the size of the new data set, and\n* the similarity of the new data set to the original data set\n\nthe approach for using transfer learning will be different. There are four main cases:\n1. new data set is small, new data is similar to original training data\n2. new data set is small, new data is different from original training data\n3. new data set is large, new data is similar to original training data\n4. new data set is large, new data is different from original training data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291795,
+              "key": "3fae647e-287e-452b-9cba-c902b63e22a6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80aac_02-guide-how-transfer-learning-v3-01/02-guide-how-transfer-learning-v3-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3fae647e-287e-452b-9cba-c902b63e22a6",
+              "caption": "Four Cases when Using Transfer Learning",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290491,
+              "key": "87e39757-ec37-4c6a-b67e-8a7b23155c3b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A large data set might have one million images. A small data could have two-thousand images. The dividing line between a large data set and small data set is somewhat subjective. Overfitting is a concern when using transfer learning with a small data set. \n\nImages of dogs and images of wolves would be considered similar; the images would share common characteristics. A data set of flower images would be different from a data set of dog images. \n\nEach of the four transfer learning cases has its own approach. In the following sections, we will look at each case one by one.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290493,
+              "key": "c2d99351-5835-4090-a9de-3ea857038c17",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Demonstration Network\n\nTo explain how each situation works, we will start with a generic pre-trained convolutional neural network and explain how to adjust the network for each case. Our example network contains three convolutional layers and three fully connected layers:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291796,
+              "key": "2fcc5caf-46c3-4915-ac20-9696960fb9b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80ae2_02-guide-how-transfer-learning-v3-02/02-guide-how-transfer-learning-v3-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2fcc5caf-46c3-4915-ac20-9696960fb9b7",
+              "caption": "General Overview of a Neural Network",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290494,
+              "key": "7a9ccbc5-6cde-413e-920b-1a0b653f902e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is an generalized overview of what the convolutional neural network does: \n* the first layer will detect edges in the image\n* the second layer will detect shapes\n* the third convolutional layer detects higher level features\n\nEach transfer learning case will use the pre-trained convolutional neural network in a different way.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290496,
+              "key": "dfcd5869-deea-4484-bc4d-390b53194d75",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 1: Small Data Set, Similar Data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291797,
+              "key": "85c5bf9f-6e61-42c2-b084-f73360fc128b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80b0b_02-guide-how-transfer-learning-v3-03/02-guide-how-transfer-learning-v3-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/85c5bf9f-6e61-42c2-b084-f73360fc128b",
+              "caption": "Case 1: Small Data Set with Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290497,
+              "key": "69f3b507-7f37-4aae-98ef-955d0d7f7c86",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is small and similar to the original training data:\n- slice off the end of the neural network\n- add a new fully connected layer that matches the number of classes in the new data set\n- randomize the weights of the new fully connected layer; freeze all the weights from the pre-trained network\n- train the network to update the weights of the new fully connected layer\n\nTo avoid overfitting on the small data set, the weights of the original network will be held constant rather than re-training the weights. \n\nSince the data sets are similar, images from each data set will have similar higher level features. Therefore most or all of the pre-trained neural network layers already contain relevant information about the new data set and should be kept.\n\nHere's how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291798,
+              "key": "47d819b4-2472-4969-a068-4125b946a937",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80b31_02-guide-how-transfer-learning-v3-04/02-guide-how-transfer-learning-v3-04.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/47d819b4-2472-4969-a068-4125b946a937",
+              "caption": "Neural Network with Small Data Set, Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290498,
+              "key": "1046b9cd-b925-452c-b0c9-a6a0312c1313",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 2: Small Data Set, Different Data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291799,
+              "key": "3d0fbbd6-c73d-496c-be1c-a63e2f655122",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80b55_02-guide-how-transfer-learning-v3-05/02-guide-how-transfer-learning-v3-05.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3d0fbbd6-c73d-496c-be1c-a63e2f655122",
+              "caption": "Case 2: Small Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290499,
+              "key": "6410ebbe-2758-47aa-a0fb-0f3baeb54f3f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is small and different from the original training data:\n* slice off most of the pre-trained layers near the beginning of the network\n* add to the remaining pre-trained layers a new fully connected layer that matches the number of classes in the new data set\n* randomize the weights of the new fully connected layer; freeze all the weights from the pre-trained network\n* train the network to update the weights of the new fully connected layer\n\nBecause the data set is small, overfitting is still a concern. To combat overfitting, the weights of the original neural network will be held constant, like in the first case.\n\nBut the original training set and the new data set do not share higher level features. In this case, the new network will only use the layers containing lower level features.\n\nHere is how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291800,
+              "key": "298a5f0f-ac69-4581-b009-1a5763bef338",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80b82_02-guide-how-transfer-learning-v3-06/02-guide-how-transfer-learning-v3-06.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/298a5f0f-ac69-4581-b009-1a5763bef338",
+              "caption": "Neural Network with Small Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290500,
+              "key": "757ceb3a-602a-4a0d-9b2f-d82457a6dd41",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 3: Large Data Set, Similar Data\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291801,
+              "key": "a0ea6989-608b-43e1-a571-b25d633513d7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80ba3_02-guide-how-transfer-learning-v3-07/02-guide-how-transfer-learning-v3-07.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a0ea6989-608b-43e1-a571-b25d633513d7",
+              "caption": "Case 3: Large Data Set, Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290501,
+              "key": "b514b50f-e5de-4f55-a4d9-44242127f5df",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is large and similar to the original training data:\n- remove the last fully connected layer and replace with a layer matching the number of classes in the new data set\n- randomly initialize the weights in the new fully connected layer\n- initialize the rest of the weights using the pre-trained weights \n-  re-train the entire neural network\n\nOverfitting is not as much of a concern when training on a large data set; therefore, you can re-train all of the weights.\n\nBecause the original training set and the new data set share higher level features, the entire neural network is used as well.\n\nHere is how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291802,
+              "key": "5813bdee-1d46-4188-88c2-971967496348",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80bc3_02-guide-how-transfer-learning-v3-08/02-guide-how-transfer-learning-v3-08.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5813bdee-1d46-4188-88c2-971967496348",
+              "caption": "Neural Network with Large Data Set, Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290502,
+              "key": "3cf0f17b-9294-49f8-b179-97daa317753e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 4: Large Data Set, Different Data\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291803,
+              "key": "09d40fc9-6815-4ce3-9469-cddb99ce07b0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80bf7_02-guide-how-transfer-learning-v3-09/02-guide-how-transfer-learning-v3-09.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/09d40fc9-6815-4ce3-9469-cddb99ce07b0",
+              "caption": "Case 4: Large Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 290504,
+              "key": "8ded10fc-6af4-4b9e-933b-5c8ba5dcfd2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is large and different from the original training data:\n- remove the last fully connected layer and replace with a layer matching the number of classes in the new data set\n- retrain the network from scratch with randomly initialized weights\n- alternatively, you could just use the same strategy as the \"large and similar\" data case\n\nEven though the data set is different from the training data, initializing the weights from the pre-trained network might make training faster. So this case is exactly the same as the case with a large, similar data set.\n\nIf using the pre-trained network as a starting point does not produce a successful model, another option is to randomly initialize the convolutional neural network weights and train the network from scratch.\n\nHere is how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 291804,
+              "key": "061f19fd-25b0-40bf-bacd-4451edcbb20b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80c1c_02-guide-how-transfer-learning-v3-10/02-guide-how-transfer-learning-v3-10.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/061f19fd-25b0-40bf-bacd-4451edcbb20b",
+              "caption": "Neural Network with Large Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 292365,
+              "key": "8b2de421-1cda-4494-a572-344568a60b78",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optional Resources\n\n- Check out this [research paper](https://arxiv.org/pdf/1411.1792.pdf) that systematically analyzes the transferability of features learned in pre-trained CNNs.\n- Read the [Nature publication](http://www.nature.com/articles/nature21056.epdf?referrer_access_token=_snzJ5POVSgpHutcNN4lEtRgN0jAjWel9jnR3ZoTv0NXpMHRAJy8Qn10ys2O4tuP9jVts1q2g1KBbk3Pd3AelZ36FalmvJLxw1ypYW0UxU7iShiMp86DmQ5Sh3wOBhXDm9idRXzicpVoBBhnUsXHzVUdYCPiVV0Slqf-Q25Ntb1SX_HAv3aFVSRgPbogozIHYQE3zSkyIghcAppAjrIkw1HtSwMvZ1PXrt6fVYXt-dvwXKEtdCN8qEHg0vbfl4_m&tracking_referrer=edition.cnn.com) detailing Sebastian Thrun's cancer-detecting CNN!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 289660,
+          "key": "86b98dc6-8f98-4e32-9782-34dd077d5360",
+          "title": "Transfer Learning in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 310804,
+              "key": "f0e931df-b011-43f5-b37e-6b343fc8d118",
+              "title": "Transfer Learning in Keras",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HsIAznMM1LA",
+                "china_cdn_id": "HsIAznMM1LA.mp4"
+              }
+            },
+            {
+              "id": 291912,
+              "key": "43f6c345-b8fe-4605-a1ad-d954bf34777a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The Jupyter notebook described in the video can be accessed from the `aind2-cnn` GitHub repository linked [here](https://github.com/udacity/aind2-cnn).  Navigate to the __transfer-learning/__ folder and open __transfer_learning.ipynb__.  If you'd like to learn how to calculate your own bottleneck features, look at __bottleneck_features.ipynb__.  (You may have trouble running __bottleneck_features.ipynb__ on an AWS GPU instance - if so, feel free to use the notebook on your local CPU/GPU instead!)\n\n### Optional Resources\n\n- Here's the [first research paper](http://cnnlocalization.csail.mit.edu/Zhou_Learning_Deep_Features_CVPR_2016_paper.pdf) to propose GAP layers for object localization.\n- Check out this [repository](https://github.com/alexisbcook/ResNetCAM-keras) that uses a CNN for object localization.\n- Watch this [video demonstration](https://www.youtube.com/watch?v=fZvOy0VXWAI) of object localization with a CNN.\n- Check out this [repository](https://github.com/alexisbcook/keras_transfer_cifar10) that uses visualization techniques to better understand bottleneck features.\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

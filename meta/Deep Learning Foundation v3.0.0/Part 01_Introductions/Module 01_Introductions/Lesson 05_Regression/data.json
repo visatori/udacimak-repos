@@ -1,0 +1,385 @@
+{
+  "data": {
+    "lesson": {
+      "id": 256010,
+      "key": "22c76bdf-836e-4a99-a81b-43def2579c6d",
+      "title": "Regression",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about linear regression and logistic regression models. These simple machine learning models are the building blocks of neural networks.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/22c76bdf-836e-4a99-a81b-43def2579c6d/256010/1544457493142/Regression+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/22c76bdf-836e-4a99-a81b-43def2579c6d/256010/1544457489648/Regression+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 259005,
+          "key": "41013912-8420-42d7-beaa-a335c817afb7",
+          "title": "Welcome to Week One",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 259006,
+              "key": "453e578b-33cc-41b3-a707-1b0714a2909b",
+              "title": "Welcome to Week One",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "10M2DnJuziE",
+                "china_cdn_id": "10M2DnJuziE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 263129,
+          "key": "4159b7f0-a447-4277-9c8b-895362aeb7f7",
+          "title": "Preparing for Siraj's video",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 263131,
+              "key": "735ab99f-3598-4be7-93dd-9cc75f2deeae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Environment\nIn the upcoming video, Siraj will be implementing linear regression in Python. If you'd like to follow along, set up a conda environment with the following:\n\n* Python 2\n     * `>> conda create -n siraj-regression python=2`\n* pandas, matplotlib, scikit-learn\n    * `>> conda install pandas matplotlib scikit-learn`\n\n\n### Resources\nIn his video, Siraj is going to use a few libraries you may not have seen before. In particular, he'll be using Pandas, Scikit-Learn, and MatPlotLib. If you're interested, you can get a head start with some of these libraries by using the following resources:\n\n* Pandas - an extremely popular library for handling data in Python.\n    *  [10 minutes to Pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html#min).\n* Scikit-learn - a comprehensive library for Machine Learning in Python.\n    * Scikit-Learn's [official tutorial](http://scikit-learn.org/stable/tutorial/basic/tutorial.html).\n* Matplotlib - a library for plotting and visualizing graphs in Python.\n    * Matplotlib's [official tutorial](http://matplotlib.org/users/pyplot_tutorial.html).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 256029,
+          "key": "7d557a84-20d3-499c-8985-2ef704b037fc",
+          "title": "Siraj's Intro to Deep Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 256109,
+              "key": "c2c3413d-d40e-45f4-9ed3-a203c21776aa",
+              "title": "Siraj's Intro to Deep Learning - How to Make a Prediction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Grab the code for this week's challenge [here](https://github.com/llSourcell/linear_regression_demo)!",
+              "video": {
+                "youtube_id": "QN1ZwKszguE",
+                "china_cdn_id": "QN1ZwKszguE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 257644,
+          "key": "18e56579-b33e-4159-be5d-ae36615c8b38",
+          "title": "Linear Regression",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 259988,
+              "key": "3b4f9e3a-f814-4c4a-ae01-cb82ace28a76",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Linear Regression\n\nIn Siraj's video, he predicted the body weight of an animal from the weight of it's brain using [linear regression](https://en.wikipedia.org/wiki/Linear_regression).  In this section, you'll use linear regression to predict life expectancy from [body mass index (BMI)](https://en.wikipedia.org/wiki/Body_mass_index).  Before you do that, let's go over the tools required to build this model.\n\nFor your linear regression model, you'll be using scikit-learn's [`LinearRegression`](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) class.  This class provides the function [`fit()`](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression.fit) to fit the model to your data.\n\n```python\n>>> from sklearn.linear_model import LinearRegression\n>>> model = LinearRegression()\n>>> model.fit(x_values, y_values)\n```\n\nIn the example above, the `model` variable is a linear regression model that has been fitted to the data `x_values` and `y_values`.  Fitting the model means finding the best line that fits the training data.  Let's make two predictions using the model's [`predict()`](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression.predict) function.\n\n```python\n>>> print(model.predict([ [127], [248] ]))\n[[ 438.94308857, 127.14839521]]\n```\n\nThe model returned an array of predictions, one prediction for each input array.  The first input, `[127]`, got a prediction of `438.94308857`.  The seconds input, `[248]`, got a prediction of `127.14839521`.  The reason for predicting on an array like `[127]` and not just `127`, is because you can have a model that makes a prediction using multiple features.  We'll go over using multiple variables in linear regression  later in this lesson.  For now, let's stick to a single value.\n\n## Linear Regression Quiz\n\nIn this quiz, you'll be working with data on the average life expectancy at birth and the average BMI for males across the world. The data comes from [Gapminder](https://www.gapminder.org/).\n\nThe data file can be found under the \"bmi_and_life_expectancy.csv\" tab in the quiz below. It includes three columns, containing the following data:\n* **Country** – The country the person was born in.  \n* **Life expectancy** – The average life expectancy at birth for a person in that country.\n* **BMI** – The mean BMI of males in that country.\n\n### You'll need to complete each of the following steps:\n\n**1. Load the data**\n* The data is in the file called \"bmi_and_life_expectancy.csv\".\n* Use pandas [`read_csv`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) to load the data into a dataframe.\n* Assign the dataframe to the variable `bmi_life_data`.\n\n**2. Build a linear regression model**\n* Create a regression model using scikit-learn's [`LinearRegression`](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) and assign it to `bmi_life_model`.\n* Fit the model to the data.\n\n**3. Predict using the model**\n* Predict using a BMI of 21.07931 and assign it to the variable `laos_life_exp`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 257655,
+              "key": "aed5ad18-fc0a-4fbc-8710-a8ea84d3c60e",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4710049453834240",
+                "initial_code_files": [
+                  {
+                    "text": "# TODO: Add import statements\n\n\n# Assign the dataframe to this variable.\n# TODO: Load the data\nbmi_life_data = None \n\n# Make and fit the linear regression model\n#TODO: Fit the model and Assign it to bmi_life_model\nbmi_life_model = None\n\n# Mak a prediction using the model\n# TODO: Predict life expectancy for a BMI value of 21.07931\nlaos_life_exp = None\n",
+                    "name": "gapminder1.py"
+                  },
+                  {
+                    "text": "Country,Life expectancy,BMI\nAfghanistan,52.8,20.62058\nAlbania,76.8,26.44657\nAlgeria,75.5,24.5962\nAndorra,84.6,27.63048\nAngola,56.7,22.25083\nArmenia,72.3,25.355420000000002\nAustralia,81.6,27.56373\nAustria,80.4,26.467409999999997\nAzerbaijan,69.2,25.65117\nBahamas,72.2,27.24594\nBangladesh,68.3,20.39742\nBarbados,75.3,26.384390000000003\nBelarus,70.0,26.16443\nBelgium,79.6,26.75915\nBelize,70.7,27.02255\nBenin,59.7,22.41835\nBhutan,70.7,22.8218\nBolivia,71.2,24.43335\nBosnia and Herzegovina,77.5,26.611629999999998\nBotswana,53.2,22.129839999999998\nBrazil,73.2,25.78623\nBulgaria,73.2,26.542859999999997\nBurkina Faso,58.0,21.27157\nBurundi,59.1,21.50291\nCambodia,66.1,20.80496\nCameroon,56.6,23.681729999999998\nCanada,80.8,27.4521\nCape Verde,70.4,23.515220000000003\nChad,54.3,21.485689999999998\nChile,78.5,27.015420000000002\nChina,73.4,22.92176\nColombia,76.2,24.94041\nComoros,67.1,22.06131\n\"Congo, Dem. Rep.\",57.5,19.86692\n\"Congo, Rep.\",58.8,21.87134\nCosta Rica,79.8,26.47897\nCote d'Ivoire,55.4,22.56469\nCroatia,76.2,26.596290000000003\nCuba,77.6,25.06867\nCyprus,80.0,27.41899\nDenmark,78.9,26.13287\nDjibouti,61.8,23.38403\nEcuador,74.7,25.58841\nEgypt,70.2,26.732429999999997\nEl Salvador,73.7,26.36751\nEritrea,60.1,20.885089999999998\nEstonia,74.2,26.264459999999996\nEthiopia,60.0,20.247\nFiji,64.9,26.53078\nFinland,79.6,26.733390000000004\nFrance,81.1,25.853289999999998\nFrench Polynesia,75.11,30.867520000000003\nGabon,61.7,24.0762\nGambia,65.7,21.65029\nGeorgia,71.8,25.54942\nGermany,80.0,27.165090000000003\nGhana,62.0,22.842470000000002\nGreece,80.2,26.33786\nGreenland,70.3,26.01359\nGrenada,70.8,25.179879999999997\nGuatemala,71.2,25.29947\nGuinea,57.1,22.52449\nGuinea-Bissau,53.6,21.64338\nGuyana,65.0,23.68465\nHaiti,61.0,23.66302\nHonduras,71.8,25.10872\nHungary,73.9,27.115679999999998\nIceland,82.4,27.206870000000002\nIndia,64.7,20.95956\nIndonesia,69.4,21.85576\nIran,73.1,25.310029999999998\nIraq,66.6,26.71017\nIreland,80.1,27.65325\nIsrael,80.6,27.13151\nJamaica,75.1,24.00421\nJapan,82.5,23.50004\nJordan,76.9,27.47362\nKazakhstan,67.1,26.290779999999998\nKenya,60.8,21.592579999999998\nKuwait,77.3,29.172109999999996\nLatvia,72.4,26.45693\nLesotho,44.5,21.90157\nLiberia,59.9,21.89537\nLibya,75.6,26.54164\nLithuania,72.1,26.86102\nLuxembourg,81.0,27.434040000000003\n\"Macedonia, FYR\",74.5,26.34473\nMadagascar,62.2,21.403470000000002\nMalawi,52.4,22.034679999999998\nMalaysia,74.5,24.73069\nMaldives,78.5,23.219910000000002\nMali,58.5,21.78881\nMalta,80.7,27.683609999999998\nMarshall Islands,65.3,29.37337\nMauritania,67.9,22.62295\nMauritius,72.9,25.15669\nMexico,75.4,27.42468\nMoldova,70.4,24.2369\nMongolia,64.8,24.88385\nMontenegro,76.0,26.55412\nMorocco,73.3,25.63182\nMozambique,54.0,21.93536\nMyanmar,59.4,21.44932\nNamibia,59.1,22.65008\nNepal,68.4,20.76344\nNetherlands,80.3,26.01541\nNicaragua,77.0,25.77291\nNiger,58.0,21.21958\nNigeria,59.2,23.03322\nNorway,80.8,26.934240000000003\nOman,76.2,26.241090000000003\nPakistan,64.1,22.299139999999998\nPanama,77.3,26.26959\nPapua New Guinea,58.6,25.015060000000002\nParaguay,74.0,25.54223\nPeru,78.2,24.770410000000002\nPhilippines,69.8,22.872629999999997\nPoland,75.4,26.6738\nPortugal,79.4,26.68445\nQatar,77.9,28.13138\nRomania,73.2,25.41069\nRussia,67.9,26.01131\nRwanda,64.1,22.55453\nSamoa,72.3,30.42475\nSao Tome and Principe,66.0,23.51233\nSenegal,63.5,21.927429999999998\nSerbia,74.3,26.51495\nSierra Leone,53.6,22.53139\nSingapore,80.6,23.83996\nSlovak Republic,74.9,26.92717\nSlovenia,78.7,27.43983\nSomalia,52.6,21.969170000000002\nSouth Africa,53.4,26.85538\nSpain,81.1,27.49975\nSri Lanka,74.0,21.96671\nSudan,65.5,22.40484\nSuriname,70.2,25.49887\nSwaziland,45.1,23.16969\nSweden,81.1,26.37629\nSwitzerland,82.0,26.20195\nSyria,76.1,26.919690000000003\nTajikistan,69.6,23.77966\nTanzania,60.4,22.47792\nThailand,73.9,23.008029999999998\nTimor-Leste,69.9,20.59082\nTogo,57.5,21.87875\nTonga,70.3,30.99563\nTrinidad and Tobago,71.7,26.396690000000003\nTunisia,76.8,25.15699\nTurkey,77.8,26.703709999999997\nTurkmenistan,67.2,25.24796\nUganda,56.0,22.35833\nUkraine,67.8,25.42379\nUnited Arab Emirates,75.6,28.053590000000003\nUnited Kingdom,79.7,27.392490000000002\nUnited States,78.3,28.456979999999998\nUruguay,76.0,26.39123\nUzbekistan,69.6,25.32054\nVanuatu,63.4,26.78926\nWest Bank and Gaza,74.1,26.5775\nVietnam,74.1,20.9163\nZambia,51.1,20.68321\nZimbabwe,47.3,22.0266\n",
+                    "name": "bmi_and_life_expectancy.csv"
+                  },
+                  {
+                    "text": "# TODO: Add import statements\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\n# Assign the dataframe to this variable.\n# TODO: Load the data\nbmi_life_data = pd.read_csv(\"bmi_and_life_expectancy.csv\")\n\n# Make and fit the linear regression model\n#TODO: Fit the model and Assign it to bmi_life_model\nbmi_life_model = LinearRegression()\nbmi_life_model.fit(bmi_life_data[['BMI']], bmi_life_data[['Life expectancy']])\n\n# Mak a prediction using the model\n# TODO: Predict life expectancy for a BMI value of 21.07931\nlaos_life_exp = bmi_life_model.predict(21.07931)\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 262033,
+          "key": "53cd8dbe-ad8e-4e33-ae39-06555472cdb7",
+          "title": "Linear Regression Warnings",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 262034,
+              "key": "39235421-57ce-4500-b140-b17f82981002",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Linear Regression Warnings\nLinear regression comes with a set of implicit assumptions and is not the best model for every situation. Here are a couple of issues that you should watch out for.\n\n**Linear Regression Works Best When the Data is Linear**  \nLinear regression produces a straight line model from the training data. If the relationship in the training data is not really linear, you'll need to either make adjustments (transform your training data), add features (we'll come to this next), or use another kind of model.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262035,
+              "key": "07c70950-8f22-4435-b8b8-802913fc798f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/58868097_quadraticlinearregression/quadraticlinearregression.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/07c70950-8f22-4435-b8b8-802913fc798f",
+              "caption": "",
+              "alt": null,
+              "width": 541,
+              "height": 435,
+              "instructor_notes": null
+            },
+            {
+              "id": 262036,
+              "key": "95dc2c3a-c94f-4bd2-868b-2ba5502af182",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Linear Regression is Sensitive to Outliers**  \nLinear regression tries to find a 'best fit' line among the training data. If your dataset has some outlying extreme values that don't fit a general pattern, they can have a surprisingly large effect. \n\nIn this first plot, the model fits the data pretty well.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262037,
+              "key": "6a0f99f8-e898-45a8-8bb9-481617cd0abe",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/5886817f_lin-reg-no-outliers/lin-reg-no-outliers.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6a0f99f8-e898-45a8-8bb9-481617cd0abe",
+              "caption": "",
+              "alt": null,
+              "width": 541,
+              "height": 435,
+              "instructor_notes": null
+            },
+            {
+              "id": 262038,
+              "key": "e5196063-f07f-4921-be7b-ced07e31d61a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "However, adding a few points that are outliers and don't fit the pattern really changes the way the model predicts. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262039,
+              "key": "495bada0-c139-415f-9df1-555e7f67d432",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/588681bb_lin-reg-w-outliers/lin-reg-w-outliers.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/495bada0-c139-415f-9df1-555e7f67d432",
+              "caption": "",
+              "alt": null,
+              "width": 541,
+              "height": 435,
+              "instructor_notes": null
+            },
+            {
+              "id": 262041,
+              "key": "fc421cb6-6178-4e41-bcc0-9c5a983ef610",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In most circumstances, you'll want a model that fits most of the data most of the time, so watch out for outliers!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 260098,
+          "key": "ca6305d7-9d13-448c-9661-bf6422e708cf",
+          "title": "Multiple Linear Regression",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 260099,
+              "key": "e882225d-b0e0-4b02-ba64-2df5473842fc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Multiple Linear Regression\n\nIn the last section, you saw how we can predict life expectancy using BMI. Here, BMI was the **predictor**, also known as an independent variable. A predictor is a variable you're looking at in order to make predictions about other variables, while the values you are trying to predict are known as dependent variables. In this case, life expectancy was the dependent variable.\n\nNow, let’s say we get new data on each person’s heart rate as well. Can we create a prediction of life expectancy using both BMI and heart rate?\n\nAbsolutely! We can do just that using multiple linear regression.\n\nIf the outcome you want to predict depends on more than one variable, you can make a more complicated model that takes this into account. As long as they're relevant to the situation, using more independent/predictor variables can help you get a better prediction.\n\nWhen there's just one predictor, the linear regression model is a line, but as you add more predictor variables, you're adding more dimensions to the picture.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 260100,
+              "key": "39b239a8-73bd-4431-b824-05c660efa104",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When you have one predictor variable, the equation of the line is\n\n<span class='mathquill'> y = m x + b </span>\n\nand the plot might look something like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 260101,
+              "key": "98f6bc50-0eb2-4837-8d6e-6c29b4104830",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/5886b877_just-a-simple-lin-reg/just-a-simple-lin-reg.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/98f6bc50-0eb2-4837-8d6e-6c29b4104830",
+              "caption": "Linear regression with one predictor variable",
+              "alt": null,
+              "width": 528,
+              "height": 435,
+              "instructor_notes": null
+            },
+            {
+              "id": 260102,
+              "key": "78b59e46-fd0d-453f-94bf-b008b8d5ef47",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Adding a predictor variable to go to two predictor variables means that the predicting equation is:\n\n<span class=\"mathquill\"> y = m_1 x_1 + m_2 x_2 + b</span>\n\nTo represent this graphically, we'll need a three-dimensional plot, with the linear regression model represented as a plane:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 260103,
+              "key": "924ff1b3-7440-4501-a95c-baaf97e5deae",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/5886b8bc_just-a-2d-reg/just-a-2d-reg.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/924ff1b3-7440-4501-a95c-baaf97e5deae",
+              "caption": "Linear regression with two predictor variables",
+              "alt": "",
+              "width": 484,
+              "height": 407,
+              "instructor_notes": null
+            },
+            {
+              "id": 260108,
+              "key": "e87044fc-64fd-46ba-8f1e-8d2e9983b471",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can use more than two predictor variables, in fact you should use as many as is useful! If you use <span class=\"mathquill\">n</span> predictor variables, then the model can be represented by the equation  \n\n<span class=\"mathquill\"> y = m_{1} x_{1} + m_{2} x_{2} + m_{3} x_{3}+ ... +m_{n} x_{n} + b </span>\n\nAs you make a model with more predictor variables, it becomes harder to visualise, but luckily, everything else about linear regression stays the same. We can still fit models and make predictions in exactly the same way - time to try it!\n\n# Programming Quiz: Multiple Linear Regression\n\nIn this quiz, you'll be using the [Boston house-prices dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/).  The dataset consists of 13 features of 506 houses and their median value in $1000's.  You'll fit a model on the 13 features to predict on the value of houses.\n\nYou'll need to complete each of the following steps:\n\n**1. Build a linear regression model**\n* Create a regression model using scikit-learn's [`LinearRegression`](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) and assign it to `model`.\n* Fit the model to the data.\n\n**2. Predict using the model**\n* Predict the value of `sample_house`.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262067,
+              "key": "24f8adbe-39ce-410c-949e-71877ad947f1",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5912575503106048",
+                "initial_code_files": [
+                  {
+                    "text": "from sklearn.linear_model import LinearRegression\nfrom sklearn.datasets import load_boston\n\n# Load the data from the the boston house-prices dataset \nboston_data = load_boston()\nx = boston_data['data']\ny = boston_data['target']\n\n# Make and fit the linear regression model\n# TODO: Fit the model and Assign it to the model variable\nmodel = None\n\n# Make a prediction using the model\nsample_house = [[2.29690000e-01, 0.00000000e+00, 1.05900000e+01, 0.00000000e+00, 4.89000000e-01,\n                6.32600000e+00, 5.25000000e+01, 4.35490000e+00, 4.00000000e+00, 2.77000000e+02,\n                1.86000000e+01, 3.94870000e+02, 1.09700000e+01]]\n# TODO: Predict housing price for the sample_house\nprediction = None",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "from sklearn.linear_model import LinearRegression\nfrom sklearn.datasets import load_boston\n\n# Load the data from the the boston house-prices dataset \nboston_data = load_boston()\nx = boston_data['data']\ny = boston_data['target']\n\n# Make and fit the linear regression model\n# TODO: Fit the model and Assign it to the model variable\nmodel = LinearRegression()\nmodel.fit(x, y)\n\n# Mak a prediction using the model\nsample_house = [[2.29690000e-01, 0.00000000e+00, 1.05900000e+01, 0.00000000e+00, 4.89000000e-01,\n                6.32600000e+00, 5.25000000e+01, 4.35490000e+00, 4.00000000e+00, 2.77000000e+02,\n                1.86000000e+01, 3.94870000e+02, 1.09700000e+01]]\n# TODO: Predict housing price for the sample_house\nprediction = model.predict(sample_house)",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 262273,
+              "key": "30465eb7-722d-4e35-ab19-322ff47babce",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Next Up - Siraj's Live Session\n\nCongratulations on making a prediction on Boston Housing Data! We've hoped you've enjoyed the opportunity to get hands on with real problems right away. In the next video, you'll see Siraj in his weekly live sessions covering a variety of student questions. He'll also go into more depth on using linear regressions the right way.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 260052,
+          "key": "a42e5097-f777-4232-9846-811bfdbc7222",
+          "title": "Siraj's Live Session",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 262733,
+              "key": "576f41e3-10c3-4116-b780-4e393e1f1417",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# How To Do Linear Regression Live Stream\n\nThis live stream from Siraj is optional. You should watch it if you want to see how Siraj codes a regression model from scratch. However, remember that this is live and mistakes will happen. Programming correctly on the first attempt is rare and Siraj will run into errors. \n\n* [How to do linear regression](https://www.youtube.com/watch?v=XdM6ER7zTLk) - Live session from 3/29/17\n\n* [How to do linear regression](https://www.youtube.com/watch?v=uwwWVAgJBcM&t=2s) - Live session from 1/18/17\n\n---\n\nIf you are unable to access YouTube, you can watch the live sessions by clicking the link below:\n\n- [How to do linear regression](https://s3.cn-north-1.amazonaws.com.cn/u-vid/XdM6ER7zTLk.mp4) - Live session from 3/29/17\n- [How to do linear regression](https://s3.cn-north-1.amazonaws.com.cn/u-vid/uwwWVAgJBcM.mp4) - Live session from 1/18/17",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

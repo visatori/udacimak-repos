@@ -1,0 +1,688 @@
+{
+  "data": {
+    "lesson": {
+      "id": 267179,
+      "key": "bd73c076-7661-4947-9f73-7020d313eb6f",
+      "title": "Deep Neural Networks",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Vincent walks you through how to go from a simple neural network to a deep neural network. You'll learn about why additional layers can help and how to prevent overfitting.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/bd73c076-7661-4947-9f73-7020d313eb6f/267179/1544457342233/Deep+Neural+Networks+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/bd73c076-7661-4947-9f73-7020d313eb6f/267179/1544457339717/Deep+Neural+Networks+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 267990,
+          "key": "aeaeb674-cfa9-4572-8a67-319080f5419d",
+          "title": "Intro to Deep Neural Networks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283740,
+              "key": "7583a9de-32dc-43b0-81b7-c5375db2aa5d",
+              "title": "Mat HS",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9P7UPWFu8w8",
+                "china_cdn_id": "9P7UPWFu8w8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 268035,
+          "key": "43664323-f76e-4b3d-8cde-5ad0c8345d1c",
+          "title": "Two-Layer Neural Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268036,
+              "key": "012a864a-3376-48c5-88be-8ca9fe31b1be",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58ae4386_two-layer-network/two-layer-network.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/012a864a-3376-48c5-88be-8ca9fe31b1be",
+              "caption": "",
+              "alt": null,
+              "width": 1047,
+              "height": 327,
+              "instructor_notes": null
+            },
+            {
+              "id": 268043,
+              "key": "c720fad5-a300-4994-b8da-68b813456c45",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Multilayer Neural Networks\n\nIn this lesson, you'll learn how to build multilayer neural networks with TensorFlow. Adding a hidden layer to a network allows it to model more complex functions. Also, using a non-linear activation function on the hidden layer lets it model non-linear functions.\n\nWe shall learn about ReLU, a non-linear function, or rectified linear unit. The ReLU function is 0 for negative inputs and <span class='mathquill'>x</span> for all inputs <span class='mathquill'>x >0</span>. \n\nNext, you'll see how a ReLU hidden layer is implemented in TensorFlow.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 267988,
+          "key": "b3de6cfa-ccd8-4a4d-b8c0-cdb47d81fd25",
+          "title": "Quiz: TensorFlow ReLUs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268008,
+              "key": "1b5960fe-d03e-4ae4-a6ae-c3d8710495a8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# TensorFlow ReLUs\n\nTensorFlow provides the ReLU function as [`tf.nn.relu()`](https://www.tensorflow.org/api_docs/python/tf/nn/relu), as shown below.\n\n```python\n# Hidden Layer with ReLU activation function\nhidden_layer = tf.add(tf.matmul(features, hidden_weights), hidden_biases)\nhidden_layer = tf.nn.relu(hidden_layer)\n\noutput = tf.add(tf.matmul(hidden_layer, output_weights), output_biases)\n```\nThe above code applies the [`tf.nn.relu()`](https://www.tensorflow.org/api_docs/python/tf/nn/relu) function to the `hidden_layer`, effectively turning off any negative weights and acting like an on/off switch.  Adding additional layers, like the `output` layer, after an activation function turns the model into a nonlinear function. This nonlinearity allows the network to solve more complex problems.\n\n## Quiz\n\nBelow you'll use the ReLU function to turn a linear single layer network into a non-linear multilayer network.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268028,
+              "key": "06fd3fd3-9de8-4dfa-88fb-b806b0810065",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58ae428b_relu-network/relu-network.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/06fd3fd3-9de8-4dfa-88fb-b806b0810065",
+              "caption": "",
+              "alt": null,
+              "width": 1047,
+              "height": 744,
+              "instructor_notes": null
+            },
+            {
+              "id": 268015,
+              "key": "b98b083a-844b-45cd-9585-665c46e2883e",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6090191409381376",
+                "initial_code_files": [
+                  {
+                    "text": "# Solution is available in the other \"solution.py\" tab\nimport tensorflow as tf\n\noutput = None\nhidden_layer_weights = [\n    [0.1, 0.2, 0.4],\n    [0.4, 0.6, 0.6],\n    [0.5, 0.9, 0.1],\n    [0.8, 0.2, 0.8]]\nout_weights = [\n    [0.1, 0.6],\n    [0.2, 0.1],\n    [0.7, 0.9]]\n\n# Weights and biases\nweights = [\n    tf.Variable(hidden_layer_weights),\n    tf.Variable(out_weights)]\nbiases = [\n    tf.Variable(tf.zeros(3)),\n    tf.Variable(tf.zeros(2))]\n\n# Input\nfeatures = tf.Variable([[1.0, 2.0, 3.0, 4.0], [-1.0, -2.0, -3.0, -4.0], [11.0, 12.0, 13.0, 14.0]])\n\n# TODO: Create Model\n\n# TODO: Print session results\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "# Quiz Solution\n# Note: You can't run code in this tab\nimport tensorflow as tf\n\noutput = None\nhidden_layer_weights = [\n    [0.1, 0.2, 0.4],\n    [0.4, 0.6, 0.6],\n    [0.5, 0.9, 0.1],\n    [0.8, 0.2, 0.8]]\nout_weights = [\n    [0.1, 0.6],\n    [0.2, 0.1],\n    [0.7, 0.9]]\n\n# Weights and biases\nweights = [\n    tf.Variable(hidden_layer_weights),\n    tf.Variable(out_weights)]\nbiases = [\n    tf.Variable(tf.zeros(3)),\n    tf.Variable(tf.zeros(2))]\n\n# Input\nfeatures = tf.Variable([[1.0, 2.0, 3.0, 4.0], [-1.0, -2.0, -3.0, -4.0], [11.0, 12.0, 13.0, 14.0]])\n\n# TODO: Create Model\nhidden_layer = tf.add(tf.matmul(features, weights[0]), biases[0])\nhidden_layer = tf.nn.relu(hidden_layer)\nlogits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])\n\n# TODO: Print session results\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    print(sess.run(logits))\n\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 197660,
+          "key": "83a3a2a2-a9bd-4b7b-95b0-eb924ab14432",
+          "title": "Deep Neural Network in TensorFlow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197661,
+              "key": "e619b2ba-2af5-4a03-bfe8-786e6b6ef8f3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Deep Neural Network in TensorFlow\nYou've seen how to build a logistic classifier using TensorFlow. Now you're going to see how to use the logistic classifier to build a deep neural network.\n## Step by Step\nIn the following walkthrough, we'll step through TensorFlow code written to classify the letters in the MNIST database.  If you would like to run the network on your computer, the file is provided [here](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58a61a3a_multilayer-perceptron/multilayer-perceptron.zip).  You can find this and many more examples of TensorFlow at [Aymeric Damien's GitHub repository](https://github.com/aymericdamien/TensorFlow-Examples).\n## Code\n### TensorFlow MNIST\n```python\nfrom tensorflow.examples.tutorials.mnist import input_data\nmnist = input_data.read_data_sets(\".\", one_hot=True, reshape=False)\n```\nYou'll use the MNIST dataset provided by TensorFlow, which batches and One-Hot encodes the data for you. \n### Learning Parameters\n```python\nimport tensorflow as tf\n\n# Parameters\nlearning_rate = 0.001\ntraining_epochs = 20\nbatch_size = 128  # Decrease batch size if you don't have enough memory\ndisplay_step = 1\n\nn_input = 784  # MNIST data input (img shape: 28*28)\nn_classes = 10  # MNIST total classes (0-9 digits)\n```\nThe focus here is on the architecture of multilayer neural networks, not parameter tuning, so here we'll just give you the learning parameters.\n### Hidden Layer Parameters\n```python\nn_hidden_layer = 256 # layer number of features\n```\nThe variable `n_hidden_layer` determines the size of the hidden layer in the neural network.  This is also known as the width of a layer.\n### Weights and Biases\n```python\n# Store layers weight & bias\nweights = {\n    'hidden_layer': tf.Variable(tf.random_normal([n_input, n_hidden_layer])),\n    'out': tf.Variable(tf.random_normal([n_hidden_layer, n_classes]))\n}\nbiases = {\n    'hidden_layer': tf.Variable(tf.random_normal([n_hidden_layer])),\n    'out': tf.Variable(tf.random_normal([n_classes]))\n}\n```\nDeep neural networks use multiple layers with each layer requiring it's own weight and bias.  The `'hidden_layer'` weight and bias is for the hidden layer.  The `'out'` weight and bias is for the output layer.  If the neural network were deeper, there would be weights and biases for each additional layer.\n### Input\n```python\n# tf Graph input\nx = tf.placeholder(\"float\", [None, 28, 28, 1])\ny = tf.placeholder(\"float\", [None, n_classes])\n\nx_flat = tf.reshape(x, [-1, n_input])\n```\nThe MNIST data is made up of 28px by 28px images with a single [channel](https://en.wikipedia.org/wiki/Channel_(digital_image%29).  The [`tf.reshape()`](https://www.tensorflow.org/versions/master/api_docs/python/tf/reshape) function above reshapes the 28px by 28px matrices in `x` into row vectors of 784px.\n### Multilayer Perceptron",
+              "instructor_notes": ""
+            },
+            {
+              "id": 197706,
+              "key": "3dc523b3-ebb6-455d-a496-f2882c66ebe5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/580fe8f8_multi-layer/multi-layer.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3dc523b3-ebb6-455d-a496-f2882c66ebe5",
+              "caption": "",
+              "alt": null,
+              "width": 2018,
+              "height": 646,
+              "instructor_notes": null
+            },
+            {
+              "id": 197705,
+              "key": "c2f276d8-4fe4-41d5-954c-04ba81548579",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\n# Hidden layer with RELU activation\nlayer_1 = tf.add(tf.matmul(x_flat, weights['hidden_layer']),\\\n    biases['hidden_layer'])\nlayer_1 = tf.nn.relu(layer_1)\n# Output layer with linear activation\nlogits = tf.add(tf.matmul(layer_1, weights['out']), biases['out'])\n```\nYou've seen the linear function `tf.add(tf.matmul(x_flat, weights['hidden_layer']), biases['hidden_layer'])` before, also known as `xw + b`.  Combining linear functions together using a ReLU will give you a two layer network.\n### Optimizer\n```python\n# Define loss and optimizer\ncost = tf.reduce_mean(\\\n    tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=y))\noptimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate)\\\n    .minimize(cost)\n```\nThis is the same optimization technique used in the Intro to TensorFLow lab.\n### Session\n```python\n# Initializing the variables\ninit = tf.global_variables_initializer()\n\n\n# Launch the graph\nwith tf.Session() as sess:\n    sess.run(init)\n    # Training cycle\n    for epoch in range(training_epochs):\n        total_batch = int(mnist.train.num_examples/batch_size)\n        # Loop over all batches\n        for i in range(total_batch):\n            batch_x, batch_y = mnist.train.next_batch(batch_size)\n            # Run optimization op (backprop) and cost op (to get loss value)\n            sess.run(optimizer, feed_dict={x: batch_x, y: batch_y})\n```\nThe MNIST library in TensorFlow provides the ability to receive the dataset in batches.  Calling the `mnist.train.next_batch()` function returns a subset of the training data.  \n##  Deeper Neural Network",
+              "instructor_notes": ""
+            },
+            {
+              "id": 197748,
+              "key": "245d51c5-0167-4f6d-b80e-e71e126ebaca",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/58100bfd_layers/layers.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/245d51c5-0167-4f6d-b80e-e71e126ebaca",
+              "caption": "",
+              "alt": null,
+              "width": 2518,
+              "height": 1082,
+              "instructor_notes": null
+            },
+            {
+              "id": 197747,
+              "key": "bb237358-46e1-4c10-a37f-d567b9c7799c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "That's it!  Going from one layer to two is easy.  Adding more layers to the network allows you to solve more complicated problems.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 267991,
+          "key": "608a9600-14b7-4f33-ba78-8a0d56bb8053",
+          "title": "Training a Deep Learning Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 267992,
+              "key": "bfe71aab-3c12-469f-992f-761c57affa28",
+              "title": "Training a Deep Learning Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CsB7yUtMJyk",
+                "china_cdn_id": "CsB7yUtMJyk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 229325,
+          "key": "ef0cdafb-57ec-497b-8f45-11c142c367d7",
+          "title": "Save and Restore TensorFlow Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 229327,
+              "key": "080e12df-390d-4a74-a527-0327358e5b50",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Save and Restore TensorFlow Models\nTraining a model can take hours. But once you close your TensorFlow session, you lose all the trained weights and biases.  If you were to reuse the model in the future, you would have to train it all over again!\n\nFortunately, TensorFlow gives you the ability to save your progress using a class called [`tf.train.Saver`](https://www.tensorflow.org/api_docs/python/tf/train/Saver).  This class provides the functionality to save any [`tf.Variable`](https://www.tensorflow.org/api_docs/python/tf/Variable) to your file system.\n## Saving Variables\nLet's start with a simple example of saving `weights` and `bias` Tensors.  For the first example you'll just save two variables.  Later examples will save all the weights in a practical model.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229329,
+              "key": "2bfb8b52-de1b-4fba-b39d-86772f36414d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\nimport tensorflow as tf\n\n# The file path to save the data\nsave_file = './model.ckpt'\n\n# Two Tensor Variables: weights and bias\nweights = tf.Variable(tf.truncated_normal([2, 3]))\nbias = tf.Variable(tf.truncated_normal([3]))\n\n# Class used to save and/or restore Tensor Variables\nsaver = tf.train.Saver()\n\nwith tf.Session() as sess:\n    # Initialize all the Variables\n    sess.run(tf.global_variables_initializer())\n    \n    # Show the values of weights and bias\n    print('Weights:')\n    print(sess.run(weights))\n    print('Bias:')\n    print(sess.run(bias))\n    \n    # Save the model\n    saver.save(sess, save_file)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229330,
+              "key": "edc3821d-dc43-49b0-a640-f8bc0812f51b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">Weights:\n\n>[[-0.97990924  1.03016174  0.74119264]\n\n>[-0.82581609 -0.07361362 -0.86653847]]\n\n>Bias:\n\n>[ 1.62978125 -0.37812829  0.64723819]\n\nThe Tensors `weights` and `bias` are set to random values using the [`tf.truncated_normal()`](https://www.tensorflow.org/api_docs/python/tf/truncated_normal) function.  The values  are then saved to the `save_file` location, \"model.ckpt\", using the [`tf.train.Saver.save()`](https://www.tensorflow.org/api_docs/python/tf/train/Saver#save) function.  (The \".ckpt\" extension stands for \"checkpoint\".)\n\nIf you're using TensorFlow 0.11.0RC1 or newer, a file called \"model.ckpt.meta\" will also be created.  This file contains the TensorFlow graph.\n## Loading Variables\n\nNow that the Tensor Variables are saved, let's load them back into a new model.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229332,
+              "key": "68594141-3028-42e2-aa19-99428def23af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\n# Remove the previous weights and bias\ntf.reset_default_graph()\n\n# Two Variables: weights and bias\nweights = tf.Variable(tf.truncated_normal([2, 3]))\nbias = tf.Variable(tf.truncated_normal([3]))\n\n# Class used to save and/or restore Tensor Variables\nsaver = tf.train.Saver()\n\nwith tf.Session() as sess:\n    # Load the weights and bias\n    saver.restore(sess, save_file)\n    \n    # Show the values of weights and bias\n    print('Weight:')\n    print(sess.run(weights))\n    print('Bias:')\n    print(sess.run(bias))\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229334,
+              "key": "ef391cbe-305b-4c96-8ae5-d29b995be601",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">Weights:\n\n>[[-0.97990924  1.03016174  0.74119264]\n\n> [-0.82581609 -0.07361362 -0.86653847]]\n\n>Bias:\n\n>[ 1.62978125 -0.37812829  0.64723819]\n\nYou'll notice you still need to create the `weights` and `bias` Tensors in Python.  The [`tf.train.Saver.restore()`](https://www.tensorflow.org/api_docs/python/tf/train/Saver#restore) function loads the saved data into `weights` and `bias`.  \n\nSince [`tf.train.Saver.restore()`](https://www.tensorflow.org/api_docs/python/tf/train/Saver#restore) sets all the TensorFlow Variables, you don't need to call [`tf.global_variables_initializer()`](https://www.tensorflow.org/api_docs/python/tf/global_variables_initializer).\n\n## Save a Trained Model\nLet's see how to train a model and save its weights.\n\nFirst start with a model:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229335,
+              "key": "51efbc79-9ffe-463b-b714-a824221d3311",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\n# Remove previous Tensors and Operations\ntf.reset_default_graph()\n\nfrom tensorflow.examples.tutorials.mnist import input_data\nimport numpy as np\n\nlearning_rate = 0.001\nn_input = 784  # MNIST data input (img shape: 28*28)\nn_classes = 10  # MNIST total classes (0-9 digits)\n\n# Import MNIST data\nmnist = input_data.read_data_sets('.', one_hot=True)\n\n# Features and Labels\nfeatures = tf.placeholder(tf.float32, [None, n_input])\nlabels = tf.placeholder(tf.float32, [None, n_classes])\n\n# Weights & bias\nweights = tf.Variable(tf.random_normal([n_input, n_classes]))\nbias = tf.Variable(tf.random_normal([n_classes]))\n\n# Logits - xW + b\nlogits = tf.add(tf.matmul(features, weights), bias)\n\n# Define loss and optimizer\ncost = tf.reduce_mean(\\\n    tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=labels))\noptimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate)\\\n    .minimize(cost)\n\n# Calculate accuracy\ncorrect_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(labels, 1))\naccuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229336,
+              "key": "225d9cd8-b1c2-4b99-9a90-95e134134afe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's train that model, then save the weights:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229337,
+              "key": "3468ff8f-7c61-4b88-b2c2-53c6389479d9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\nimport math\n\nsave_file = './train_model.ckpt'\nbatch_size = 128\nn_epochs = 100\n\nsaver = tf.train.Saver()\n\n# Launch the graph\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n\n    # Training cycle\n    for epoch in range(n_epochs):\n        total_batch = math.ceil(mnist.train.num_examples / batch_size)\n\n        # Loop over all batches\n        for i in range(total_batch):\n            batch_features, batch_labels = mnist.train.next_batch(batch_size)\n            sess.run(\n                optimizer,\n                feed_dict={features: batch_features, labels: batch_labels})\n\n        # Print status for every 10 epochs\n        if epoch % 10 == 0:\n            valid_accuracy = sess.run(\n                accuracy,\n                feed_dict={\n                    features: mnist.validation.images,\n                    labels: mnist.validation.labels})\n            print('Epoch {:<3} - Validation Accuracy: {}'.format(\n                epoch,\n                valid_accuracy))\n\n    # Save the model\n    saver.save(sess, save_file)\n    print('Trained Model Saved.')\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229338,
+              "key": "6385d9d4-2914-4373-b30f-4a62373036d1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">Epoch 0   - Validation Accuracy: 0.06859999895095825\n\n>Epoch 10  - Validation Accuracy: 0.20239999890327454\n\n>Epoch 20  - Validation Accuracy: 0.36980000138282776\n\n>Epoch 30  - Validation Accuracy: 0.48820000886917114\n\n>Epoch 40  - Validation Accuracy: 0.5601999759674072\n\n>Epoch 50  - Validation Accuracy: 0.6097999811172485\n\n>Epoch 60  - Validation Accuracy: 0.6425999999046326\n\n>Epoch 70  - Validation Accuracy: 0.6733999848365784\n\n>Epoch 80  - Validation Accuracy: 0.6916000247001648\n\n>Epoch 90  - Validation Accuracy: 0.7113999724388123\n\n>Trained Model Saved.\n\n## Load a Trained Model\n\nLet's load the weights and bias from memory, then check the test accuracy.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229339,
+              "key": "0a5db02f-d18d-424f-b772-aa71582bf140",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\nsaver = tf.train.Saver()\n\n# Launch the graph\nwith tf.Session() as sess:\n    saver.restore(sess, save_file)\n\n    test_accuracy = sess.run(\n        accuracy,\n        feed_dict={features: mnist.test.images, labels: mnist.test.labels})\n\nprint('Test Accuracy: {}'.format(test_accuracy))\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229340,
+              "key": "be14e4d7-6a60-4af6-ac6d-5928edd07099",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">Test Accuracy: 0.7229999899864197\n\nThat's it!  You now know how to save and load a trained model in TensorFlow.  Let's look at loading weights and biases into modified models in the next section.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 246626,
+          "key": "c22dbf36-7215-483a-a397-d5f4f757d2d1",
+          "title": "Finetuning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 246628,
+              "key": "3795d94c-92ca-4f2a-a9e1-dd4dee38e9de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Loading the Weights and Biases into a New Model\nSometimes you might want to adjust, or \"finetune\" a model that you have already trained and saved.\n\nHowever, loading saved Variables directly into a modified model can generate errors.  Let's go over how to avoid these problems. \n\n## Naming Error\nTensorFlow uses a string identifier for Tensors and Operations called `name`.  If a name is not given, TensorFlow will create one automatically.  TensorFlow will give the first node the name `<Type>`, and then give the name `<Type>_<number>` for the subsequent nodes.  Let's see how this can affect loading a model with a different order of `weights` and `bias`:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 246629,
+              "key": "cab15af9-d054-4ee2-9d77-efd7a961bfde",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\nimport tensorflow as tf\n\n# Remove the previous weights and bias\ntf.reset_default_graph()\n\nsave_file = 'model.ckpt'\n\n# Two Tensor Variables: weights and bias\nweights = tf.Variable(tf.truncated_normal([2, 3]))\nbias = tf.Variable(tf.truncated_normal([3]))\n\nsaver = tf.train.Saver()\n\n# Print the name of Weights and Bias\nprint('Save Weights: {}'.format(weights.name))\nprint('Save Bias: {}'.format(bias.name))\n\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    saver.save(sess, save_file)\n    \n# Remove the previous weights and bias\ntf.reset_default_graph()\n\n# Two Variables: weights and bias\nbias = tf.Variable(tf.truncated_normal([3]))\nweights = tf.Variable(tf.truncated_normal([2, 3]))\n\nsaver = tf.train.Saver()\n\n# Print the name of Weights and Bias\nprint('Load Weights: {}'.format(weights.name))\nprint('Load Bias: {}'.format(bias.name))\n\nwith tf.Session() as sess:\n    # Load the weights and bias - ERROR\n    saver.restore(sess, save_file)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 246630,
+              "key": "dbfaf2d9-f908-4be1-9423-ddec9937db2d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The code above prints out the following:\n\n>Save Weights: Variable:0\n\n>Save Bias: Variable_1:0\n\n>Load Weights: Variable_1:0\n\n>Load Bias: Variable:0\n\n>...\n\n>InvalidArgumentError (see above for traceback): Assign requires shapes of both tensors to match.\n\n>...\n\nYou'll notice that the `name` properties for `weights` and `bias` are different than when you saved the model.  This is why the code produces the \"Assign requires shapes of both tensors to match\" error.  The code `saver.restore(sess, save_file)` is trying to load weight data into `bias` and bias data into `weights`.\n\nInstead of letting TensorFlow set the `name` property, let's set it manually:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 246631,
+              "key": "b99cfa70-e455-4407-8a42-d887abc4b407",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\nimport tensorflow as tf\n\ntf.reset_default_graph()\n\nsave_file = 'model.ckpt'\n\n# Two Tensor Variables: weights and bias\nweights = tf.Variable(tf.truncated_normal([2, 3]), name='weights_0')\nbias = tf.Variable(tf.truncated_normal([3]), name='bias_0')\n\nsaver = tf.train.Saver()\n\n# Print the name of Weights and Bias\nprint('Save Weights: {}'.format(weights.name))\nprint('Save Bias: {}'.format(bias.name))\n\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    saver.save(sess, save_file)\n    \n# Remove the previous weights and bias\ntf.reset_default_graph()\n\n# Two Variables: weights and bias\nbias = tf.Variable(tf.truncated_normal([3]), name='bias_0')\nweights = tf.Variable(tf.truncated_normal([2, 3]) ,name='weights_0')\n\nsaver = tf.train.Saver()\n\n# Print the name of Weights and Bias\nprint('Load Weights: {}'.format(weights.name))\nprint('Load Bias: {}'.format(bias.name))\n\nwith tf.Session() as sess:\n    # Load the weights and bias - No Error\n    saver.restore(sess, save_file)\n    \nprint('Loaded Weights and Bias successfully.')\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 246632,
+              "key": "7b4599d5-6ca8-42b6-a734-b5c757208993",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">Save Weights: weights_0:0\n\n>Save Bias: bias_0:0\n\n>Load Weights: weights_0:0\n\n>Load Bias: bias_0:0\n\n>Loaded Weights and Bias successfully.\n\nThat worked!  The Tensor names match and the data loaded correctly.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 67831,
+          "key": "63734132060923",
+          "title": "Regularization Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 68199,
+              "key": "6373413206",
+              "title": "Regularization Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "pECnr-5F3_Q",
+                "china_cdn_id": "pECnr-5F3_Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 268004,
+          "key": "7e05821d-98fd-46be-aefd-74313e7616b6",
+          "title": "Regularization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268005,
+              "key": "b0455c53-2c30-42c1-ba95-736b14c55749",
+              "title": "Regularization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QcJBhbuCl5g",
+                "china_cdn_id": "QcJBhbuCl5g.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 268045,
+          "key": "2b3f3266-0578-44c0-8855-0eb236cab8d4",
+          "title": "Regularization Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 278824,
+              "key": "0c2124ab-3b2f-4fd1-945c-36ddf34073c3",
+              "title": "Regularization-Quiz",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "E0eEW6V0_sA",
+                "china_cdn_id": "E0eEW6V0_sA.mp4"
+              }
+            },
+            {
+              "id": 288362,
+              "key": "68e66fa1-490b-415a-ad0e-465e8aad24f5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58daed47_regularization-quiz/regularization-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/68e66fa1-490b-415a-ad0e-465e8aad24f5",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 268048,
+              "key": "67cc2259-1540-4717-8596-4e28ea103f7f",
+              "title": "Regularization",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Derivative?",
+                "answers": [
+                  {
+                    "id": "a1487816652626",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1487816794635",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1487816795688",
+                    "text": "C",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 267995,
+          "key": "07271100-4989-42e8-a2dc-41a14ef52c34",
+          "title": "Dropout",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268667,
+              "key": "19258381-b678-4421-9975-43f60ae04e84",
+              "title": "Dropout RENDER",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6DcImJS8uV8",
+                "china_cdn_id": "6DcImJS8uV8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 87930,
+          "key": "63722671800923",
+          "title": "Dropout Pt. 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268675,
+              "key": "5da439a9-b13f-413f-90bd-b177eff6ad9f",
+              "title": "Dropout Pt. 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8nG8zzJMbZw",
+                "china_cdn_id": "8nG8zzJMbZw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 202474,
+          "key": "d5cf4454-1324-4524-9e2c-0ecca1f5c40e",
+          "title": "Quiz: TensorFlow Dropout",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 204934,
+              "key": "a9308a69-b98c-4b34-ad81-0b4d7cc42a5a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# TensorFlow Dropout",
+              "instructor_notes": ""
+            },
+            {
+              "id": 204992,
+              "key": "47666c10-996f-4740-9674-ce54c6f768ae",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/58222112_dropout-node/dropout-node.jpeg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/47666c10-996f-4740-9674-ce54c6f768ae",
+              "caption": "Figure 1: Taken from the paper \"Dropout: A Simple Way to Prevent Neural Networks from\nOverfitting\" (https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)",
+              "alt": null,
+              "width": 614,
+              "height": 328,
+              "instructor_notes": null
+            },
+            {
+              "id": 204993,
+              "key": "bbd1fecd-ed76-4db5-9ca0-6f8d54285119",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Dropout is a regularization technique for reducing overfitting.  The technique temporarily drops units ([artificial neurons](https://en.wikipedia.org/wiki/Artificial_neuron)) from the network, along with all of those units' incoming and outgoing connections. Figure 1 illustrates how dropout works.\n\nTensorFlow provides the [`tf.nn.dropout()`](https://www.tensorflow.org/api_docs/python/tf/nn/dropout) function, which you can use to implement dropout. \n\nLet's look at an example of how to use [`tf.nn.dropout()`](https://www.tensorflow.org/api_docs/python/tf/nn/dropout).\n```python\nkeep_prob = tf.placeholder(tf.float32) # probability to keep units\n\nhidden_layer = tf.add(tf.matmul(features, weights[0]), biases[0])\nhidden_layer = tf.nn.relu(hidden_layer)\nhidden_layer = tf.nn.dropout(hidden_layer, keep_prob)\n\nlogits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])\n```\nThe code above illustrates how to apply dropout to a neural network.  \n\nThe [`tf.nn.dropout()`](https://www.tensorflow.org/api_docs/python/tf/nn/dropout) function takes in two parameters:\n1. `hidden_layer`: the tensor to which you would like to apply dropout\n2. `keep_prob`: the probability of keeping (i.e. *not* dropping) any given unit \n\n`keep_prob` allows you to adjust the number of units to drop. In order to compensate for dropped units, [`tf.nn.dropout()`](https://www.tensorflow.org/api_docs/python/tf/nn/dropout) multiplies all units that are kept (i.e. *not* dropped) by `1/keep_prob`. \n\nDuring training, a good starting value for `keep_prob` is `0.5`.\n\nDuring testing, use a `keep_prob` value of `1.0` to keep all units and maximize the power of the model.\n\n## Quiz 1\nTake a look at the code snippet below.  Do you see what's wrong?\n\nThere's nothing wrong with the syntax, however the test accuracy is extremely low.\n```python\n...\n\nkeep_prob = tf.placeholder(tf.float32) # probability to keep units\n\nhidden_layer = tf.add(tf.matmul(features, weights[0]), biases[0])\nhidden_layer = tf.nn.relu(hidden_layer)\nhidden_layer = tf.nn.dropout(hidden_layer, keep_prob)\n\nlogits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])\n\n...\n\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    \n    for epoch_i in range(epochs):\n        for batch_i in range(batches):\n            ....\n    \n            sess.run(optimizer, feed_dict={\n                features: batch_features,\n                labels: batch_labels,\n                keep_prob: 0.5})\n    \n    validation_accuracy = sess.run(accuracy, feed_dict={\n        features: test_features,\n        labels: test_labels,\n        keep_prob: 0.5})\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 205033,
+              "key": "a1b14727-a408-4b03-b867-c5562ef5ef3e",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What's wrong with the above code?",
+                "answers": [
+                  {
+                    "id": "a1478643461582",
+                    "text": "Dropout doesn't work with batching.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1478646143808",
+                    "text": "The keep_prob value of 0.5 is too low.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1478646160078",
+                    "text": "There shouldn't be a value passed to keep_prob when testing for accuracy.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1478646212823",
+                    "text": "keep_prob should be set to 1.0 when evaluating validation accuracy.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 205032,
+              "key": "7c53df85-f083-4af1-a2bd-141da86f1b6a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quiz 2\nThis quiz will be starting with the code from the ReLU Quiz and applying a dropout layer.  Build a model with a ReLU layer and dropout layer using the `keep_prob` placeholder to pass in a probability of `0.5`.  Print the logits from the model.\n\nNote: Output will be different every time the code is run.  This is caused by dropout randomizing the units it drops.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 205002,
+              "key": "73ed1038-9ba6-487b-8840-d1c101645d41",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6594713119490048",
+                "initial_code_files": [
+                  {
+                    "text": "# Solution is available in the other \"solution.py\" tab\nimport tensorflow as tf\n\nhidden_layer_weights = [\n    [0.1, 0.2, 0.4],\n    [0.4, 0.6, 0.6],\n    [0.5, 0.9, 0.1],\n    [0.8, 0.2, 0.8]]\nout_weights = [\n    [0.1, 0.6],\n    [0.2, 0.1],\n    [0.7, 0.9]]\n\n# Weights and biases\nweights = [\n    tf.Variable(hidden_layer_weights),\n    tf.Variable(out_weights)]\nbiases = [\n    tf.Variable(tf.zeros(3)),\n    tf.Variable(tf.zeros(2))]\n\n# Input\nfeatures = tf.Variable([[0.0, 2.0, 3.0, 4.0], [0.1, 0.2, 0.3, 0.4], [11.0, 12.0, 13.0, 14.0]])\n\n# TODO: Create Model with Dropout\n\n\n# TODO: Print logits from a session\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "# Quiz Solution\n# Note: You can't run code in this tab\nimport tensorflow as tf\n\nhidden_layer_weights = [\n    [0.1, 0.2, 0.4],\n    [0.4, 0.6, 0.6],\n    [0.5, 0.9, 0.1],\n    [0.8, 0.2, 0.8]]\nout_weights = [\n    [0.1, 0.6],\n    [0.2, 0.1],\n    [0.7, 0.9]]\n\n# Weights and biases\nweights = [\n    tf.Variable(hidden_layer_weights),\n    tf.Variable(out_weights)]\nbiases = [\n    tf.Variable(tf.zeros(3)),\n    tf.Variable(tf.zeros(2))]\n\n# Input\nfeatures = tf.Variable([[0.0, 2.0, 3.0, 4.0], [0.1, 0.2, 0.3, 0.4], [11.0, 12.0, 13.0, 14.0]])\n\n# TODO: Create Model with Dropout\nkeep_prob = tf.placeholder(tf.float32)\nhidden_layer = tf.add(tf.matmul(features, weights[0]), biases[0])\nhidden_layer = tf.nn.relu(hidden_layer)\nhidden_layer = tf.nn.dropout(hidden_layer, keep_prob)\n\nlogits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])\n\n# TODO: Print logits from a session\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    print(sess.run(logits, feed_dict={keep_prob: 0.5}))\n\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

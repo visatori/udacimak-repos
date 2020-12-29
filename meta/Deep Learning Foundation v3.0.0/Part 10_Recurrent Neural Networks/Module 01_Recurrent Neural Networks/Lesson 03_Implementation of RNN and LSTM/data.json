@@ -1,0 +1,337 @@
+{
+  "data": {
+    "lesson": {
+      "id": 403150,
+      "key": "a8c4d04d-282c-44de-a42e-b14981451264",
+      "title": "Implementation of RNN and LSTM",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": null,
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/a8c4d04d-282c-44de-a42e-b14981451264/403150/1544444188058/Implementation+of+RNN+and+LSTM+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/a8c4d04d-282c-44de-a42e-b14981451264/403150/1544444183555/Implementation+of+RNN+and+LSTM+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 466739,
+          "key": "4304ddac-3d43-41c2-ae80-78574d2060b4",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466740,
+              "key": "e0296a5c-0618-4cdb-978b-3c2d7a4399bb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/November/5a2079c6_screen-shot-2017-11-30-at-1.34.44-pm/screen-shot-2017-11-30-at-1.34.44-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e0296a5c-0618-4cdb-978b-3c2d7a4399bb",
+              "caption": "Hi! It's Mat.",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 466741,
+              "key": "c4288cb6-1df7-409e-8ea8-fe1180dea256",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Hi everyone! \nIn the previous lessons, Ortal and Luis introduced you to RNNs and LSTMs. We will now start with implementations of these networks. As we mentioned before, there are various error functions we can use, here we will use the cross entropy loss.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 305304,
+          "key": "6538eb14-1ec2-4a25-bc73-5942a48b1141",
+          "title": "Character-wise RNNs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306074,
+              "key": "a1b53a77-896f-46d1-9827-2127679400fc",
+              "title": "Character-Wise RNN",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dXl3eWCGLdU",
+                "china_cdn_id": "dXl3eWCGLdU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305305,
+          "key": "5a65c5b3-5cfc-4753-bcde-25a490978e6c",
+          "title": "Sequence Batching",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306077,
+              "key": "3eb4b04b-ea18-44b9-82fe-ad8d094bca10",
+              "title": "Sequence-Batching",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Z4OiyU0Cldg",
+                "china_cdn_id": "Z4OiyU0Cldg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 269358,
+          "key": "7076c726-bd0e-49ca-94b2-be7d577f7321",
+          "title": "Character-wise RNN Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269365,
+              "key": "1fb7a2dc-b16f-4bf1-8f8e-65e6dbc3e5fc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Character-wise RNN Notebook\n\nYou can get the notebook with the character-wise RNN from our [public GitHub repo](https://github.com/udacity/deep-learning/tree/master/intro-to-rnns) in the `intro-to-rnns` folder.\n\nTo clone the entire repository to your machine:\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nThis code requires **TensorFlow 1.0**, so make sure you upgrade if you're using an older version.\nPlay with the network, improve it, train it on your own text. This thing is for you to build off of.\n\nIf you find ways to improve it, make a pull request and we'll add it in. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 466699,
+          "key": "5d66f50a-0159-48b1-a764-28600ef4982f",
+          "title": "Implementing a Character-wise RNN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466700,
+              "key": "2e01e14b-0ca8-4d22-8dce-ee82c35a1f10",
+              "title": "Implementing a Character-wise RNN",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KPCMn_jg2oY",
+                "china_cdn_id": "KPCMn_jg2oY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466701,
+          "key": "fafd6ec8-b49b-4753-b2eb-dbb4e2037f25",
+          "title": "Batching Data Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466702,
+              "key": "06254ac9-c5aa-4106-ad60-f19911f09f83",
+              "title": "Batching Data Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o3nBxHJLQcc",
+                "china_cdn_id": "o3nBxHJLQcc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466703,
+          "key": "a4456242-cbfe-46ea-bdcd-f386af0b2cef",
+          "title": "LSTM Cell",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466704,
+              "key": "11dc958f-5faa-496a-9ffa-95b2f8040895",
+              "title": "LSTM Cell",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ajC-5uWB8S4",
+                "china_cdn_id": "ajC-5uWB8S4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466705,
+          "key": "f7b81f98-4a09-47fd-85d0-bd1ad003e57a",
+          "title": "LSTM Cell Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466706,
+              "key": "91cbc66e-af31-45bf-9c88-94456d68f84e",
+              "title": "LSTM Cell Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X4uA0dq_4jA",
+                "china_cdn_id": "X4uA0dq_4jA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466707,
+          "key": "1343d83b-5dc1-45d8-b76f-02bf8a9ba50d",
+          "title": "RNN Output",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466708,
+              "key": "c6511c0a-cf35-4f20-bccb-fa586453c4f5",
+              "title": "RNN Output",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RkanDkcrTxs",
+                "china_cdn_id": "RkanDkcrTxs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466709,
+          "key": "4e400500-39c9-438e-b94c-201b235058b8",
+          "title": "Network Loss",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466711,
+              "key": "a2cab339-72d8-4b49-9244-b0ee73de3a49",
+              "title": "Network Loss",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "itu-uNK4brc",
+                "china_cdn_id": "itu-uNK4brc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466712,
+          "key": "42636ee1-c5b6-40e8-8e56-75822497bb88",
+          "title": "Output and Loss Solutions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466713,
+              "key": "cd29224a-1227-4d43-8de8-55962f2655d8",
+              "title": "Output And Loss Solutions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CT8hcU7FmGc",
+                "china_cdn_id": "CT8hcU7FmGc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466714,
+          "key": "20c47d6c-0895-4639-9327-772c5a5ab6b8",
+          "title": "Build the Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466715,
+              "key": "f7c95e93-962c-439a-a068-c88b2720e632",
+              "title": "Build The Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RVNjDlWTBQU",
+                "china_cdn_id": "RVNjDlWTBQU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 466716,
+          "key": "1a73d331-82fd-4838-91d7-d78c9463bfdb",
+          "title": "Build the Network Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 466717,
+              "key": "6293c625-7e3e-4b9d-bc33-7f02556ca658",
+              "title": "Build The Network And Results",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hu8iMMqajmQ",
+                "china_cdn_id": "hu8iMMqajmQ.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

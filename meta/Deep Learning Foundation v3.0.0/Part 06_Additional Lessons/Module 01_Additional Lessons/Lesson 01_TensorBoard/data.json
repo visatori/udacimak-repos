@@ -1,0 +1,164 @@
+{
+  "data": {
+    "lesson": {
+      "id": 280068,
+      "key": "7cca02e6-8075-406c-866e-0875a380da7e",
+      "title": "TensorBoard",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll learn about using TensorBoard to inspect your network. You can view the TensorFlow graph and the distributions of variables in the network. You can also use it to compare multiple training runs with different hyperparameters.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7cca02e6-8075-406c-866e-0875a380da7e/280068/1544457261723/TensorBoard+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7cca02e6-8075-406c-866e-0875a380da7e/280068/1544457258431/TensorBoard+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 282738,
+          "key": "713b392e-cc00-4de6-8e70-43d8f243b69b",
+          "title": "TensorBoard Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282739,
+              "key": "c61fd700-3c26-42e5-ae40-9852544b7083",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c61fd700-3c26-42e5-ae40-9852544b7083",
+              "caption": "Hi there, it's Mat again!",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 282786,
+              "key": "b6443dd1-0d6e-468e-bbb6-c77f28c9869a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Hi there! This week, we're going to be covering TensorBoard. TensorBoard is an app that runs in your browser and allows you to inspect your graphs and network variables, such as weights and biases. It helps with debugging and can be used to help choose the best hyperparameters for your problem.\n\nTo start, watch this [TensorBoard tutorial](https://youtu.be/eBbEDRsCmv4) from the TensorFlow dev summit. This is a great overview of using TensorBoard. And [here is a tutorial](https://www.tensorflow.org/get_started/summaries_and_tensorboard) to help you get started using TensorBoard. Next up, I'll be showing you how to use TensorBoard for one of the networks we've built in this course.\n\nYou can get the notebook files from our [public GitHub repo](https://github.com/udacity/deep-learning), in the `tensorboard` folder. Download the files from there, or clone the repo\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nTry out using TensorBoard on your next project!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 282731,
+          "key": "6845c74e-f6b3-479d-95fb-3ad37a7724c3",
+          "title": "Viewing Graphs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282733,
+              "key": "4c9796bd-3e69-4718-9ca2-dd92ba9331c3",
+              "title": "TensorBoard Graphs 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "M64FWxf1yK4",
+                "china_cdn_id": "M64FWxf1yK4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 282732,
+          "key": "91a64870-3c6b-4a30-922c-a916852faab0",
+          "title": "Name Scopes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282735,
+              "key": "9e640e11-563e-4486-8e08-dd82ce9fcba7",
+              "title": "TensorBoard Graphs 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "REmz7HUj6f4",
+                "china_cdn_id": "REmz7HUj6f4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 282729,
+          "key": "50618c8b-0673-42b6-b6df-5792c6979ff2",
+          "title": "Inspecting Variables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282730,
+              "key": "f7eca6c1-0844-4ca6-a01b-ee438c959957",
+              "title": "TensorBoard Variables 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QG41p4Wx5wc",
+                "china_cdn_id": "QG41p4Wx5wc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 282736,
+          "key": "02417f7f-70c1-4932-b0f5-b5188188fa0a",
+          "title": "\tChoosing Hyperparameters",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 282737,
+              "key": "1bd78e2f-c987-49ec-b869-91a65eb312b7",
+              "title": "TensorBoard Hyperparameters",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "THiwPbkjoLQ",
+                "china_cdn_id": "THiwPbkjoLQ.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

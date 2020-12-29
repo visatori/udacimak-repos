@@ -1,0 +1,40 @@
+{
+  "data": {
+    "lesson": {
+      "id": 553609,
+      "key": "4112e833-76f2-4827-b667-c1bfa595d55c",
+      "title": "CNN Project: Dog Breed Classifier",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this project, you will learn how to build a pipeline to process real-world, user-supplied images. Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 553610,
+          "key": "353505d5-ac8a-4f2c-aefa-421a93089c5a",
+          "title": "Project Description",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 553614,
+              "key": "76c43f75-9d10-4403-9767-43bc0d29bc17",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project Overview\n\nWelcome to the Convolutional Neural Networks (CNN) project! In this project, you will learn how to build a pipeline to process real-world, user-supplied images.  Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.  \n\nAlong with exploring state-of-the-art CNN models for classification, you will make important design decisions about the user experience for your app.  Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer.  Your imperfect solution will nonetheless create a fun user experience!\n\n## Project Instructions\n\nClone the project from the GitHub [repository](https://github.com/udacity/dog-project).  Follow the instructions in the README to complete the project.\n\n## Evaluation\n\nYou can find the project specifications in this [rubric](https://review.udacity.com/#!/rubrics/810/view).  Review this rubric thoroughly, and self-evaluate your project. \n\n## Final Steps\n\nWhen you are done, collect the following files and compress them into a single archive:\n- The `dog_app.ipynb` file with fully functional code, all code cells executed and displaying output, and all questions answered.\n- An HTML or PDF export of the project notebook with the name `report.html` or `report.pdf`.\n- Any additional images used for the project that were not supplied to you for the project. __Please do not include the project data sets in the `dogImages/` or `lfw/` folders.  Likewise, please do not include the `bottleneck_features/` folder.__\n\nAlternatively, your completed project could consist of the GitHub link to your repository.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

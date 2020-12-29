@@ -1,0 +1,226 @@
+{
+  "data": {
+    "lesson": {
+      "id": 287310,
+      "key": "34a24397-2b0f-4c04-9088-1cea220c03b8",
+      "title": "Sentiment Prediction RNN",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Implement a sentiment prediction RNN",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/34a24397-2b0f-4c04-9088-1cea220c03b8/287310/1544465288180/Sentiment+Prediction+RNN+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/34a24397-2b0f-4c04-9088-1cea220c03b8/287310/1544465284612/Sentiment+Prediction+RNN+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 287311,
+          "key": "5904c93a-0dbc-4900-80ec-3e5523b56c70",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287312,
+              "key": "27308933-5ddd-4049-8c77-4f48b4310c64",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/27308933-5ddd-4049-8c77-4f48b4310c64",
+              "caption": "It's Mat again, with more knowledge for you",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 287313,
+              "key": "80d04553-01d2-497f-8e0a-46966ef98753",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Sentiment Prediction RNN\n\nWelcome to this lesson on building a recurrent neural network for predicting sentiment. This is intended to give you more experience building RNNs. I'm using the dataset from Andrew Trask's lesson, a bunch of movie reviews from IMDB labeled with sentiment (positive or negative).\n\nI'm going to have you implement this RNN. You can find the notebooks in our [public GitHub repo](https://github.com/udacity/deep-learning). You can download the notebooks from the `sentiment-rnn` folder there, or clone the repository:\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nIf you already have the repo, do a `git pull` to get the new notebooks.\n\n## The Data\n\nThe data, `reviews.txt` and `labels.txt`, is located in the `sentiment_network` directory. You can also find the labels [here](https://github.com/udacity/deep-learning/blob/master/sentiment-network/labels.txt) and the reviews [here](https://github.com/udacity/deep-learning/blob/master/sentiment-network/reviews.txt).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 287314,
+          "key": "3f86b1ed-624e-435e-acbf-73597d29e02a",
+          "title": "Sentiment RNN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287324,
+              "key": "20046bd3-72a7-455d-bb2f-14b601694c70",
+              "title": "Sentiment Prediction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uGN3rZJRiMY",
+                "china_cdn_id": "uGN3rZJRiMY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 287321,
+          "key": "6ea3be95-f4ee-460a-a69d-975d8a88b2a3",
+          "title": "Data Preprocessing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287325,
+              "key": "1bb719d0-1cc7-4e2e-9e0c-052918dc0725",
+              "title": "Data Preprocessing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "h4-LwZU9_k8",
+                "china_cdn_id": "h4-LwZU9_k8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 287322,
+          "key": "dd0ffb77-06ad-4eaf-a213-5e8a908e9e5f",
+          "title": "Creating Testing Sets",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287326,
+              "key": "175ced85-7b40-4810-b5ee-20bf17cbb2a4",
+              "title": "Creating Testing Sets",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BRBbrNLz1ho",
+                "china_cdn_id": "BRBbrNLz1ho.mp4"
+              }
+            },
+            {
+              "id": 287335,
+              "key": "eb2a078a-7ebd-4a0e-99d1-2a97f2154c44",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Note from Mat\n\nHere I say `split_frac` is the fraction to keep in the \"test\" set. It's actually the fraction to keep in the **training** set. My apologies, will fix this video.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 287327,
+          "key": "31aa642b-3b60-421e-81cb-b95187e894b3",
+          "title": "Building the RNN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287448,
+              "key": "d6e6f89b-cf9d-4213-ace3-2ffa69ac1d04",
+              "title": "Building The RNN 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XTD6slf64fM",
+                "china_cdn_id": "XTD6slf64fM.mp4"
+              }
+            },
+            {
+              "id": 287337,
+              "key": "21dfb791-dea3-4ba0-9b73-152bb4a3c894",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Note from Mat\n\nWe're aware of some audio mixup at 1:00 here. We're on it!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 287328,
+          "key": "a8623915-6a2f-4b97-8207-30e128293260",
+          "title": "Training the Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287330,
+              "key": "b9d9538d-ac7a-4806-87a6-6f62ce745171",
+              "title": "Training The Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nknJ3Xu3ld0",
+                "china_cdn_id": "nknJ3Xu3ld0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 287315,
+          "key": "314b9231-16d4-4afe-97db-4d8958232bda",
+          "title": "Solutions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287320,
+              "key": "2436ec35-42de-446b-a839-f19ddca92c4e",
+              "title": "Sentiment RNN 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "V9YGGjmoHS0",
+                "china_cdn_id": "V9YGGjmoHS0.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

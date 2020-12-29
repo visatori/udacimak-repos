@@ -1,0 +1,304 @@
+{
+  "data": {
+    "lesson": {
+      "id": 309327,
+      "key": "9a9cfc71-bce9-475e-b042-afc23baa1569",
+      "title": "Deep Convolutional GANs",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll implement a Deep Convolution GAN to generate complex color images of house numbers.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/9a9cfc71-bce9-475e-b042-afc23baa1569/309327/1544457312135/Deep+Convolutional+GANs+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/9a9cfc71-bce9-475e-b042-afc23baa1569/309327/1544457309097/Deep+Convolutional+GANs+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 309432,
+          "key": "b65541f5-01ca-4fca-83c6-e91de2745877",
+          "title": "Deep Convolutional GANs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309512,
+              "key": "be27b4ba-99ca-493b-9aa8-54e3f2d1e134",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/be27b4ba-99ca-493b-9aa8-54e3f2d1e134",
+              "caption": "Hi there, it's Mat again!",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 309517,
+              "key": "7d634acb-474b-4610-b8e9-77d118519173",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Deep Convolutional GANs\n\nIn this lesson you'll implement the Deep Convolutional GAN model to generate full color images. The additional complexity of these images requires using convolutional layers in the generator and discriminator. You'll also need to use a technique called batch normalization to get the GAN to train appropriately.\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309520,
+              "key": "149eea06-7e6d-4532-bc8a-b0ad2b14daeb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5913bc49_svhn-examples/svhn-examples.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/149eea06-7e6d-4532-bc8a-b0ad2b14daeb",
+              "caption": "",
+              "alt": null,
+              "width": 340,
+              "height": 340,
+              "instructor_notes": null
+            },
+            {
+              "id": 309521,
+              "key": "51b97960-a709-4f97-82b2-cb241af8ad95",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You'll be training your GAN on the Street View House Numbers dataset, a small example is shown above. After training, the generator will be able to create images that are nearly identical to these images.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309518,
+              "key": "4531a661-9d73-4041-9c8c-a98c79cd3171",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note:** This lesson will eventually cover semi-supervised learning with GANs. We'll release more content in a few weeks with Ian Goodfellow on this.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 309433,
+          "key": "1e82e080-7db1-4ac8-a5fc-db165ed4585e",
+          "title": "DCGAN Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309435,
+              "key": "7fa46a50-ec9d-4ccd-a2ba-27d69d7c86d2",
+              "title": "Deconvolution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sX_AxtB6CHI",
+                "china_cdn_id": "sX_AxtB6CHI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309436,
+          "key": "04e83c91-0e08-426b-b2d2-5bc46040a975",
+          "title": "Batch Normalization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309497,
+              "key": "2f8bcdf9-fb20-4e8d-8084-2edbd63a7a41",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Batch Normalization\n\nBatch normalization is a technique for improving the performance and stability of neural networks. The idea is to normalize the layer inputs such that they have a mean of zero and variance of one, much like how we standardize the inputs to networks. Batch normalization is necessary to make DCGANs work.\n\nWe've prepared a few notebooks for you to work through that will teach you about batch normalization and how to implement it in TensorFlow. As usual, you can find the notebooks on our [GitHub repository](https://github.com/udacity/deep-learning) in the `batch-norm` folder. If you have already cloned the repo, do a `git pull` to get the new files. Otherwise, clone the repository:\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\n\n\nOr, you can get the notebooks [here](https://github.com/udacity/deep-learning/tree/master/batch-norm).\n\nYou'll find three notebooks:\n\n* `Batch_Normalization_Lesson.ipynb` - A notebook showing you how batch normalization works\n* `Batch_Normalization_Exercises.ipynb` - Exercises for you to implement batch normalization\n* `Batch_Normalization_Solutions.ipynb` - Solutions to those exercises",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 309525,
+          "key": "32778dec-e12d-4bc8-beea-73980b970d85",
+          "title": "DCGAN Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309526,
+              "key": "7d290be9-e254-4f9d-a393-fed6f21dee55",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# DCGAN implementation\n\nWe've prepared some notebooks for you to work through where you'll implement a DCGAN on the [Street View House Numbers](http://ufldl.stanford.edu/housenumbers/) (SVHN) dataset. I made a short video of generated images while the GAN is being trained. If you get everything in your implementation right, it should look a lot like [this](https://youtu.be/TjGs2fQvCDU).\n\nAs usual, you can find the notebooks on our [GitHub repository](https://github.com/udacity/deep-learning) in the `dcgan-svhn` folder. If you have already cloned the repo, do a `git pull` to get the new files. Otherwise, clone the repository:\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nOr, you can get the notebooks [here](https://github.com/udacity/deep-learning/tree/master/dcgan-svhn).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 309441,
+          "key": "52c8e972-e240-40b7-b6f5-20449ae07612",
+          "title": "DCGAN and the Generator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309442,
+              "key": "bdec59f2-3d68-461b-9d74-ce79e58e02b3",
+              "title": "DCGAN And The Generator",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CH6BxLTKt7s",
+                "china_cdn_id": "CH6BxLTKt7s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309443,
+          "key": "4284d5c2-0229-4702-8db2-0ed6a225d2d3",
+          "title": "Generator Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309444,
+              "key": "2f607686-9418-44c4-890b-a35887b652c8",
+              "title": "Generator Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jyPwUEZg05Q",
+                "china_cdn_id": "jyPwUEZg05Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309445,
+          "key": "8eba15c6-e06e-4b98-876f-0dc542d05a70",
+          "title": "Discriminator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309506,
+              "key": "7aabda89-e353-4391-a583-cdb3c75ecd74",
+              "title": "Discriminator",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XRqOUbf96eI",
+                "china_cdn_id": "XRqOUbf96eI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309446,
+          "key": "fe6bd832-2bef-4792-a30f-b7b40dea304c",
+          "title": "Discriminator Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309507,
+              "key": "55232585-794b-4a04-9fc3-a6adedd0473d",
+              "title": "Discriminator Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ffPWI2yJscw",
+                "china_cdn_id": "ffPWI2yJscw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309447,
+          "key": "fbfaffed-7971-4676-b97d-25ff9dae85d4",
+          "title": "Building and Training the Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309508,
+              "key": "fcaef0e0-b657-4dc5-a8df-29af41e5c2f3",
+              "title": "Building And Training The Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nXKk9GI4X14",
+                "china_cdn_id": "nXKk9GI4X14.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309448,
+          "key": "6ea5841f-1612-4eeb-8568-0c93226017ac",
+          "title": "Hyperparameter Solutions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309509,
+              "key": "2268688a-c930-49c6-8739-1ccfc6808fa8",
+              "title": "Hyperparameters Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Rt8MlVDtpi8",
+                "china_cdn_id": "Rt8MlVDtpi8.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

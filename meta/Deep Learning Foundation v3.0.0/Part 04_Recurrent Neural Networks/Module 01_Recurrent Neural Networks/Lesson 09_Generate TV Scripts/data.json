@@ -1,0 +1,112 @@
+{
+  "data": {
+    "lesson": {
+      "id": 261248,
+      "key": "90002ca0-2f37-4278-b986-095a107e8e21",
+      "title": "Generate TV Scripts",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Generate a TV script using a recurrent neural network.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/90002ca0-2f37-4278-b986-095a107e8e21/261248/1544457192525/Generate+TV+Scripts+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/90002ca0-2f37-4278-b986-095a107e8e21/261248/1544457190554/Generate+TV+Scripts+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "90ee7009-983c-45a8-aaf8-f70b32adc226",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 30240,
+        "semantic_type": "Project",
+        "title": "Generate TV Scripts",
+        "description": "# Generate TV Scripts\n### Introduction\nIn this project, you'll generate your own Simpsons TV scripts using RNNs. You'll be using part of the Simpsons dataset of scripts from 27 seasons. The Neural Network you'll build will generate a new TV script for a scene at Moe's Tavern.\n### Getting the project files\nThe project files can be found in our [public GitHub repo](https://github.com/udacity/deep-learning), in the `tv-script-generation` folder. You can download the files from there, but it's better to clone the repository to your computer\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nThis way you can stay up to date with any changes we make by pulling the changes to your local repository with `git pull`.\n\n### Submission\n1. Ensure you've passed all the unit tests in the notebook.\n2. Ensure you pass all points on [the rubric](https://review.udacity.com/#!/rubrics/725/view).\n3. When you're done with the project, please save the notebook as an HTML file. You can do this by going to the **File** menu in the notebook and choosing \"Download as\" > HTML. ** Ensure you submit both the Jupyter Notebook and it's HTML version together. **\n4. Package the \"dlnd_tv_script_generation.ipynb\", \"helper.py\", \"problem_unittests.py\", and the HTML file into a zip archive, or push the files from your GitHub repo.\n5. Hit Submit Project below!\n\n### Advanced Projects\nAfter completing this project, try applying what you learned to one of these problems.\n- Generate your own Bach music using like [DeepBach](https://arxiv.org/pdf/1612.01010.pdf).\n- Predict seizures in intracranial EEG recordings on [Kaggle](https://www.kaggle.com/c/seizure-prediction).",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "c/nd101-Project-3",
+        "rubric_id": "725",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://d17h27t6h515a5.cloudfront.net/topher/2017/March/58d2e596_project-3-hero2/project-3-hero2.jpg",
+          "width": 1200,
+          "height": 900
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 288313,
+          "key": "b7ff74a2-223a-4d91-99ca-dabe031f7496",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 288314,
+              "key": "5ae2d375-8ca2-46ea-bc73-afba21c7c5cf",
+              "title": "Project-3-Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qNpv7IjQzo0",
+                "china_cdn_id": "qNpv7IjQzo0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 570840,
+          "key": "d2ac1102-40f5-4cc4-aca6-feccbaf149c9",
+          "title": "TV Script Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571316,
+              "key": "ccc717fb-59b7-499f-bc1e-1ef4c5b7a760",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewc4279aa2",
+              "pool_id": "jupytergpu",
+              "view_id": "c4279aa2-8bbe-4c06-91d5-39ba95db4f13",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "/notebooks/tv-script-generation/dlnd_tv_script_generation.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,965 @@
+{
+  "data": {
+    "lesson": {
+      "id": 374796,
+      "key": "ce8d7dbc-3320-4440-bdd3-556b8ca3fda2",
+      "title": "The RL Framework: The Solution",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In reinforcement learning, agents learn to prioritize different decisions based on the rewards and punishments associated with different outcomes.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/ce8d7dbc-3320-4440-bdd3-556b8ca3fda2/374796/1547827179114/The+RL+Framework%3A+The+Solution+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/ce8d7dbc-3320-4440-bdd3-556b8ca3fda2/374796/1547827175492/The+RL+Framework%3A+The+Solution+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 385102,
+          "key": "f2b5117a-f84f-44ef-ba50-72abeb199ece",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 813314,
+              "key": "58388499-f195-40bf-b89d-ac2c493aed41",
+              "title": "M0 L3 C01 Intro- V3 No Slack-OH",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5IlSH-eoPAU",
+                "china_cdn_id": "5IlSH-eoPAU.mp4"
+              }
+            },
+            {
+              "id": 410028,
+              "key": "efcb8e93-7e28-40dc-bb75-78028d2eac6f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This lesson covers material in **Chapter 3** (especially 3.5-3.6) of the [textbook](http://go.udacity.com/rl-textbook).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 385100,
+          "key": "766ed227-4ac9-4a91-b8e6-e4d37bfdf2b9",
+          "title": "Policies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478281,
+              "key": "593fed8f-bf9e-4bc9-8b98-1d58afb6cb0b",
+              "title": "Policies",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hc3LrvaC13U",
+                "china_cdn_id": "hc3LrvaC13U.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 385105,
+          "key": "d09cd02f-cc41-4035-a0dd-f8949e082ffb",
+          "title": "Quiz: Interpret the Policy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 408081,
+              "key": "dd7a4d5a-e796-4a78-a27f-746cb6ff6d2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Interpret the Policy",
+              "instructor_notes": ""
+            },
+            {
+              "id": 408086,
+              "key": "32393094-398c-4658-8dec-9c1494ad7104",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A policy determines how an agent chooses an action in response to the current state.  In other words, it specifies how the agent responds to situations that the environment has presented.\n\nConsider the recycling robot MDP from the previous lesson.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 408098,
+              "key": "234ec64c-0487-460b-a110-389b3ff75691",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c40b85_screen-shot-2017-09-21-at-12.20.30-pm/screen-shot-2017-09-21-at-12.20.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/234ec64c-0487-460b-a110-389b3ff75691",
+              "caption": "",
+              "alt": "",
+              "width": 1788,
+              "height": 1122,
+              "instructor_notes": null
+            },
+            {
+              "id": 407376,
+              "key": "138b0154-ff73-40fc-94eb-0a0f434689f8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Deterministic Policy: Example\n---\nAn example deterministic policy <span class=\"mathquill\">\\pi: \\mathcal{S}\\to\\mathcal{A}</span> can be specified as:\n\n> <span class=\"mathquill\">\\pi(\\text{low}) = \\text{recharge}</span>\n\n> <span class=\"mathquill\">\\pi(\\text{high}) = \\text{search}</span>\n\nIn this case,\n- if the battery level is _low_, the agent chooses to _recharge_ the battery.  \n- if the battery level is _high_, the agent chooses to _search_ for cans. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 408101,
+              "key": "70a4025a-49bd-468b-a9d2-7dd0e49ad8f9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question 1\n\nConsider a different deterministic policy <span class=\"mathquill\">\\pi: \\mathcal{S}\\to\\mathcal{A}</span>, where:\n\n> <span class=\"mathquill\">\\pi(\\text{low}) = \\text{search}</span>\n\n> <span class=\"mathquill\">\\pi(\\text{high}) = \\text{search}</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 408103,
+              "key": "3a630ddd-2346-4dba-ab58-53f7a8ca336a",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the following statements are true, if the agent follows the policy?  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506112677829",
+                    "text": "If the state is _low_, the agent chooses action _search_.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506112718272",
+                    "text": "If the action is _low_, the agent chooses state _search_.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506112758524",
+                    "text": "The agent will always _search_ for cans at every time step (whether the battery level is _low_ or _high_).",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506112838120",
+                    "text": "If the state is _high_, the agent chooses to _wait_ for cans.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 408105,
+              "key": "6398afd1-b5d6-464a-b393-ab857816655d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Stochastic Policy: Example\n---\nAn example stochastic policy <span class=\"mathquill\">\\pi: \\mathcal{S}\\times\\mathcal{A}\\to [0,1]</span> can be specified as:\n\n> <span class=\"mathquill\">\\pi(\\text{recharge}|\\text{low}) = 0.5</span>\n\n> <span class=\"mathquill\">\\pi(\\text{wait}|\\text{low}) = 0.4</span>\n\n> <span class=\"mathquill\">\\pi(\\text{search}|\\text{low}) = 0.1</span>\n\n> <span class=\"mathquill\">\\pi(\\text{search}|\\text{high}) = 0.9</span>\n\n> <span class=\"mathquill\">\\pi(\\text{wait}|\\text{high}) = 0.1</span>\n\nIn this case,\n- if the battery level is _low_, the agent _recharges_ the battery with 50% probability, _waits_ for cans with 40% probability, and _searches_ for cans with 10% probability.  \n- if the battery level is _high_, the agent _searches_ for cans with 90% probability and _waits_ for cans with 10% probability. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 408109,
+              "key": "b7a5f532-f052-4c92-a627-e9a935256819",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question 2\nConsider a different stochastic policy <span class=\"mathquill\">\\pi: \\mathcal{S}\\times\\mathcal{A}\\to [0,1]</span>, where:\n\n> <span class=\"mathquill\">\\pi(\\text{recharge}|\\text{low}) = 0.3</span>\n\n> <span class=\"mathquill\">\\pi(\\text{wait}|\\text{low}) = 0.5</span>\n\n> <span class=\"mathquill\">\\pi(\\text{search}|\\text{low}) = 0.2</span>\n\n> <span class=\"mathquill\">\\pi(\\text{search}|\\text{high}) = 0.6</span>\n\n> <span class=\"mathquill\">\\pi(\\text{wait}|\\text{high}) = 0.4</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 408111,
+              "key": "864f4106-e495-43fc-b176-d5b176ce88a3",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the following statements are true, if the agent follows the policy?  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506116933600",
+                    "text": "If the battery level is _low_, the agent will always decide to _wait_ for cans.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506117065613",
+                    "text": "If the battery level is _high_, the agent chooses to _search_ for a can with 60% probability, and otherwise _waits_ for a can.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506117153961",
+                    "text": "If the battery level is _low_, the agent is most likely to decide to _wait_ for cans.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 385107,
+          "key": "66559240-49b2-492a-ae1d-b2d9eb844814",
+          "title": "Gridworld Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461379,
+              "key": "26ea6a29-3beb-40f8-8499-d15849956fdb",
+              "title": "Gridworld Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XeHBmPFqTsE",
+                "china_cdn_id": "XeHBmPFqTsE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 385108,
+          "key": "0fab7f1b-5ac2-4b13-a190-8c0f78da6ef0",
+          "title": "State-Value Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461380,
+              "key": "96f4af6f-d079-4443-b165-0fc46da38449",
+              "title": "State-Value Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "llakAjwox_8",
+                "china_cdn_id": "llakAjwox_8.mp4"
+              }
+            },
+            {
+              "id": 407704,
+              "key": "60d7dec4-b52a-40fd-9aae-af9f69ab3c6f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note #1**: The notation <span class=\"mathquill\">\\mathbb{E}_\\pi[\\cdot]</span> is borrowed from the suggested [textbook](http://go.udacity.com/rl-textbook).  <span class=\"mathquill\">\\mathbb{E}_\\pi[\\cdot]</span> is defined as the expected value of a random variable, given that the agent follows policy <span class=\"mathquill\">\\pi</span>.\n\n**Note #2**: In this course, we will use \"return\" and \"discounted return\" interchangably.  For an arbitrary time step <span class=\"mathquill\">t</span>, both terms refer to <span class=\"mathquill\">G_t \\doteq R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\ldots = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}</span>, where <span class=\"mathquill\">\\gamma \\in [0,1]</span>.  In particular, when we refer to \"return\", it is not necessarily the case that <span class=\"mathquill\">\\gamma = 1</span>, and when we refer to \"discounted return\", it is not necessarily true that <span class=\"mathquill\">\\gamma < 1</span>.  (_This also holds for the readings in the recommended [textbook](http://go.udacity.com/rl-textbook)._)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 385109,
+          "key": "3d66f062-a1a4-492f-a829-b252819844d7",
+          "title": "Bellman Equations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461381,
+              "key": "c8ac4446-d280-4e50-a265-6306cbefffbd",
+              "title": "Bellman Equations",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UgIaDMvSdUo",
+                "china_cdn_id": "UgIaDMvSdUo.mp4"
+              }
+            },
+            {
+              "id": 461385,
+              "key": "f66a6efe-749f-48f8-9d63-e7e453187081",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Bellman Equations",
+              "instructor_notes": ""
+            },
+            {
+              "id": 408639,
+              "key": "3a61d094-a352-4a47-98b6-c2a2fcc0310b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this gridworld example, once the agent selects an action, \n- it always moves in the chosen direction (contrasting general MDPs where the agent doesn't always have complete control over what the next state will be), and \n- the reward can be predicted with complete certainty (contrasting general MDPs where the reward is a random draw from a probability distribution).\n\nIn this simple example, we saw that the value of any state can be calculated as the sum of the immediate reward and the (discounted) value of the next state.  \n\nAlexis mentioned that for a general MDP, we have to instead work in terms of an _expectation_, since it's not often the case that the immediate reward and next state can be predicted with certainty.  Indeed, we saw in an earlier lesson that the reward and next state are chosen according to the one-step dynamics of the MDP.  In this case, where the reward <span class=\"mathquill\">r</span> and next state <span class=\"mathquill\">s'</span> are drawn from a (conditional) probability distribution <span class=\"mathquill\">p(s',r|s,a)</span>, the **Bellman Expectation Equation (for <span class=\"mathquill\">v_\\pi</span>)** expresses the value of any state <span class=\"mathquill\">s</span> in terms of the _expected_ immediate reward and the  _expected_ value of the next state:\n\n<div class=\"mathquill\">v_\\pi(s) = \\text{} \\mathbb{E}_\\pi[R_{t+1} + \\gamma v_\\pi(S_{t+1})|S_t =s].</div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 442069,
+              "key": "7db81257-c385-4c5a-b775-2747391c4a8c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Calculating the Expectation\n---\nIn the event that the agent's policy <span class=\"mathquill\">\\pi</span> is **deterministic**,  the agent selects action <span class=\"mathquill\">\\pi(s)</span> when in state <span class=\"mathquill\">s</span>, and the Bellman Expectation Equation can be rewritten as the sum over two variables (<span class=\"mathquill\">s'</span> and <span class=\"mathquill\">r</span>):\n\n<div class=\"mathquill\">v_\\pi(s) = \\text{} \\sum_{s'\\in\\mathcal{S}^+, r\\in\\mathcal{R}}p(s',r|s,\\pi(s))(r+\\gamma  v_\\pi(s'))</div>\n\nIn this case, we multiply the sum of the reward and discounted value of the next state <span class=\"mathquill\">(r+\\gamma  v_\\pi(s'))</span> by its corresponding probability <span class=\"mathquill\">p(s',r|s,\\pi(s))</span> and sum over all possibilities to yield the expected value.\n\nIf the agent's policy <span class=\"mathquill\">\\pi</span> is **stochastic**,  the agent selects action <span class=\"mathquill\">a</span> with probability <span class=\"mathquill\">\\pi(a|s)</span> when in state <span class=\"mathquill\">s</span>, and the Bellman Expectation Equation can be rewritten as the sum over three variables (<span class=\"mathquill\">s'</span>, <span class=\"mathquill\">r</span>, and <span class=\"mathquill\">a</span>):\n\n<div class=\"mathquill\">v_\\pi(s) = \\text{} \\sum_{s'\\in\\mathcal{S}^+, r\\in\\mathcal{R},a\\in\\mathcal{A}(s)}\\pi(a|s)p(s',r|s,a)(r+\\gamma  v_\\pi(s'))</div>\n\nIn this case, we multiply the sum of the reward and discounted value of the next state <span class=\"mathquill\">(r+\\gamma  v_\\pi(s'))</span> by its corresponding probability <span class=\"mathquill\">\\pi(a|s)p(s',r|s,a)</span> and sum over all possibilities to yield the expected value.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 598930,
+              "key": "99d0cf24-33e5-41ea-9cb9-e024dac82cf0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## There are 3 more Bellman Equations!\n---\nIn this video, you learned about one Bellman equation, but there are 3 more, for a total of 4 Bellman equations.\n \n> All of the Bellman equations attest to the fact that *value functions satisfy recursive relationships*.  \n\nFor instance, the  **Bellman Expectation Equation (for <span class=\"mathquill\">v_\\pi</span>)** shows that it is possible to relate the value of a state to the values of all of its possible successor states.\n\nAfter finishing this lesson, you are encouraged to read about the remaining three Bellman equations in sections 3.5 and 3.6 of the [textbook](http://go.udacity.com/rl-textbook).  The Bellman equations are incredibly useful to the theory of MDPs.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 385110,
+          "key": "f958d2bf-ff9e-410e-ac18-c2c0add455af",
+          "title": "Quiz: State-Value Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 385115,
+              "key": "cbbc8147-a3ea-4ebc-aaa9-e48ad6b96c6a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: State-Value Functions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409113,
+              "key": "fe93cbb1-fa2e-4c72-8d0d-5cb978e6c8a5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this quiz, you will calculate the value function corresponding to a particular policy. \n\nEach of the nine states in the MDP is labeled as one of <span class=\"mathquill\">\\mathcal{S}^+ = \\{s_1, s_2, \\ldots, s_9 \\} </span>, where <span class=\"mathquill\">s_9</span> is a terminal state.\n\nConsider the (deterministic) policy that is indicated (in orange) in the figure below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409070,
+              "key": "18ec82cb-1f0b-4294-bd07-676590afa7ef",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c823a0_screen-shot-2017-09-24-at-4.28.04-pm/screen-shot-2017-09-24-at-4.28.04-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/18ec82cb-1f0b-4294-bd07-676590afa7ef",
+              "caption": "",
+              "alt": "",
+              "width": 680,
+              "height": 615,
+              "instructor_notes": null
+            },
+            {
+              "id": 409570,
+              "key": "03f04cba-a2e9-46f7-9d24-2eea98e21dae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The policy <span class=\"mathquill\">\\pi</span> is given by:\n\n> <span class=\"mathquill\">\\pi(s_1) = \\text{right}</span>\n\n> <span class=\"mathquill\">\\pi(s_2) = \\text{right}</span>\n\n> <span class=\"mathquill\">\\pi(s_3) = \\text{down}</span>\n\n> <span class=\"mathquill\">\\pi(s_4) = \\text{up}</span>\n\n> <span class=\"mathquill\">\\pi(s_5) = \\text{right}</span>\n\n> <span class=\"mathquill\">\\pi(s_6) = \\text{down}</span>\n\n> <span class=\"mathquill\">\\pi(s_7) = \\text{right}</span>\n\n> <span class=\"mathquill\">\\pi(s_8) = \\text{right}</span>\n\nRecall that since <span class=\"mathquill\">s_9</span> is a terminal state, the episode ends immediately if the agent begins in this state.  So, the agent will not have to choose an action (so, we won't include <span class=\"mathquill\">s_9</span> in the domain of the policy), and <span class=\"mathquill\">v_\\pi(s_9) = 0</span>.\n\nTake the time now to calculate the state-value function <span class=\"mathquill\">v_\\pi</span> that corresponds to the policy.  (_You may find that the Bellman expectation equation saves you a lot of work!_)  \n\n**Assume <span class=\"mathquill\">\\gamma = 1</span>.**\n\nOnce you have finished, use <span class=\"mathquill\">v_\\pi</span> to answer the questions below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409571,
+              "key": "a47f39fc-5078-472a-80f3-66ee61718885",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question 1",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409572,
+              "key": "fca975da-4f93-41dd-9b5b-28ec16c20291",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "What is <span class=\"mathquill\">v_\\pi(s_4)</span>?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 457510,
+              "key": "49937cac-442b-4b17-82a6-f4046663560e",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Select the appropriate numerical value.",
+                "answers": [
+                  {
+                    "id": "a1510071223596",
+                    "text": "-2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1510071251325",
+                    "text": "-1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1510071253053",
+                    "text": "0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1510071256019",
+                    "text": "1",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1510071257182",
+                    "text": "2",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 409573,
+              "key": "c1a5a663-c9a0-47ff-a220-1696ebcdb208",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question 2",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409574,
+              "key": "59e160ab-6af6-4285-b47e-3775875c4917",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "What is <span class=\"mathquill\">v_\\pi(s_1)</span>?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 457511,
+              "key": "a0954457-c3e7-495b-8b77-783f5a9a2775",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Select the appropriate numerical value. ",
+                "answers": [
+                  {
+                    "id": "a1510071412903",
+                    "text": "-2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1510071426330",
+                    "text": "-1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1510071428386",
+                    "text": "0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1510071430664",
+                    "text": "1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1510071431937",
+                    "text": "2",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 409575,
+              "key": "491d9a88-6697-4707-a9b7-6f5b6823ccd1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question 3",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409576,
+              "key": "47fe4c55-41cb-4089-8a49-622431c096da",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Consider the following statements:\n- (1) <span class=\"mathquill\">v_\\pi(s_6) = -1 + v_\\pi(s_5)</span> \n- (2) <span class=\"mathquill\">v_\\pi(s_7) = -3 + v_\\pi(s_8)</span> \n- (3) <span class=\"mathquill\">v_\\pi(s_1) = -1 + v_\\pi(s_2)</span> \n- (4) <span class=\"mathquill\">v_\\pi(s_4) = -3 + v_\\pi(s_7)</span> \n- (5) <span class=\"mathquill\">v_\\pi(s_8) = -3 + v_\\pi(s_5)</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409577,
+              "key": "c10baab3-f073-42ce-a4e2-1e988e2fb905",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Select the statements (listed above) that are true.  (Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1506351586848",
+                    "text": "(1)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506351626150",
+                    "text": "(2)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506351628536",
+                    "text": "(3)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506351630830",
+                    "text": "(4)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506351633216",
+                    "text": "(5)",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 385111,
+          "key": "a025fcb0-526a-485e-aba7-84a2c273dd7b",
+          "title": "Optimality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461382,
+              "key": "0f8291d1-d6d3-4083-9802-eadc6c3673b5",
+              "title": "Optimality",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "j231aRV74QM",
+                "china_cdn_id": "j231aRV74QM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 385233,
+          "key": "e01d0ddc-54ab-4a87-90af-bf759c6d6df1",
+          "title": "Action-Value Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461383,
+              "key": "e72e506c-0974-4488-a4b1-81033e6e2c88",
+              "title": "Action-Value Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KJLaRfOOPGA",
+                "china_cdn_id": "KJLaRfOOPGA.mp4"
+              }
+            },
+            {
+              "id": 408076,
+              "key": "6c9df0e2-c4bc-4601-836a-0e0ea47d1b77",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note**: In this course, we will use \"return\" and \"discounted return\" interchangably.  For an arbitrary time step <span class=\"mathquill\">t</span>, both refer to <span class=\"mathquill\">G_t \\doteq R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\ldots = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}</span>, where <span class=\"mathquill\">\\gamma \\in [0,1]</span>.  In particular, when we refer to \"return\", it is not necessarily the case that <span class=\"mathquill\">\\gamma = 1</span>, and when we refer to \"discounted return\", it is not necessarily true that <span class=\"mathquill\">\\gamma < 1</span>.  (_This also holds for the readings in the recommended textbook._)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 385234,
+          "key": "264f6ce5-e60e-4bcb-9bb2-d92079c34a37",
+          "title": "Quiz: Action-Value Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 409639,
+              "key": "7a2b25ea-03cc-403f-8a1a-352882bb2e0c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Action-Value Functions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 385508,
+              "key": "a3f3fba2-ccf1-41f5-8276-865e9895e5bc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/59a87161_screen-shot-2017-08-31-at-3.27.10-pm/screen-shot-2017-08-31-at-3.27.10-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a3f3fba2-ccf1-41f5-8276-865e9895e5bc",
+              "caption": "",
+              "alt": null,
+              "width": 1695,
+              "height": 844,
+              "instructor_notes": null
+            },
+            {
+              "id": 385505,
+              "key": "1fe1a3a8-1d18-4ddc-b60e-3ced058e4165",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "__True or False?__: For a deterministic policy <span class=\"mathquill\">\\pi</span>, \n\n<span class=\"mathquill\">v_\\pi(s) = q_\\pi(s, \\pi(s))</span> \n\nholds for all <span class=\"mathquill\">s \\in \\mathcal{S}</span>.\n\nFeel free to use the state-value and action-value functions (for an example deterministic policy) above to answer this question.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 385498,
+              "key": "65e7b594-2f27-4655-be02-15670a02d8e6",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Is the above statement true or false?",
+                "answers": [
+                  {
+                    "id": "a1504210076241",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1504210142008",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 385236,
+          "key": "934b86fe-7f3a-4dc0-8baf-e7c597cc0ece",
+          "title": "Optimal Policies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461384,
+              "key": "04c9c6bc-fe79-4c48-984a-a2a2698644dd",
+              "title": "Optimal Policies",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2rguYpVyCto",
+                "china_cdn_id": "2rguYpVyCto.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 385719,
+          "key": "7c1e4c72-9c0a-4e47-b74b-7352d2739682",
+          "title": "Quiz: Optimal Policies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 409635,
+              "key": "5c53a10c-cdb2-4d26-b200-cb3c1ee3fbda",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Optimal Policies",
+              "instructor_notes": ""
+            },
+            {
+              "id": 385721,
+              "key": "c2b8e248-3fab-4071-a2b2-65a39c1cd650",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the state space  <span class=\"mathquill\">\\mathcal{S}</span> and action space <span class=\"mathquill\">\\mathcal{A}</span> are finite, we can represent the optimal action-value function <span class=\"mathquill\">q_*</span> in a table, where we have one entry for each possible environment state <span class=\"mathquill\">s \\in \\mathcal{S}</span> and action <span class=\"mathquill\">a\\in\\mathcal{A}</span>. \n\nThe value for a particular state-action pair <span class=\"mathquill\">s,a</span> is the expected return if the agent starts in state <span class=\"mathquill\">s</span>, takes action <span class=\"mathquill\">a</span>, and then henceforth follows the optimal policy <span class=\"mathquill\">\\pi_*</span>.  \n\nWe have populated some values for a hypothetical Markov decision process (MDP) (where <span class=\"mathquill\">\\mathcal{S}=\\{ s_1, s_2, s_3 \\}</span> and <span class=\"mathquill\">\\mathcal{A}=\\{a_1, a_2, a_3\\}</span>) below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409913,
+              "key": "56a7b940-35e0-402f-8193-2de30a922cec",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c98891_screen-shot-2017-09-25-at-5.51.40-pm/screen-shot-2017-09-25-at-5.51.40-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/56a7b940-35e0-402f-8193-2de30a922cec",
+              "caption": "",
+              "alt": "",
+              "width": 205,
+              "height": 169,
+              "instructor_notes": null
+            },
+            {
+              "id": 385723,
+              "key": "de31d477-998c-4791-97e5-b534fc14b8c8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You learned in the previous concept that once the agent has determined the optimal action-value function <span class=\"mathquill\">q_*</span>, it can quickly obtain an optimal policy <span class=\"mathquill\">\\pi_*</span> by setting  <span class=\"mathquill\">\\pi_*(s) = \\arg\\max_{a\\in\\mathcal{A}(s)} q_*(s,a)</span> for all <span class=\"mathquill\">s\\in\\mathcal{S}</span>.\n\nTo see *why* this should be the case, note that it must hold that <span class=\"mathquill\">v_*(s) = \\max_{a\\in\\mathcal{A}(s)} q_*(s,a)</span>.\n\nIn the event that there is some state <span class=\"mathquill\">s\\in\\mathcal{S}</span> for which multiple actions <span class=\"mathquill\">a\\in\\mathcal{A}(s)</span> maximize the optimal action-value function, you can construct an optimal policy by placing any amount of probability on any of the (maximizing) actions.  You need only ensure that the actions that do not maximize the action-value function (for a particular state) are given 0% probability under the policy.\n\nTowards constructing the optimal policy, we can begin by selecting the entries that maximize the action-value function, for each row (or state).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409919,
+              "key": "82f425f8-c890-4e42-8ca2-9ac7772331f4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c98bf4_screen-shot-2017-09-25-at-6.02.37-pm/screen-shot-2017-09-25-at-6.02.37-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/82f425f8-c890-4e42-8ca2-9ac7772331f4",
+              "caption": "",
+              "alt": "",
+              "width": 201,
+              "height": 168,
+              "instructor_notes": null
+            },
+            {
+              "id": 409918,
+              "key": "5020c6e9-af2c-4771-bf44-b015a49851fe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Thus, the optimal policy <span class=\"mathquill\">\\pi_*</span> for the corresponding MDP must satisfy:\n- <span class=\"mathquill\">\\pi_*(s_1) = a_2</span> (or, equivalently, <span class=\"mathquill\">\\pi_*(a_2| s_1) = 1</span>), and\n- <span class=\"mathquill\">\\pi_*(s_2) = a_3</span> (or, equivalently, <span class=\"mathquill\">\\pi_*(a_3| s_2) = 1</span>).\n\nThis is because <span class=\"mathquill\">a_2 = \\arg\\max_{a\\in\\mathcal{A}(s_1)}q_*(s_1,a)</span>, and <span class=\"mathquill\">a_3 = \\arg\\max_{a\\in\\mathcal{A}(s_2)}q_*(s_2,a)</span>.\n\nIn other words, under the optimal policy, the agent must choose action <span class=\"mathquill\">a_2</span> when in state <span class=\"mathquill\">s_1</span>, and it will choose action <span class=\"mathquill\">a_3</span> when in state <span class=\"mathquill\">s_2</span>.  \n\nAs for state <span class=\"mathquill\">s_3</span>, note that <span class=\"mathquill\">a_1, a_2 \\in \\arg\\max_{a\\in\\mathcal{A}(s_3)}q_*(s_3,a)</span>.  Thus, the agent can choose either action <span class=\"mathquill\">a_1</span> or <span class=\"mathquill\">a_2</span> under the optimal policy, but it can never choose action <span class=\"mathquill\">a_3</span>.  That is, the optimal policy <span class=\"mathquill\">\\pi_*</span> must satisfy:\n- <span class=\"mathquill\">\\pi_*(a_1| s_3) = p</span>,\n- <span class=\"mathquill\">\\pi_*(a_2| s_3) = q</span>, and\n- <span class=\"mathquill\">\\pi_*(a_3| s_3) = 0</span>,\n\nwhere <span class=\"mathquill\">p,q\\geq 0</span>, and <span class=\"mathquill\">p + q = 1</span>.  ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409980,
+              "key": "16afcb0c-7e88-4354-be4c-36613fd63446",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Question",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409985,
+              "key": "962372e3-24ce-4da0-a642-884e85eb5822",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Consider a different MDP, with a different corresponding optimal action-value function.  Please use this action-value function to answer the following question.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409986,
+              "key": "546cbd57-8e7a-4431-9930-529da5cefea0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c9b917_screen-shot-2017-09-25-at-9.18.00-pm/screen-shot-2017-09-25-at-9.18.00-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/546cbd57-8e7a-4431-9930-529da5cefea0",
+              "caption": "",
+              "alt": "",
+              "width": 222,
+              "height": 182,
+              "instructor_notes": null
+            },
+            {
+              "id": 409981,
+              "key": "ae86936d-58eb-474b-b3aa-36344d571594",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the following describes a potential optimal policy that corresponds to the optimal action-value function?",
+                "answers": [
+                  {
+                    "id": "a1506391418690",
+                    "text": "The agent always selects action a_1 in state s_1.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506392447372",
+                    "text": "The agent always selects action a_3 in state s_1.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506392447990",
+                    "text": "The agent is free to select either action a_1 or action a_2 in state s_2.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506392488342",
+                    "text": "The agent must select action a_3 in state s_2.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506392502012",
+                    "text": "The agent must select action a_1 in state s_3.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1506392565169",
+                    "text": "The agent is free to select either action a_2 or a_3 in state s_3.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 385240,
+          "key": "5b3c215e-4e6b-4e43-b9ec-d14ebd9f5142",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 407596,
+              "key": "c3a29230-c4a1-4a8c-900d-304fa99bf27a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 409648,
+              "key": "1f07f0d0-7678-4666-b9bd-e75ebd90f18e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59c93080_screen-shot-2017-09-25-at-11.35.38-am/screen-shot-2017-09-25-at-11.35.38-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1f07f0d0-7678-4666-b9bd-e75ebd90f18e",
+              "caption": "State-value function for golf-playing agent (Sutton and Barto, 2017)",
+              "alt": "",
+              "width": 434,
+              "height": 235,
+              "instructor_notes": null
+            },
+            {
+              "id": 407590,
+              "key": "c927dd37-1a7d-4f3c-b038-2357d5370072",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Policies\n---\n-  A **deterministic policy** is a mapping <span class=\"mathquill\">\\pi: \\mathcal{S}\\to\\mathcal{A}</span>.  For each state <span class=\"mathquill\">s\\in\\mathcal{S}</span>, it yields the action <span class=\"mathquill\">a\\in\\mathcal{A}</span> that the agent will choose while in state <span class=\"mathquill\">s</span>.\n- A **stochastic policy** is a mapping <span class=\"mathquill\">\\pi: \\mathcal{S}\\times\\mathcal{A}\\to [0,1]</span>.  For each state <span class=\"mathquill\">s\\in\\mathcal{S}</span> and action <span class=\"mathquill\">a\\in\\mathcal{A}</span>, it yields the probability <span class=\"mathquill\">\\pi(a|s)</span> that the agent chooses action <span class=\"mathquill\">a</span> while in state  <span class=\"mathquill\">s</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407593,
+              "key": "0b3c4974-f799-4af5-9b11-f131ed9d7b53",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### State-Value Functions\n---\n- The **state-value function** for a policy <span class=\"mathquill\">\\pi</span> is denoted <span class=\"mathquill\">v_\\pi</span>.  For each state <span class=\"mathquill\">s \\in\\mathcal{S}</span>, it yields the expected return if the agent starts in state <span class=\"mathquill\">s</span> and then uses the policy to choose its actions for all time steps.  That is, <span class=\"mathquill\">v_\\pi(s) \\doteq \\text{} \\mathbb{E}_\\pi[G_t|S_t=s]</span>.  We refer to <span class=\"mathquill\">v_\\pi(s)</span> as the **value of state <span class=\"mathquill\">s</span> under policy <span class=\"mathquill\">\\pi</span>**.\n- The notation <span class=\"mathquill\">\\mathbb{E}_\\pi[\\cdot]</span> is borrowed from the suggested textbook, where <span class=\"mathquill\">\\mathbb{E}_\\pi[\\cdot]</span> is defined as the expected value of a random variable, given that the agent follows policy <span class=\"mathquill\">\\pi</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407636,
+              "key": "e71c9f52-cddf-4d87-afc0-f4b2e1a4b3a7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Bellman Equations\n---\n- The **Bellman expectation equation for <span class=\"mathquill\">v_\\pi</span>** is: <span class=\"mathquill\">v_\\pi(s) = \\text{} \\mathbb{E}_\\pi[R_{t+1} + \\gamma v_\\pi(S_{t+1})|S_t =s].</span>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407637,
+              "key": "6c55ee44-e0ce-4b5e-84f5-ddea9ac6065e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optimality\n---\n- A policy <span class=\"mathquill\">\\pi'</span> is defined to be better than or equal to a policy <span class=\"mathquill\">\\pi</span> if and only if <span class=\"mathquill\">v_{\\pi'}(s) \\geq v_\\pi(s)</span> for all <span class=\"mathquill\">s\\in\\mathcal{S}</span>.\n- An **optimal policy <span class=\"mathquill\">\\pi_*</span>** satisfies <span class=\"mathquill\">\\pi_* \\geq \\pi</span> for all policies <span class=\"mathquill\">\\pi</span>.  An optimal policy is guaranteed to exist but may not be unique.\n- All optimal policies have the same state-value function <span class=\"mathquill\">v_*</span>, called the __optimal state-value function__.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407638,
+              "key": "456dcdc0-dfb8-4c2b-b9fe-815906d55c83",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Action-Value Functions\n---\n- The **action-value function** for a policy <span class=\"mathquill\">\\pi</span> is denoted <span class=\"mathquill\">q_\\pi</span>.  For each state <span class=\"mathquill\">s \\in\\mathcal{S}</span> and action <span class=\"mathquill\">a \\in\\mathcal{A}</span>, it yields the expected return if the agent starts in state <span class=\"mathquill\">s</span>, takes action <span class=\"mathquill\">a</span>, and then follows the policy for all future time steps.  That is, <span class=\"mathquill\">q_\\pi(s,a) \\doteq \\mathbb{E}_\\pi[G_t|S_t=s, A_t=a]</span>.  We refer to <span class=\"mathquill\">q_\\pi(s,a)</span> as the **value of taking action <span class=\"mathquill\">a</span> in state <span class=\"mathquill\">s</span> under a policy <span class=\"mathquill\">\\pi</span>** (or alternatively as the **value of the state-action pair <span class=\"mathquill\">s, a</span>**).\n- All optimal policies have the same action-value function <span class=\"mathquill\">q_*</span>, called the __optimal action-value function__.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 407640,
+              "key": "2a32ffac-3468-4f6b-b01d-1f35b542cf8d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optimal Policies\n---\n- Once the agent determines the optimal action-value function <span class=\"mathquill\">q_*</span>, it can quickly obtain an optimal policy <span class=\"mathquill\">\\pi_*</span> by setting  <span class=\"mathquill\">\\pi_*(s) = \\arg\\max_{a\\in\\mathcal{A}(s)} q_*(s,a)</span>.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

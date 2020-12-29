@@ -1,0 +1,834 @@
+{
+  "data": {
+    "lesson": {
+      "id": 371500,
+      "key": "d2de57a0-cd89-40bd-b87f-ec0298b425cf",
+      "title": "Temporal-Difference Methods",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about how to apply temporal-difference methods such as Sarsa, Q-Learning, and Expected Sarsa to solve both episodic and continuous tasks.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/d2de57a0-cd89-40bd-b87f-ec0298b425cf/371500/1544926949194/Temporal-Difference+Methods+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/d2de57a0-cd89-40bd-b87f-ec0298b425cf/371500/1544926946351/Temporal-Difference+Methods+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 380572,
+          "key": "5fece0da-59f6-42ee-9919-515e7dbf4a70",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486088,
+              "key": "4112ba88-42ea-42db-a073-f2f5e7f61992",
+              "title": "Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yXErXQulI_o",
+                "china_cdn_id": "yXErXQulI_o.mp4"
+              }
+            },
+            {
+              "id": 420993,
+              "key": "c1f4d32f-f748-45e7-8f50-b014cf74f6da",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This lesson covers material in **Chapter 6** (especially 6.1-6.6) of the [textbook](http://go.udacity.com/rl-textbook).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 420987,
+          "key": "85012ae2-95cc-4216-822e-0e9f79b483f1",
+          "title": "OpenAI Gym: CliffWalkingEnv",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 420988,
+              "key": "902560d7-7408-4515-8e72-8bb9555bde8d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# OpenAI Gym: CliffWalkingEnv",
+              "instructor_notes": ""
+            },
+            {
+              "id": 420989,
+              "key": "d55281f4-0b8d-4303-b614-dfe7e73b4755",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, you will write your own Python implementations of all of the algorithms that we discuss. While your algorithms will be designed to work with any OpenAI Gym environment, you will test your code with the CliffWalking environment.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 430631,
+              "key": "a486f97c-39c5-4916-b245-77848f08d4e7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59de4705_matengai-of-kuniga-coast-in-oki-island-shimane-pref600/matengai-of-kuniga-coast-in-oki-island-shimane-pref600.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a486f97c-39c5-4916-b245-77848f08d4e7",
+              "caption": "Source: Wikipedia",
+              "alt": "",
+              "width": 630,
+              "height": 420,
+              "instructor_notes": null
+            },
+            {
+              "id": 420992,
+              "key": "788ff7fb-610a-4752-a24c-dc6d56355834",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the CliffWalking environment, the agent navigates a 4x12 gridworld.  Please read about the cliff-walking task in Example 6.6 of the [textbook](http://go.udacity.com/rl-textbook).  When you have finished, you can learn more about the environment in its corresponding [GitHub file](https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py), by reading the commented block in the CliffWalkingEnv class.  For clarity, we have also pasted the description of the environment below (note that the link below to the Sutton and Barto textbook may not work, and you're encouraged to use [this link](http://go.udacity.com/rl-textbook) to access the textbook):\n\n```text\n    \"\"\"\n    This is a simple implementation of the Gridworld Cliff\n    reinforcement learning task.\n    Adapted from Example 6.6 from Reinforcement Learning: An Introduction\n    by Sutton and Barto:\n    http://people.inf.elte.hu/lorincz/Files/RL_2006/SuttonBook.pdf\n    \n    With inspiration from:\n    https://github.com/dennybritz/reinforcement-learning/blob/master/lib/envs/cliff_walking.py\n    The board is a 4x12 matrix, with (using Numpy matrix indexing):\n        [3, 0] as the start at bottom-left\n        [3, 11] as the goal at bottom-right\n        [3, 1..10] as the cliff at bottom-center\n    Each time step incurs -1 reward, and stepping into the cliff incurs -100 reward \n    and a reset to the start. An episode terminates when the agent reaches the goal.\n    \"\"\"\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 380573,
+          "key": "040cfb3d-7f37-481c-8a19-a8a680123861",
+          "title": "TD Prediction: TD(0)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486083,
+              "key": "744fc5c0-a90e-4f2c-bbc6-1bb55f17a79a",
+              "title": "TD Prediction: TD(0)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CsD6b0csU7o",
+                "china_cdn_id": "CsD6b0csU7o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 430769,
+          "key": "76343403-fafe-4634-ae2d-6484b233e0f9",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 430773,
+              "key": "6b571313-257e-425d-843f-5861071010bf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: TD(0)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 430774,
+              "key": "c4874842-1eae-4c19-89f3-97c2818559b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for TD(0) (or one-step TD) can be found below.  ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431158,
+              "key": "021fe61b-6e90-441a-b17e-1c0d549bd5d1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfc20c_td-prediction/td-prediction.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/021fe61b-6e90-441a-b17e-1c0d549bd5d1",
+              "caption": "",
+              "alt": "",
+              "width": 630,
+              "height": 440,
+              "instructor_notes": null
+            },
+            {
+              "id": 430775,
+              "key": "b24cea24-9916-46ce-bccd-9cc4ce808f1d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "TD(0) is **guaranteed to converge** to the true state-value function, as long as the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small.  If you recall, this was also the case for constant-<span class=\"mathquill\">\\alpha</span> MC prediction.  However, TD(0) has some nice advantages:\n- Whereas MC prediction  must wait until the end of an episode to update the value function estimate, TD prediction methods update the value function after every time step.  Similarly, TD prediction methods work for continuous and episodic tasks, while MC prediction can only be applied to episodic tasks.\n- In practice, TD prediction converges faster than MC prediction.  (_That said, no one has yet been able to prove this, and it remains an open problem._)  You are encouraged to take the time to check this for yourself in your implementations!  For an example of how to run this kind of analysis, check out Example 6.2 in the [textbook](http://go.udacity.com/rl-textbook).\n\nPlease use the next concept to complete **Part 0: Explore CliffWalkingEnv** and **Part 1: TD Prediction: State Values** of `Temporal_Difference.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding sections in `Temporal_Difference_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 380579,
+          "key": "3c578c74-76af-485c-8240-7b0d97a415fb",
+          "title": "Mini Project: TD (Parts 0 and 1)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 436047,
+              "key": "2e544378-1be9-4d67-9af8-c5b4dbde6539",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewbf0ce2d2",
+              "pool_id": "jupyter",
+              "view_id": "bf0ce2d2-7e45-45dd-b976-8d3993b81e56",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Temporal_Difference.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 380575,
+          "key": "b89ca9a5-ffaf-4027-b6cb-7ec2f74caceb",
+          "title": "TD Prediction: Action Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486084,
+              "key": "d674804a-aa5e-4ca9-b1d1-b7c1d12e1517",
+              "title": "TD Prediction: Action Values",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1c029-7_9GA",
+                "china_cdn_id": "1c029-7_9GA.mp4"
+              }
+            },
+            {
+              "id": 430780,
+              "key": "eb3c1888-8e53-41ab-b2be-314437a8ad0c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Similar to TD(0), this method for estimating the action values is guaranteed to converge to the true action-value function, as long as the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 380576,
+          "key": "24a2e101-9cd6-4343-bd7a-814a42762e21",
+          "title": "TD Control: Sarsa(0)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486085,
+              "key": "5af1bbd0-2bc1-42bc-9765-b9fb0b26d7fa",
+              "title": "TD Control: Sarsa(0)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LkFkjfsRpXc",
+                "china_cdn_id": "LkFkjfsRpXc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 431175,
+          "key": "f27a2426-3620-43a2-8284-f3bc476634e0",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 431177,
+              "key": "c2028e4a-e144-4c45-8324-accf5bce82ff",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Sarsa(0)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431178,
+              "key": "dd7a5551-c708-4c1d-8512-08cb2ed55f5a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for Sarsa (or Sarsa(0)) can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431182,
+              "key": "b97fee66-b767-437c-8a18-bc5712b7f7fd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfd2f8_sarsa/sarsa.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b97fee66-b767-437c-8a18-bc5712b7f7fd",
+              "caption": "",
+              "alt": "",
+              "width": 619,
+              "height": 350,
+              "instructor_notes": null
+            },
+            {
+              "id": 431179,
+              "key": "e9ad89fe-6ef9-4370-b4d6-3d5e0b0f5338",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Sarsa(0) is **guaranteed to converge** to the optimal action-value function, as long as the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small, and the **Greedy in the Limit with Infinite Exploration (GLIE)** conditions are met.  The GLIE conditions were introduced in the previous lesson, when we learned about MC control.  Although there are many ways to satisfy the GLIE conditions, one method involves gradually decaying the value of <span class=\"mathquill\">\\epsilon</span> when constructing <span class=\"mathquill\">\\epsilon</span>-greedy policies.\n\nIn particular, let <span class=\"mathquill\">\\epsilon_i</span> correspond to the <span class=\"mathquill\">i</span>-th time step.  Then, if we set <span class=\"mathquill\">\\epsilon_i</span> such that:\n-  <span class=\"mathquill\">\\epsilon_i > 0</span> for all time steps <span class=\"mathquill\">i</span>, and \n- <span class=\"mathquill\">\\epsilon_i</span> decays to zero in the limit as the time step <span class=\"mathquill\">i</span> approaches infinity (that is, <span class=\"mathquill\">\\lim_{i\\to\\infty} \\epsilon_i = 0</span>),\n\nthen the algorithm is guaranteed to yield a good estimate for <span class=\"mathquill\">q_*</span>, as long as we run the algorithm for long enough.  A corresponding optimal policy <span class=\"mathquill\">\\pi_*</span> can then be quickly obtained by setting <span class=\"mathquill\">\\pi_*(s) = \\arg\\max_{a\\in\\mathcal{A}(s)} q_*(s, a)</span> for all <span class=\"mathquill\">s\\in\\mathcal{S}</span>.\n\nPlease use the next concept to complete **Part 2: TD Control: Sarsa** of `Temporal_Difference.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Temporal_Difference_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 431176,
+          "key": "76b5bac4-5928-4471-92c2-59792c7c15d9",
+          "title": "Mini Project: TD (Part 2)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 436048,
+              "key": "d0afc4d6-061c-4f2d-a221-158a8aeaa3eb",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewbf0ce2d2",
+              "pool_id": "jupyter",
+              "view_id": "5fca2b10-807b-433b-98e2-095b104bd48e",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Temporal_Difference.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 380580,
+          "key": "619930e9-2973-4d28-8aef-f73e8284f343",
+          "title": "TD Control: Sarsamax",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486086,
+              "key": "22d25b7a-cd5a-434d-91e3-e8e347d05347",
+              "title": "TD Control: Sarsamax",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4DxoYuR7aZ4",
+                "china_cdn_id": "4DxoYuR7aZ4.mp4"
+              }
+            },
+            {
+              "id": 437021,
+              "key": "618e9cf3-2e83-42d5-b1aa-97a69869622b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Check out this (optional) [research paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.80.7501&rep=rep1&type=pdf) to read the proof that Sarsamax (or *Q*-learning) converges.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 431224,
+          "key": "453aaf31-cb5b-43e4-b64f-b87ff88dff65",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 431225,
+              "key": "39f9f3a9-2582-4076-b04c-4a14e100961f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Sarsamax",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431453,
+              "key": "3ae61f8d-6080-4511-8f3d-0f824d314a19",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for Sarsamax (or *Q*-learning) can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431454,
+              "key": "c9163e1d-7f4c-47a4-8a8b-f3af15f6bb7a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dff721_sarsamax/sarsamax.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c9163e1d-7f4c-47a4-8a8b-f3af15f6bb7a",
+              "caption": "",
+              "alt": "",
+              "width": 617,
+              "height": 321,
+              "instructor_notes": null
+            },
+            {
+              "id": 431455,
+              "key": "eebed927-70f8-4412-9d70-695f37164402",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Sarsamax is **guaranteed to converge** under the same conditions that guarantee convergence of Sarsa.\n\nPlease use the next concept to complete **Part 3: TD Control: Q-learning** of `Temporal_Difference.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Temporal_Difference_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 380581,
+          "key": "82a8826f-42f7-4e3c-a462-9fa8880faaa4",
+          "title": "Mini Project: TD (Part 3)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 436049,
+              "key": "4925fe50-c9bc-40e6-ac09-74b624c42754",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewbf0ce2d2",
+              "pool_id": "jupyter",
+              "view_id": "660f3b81-4140-4d68-88a0-13fed1e16cdf",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Temporal_Difference.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 380582,
+          "key": "5a9cd22e-ed36-4573-b71a-46cc10b68b33",
+          "title": "TD Control: Expected Sarsa",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486087,
+              "key": "b10cea57-b552-47bc-ac9d-f725d8dc97d1",
+              "title": "TD Control: Expected Sarsa",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kEKupCyU0P0",
+                "china_cdn_id": "kEKupCyU0P0.mp4"
+              }
+            },
+            {
+              "id": 434380,
+              "key": "1709cc02-de68-4796-b0c4-0de5c78b85b8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Check out this [research paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.216.4144&rep=rep1&type=pdf) to learn more about Expected Sarsa.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 431449,
+          "key": "56614a53-7e82-48f3-a9fb-1e2db9e3c312",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 431456,
+              "key": "62036013-a388-4d12-a0d2-3acf3c7881d4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Expected Sarsa",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431457,
+              "key": "a4f73c53-8494-4fd0-9aab-4e39ac2d024c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for Expected Sarsa can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431458,
+              "key": "9fbb47e8-78af-41ff-9329-5f89bb753142",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dffa3d_expected-sarsa/expected-sarsa.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9fbb47e8-78af-41ff-9329-5f89bb753142",
+              "caption": "",
+              "alt": "",
+              "width": 617,
+              "height": 315,
+              "instructor_notes": null
+            },
+            {
+              "id": 431459,
+              "key": "9e1e201f-edc5-4a96-83c8-159727a3888e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Expected Sarsa is **guaranteed to converge** under the same conditions that guarantee convergence of Sarsa and Sarsamax.  \n\nRemember that **_theoretically_**, the as long as the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small, and the **Greedy in the Limit with Infinite Exploration (GLIE)** conditions are met, the agent is guaranteed to eventually discover the optimal action-value function (and an associated optimal policy).  However, **_in practice_**, for all of the algorithms we have discussed, it is common to completely ignore these conditions and still discover an optimal policy.  You can see an example of this in the solution notebook.\n\nPlease use the next concept to complete **Part 4: TD Control: Expected Sarsa** of `Temporal_Difference.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Temporal_Difference_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 380583,
+          "key": "d2f46808-c5d3-463a-8383-840877448103",
+          "title": "Mini Project: TD (Part 4)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 436050,
+              "key": "f801e1d4-f992-4622-a0b6-37156d397f14",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewbf0ce2d2",
+              "pool_id": "jupyter",
+              "view_id": "0cc70b07-fb74-4d5a-8208-de7771643742",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Temporal_Difference.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 434365,
+          "key": "a17bef10-2c2a-457f-9f26-ffe272ff650b",
+          "title": "Analyzing Performance",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 434366,
+              "key": "9685d573-f09c-4073-afa6-358dfba863f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Analyzing Performance",
+              "instructor_notes": ""
+            },
+            {
+              "id": 434373,
+              "key": "1648165a-9f75-4099-9773-816aea791e70",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "All of the TD control algorithms we have examined (Sarsa, Sarsamax, Expected Sarsa) converge to the optimal action-value function <span class=\"mathquill\">q_*</span> (and so yield the optimal policy <span class=\"mathquill\">\\pi_*</span>) if (1) the value of <span class=\"mathquill\">\\epsilon</span> decays in accordance with the GLIE conditions, and (2) the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small.\n\nThe differences between these algorithms are summarized below:\n- Sarsa and Expected Sarsa are both **on-policy** TD control algorithms.  In this case, the same (<span class=\"mathquill\">\\epsilon</span>-greedy) policy that is evaluated and improved is also used to select actions.\n- Sarsamax is an **off-policy** method, where the (greedy) policy that is evaluated and improved is different from the (<span class=\"mathquill\">\\epsilon</span>-greedy) policy that is used to select actions.\n- On-policy TD control methods (like Expected Sarsa and Sarsa) have better online performance than off-policy TD control methods (like Sarsamax). \n- Expected Sarsa generally achieves better performance than Sarsa.\n\nIf you would like to learn more, you are encouraged to read Chapter 6 of the [textbook](http://go.udacity.com/rl-textbook) (especially sections 6.4-6.6).\n\nAs an optional exercise to deepen your understanding, you are encouraged to reproduce Figure 6.4.  (Note that this exercise is optional!)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 486195,
+              "key": "a0649a41-265c-4c24-afd6-ed576f52c171",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/December/5a36bc5a_screen-shot-2017-12-17-at-12.49.34-pm/screen-shot-2017-12-17-at-12.49.34-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a0649a41-265c-4c24-afd6-ed576f52c171",
+              "caption": "",
+              "alt": "",
+              "width": 1670,
+              "height": 1088,
+              "instructor_notes": null
+            },
+            {
+              "id": 434375,
+              "key": "fedea94c-5430-4aeb-8669-c4375ab2c975",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The figure shows the performance of Sarsa and Q-learning on the cliff walking environment for constant <span class=\"mathquill\">\\epsilon = 0.1</span>.  As described in the textbook, in this case,\n- Q-learning achieves worse online performance (where the agent collects less reward on average in each episode), but learns the optimal policy, and\n- Sarsa achieves better online performance, but learns a sub-optimal \"safe\" policy.\n\nYou should be able to reproduce the figure by making only small modifications to your existing code.  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 380586,
+          "key": "7d2dafe6-e522-4a8d-beb0-e9dd6eadddfc",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 420911,
+              "key": "edf3626b-5531-400f-8fee-3de202b85bb3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436051,
+              "key": "1f1999cf-2c2e-4105-9e74-cf12e24f14cb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59e629d0_screen-shot-2017-10-17-at-11.02.44-am/screen-shot-2017-10-17-at-11.02.44-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1f1999cf-2c2e-4105-9e74-cf12e24f14cb",
+              "caption": "The cliff-walking task (Sutton and Barto, 2017)",
+              "alt": "",
+              "width": 1489,
+              "height": 594,
+              "instructor_notes": null
+            },
+            {
+              "id": 420912,
+              "key": "8d3d35fb-9470-4000-bd63-8edbc0c9e717",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## TD Prediction: TD(0)\n---\n- Whereas Monte Carlo (MC) prediction methods must wait until the end of an episode to update the value function estimate, temporal-difference (TD) methods update the value function after every time step.\n- For any fixed policy, **one-step TD** (or **TD(0)**) is guaranteed to converge to the true state-value function, as long as the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small.\n- In practice, TD prediction converges faster than MC prediction.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431159,
+              "key": "50ae7ab3-6637-4519-942e-dc105e3b2b78",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfc20c_td-prediction/td-prediction.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/50ae7ab3-6637-4519-942e-dc105e3b2b78",
+              "caption": "",
+              "alt": "",
+              "width": 472,
+              "height": 330,
+              "instructor_notes": null
+            },
+            {
+              "id": 430777,
+              "key": "3dcd18f7-132e-4f09-822d-a1437141917f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## TD Prediction: Action Values\n---\n- (In this concept, we discussed a TD prediction algorithm for estimating action values.  Similar to TD(0), this algorithm is guaranteed to converge to the true action-value function, as long as the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small.)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 430781,
+              "key": "9f8fdfc4-a4c6-410c-b464-7cd6e9c375c0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## TD Control: Sarsa(0)\n---\n- **Sarsa(0)** (or **Sarsa**) is an on-policy TD control method.  It is guaranteed to converge to the optimal action-value function <span class=\"mathquill\">q_*</span>, as long as the step-size parameter <span class=\"mathquill\">\\alpha</span> is sufficiently small and <span class=\"mathquill\">\\epsilon</span> is chosen to satisfy the __Greedy in the Limit with Infinite Exploration (GLIE)__ conditions.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431183,
+              "key": "721ae433-8576-4292-87f4-085b7d342990",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfd2f8_sarsa/sarsa.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/721ae433-8576-4292-87f4-085b7d342990",
+              "caption": "",
+              "alt": "",
+              "width": 619,
+              "height": 350,
+              "instructor_notes": null
+            },
+            {
+              "id": 431222,
+              "key": "012cb79a-bd4d-4212-afc4-9abe353b1348",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## TD Control: Sarsamax\n---\n- **Sarsamax** (or **Q-Learning**) is an off-policy TD control method.  It is guaranteed to converge to the optimal action value function <span class=\"mathquill\">q_*</span>, under the same conditions that guarantee convergence of the Sarsa control algorithm.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431223,
+              "key": "b218a041-0cfc-4bc8-abe1-e15a8c9aee80",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dff721_sarsamax/sarsamax.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b218a041-0cfc-4bc8-abe1-e15a8c9aee80",
+              "caption": "",
+              "alt": "",
+              "width": 617,
+              "height": 621,
+              "instructor_notes": null
+            },
+            {
+              "id": 431461,
+              "key": "b56108b7-0024-485b-a7d8-94479f2a17a5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## TD Control: Expected Sarsa\n---\n- **Expected Sarsa** is an on-policy TD control method.  It is guaranteed to converge to the optimal action value function <span class=\"mathquill\">q_*</span>, under the same conditions that guarantee convergence of Sarsa and Sarsamax.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431462,
+              "key": "52147850-c298-4da2-b2cc-6bbf2a013c75",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dffa3d_expected-sarsa/expected-sarsa.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/52147850-c298-4da2-b2cc-6bbf2a013c75",
+              "caption": "",
+              "alt": "",
+              "width": 616,
+              "height": 315,
+              "instructor_notes": null
+            },
+            {
+              "id": 435332,
+              "key": "2625b2cf-dd09-4285-a816-2e7bfea52d2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Analyzing Performance\n---\n- On-policy TD control methods (like Expected Sarsa and Sarsa) have better online performance than off-policy TD control methods (like Q-learning). \n- Expected Sarsa generally achieves better performance than Sarsa.\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

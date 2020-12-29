@@ -1,0 +1,191 @@
+{
+  "data": {
+    "lesson": {
+      "id": 385914,
+      "key": "d34af204-cf9d-457d-9967-4b22163d8363",
+      "title": "Actor-Critic Methods",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how to combine value-based and policy-based methods, bringing together the best of both worlds, to solve challenging reinforcement learning problems.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/d34af204-cf9d-457d-9967-4b22163d8363/385914/1544926992985/Actor-Critic+Methods+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/d34af204-cf9d-457d-9967-4b22163d8363/385914/1544926989359/Actor-Critic+Methods+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 485831,
+          "key": "c0596de3-2f54-48f0-8b1f-d92853987748",
+          "title": "Actor-Critic Methods",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501794,
+              "key": "b6474a4e-362d-4e3b-9ab8-70d134b94e11",
+              "title": "RL M2L4 01 Actor Critic Methods RENDER V1 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FXhyxJzgt8U",
+                "china_cdn_id": "FXhyxJzgt8U.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 485832,
+          "key": "7a02d6af-d822-4671-8c1b-3bfd549280af",
+          "title": "A Better Score Function",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501795,
+              "key": "a2dc2c5f-b59a-430d-acb1-cd089396ebd3",
+              "title": "RL M2L4 02 A Better Score Function V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_HBJ3l10-OE",
+                "china_cdn_id": "_HBJ3l10-OE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 485833,
+          "key": "e5a8f06b-f998-4d8f-b3bf-0f7f65c4a1cf",
+          "title": "Two Function Approximators",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501796,
+              "key": "84e76764-0858-478d-b599-d596ba891146",
+              "title": "RL M2L4 03 Two Function Approximators V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "37KQEgLaLfw",
+                "china_cdn_id": "37KQEgLaLfw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 485834,
+          "key": "62f13787-2329-41c3-a142-69c97ae17b55",
+          "title": "The Actor and The Critic",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501797,
+              "key": "db3fb613-3a59-450f-aa80-1ded83467d09",
+              "title": "RL M2L4 04 The Actor And The Critic V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bvbE9F7urd4",
+                "china_cdn_id": "bvbE9F7urd4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 485835,
+          "key": "0dfc0717-d94e-4a1b-95ae-962e229356de",
+          "title": "Advantage Function",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501798,
+              "key": "3acea3a5-7972-4e98-91da-2641575a4cbc",
+              "title": "RL M2L4 05 Advantage Function RENDER V1 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "vpLmzKqcgfc",
+                "china_cdn_id": "vpLmzKqcgfc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 485836,
+          "key": "31b01b3b-fbf4-443d-befb-a02b7cd7eb64",
+          "title": "Actor-Critic with Advantage",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501800,
+              "key": "9fae6aa1-c8e4-425e-ac28-5ffa89cdad5b",
+              "title": "RL M2L4 06 Actor Critic With Advantage RENDER V1 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Bwd2OF7hJXQ",
+                "china_cdn_id": "Bwd2OF7hJXQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 485837,
+          "key": "a3c56777-c4c4-4ffd-8ebf-0672b7bbd95a",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501801,
+              "key": "ba7bdcb8-b87e-4fc4-a294-060faa71d11d",
+              "title": "Summary",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hvYQ_3LgCYs",
+                "china_cdn_id": "hvYQ_3LgCYs.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

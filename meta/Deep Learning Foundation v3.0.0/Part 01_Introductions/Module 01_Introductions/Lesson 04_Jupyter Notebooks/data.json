@@ -1,0 +1,1067 @@
+{
+  "data": {
+    "lesson": {
+      "id": 257301,
+      "key": "13f4b7d6-92a9-468d-9008-084fc8b53a23",
+      "title": "Jupyter Notebooks",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how to use Jupyter Notebooks to create documents combining code, text, images, and more.\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/13f4b7d6-92a9-468d-9008-084fc8b53a23/257301/1544457518125/Jupyter+Notebooks+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/13f4b7d6-92a9-468d-9008-084fc8b53a23/257301/1544457515925/Jupyter+Notebooks+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 568675,
+          "key": "8b26c5db-ef35-4d54-8c7c-69e9bc1cbd4a",
+          "title": "Objectives",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 568676,
+              "key": "8ed385d0-ecd3-4a53-9c73-5e51a6a63056",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5ab0356d_screen-shot-2018-03-19-at-2.49.57-pm/screen-shot-2018-03-19-at-2.49.57-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8ed385d0-ecd3-4a53-9c73-5e51a6a63056",
+              "caption": "_Mat Leonard_",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 568678,
+              "key": "49ea4465-9930-42f1-b93e-d714d970e495",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Welcome to the next lesson, **Jupyter Notebooks**, where you will learn an easy and convenient way to create and share a document that contains text, code, videos, equations, and images! \n\n## Meet Your Instructor\nMat will be your instructor!  Mat is a former physicist, research neuroscientist, and data scientist. He did his Ph.D. and Postdoctoral Fellowship at the University of California, Berkeley.\n\n\n\n## Lesson Objectives\nIn this lesson, you will get acquainted with the Jupyter notebook to get started with your programs. A notebook is an application that you'll use to write code, run lines of code individually, view the output in the graphical form, code a variety of visualizations, write comments in markup, provide a mathematical explanation, and much more, all on the same page. By the end of this lesson, you will be able to:\n1. Install the Jupyter notebook. If you are using Anaconda distribution, then the notebook is installed by default. \n2. Launch notebook and utilize markup features to explain the necessary concept. \n3. Get acquainted with the keyboard shortcuts for different menu options in the notebook. \n4. Converting notebooks to other file formats for compatibility and portability. \n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 160285,
+          "key": "75e1eee0-5f81-4d5b-a1ca-eaebe3c91759",
+          "title": "What are Jupyter notebooks?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1080682,
+              "key": "c6901bfe-0ab4-44ba-94ac-19f63ac1a890",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Jupyter Notebook  - First Demonstration ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262240,
+              "key": "9d21f1fa-e971-4c99-80fe-1c4583d03aa3",
+              "title": "Jupyter",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qiYDWFLyXvg",
+                "china_cdn_id": "qiYDWFLyXvg.mp4"
+              }
+            },
+            {
+              "id": 199565,
+              "key": "8cf4aa3c-3e9a-499f-ac9c-2b84298ac321",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# What are Jupyter Notebooks?\n\nWelcome to this lesson on using [Jupyter](http://jupyter.org/) notebooks. The notebook is a web application that allows you to combine explanatory text, math equations, code, and visualizations all in one easily sharable document. For example, here's one of my favorite notebooks shared recently, [binary black hole signals in LIGO open data](https://www.gw-openscience.org/GW150914data/LOSC_Event_tutorial_GW150914.html) detected by the [LIGO experiment](https://www.ligo.caltech.edu/news/ligo20160211). You could download the data, run the code in the notebook, and repeat the analysis, in effect detecting the gravitational waves yourself! You can view a few more tutorial notebooks at [Gravitational Wave Open Science Center homepage](https://www.gw-openscience.org/tutorials/).\n\n\nNotebooks have quickly become an essential tool when working with data. You'll find them being used for [data cleaning and exploration](http://nbviewer.jupyter.org/github/jmsteinw/Notebooks/blob/master/IndeedJobs.ipynb), visualization, [machine learning](http://nbviewer.jupyter.org/github/masinoa/machine_learning/blob/master/04_Neural_Networks.ipynb), and [big data analysis](http://nbviewer.jupyter.org/github/tdhopper/rta-pyspark-presentation/blob/master/slides.ipynb). Here's [an example notebook](https://github.com/mcleonard/blog_posts/blob/master/body_fat_percentage.ipynb) I made for my personal blog that shows off many of the features of notebooks. Typically you'd be doing this work in a terminal, either the normal Python shell or with IPython. Your visualizations would be in separate windows, any documentation would be in separate documents, along with various scripts for functions and classes. However, with notebooks, all of these are in one place and easily read together.\n\nNotebooks are also rendered automatically on GitHub. It’s a great feature that lets you easily share your work. There is also http://nbviewer.jupyter.org/ that renders the notebooks from your GitHub repo or from notebooks stored elsewhere.   ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199609,
+              "key": "c2149e65-bd98-4a6c-944c-d9513a86b4d2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Literate Programming\n\nNotebooks are a form of [literate programming](http://www.literateprogramming.com/) proposed by Donald Knuth in 1984. With literate programming, the documentation is written as a narrative alongside the code instead of sitting off by its own. In Donald Knuth's words, \n\n> Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.\n\nAfter all, code is written for humans, not for computers. Notebooks provide exactly this capability. You are able to write documentation as narrative text, along with code. This is not only useful for the people reading your notebooks, but for your future self coming back to the analysis. \n\nJust a small aside: recently, this idea of literate programming has been extended to a whole programming language, [Eve](http://www.witheve.com/).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199613,
+              "key": "4ceb3c91-07fe-4d1b-be8e-3805c4374c3e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## How Notebooks Work\n\nJupyter notebooks grew out of the [IPython project](https://ipython.org/) started by Fernando Perez. IPython is an interactive shell, similar to the normal Python shell but with great features like syntax highlighting and code completion. Originally, notebooks worked by sending messages from the web app (the notebook you see in the browser) to an IPython kernel (an IPython application running in the background). The kernel executed the code, then sent it back to the notebook.  The current architecture is similar, drawn out below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199614,
+              "key": "dd1fe61e-27b1-46ce-8527-75760aac6a70",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/5817c83b_notebook-components/notebook-components.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dd1fe61e-27b1-46ce-8527-75760aac6a70",
+              "caption": "From [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/architecture/how_jupyter_ipython_work.html)",
+              "alt": null,
+              "width": 633,
+              "height": 357,
+              "instructor_notes": null
+            },
+            {
+              "id": 199623,
+              "key": "6f9c996a-3e4d-4c2a-a03d-ddad3c7fd2e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The central point is the notebook server. You connect to the server through your browser and the notebook is rendered as a web app. Code you write in the web app is sent through the server to the kernel. The kernel runs the code and sends it back to the server, then any output is rendered back in the browser. When you save the notebook, it is written to the server as a JSON file with a `.ipynb` file extension.\n\nThe great part of this architecture is that the kernel doesn't need to run Python. Since the notebook and the kernel are separate, code in any language can be sent between them. For example, two of the earlier non-Python kernels were for the [R](https://www.r-project.org/) and [Julia](http://julialang.org/) languages. With an R kernel, code written in R will be sent to the R kernel where it is executed, exactly the same as Python code running on a Python kernel. IPython notebooks were renamed because notebooks became language agnostic. The new name **Jupyter** comes from the combination of **Ju**lia, **Pyt**hon, and **R**. If you're interested, here's a [list of available kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels).\n\nAnother benefit is that the server can be run anywhere and accessed via the internet. Typically you'll be running the server on your own machine where all your data and notebook files are stored. But, you could also [set up a server](http://jupyter-notebook.readthedocs.io/en/latest/public_server.html) on a remote machine or cloud instance like Amazon's EC2. Then, you can access the notebooks in your browser from anywhere in the world.  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 199630,
+          "key": "424eddd4-9304-4207-898b-422d40a11927",
+          "title": "Installing Jupyter Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 199631,
+              "key": "be67c80b-4731-4cbf-bc2e-820911d54dba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Installing Jupyter Notebook\n\n*The Jupyter notebooks automatically get installed with the Anaconda distribution.* You'll be able to use notebooks from the default environment.\n\nIf you are using Miniconda, there are multiple ways you can install the Jupyter notebook. You can [install Jupyter notebooks in a conda environment](https://jupyter.org/install) using the following commands in your Terminal/Anaconda Prompt: \n```bash\n# First, verify if you have Python and conda installed\n# If the command below shows an error, try installing it first using `conda install python=3`\npython --version\nconda --version\n\n# Use either of the commands below to install notebook\nconda install jupyter notebook\nconda install -c conda-forge notebook\n```\n\nIf you are using `pip`, you can install Jupyter notebook with:\n```bash\n\n# First, verify if you have pip installed. In recent versions of Python 2 >=2.7.9 or Python 3 >=3.4, pip comes preinstalled. \n# If the `pip` command below shows an error, try installing pip from https://pip.pypa.io/en/stable/installing/ \npython --version\npip --version\n\n\n# Use either of the commands below to install notebook\npip install notebook\npip install jupyter notebook\n```\nTo run the notebook, run the following command at the Terminal (Mac/Linux) or Command Prompt (Windows) / Anaconda Prompt (Windows):\n```bash\njupyter notebook\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 199665,
+          "key": "7832d9b4-e925-4d5f-848e-c9289cac4f33",
+          "title": "Launching the Notebook Server",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 199667,
+              "key": "fdb9bf93-ce09-43d5-a2b6-72cae0d0e200",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Launching the Notebook Server\n\nTo start a notebook server using a command-line interface, open the Terminal/Anaconda prompt, and navigate to the directory where you'd like to create notebook files (`.ipynb`). You can confirm the present working directory using `pwd`. \n\n```\ncd <directory_path>\npwd\n```\nNext, enter the following command in your terminal/Anaconda prompt\n```\njupyter notebook\n```  \nThe command above will start the Notebook server in the current directory. Typically you'd want to start the server in the directory where your existing-notebooks reside. However, you can navigate through your file system to where the notebooks are present.\n\n## Unable to Start the Jupyter Notebook Server?\nTry troubleshooting the problem with the help of this post - [What to do when things go wrong?](https://jupyter-notebook.readthedocs.io/en/stable/troubleshooting.html#what-to-do-when-things-go-wrong)\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1080685,
+              "key": "27c9cd2f-d4c0-46df-b9e7-b469b98c58d6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f7319f6_screenshot-2020-09-29-at-3.15.16-pm/screenshot-2020-09-29-at-3.15.16-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/27c9cd2f-d4c0-46df-b9e7-b469b98c58d6",
+              "caption": "Starting a Notebook server in the default `base` environment. The `jupyter notebook` command will behave the same in both MacOS/Linux and Windows. ",
+              "alt": "",
+              "width": 2770,
+              "height": 724,
+              "instructor_notes": null
+            },
+            {
+              "id": 1080684,
+              "key": "afd139af-3813-4dbf-847e-e983c6be8184",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n## Notebook Server Walkaround\nWhen you run the `jupyter notebook` command (try it yourself!), the server home should open in your browser. By default, the notebook server runs at `http://localhost:8888`. If you aren't familiar with this, `localhost` means your computer and `8888` is the port the server is communicating on. As long as the server is still running, you can always come back to it by going to http://localhost:8888 in your browser.\n\nIf you start another server, it'll try to use port `8888`, but since it is occupied, the new server will run on port `8889`. Then, you'd connect to it at `http://localhost:8889`. Every additional notebook server will increment the port number like this.\n\nIf you tried starting your own server, it should look something like this:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199669,
+              "key": "cb7af561-c3e7-4f47-974d-5cd902c73da1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/5818e181_notebook-server/notebook-server.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cb7af561-c3e7-4f47-974d-5cd902c73da1",
+              "caption": "A snapshot of Jupyter Notebook Server",
+              "alt": "",
+              "width": 1285,
+              "height": 889,
+              "instructor_notes": null
+            },
+            {
+              "id": 199670,
+              "key": "35ce4727-8261-4e98-bcf3-2d5fb81b3631",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You might see some files and folders in the list here, it depends on where you started the server from.\n\n## Create a New Notebook\nOver on the right, you can click on \"New\" to create a new notebook, text file, folder, or terminal. The list under \"Notebooks\" shows the kernels you have installed. Here I'm running the server in a Python 3 environment, so I have a Python 3 kernel available. You might see Python 2 here. I've also installed kernels for Scala 2.10 and 2.11 which you see in the list. See [this documentation](https://ipython.readthedocs.io/en/latest/install/kernel_install.html) for how to install kernels if you ever need to do so.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 219907,
+              "key": "ceac84f6-80ae-455c-bf64-3e76d4e6dbe0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Jupyter Notebook Server Tabs\nThe tabs at the top show *Files*, *Running*, and *Cluster*.  *Files* shows all the files and folders in the current directory. Clicking on the *Running* tab will list all the currently running notebooks. From there you can manage them.\n\n*Clusters* previously was where you'd create multiple kernels for use in parallel computing. Now that's been taken over by [ipyparallel](https://ipyparallel.readthedocs.io/en/latest/intro.html) so there isn't much to do there.\n\n## Notebook Conda Package\nYou should consider installing the Notebook Conda package to help manage your environments. Run the following terminal command:\n\n`conda install nb_conda`\n\nAfter successful installation of the `nb_conda` package, if you run the notebook server from a conda environment, you'll also have access to the \"Conda\" tab shown below.  Here you can manage your environments from within Jupyter. You can create new environments, install packages, update packages, export environments, and much more.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 219910,
+              "key": "6813100f-a237-4c05-8bb4-5d6b9ac9427f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58473bf5_conda-tab/conda-tab.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6813100f-a237-4c05-8bb4-5d6b9ac9427f",
+              "caption": "conda tab in Jupyter",
+              "alt": null,
+              "width": 955,
+              "height": 643,
+              "instructor_notes": null
+            },
+            {
+              "id": 322938,
+              "key": "deba6348-dc72-47f9-bd49-480572444bf4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Additionally, with `nb_conda` installed you will be able to access any of your conda environments when choosing a kernel. For example, the image below shows an example of creating a new notebook on a machine with several different conda environments:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 322940,
+              "key": "f561436c-8769-471e-9927-94ed6f32e521",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/584739ab_conda-environments/conda-environments.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f561436c-8769-471e-9927-94ed6f32e521",
+              "caption": "conda environments in Jupyter",
+              "alt": null,
+              "width": 309,
+              "height": 566,
+              "instructor_notes": null
+            },
+            {
+              "id": 219923,
+              "key": "3a7efa4b-103e-4e9a-9750-85c5f0103846",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Shutting down Jupyter\n\nYou can shutdown individual notebooks by marking the checkbox next to the notebook on the server home and clicking \"Shutdown.\" Make sure you've saved your work before you do this though! Any changes since the last time you saved will be lost. You'll also need to rerun the code the next time you run the notebook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 219924,
+              "key": "9f2607e6-2944-4cfd-a6d1-e3925f41779a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58474142_notebook-shutdown/notebook-shutdown.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9f2607e6-2944-4cfd-a6d1-e3925f41779a",
+              "caption": "",
+              "alt": null,
+              "width": 970,
+              "height": 446,
+              "instructor_notes": null
+            },
+            {
+              "id": 219925,
+              "key": "99aad727-2c59-4bc6-a35a-ac1b119b4268",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can shutdown the entire server by pressing control + C twice in the terminal. Again, this will immediately shutdown all the running notebooks, so make sure your work is saved!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 219926,
+              "key": "57ae3206-1e08-4da0-96cb-8c0d7aeee50a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58474185_server-shutdown/server-shutdown.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/57ae3206-1e08-4da0-96cb-8c0d7aeee50a",
+              "caption": "",
+              "alt": null,
+              "width": 777,
+              "height": 572,
+              "instructor_notes": null
+            },
+            {
+              "id": 1080708,
+              "key": "c5c8b86c-0df0-4df7-8f87-13ea4335d673",
+              "title": "Multiple Servers",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Can we start multiple Notebook servers at the same time?",
+                "answers": [
+                  {
+                    "id": "a1601397702679",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1601397718358",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 199672,
+          "key": "0d3b93d8-fd93-4dde-92f2-55594d6d458e",
+          "title": "Notebook Interface",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 199699,
+              "key": "eddc9ea8-df56-4ca4-8ed2-ee4d1b989264",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Notebook Interface\n\nYou can create a new notebook by clicking “new” and then choosing a kernel, such as python3.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1080683,
+              "key": "994b2c6f-50fb-46da-a23d-e116b838de6a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f7319b0_screenshot-2020-09-29-at-3.15.27-pm/screenshot-2020-09-29-at-3.15.27-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/994b2c6f-50fb-46da-a23d-e116b838de6a",
+              "caption": "Create a new Notebook",
+              "alt": "",
+              "width": 2952,
+              "height": 846,
+              "instructor_notes": null
+            },
+            {
+              "id": 1080686,
+              "key": "1e872513-3afe-4553-8ff3-70e8c5e27160",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The command above will create a new notebook in a new browser tab, named `Untitled.ipynb`, as shown below:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199719,
+              "key": "4373fb66-0f6e-4fef-a10f-364fd9ab1e6c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f731d7e_new-notebook/new-notebook.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4373fb66-0f6e-4fef-a10f-364fd9ab1e6c",
+              "caption": "",
+              "alt": "",
+              "width": 1324,
+              "height": 889,
+              "instructor_notes": null
+            },
+            {
+              "id": 199889,
+              "key": "750b34af-b8fd-4304-a0ce-670139f392f0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Feel free to try this yourself and poke around a bit.\n\nYou’ll see a little box outlined in green. This is called a *cell*. Cells are where you write and run your code. You can also change it to render Markdown, a popular formatting syntax for writing web content. I'll cover Markdown in more detail later. In the toolbar, click “Code” to change it to Markdown and back. The little play button runs the cell, and the up and down arrows move cells up and down.\n\n<video loop autoplay style=\"width: 100%\">\n<source src=\"https://s3.amazonaws.com/content.udacity-data.com/courses/ud1111/notebook+interface.mp4\" type=\"video/mp4\">\n</video>\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199940,
+              "key": "0c6dacde-5288-4f4f-a3a5-85c839860552",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When you run a code cell, the output is displayed below the cell. The cell also gets numbered, you see `In [1]:` on the left. This lets you know the code was run and the order if you run multiple cells.  Running the cell in Markdown mode renders the Markdown as text.\n\n## The tool bar\n\nElsewhere on the tool bar, starting from the left:\n\n* The anachronistic symbol for \"save,\" the floppy disk. Saves the notebook!\n* The `+` button creates a new cell\n* Then, buttons to cut, copy, and paste cells. \n* Run, stop, restart the kernel\n* Cell type: code, Markdown, raw text, and header\n* Command palette (see next)\n* Cell toolbar, gives various options for cells such as using them as slides\n\n### Command palette\n\nThe little keyboard is the command palette. This will bring up a panel with a search bar where you can search for various commands. This is really helpful for speeding up your workflow as you don't need to search around in the menus with your mouse. Just open the command palette and type in what you want to do. For instance, if you want to merge two cells:\n\n<video loop autoplay style=\"width: 100%\">\n<source src=\"https://s3.amazonaws.com/content.udacity-data.com/courses/ud1111/command+palette.mp4\" type=\"video/mp4\">\n</video>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199943,
+              "key": "58433b80-553f-42ce-b012-a905e9a6b96a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## More things\n\nAt the top you see the title. Click on this to rename the notebook.\n\nOver on the right is the kernel type (Python 3 in my case) and next to it, a little circle. When the kernel is running a cell, it'll fill in. For most operations which run quickly, it won't fill in. It's a little indicator to let you know longer running code is actually running.\n\nAlong with the save button in the toolbar, notebooks are automatically saved periodically. The most recent save is noted to the right of the title. You can save manually with the save button, or by pressing `escape` then `s` on your keyboard. The `escape` key changes to command mode and `s` is the shortcut for \"save.\" I'll cover command mode and keyboard shortcuts later.\n\nIn the \"File\" menu, you can download the notebook in multiple formats. You'll often want to download it as an HTML file to share with others who aren't using Jupyter. Also, you can download the notebook as a normal Python file where all the code will run like normal. The [Markdown](https://daringfireball.net/projects/markdown/) and [reST](http://docutils.sourceforge.net/rst.html) formats are great for using notebooks in blogs or documentation. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 219911,
+              "key": "e3a10da0-7978-42e5-8a3c-61ee61ff4c57",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58473c56_notebook-download/notebook-download.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e3a10da0-7978-42e5-8a3c-61ee61ff4c57",
+              "caption": "",
+              "alt": null,
+              "width": 397,
+              "height": 529,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 199944,
+          "key": "6dcc83a8-0521-4235-ac84-61fac4f9775d",
+          "title": "Code Cells",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": {
+            "files": [
+              {
+                "name": "Working With Code Cells",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2016/December/58474202_working-with-code-cells/working-with-code-cells.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 200049,
+              "key": "77a1bd07-9d45-4f52-aacf-10e1dccbce1b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Code Cells\n\nMost of your work in notebooks will be done in code cells. This is where you write your code and it gets executed. In code cells, you can write any code, assigning variables, defining functions and classes, importing packages, and more. Any code executed in one cell is available in all other cells.\n\nTo give you some practice, I created a notebook you can work through. Download the notebook **Working With Code Cells** below then run it from your own notebook server. Your browser might try to open the notebook file without downloading it. If that happens, right-click on the link then choose \"Save Link As...\". There are two ways to open the downloaded notebook locally:\n1. In your terminal, change to the directory with the notebook file, then enter `jupyter notebook`. \n2. If you have a Notebook server already up and running, you can either put the newly-downloaded file into the current working directory or use the “Upload” option in the NOtebook server. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1080687,
+              "key": "850484a2-de17-44a8-a42f-fabf4ab15c6c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f731dd5_screenshot-2020-09-29-at-3.24.31-pm/screenshot-2020-09-29-at-3.24.31-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/850484a2-de17-44a8-a42f-fabf4ab15c6c",
+              "caption": "Open a file using the \"File\" menu. ",
+              "alt": "",
+              "width": 2954,
+              "height": 1176,
+              "instructor_notes": null
+            },
+            {
+              "id": 1080688,
+              "key": "e21d0d83-dd06-4726-ac6c-41a3e16d49a6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f73200c_screenshot-2020-09-29-at-5.19.45-pm/screenshot-2020-09-29-at-5.19.45-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e21d0d83-dd06-4726-ac6c-41a3e16d49a6",
+              "caption": "Steps to upload any file to the current running Notebook server. ",
+              "alt": "",
+              "width": 1009,
+              "height": 348,
+              "instructor_notes": null
+            },
+            {
+              "id": 1080689,
+              "key": "80fe977a-121b-42a2-8145-54825db11fe2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f732037_screenshot-2020-09-29-at-5.23.11-pm/screenshot-2020-09-29-at-5.23.11-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/80fe977a-121b-42a2-8145-54825db11fe2",
+              "caption": "A snapshot of the `working-with-code-cells.ipynb` file",
+              "alt": "",
+              "width": 976,
+              "height": 982,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 200050,
+          "key": "b61c167c-767b-467a-85e2-6eca473f315b",
+          "title": "Markdown Cells",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 200051,
+              "key": "8834acdc-59cb-4594-9667-dafc203d109f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Markdown Cells\n\nAs mentioned before, cells can also be used for text written in Markdown. Markdown is a formatting syntax that allows you to include links, style text as bold or italicized, and format code. As with code cells, you press **Shift + Enter** or **Control + Enter** to run the Markdown cell, where it will render the Markdown to formatted text. Including text allows you to write a narrative alongside your code, as well as documenting your code and the thoughts that went into it.\n\nBelow is a brief summary of markup concepts. At the bottom of this page, you'll find very good resources to learn and practice markup concepts:\n\n## Headers\n\nYou can write headers using the pound/hash/[octothorpe](http://www.worldwidewords.org/weirdwords/ww-oct1.htm) symbol `#` placed before the text. One `#` renders as an `h1` header, two `#`s is an h2, and so on. Looks like this:\n\n```[Markdown]\n# Header 1\n## Header 2\n### Header 3\n```\nrenders as \n\n# Header 1\n## Header 2\n### Header 3",
+              "instructor_notes": ""
+            },
+            {
+              "id": 200056,
+              "key": "58d65af0-a423-42d1-b57e-ed1e3ec98078",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Links\n\nLinking in Markdown is done by enclosing text in square brackets and the URL in parentheses, like this `[Udacity's home page](https://www.udacity.com)` for a link to [Udacity's home page](https://www.udacity.com).\n\n## Emphasis\n\nYou can add emphasis through bold or italics with asterisks or underscores (`*` or `_`). For italics, wrap the text in one asterisk or underscore, `_gelato_` or `*gelato*` renders as *gelato*.\n\nBold text uses two symbols, `**aardvark**` or `__aardvark__` looks like **aardvark**.\n\nEither asterisks or underscores are fine as long as you use the same symbol on both sides of the text.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 200052,
+              "key": "6e64f6a3-d261-47f5-9196-f1f85a0e45cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Code\n\nThere are two different ways to display code, inline with text and as a code block separated from the text. To format inline code, wrap the text in backticks. For example, `` `string.punctuation` `` renders as `string.punctuation`.\n\nTo create a code block, start a new line and wrap the text in three backticks\n\n    ```\n    import requests\n    response = requests.get('https://www.udacity.com')\n    ```\n\nor indent each line of the code block with four spaces.\n\n```python\n    import requests\n    response = requests.get('https://www.udacity.com')\n```\n\nNote: You won't see the spaces here in the page for the above! Udacity's classroom is rendering the spaces directly as a code block.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 200055,
+              "key": "c929d741-7e39-4f1e-85a2-83bf68017344",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Math expressions\n\nYou can create math expressions in Markdown cells using [LaTeX](https://www.latex-project.org/) symbols. Notebooks use MathJax to render the LaTeX symbols as math symbols. To start math mode, wrap the LaTeX in dollar signs `$y = mx + b$` for inline math. For a math block, use double dollar signs,\n\n```\n$$\ny = \\frac{a}{b+c}\n$$\n```\n\nThis is a really useful feature, so if you don't have experience with LaTeX, [here is a tutorial](https://www.latex-tutorial.com/) on using it to create math expressions.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 200065,
+              "key": "65ca51b5-4905-4b50-a1cc-0e49f4f6115a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<video loop autoplay style=\"width:100%\">\n<source src=\"https://s3.amazonaws.com/content.udacity-data.com/courses/ud1111/Markdown+cells.mp4\" type=\"video/mp4\">\n</video>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 200057,
+              "key": "43e525cc-d37a-4f73-aaae-27d93f9a0f32",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Markdown Tutorial and Cheatsheet\nTo get a better hands-on practice with markdown text, we recommend you to try this [interactive tutorial](https://commonmark.org/help/tutorial/)  on basic markdown concepts. Also, you can bookmark either of the following two cheatsheets:\n1. [Github markdown cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf) \n2. [Cheatsheet by Adam Pritchard](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) \n\nWe recommend making use of the Markdown cells. Your notebooks will be much more readable compared to a bunch of code blocks.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 205545,
+          "key": "6a803904-d84d-48ac-92a6-d9bee9807d44",
+          "title": "Keyboard Shortcuts",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": {
+            "files": [
+              {
+                "name": "Keyboard-Shortcuts",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/April/58e412d0_keyboard-shortcuts/keyboard-shortcuts.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 206709,
+              "key": "23dea1a1-6fb0-44c3-8193-e94e7441177e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Keyboard Shortcuts\n\nNotebooks come with a bunch of keyboard shortcuts that let you use your keyboard to interact with the cells, instead of using the mouse and toolbars. They take a bit of time to get used to, but when you're proficient with the shortcuts you'll be much faster at working in notebooks. To learn more about the shortcuts and get practice using them, download the notebook **Keyboard Shortcuts** below. Again, your browser might try to open it, but you want to save it to your computer. Right-click on the link, then choose \"Save Link As...\"",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1080690,
+              "key": "7c062305-7c65-4562-9903-8147db3193d3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f732495_screenshot-2020-09-29-at-5.39.51-pm/screenshot-2020-09-29-at-5.39.51-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7c062305-7c65-4562-9903-8147db3193d3",
+              "caption": "Upload the file to the current running Notebook server. ",
+              "alt": "",
+              "width": 1002,
+              "height": 387,
+              "instructor_notes": null
+            },
+            {
+              "id": 1080691,
+              "key": "53aa3a2e-7290-41a2-b2d1-cc1b9f3af445",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f7324b7_screenshot-2020-09-29-at-5.41.08-pm/screenshot-2020-09-29-at-5.41.08-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/53aa3a2e-7290-41a2-b2d1-cc1b9f3af445",
+              "caption": "A snapshot of `keyboard-shortcuts.ipynb` file.",
+              "alt": "",
+              "width": 1026,
+              "height": 1015,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 208390,
+          "key": "256cdd36-17d4-442a-a033-7c64ce83f7f8",
+          "title": "Magic Keywords",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 213428,
+              "key": "71b42c51-f533-4662-a3e3-fac13dfe79c7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Magic Keywords\n\nMagic keywords are special commands you can run in cells that let you control the notebook itself or perform system calls such as changing directories. For example, you can set up matplotlib to work interactively in the notebook with `%matplotlib`.\n\nMagic commands are preceded with one or two percent signs (`%` or `%%`) for line magics and cell magics, respectively. Line magics apply only to the line the magic command is written on, while cell magics apply to the whole cell.\n\n**NOTE:** These magic keywords are specific to the normal Python kernel. If you are using other kernels, these most likely won't work.\n\n## Timing code\n\nAt some point, you'll probably spend some effort optimizing code to run faster. Timing how quickly your code runs is essential for this optimization. You can use the `timeit` magic command to time how long it takes for a function to run, like so:\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 215665,
+              "key": "5107d13d-ebbb-4cce-bdbf-cc4dae39e210",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/582f354d_magic-timeit/magic-timeit.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5107d13d-ebbb-4cce-bdbf-cc4dae39e210",
+              "caption": "",
+              "alt": null,
+              "width": 1574,
+              "height": 874,
+              "instructor_notes": null
+            },
+            {
+              "id": 215664,
+              "key": "5a931da9-6ae4-448c-ac4a-0e39099c2933",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you want to time how long it takes for a whole cell to run, you’d use `%%timeit` like so:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216040,
+              "key": "4935f7ac-3024-40c3-87f2-406dc9d73400",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/58337d71_magic-timeit2/magic-timeit2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4935f7ac-3024-40c3-87f2-406dc9d73400",
+              "caption": "",
+              "alt": null,
+              "width": 695,
+              "height": 359,
+              "instructor_notes": null
+            },
+            {
+              "id": 216044,
+              "key": "993c0776-88da-46bd-bacd-ff7f04a9b6a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Embedding visualizations in notebooks\n\nAs mentioned before, notebooks let you embed images along with text and code. This is most useful when you’re using `matplotlib` or other plotting packages to create visualizations. You can use `%matplotlib` to set up `matplotlib` for interactive use in the notebook. By default, figures will render in their own window. However, you can pass arguments to the command to select a specific [\"backend\"](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend), the software that renders the image. To render figures directly in the notebook, you should use the inline backend with the command `%matplotlib inline`.\n\n> **Tip:** On higher resolution screens such as Retina displays, the default images in notebooks can look blurry. Use `%config InlineBackend.figure_format = 'retina'` after `%matplotlib inline` to render higher resolution images.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216051,
+              "key": "5e263ad0-6e13-4ade-a766-5da705ce1e8e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/5833867f_magic-matplotlib/magic-matplotlib.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5e263ad0-6e13-4ade-a766-5da705ce1e8e",
+              "caption": "Example figure in a notebook",
+              "alt": null,
+              "width": 744,
+              "height": 566,
+              "instructor_notes": null
+            },
+            {
+              "id": 216041,
+              "key": "2d6970b7-83b7-4268-81e0-b082a30056df",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Debugging in the Notebook\n\nWith the Python kernel, you can turn on the interactive debugger using the magic command `%pdb`. When you cause an error, you'll be able to inspect the variables in the current namespace.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216042,
+              "key": "bf742711-6127-4af8-8111-ea370ef8f2da",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/58337eac_magic-pdb/magic-pdb.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bf742711-6127-4af8-8111-ea370ef8f2da",
+              "caption": "Debugging in a notebook",
+              "alt": null,
+              "width": 724,
+              "height": 459,
+              "instructor_notes": null
+            },
+            {
+              "id": 216043,
+              "key": "7dbf6da3-02dc-4016-99a9-d40224ec577b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Above you can see I tried to sum up a string which gives an error. The debugger raises the error and provides a prompt for inspecting your code.\n\nRead more about `pdb` in [the documentation](https://docs.python.org/3/library/pdb.html). To quit the debugger, simply enter `q` in the prompt.\n\n## More reading\n\nThere are a whole bunch of other magic commands, I just touched on a few of the ones you'll use the most often. To learn more about them, [here's the list](http://ipython.readthedocs.io/en/stable/interactive/magics.html) of all available magic commands.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 215938,
+          "key": "2b324ee9-d6ec-4af4-b105-c4996b53d162",
+          "title": "Converting Notebooks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 216053,
+              "key": "fadfae5b-7d0b-404e-8009-abbe22f8bc5b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Converting Notebooks\n\nNotebooks are just big [JSON](http://www.json.org/) files with the extension `.ipynb`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216054,
+              "key": "3478b081-7016-46ec-86c9-7e23b3316015",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/5833887b_notebook-json/notebook-json.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3478b081-7016-46ec-86c9-7e23b3316015",
+              "caption": "Notebook file opened in a text editor shows JSON data",
+              "alt": null,
+              "width": 819,
+              "height": 616,
+              "instructor_notes": null
+            },
+            {
+              "id": 216055,
+              "key": "ef1caf21-4515-4d86-ab7f-3d00b03c4c9a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Since notebooks are JSON, it is simple to convert them to other formats. Jupyter comes with a utility called `nbconvert` for converting to HTML, Markdown, slideshows, etc. The general syntax to convert a given `mynotebook.ipynb` file to another FORMAT is:\n```bash\njupyter nbconvert --to FORMAT mynotebook.ipynb\n```\nThe currently supported output `FORMAT` could be either of the following (ignore case):\n1. HTML,\n2. LaTeX,\n3. PDF,\n4. WebPDF,\n5. Reveal.js HTML slideshow,\n6. Markdown,\n7. Ascii,\n8. reStructuredText,\n9. executable script,\n10. notebook.\n\nFor example, to convert a notebook to an HTML file, in your terminal use\n```bash\n# Install the package below, if not already\npip install nbconvert\njupyter nbconvert --to html mynotebook.ipynb\n```\n>**Note** - If you wish to install any package in conda that is **not** available in Anaconda distribution, such as the Airbase package, use `pip install airbase`, instead of `conda install airbase`. \n\nConverting to HTML is useful for sharing your notebooks with others who aren't using notebooks. Markdown is great for including a notebook in blogs and other text editors that accept Markdown formatting.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216056,
+              "key": "6d467407-c496-4cad-92b3-3c38f3fccdb4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/58338a48_nbconvert-example/nbconvert-example.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6d467407-c496-4cad-92b3-3c38f3fccdb4",
+              "caption": "",
+              "alt": null,
+              "width": 857,
+              "height": 623,
+              "instructor_notes": null
+            },
+            {
+              "id": 216057,
+              "key": "55c8bf3a-15a8-494b-b805-1d687f76d245",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Recommended Read\nAs always, learn more about `nbconvert` from the [documentation](https://nbconvert.readthedocs.io/en/latest/usage.html).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1080706,
+              "key": "c880614e-aa38-4038-a73b-f93954069380",
+              "title": "Notebook Supported File Formats",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the following is **not** a supported output file format to which you can convert a given Notebook file? ",
+                "answers": [
+                  {
+                    "id": "a1601396710341",
+                    "text": ".pdf",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1601396769146",
+                    "text": ".tex",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1601396779232",
+                    "text": ".docx",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1601396789702",
+                    "text": ".html",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 215937,
+          "key": "74d96c44-fadc-4499-8c33-c48c4b4c73e4",
+          "title": "Creating a Slideshow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 216094,
+              "key": "49a4e03c-b56a-4291-935c-e161cad17681",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Creating a Slideshow\n\nCreate slideshows from notebooks is one of my favorite features. You can see [an example of a slideshow here](http://nbviewer.jupyter.org/format/slides/github/jorisvandenbossche/2015-PyDataParis/blob/master/pandas_introduction.ipynb#/) introducing pandas for working with data.\n\nThe slides are created in notebooks like normal, but you'll need to designate which cells are slides and the type of slide the cell will be. In the menu bar, click View > Cell Toolbar > Slideshow to bring up the slide cell menu on each cell.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216095,
+              "key": "4719b8f3-6b0b-492f-9bab-8609b9c5d3ef",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/58339359_slides-cell-toolbar-menu/slides-cell-toolbar-menu.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4719b8f3-6b0b-492f-9bab-8609b9c5d3ef",
+              "caption": "Turning on Slideshow toolbars for cells",
+              "alt": null,
+              "width": 866,
+              "height": 301,
+              "instructor_notes": null
+            },
+            {
+              "id": 216096,
+              "key": "79e088bd-1454-4acb-99f9-d950f9cdfc95",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This will show a menu dropdown on each cell that lets you choose how the cell shows up in the slideshow.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216098,
+              "key": "4b6b6871-9eed-4b5c-a8dc-1eb888a2554f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/5833938f_slides-choose-slide-type/slides-choose-slide-type.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4b6b6871-9eed-4b5c-a8dc-1eb888a2554f",
+              "caption": "Choose slide type",
+              "alt": null,
+              "width": 866,
+              "height": 342,
+              "instructor_notes": null
+            },
+            {
+              "id": 216099,
+              "key": "eabfb632-30f7-4d58-a27b-8d2755697269",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Slides** are full slides that you move through left to right. **Sub-slides** show up in the slideshow by pressing up or down. **Fragments** are hidden at first, then appear with a button press. You can skip cells in the slideshow with **Skip** and **Notes** leaves the cell as speaker notes.\n\n\n## Running the slideshow\n\nTo create the slideshow from the notebook file, you'll need to use `nbconvert`:\n\n```bash\n    jupyter nbconvert notebook.ipynb --to slides\n```\n\nThis just converts the notebook to the necessary files for the slideshow, but you need to serve it with an HTTP server to actually see the presentation.\n\nTo convert it and immediately see it, use\n\n```bash\njupyter nbconvert notebook.ipynb --to slides --post serve\n```\n\nThis will open up the slideshow in your browser so you can present it.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1080707,
+              "key": "9281a0ea-c3a9-43e4-b6ea-5801780a8944",
+              "title": "Type of Slide",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the following is **not** a type of slide available in the notebook?",
+                "answers": [
+                  {
+                    "id": "a1601396935790",
+                    "text": "Sub-slide",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1601396970337",
+                    "text": "Fragment",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1601396977203",
+                    "text": "Title-slide",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1601396984442",
+                    "text": "Notes",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 216398,
+          "key": "ecc780f6-37d0-4115-81ad-bdf7f5f4b5e2",
+          "title": "Finishing up",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 216399,
+              "key": "745897e1-2395-4508-ab46-198340eb65b8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Congratulations!\n\nAt this moment, you must have learned to:\n\n1. Install the Jupyter notebook. \n2. Start new or upload an existing notebook, and utilize markup features.\n3. Get acquainted with the keyboard shortcuts and magic keywords.\n4. Converting notebooks to other file formats.\n\nYou've made it to the end of this short course on tools in the Python data science workflow. Making good use of Anaconda and Jupyter Notebooks will increase your productivity and general well-being. There is a lot to learn to get the most out of these, Markdown and LaTeX for instance, but after a bit you'll be wondering why data analysis is done any other way.\n\nAgain, congratulations and good luck!\n\n\n\n## More to Explore\n[Documentation on Notebook in the form of Notebook on NBViewer](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/examples_index.html)\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

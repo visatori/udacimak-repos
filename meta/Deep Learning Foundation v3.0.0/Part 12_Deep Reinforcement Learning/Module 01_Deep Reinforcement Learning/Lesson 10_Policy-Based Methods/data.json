@@ -1,0 +1,213 @@
+{
+  "data": {
+    "lesson": {
+      "id": 350717,
+      "key": "aeceac62-e015-41ae-9fef-41551ad8b756",
+      "title": "Policy-Based Methods",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Policy-based methods try to directly optimize for the optimal policy. Learn how they work, and why they are important, especially for domains with continuous action spaces.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/aeceac62-e015-41ae-9fef-41551ad8b756/350717/1544927080061/Policy-Based+Methods+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/aeceac62-e015-41ae-9fef-41551ad8b756/350717/1544927076922/Policy-Based+Methods+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 474224,
+          "key": "aa1db2be-41fd-4c2f-b458-b3e3f910130d",
+          "title": "Policy-Based Methods",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501787,
+              "key": "76f7161b-0aa8-4177-8862-3784d0ac911f",
+              "title": "M2L3 01 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YOSREyp04HA",
+                "china_cdn_id": "YOSREyp04HA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 474225,
+          "key": "d8ac869a-dd97-4e57-8c8d-e87ecbb0ccc3",
+          "title": "Why Policy-Based Methods?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501786,
+              "key": "1385f2b3-94e4-46fe-b08b-f7ca25f934f9",
+              "title": "M2L3 02 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ToS8vXGdODE",
+                "china_cdn_id": "ToS8vXGdODE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 474226,
+          "key": "bad0e0ad-f444-4285-bc06-72f0f6266066",
+          "title": "Policy Function Approximation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501788,
+              "key": "fc395759-1252-4146-ac22-58440f084e58",
+              "title": "M2L3 03 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TePX-0Bs23E",
+                "china_cdn_id": "TePX-0Bs23E.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 474227,
+          "key": "60b020c5-bf08-43fc-820c-d1f393fc47e2",
+          "title": "Stochastic Policy Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501789,
+              "key": "a456ab78-1e69-4809-806a-6cb2ff69ffb4",
+              "title": "M2L3 04 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QicxmyE5vTo",
+                "china_cdn_id": "QicxmyE5vTo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 474228,
+          "key": "b23e087a-d510-47b5-9868-61493fbe61ab",
+          "title": "Policy Gradients",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501790,
+              "key": "56526e51-8525-42c3-bf43-4a609365de7f",
+              "title": "M2L3 05 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eZxxNNIZuwA",
+                "china_cdn_id": "eZxxNNIZuwA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 474234,
+          "key": "7db97364-5a4c-4082-8e02-ffc802461449",
+          "title": "Monte Carlo Policy Gradients",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501791,
+              "key": "76c8eb56-ea40-408a-8614-8b85b10158b0",
+              "title": "M2L3 06 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RMjdQkl6CqE",
+                "china_cdn_id": "RMjdQkl6CqE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 474236,
+          "key": "c832f0c8-a830-4fe7-895c-bc163a028af2",
+          "title": "Constrained Policy Gradients",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501792,
+              "key": "9ef4f213-d6a8-4d2d-afc9-d98419a36986",
+              "title": "M2L3 07 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZBLLGIN1EfU",
+                "china_cdn_id": "ZBLLGIN1EfU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 474238,
+          "key": "9436ccee-82ef-4795-87e8-52483feb114f",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501793,
+              "key": "8826a7d9-ba85-4be9-8fc3-25e8b0e43946",
+              "title": "M2L3 08 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "og3W6CXn1F0",
+                "china_cdn_id": "og3W6CXn1F0.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

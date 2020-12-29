@@ -1,0 +1,1376 @@
+{
+  "data": {
+    "lesson": {
+      "id": 371477,
+      "key": "4894b062-f2ed-4f31-95bc-f28a90f7acff",
+      "title": "Monte Carlo Methods",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Write your own implementation of Monte Carlo control to teach an agent to play Blackjack!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/4894b062-f2ed-4f31-95bc-f28a90f7acff/371477/1544926960455/Monte+Carlo+Methods+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/4894b062-f2ed-4f31-95bc-f28a90f7acff/371477/1544926956083/Monte+Carlo+Methods+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 372355,
+          "key": "2533f023-d223-4ea4-a895-5c63a35b7387",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486074,
+              "key": "0ce1320a-096d-4fd2-bf86-85905d653c18",
+              "title": "Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "W2EP3riQSus",
+                "china_cdn_id": "W2EP3riQSus.mp4"
+              }
+            },
+            {
+              "id": 372356,
+              "key": "af88747d-9cd8-4af3-9228-fb783cb7ab68",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This lesson covers material in **Chapter 5** (especially 5.1-5.6) of the [textbook](http://go.udacity.com/rl-textbook).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 374798,
+          "key": "0efcbe12-d803-4021-9c37-f9935046fe46",
+          "title": "OpenAI Gym: BlackjackEnv",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 415749,
+              "key": "b1935f21-eeb8-487b-be6d-bac0cbaa0c06",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# OpenAI Gym: BlackjackEnv",
+              "instructor_notes": ""
+            },
+            {
+              "id": 415747,
+              "key": "a7816803-2af2-40c8-b985-a4af8c513cb5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, you will write code to teach an agent to play Blackjack.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 415748,
+              "key": "13823fa1-c980-4cfb-b331-c6b535a2860f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d245d3_2-card-21/2-card-21.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/13823fa1-c980-4cfb-b331-c6b535a2860f",
+              "caption": "Source: https://www.blackjackinfo.com/img/2-card-21.png",
+              "alt": "",
+              "width": 472,
+              "height": 225,
+              "instructor_notes": null
+            },
+            {
+              "id": 377100,
+              "key": "fa135d5b-e18b-4ae2-b326-2783f4481edb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please read about the game of Blackjack in Example 5.1 of the [textbook](http://go.udacity.com/rl-textbook).\n\nWhen you have finished, please review the corresponding [GitHub file](https://github.com/openai/gym/blob/master/gym/envs/toy_text/blackjack.py), by reading the commented block in the BlackjackEnv class.  (_While you do **not** need to understand how all of the code works, please read the commented block that explains the dynamics of the environment._)  For clarity, we have also pasted the description of the environment below:\n\n```text\n    \"\"\"Simple blackjack environment\n\n    Blackjack is a card game where the goal is to obtain cards that sum to as\n    near as possible to 21 without going over.  They're playing against a fixed\n    dealer.\n    Face cards (Jack, Queen, King) have point value 10.\n    Aces can either count as 11 or 1, and it's called 'usable' at 11.\n    This game is placed with an infinite deck (or with replacement).\n    The game starts with each (player and dealer) having one face up and one\n    face down card.\n\n    The player can request additional cards (hit=1) until they decide to stop\n    (stick=0) or exceed 21 (bust).\n\n    After the player sticks, the dealer reveals their facedown card, and draws\n    until their sum is 17 or greater.  If the dealer goes bust the player wins.\n\n    If neither player nor dealer busts, the outcome (win, lose, draw) is\n    decided by whose sum is closer to 21.  The reward for winning is +1,\n    drawing is 0, and losing is -1.\n\n    The observation of a 3-tuple of: the players current sum,\n    the dealer's one showing card (1-10 where 1 is ace),\n    and whether or not the player holds a usable ace (0 or 1).\n\n    This environment corresponds to the version of the blackjack problem\n    described in Example 5.1 in Reinforcement Learning: An Introduction\n    by Sutton and Barto (1998).\n    http://incompleteideas.net/sutton/book/the-book.html\n    \"\"\"\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 374797,
+          "key": "d29f23ea-2ecd-4b67-9d14-53849d126e12",
+          "title": "MC Prediction: State Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486075,
+              "key": "322f103c-eb3f-42b4-af73-f1ed121d06d3",
+              "title": "MC Prediction: State Values",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0q2wSWyuBj8",
+                "china_cdn_id": "0q2wSWyuBj8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 374799,
+          "key": "c6a9bf61-1311-4fb3-bdef-74cd7b94eacb",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 377107,
+              "key": "2dced8a9-20e4-4ec1-b77d-5aceaf7dd8dd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: MC Prediction (State Values)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 377102,
+              "key": "d6d2d73e-37d9-4b33-ad0c-07f4ce6071ab",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for (first-visit) MC prediction (for the state values) can be found below.  (_Feel free to implement either the first-visit or every-visit MC method.  In the game of Blackjack, both the first-visit and every-visit methods return identical results._)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431196,
+              "key": "dd955e77-98e1-4ab0-af3a-4027d85c2f96",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe1e7_mc-pred-state/mc-pred-state.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dd955e77-98e1-4ab0-af3a-4027d85c2f96",
+              "caption": "",
+              "alt": "",
+              "width": 602,
+              "height": 420,
+              "instructor_notes": null
+            },
+            {
+              "id": 415767,
+              "key": "a5c5ec8a-9abb-42e2-a758-788d633c160b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you are interested in learning more about the difference between first-visit and every-visit MC methods, you are encouraged to read Section 3 of [this paper](http://www-anw.cs.umass.edu/legacy/pubs/1995_96/singh_s_ML96.pdf\n).  \nTheir results are summarized in Section 3.6.  The authors show:\n- Every-visit MC is [biased](https://en.wikipedia.org/wiki/Bias_of_an_estimator), whereas first-visit MC is unbiased (see Theorems 6 and 7).\n- Initially, every-visit MC has lower [mean squared error (MSE)](https://en.wikipedia.org/wiki/Mean_squared_error), but as more episodes are collected, first-visit MC attains better MSE (see Corollary 9a and 10a, and Figure 4).\n\nBoth the first-visit and every-visit method are **guaranteed to converge** to the true value function, as the number of visits to each state approaches infinity.  (_So, in other words, as long as the agent gets enough experience with each state, the value function estimate will be pretty close to the true value._)  In the case of first-visit MC, convergence follows from the [Law of Large Numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers), and the details are covered in section 5.1 of the [textbook](http://go.udacity.com/rl-textbook).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 416009,
+              "key": "0c94d01f-97d8-413e-89b5-79c181ee215f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 0: Explore BlackjackEnv** and **Part 1: MC Prediction: State Values** of `Monte_Carlo.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding sections in `Monte_Carlo_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 416010,
+          "key": "7f918bf3-b2b3-4bb3-a7a3-a7d3eff454e3",
+          "title": "Mini Project: MC (Parts 0 and 1)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 431213,
+              "key": "1b4e8c08-6f68-43fc-b88b-c0e3ad5dbd4b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6955c28f",
+              "pool_id": "jupyter",
+              "view_id": "6955c28f-f3c1-4407-ba7a-85dc37335982",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Monte_Carlo.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 374800,
+          "key": "193835c9-f2ea-4f4a-ad2c-142d76d8a0c6",
+          "title": "MC Prediction: Action Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486076,
+              "key": "ab7cadae-1d28-4c90-8f53-fe529c3b219d",
+              "title": "MC Prediction: Action Values",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "08tLtbh0xLs",
+                "china_cdn_id": "08tLtbh0xLs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 374801,
+          "key": "0c7422ed-6f69-40b1-bae9-3a0fe2012216",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 377113,
+              "key": "dd8b3240-3cf9-419f-81bf-6108d29b8111",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: MC Prediction (Action Values)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 377103,
+              "key": "d23bcc22-170b-439e-a71f-11dbf153dca5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for (first-visit) MC prediction (for the action values) can be found below.  (_Feel free to implement either the first-visit or every-visit MC method.  In the game of Blackjack, both the first-visit and every-visit methods return identical results._)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431197,
+              "key": "a43fe02b-291e-4373-8331-b5af156f986b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe1f8_mc-pred-action/mc-pred-action.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a43fe02b-291e-4373-8331-b5af156f986b",
+              "caption": "",
+              "alt": "",
+              "width": 602,
+              "height": 420,
+              "instructor_notes": null
+            },
+            {
+              "id": 377114,
+              "key": "ae62dcc5-9250-44fe-b55b-df230149daf9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Both the first-visit and every-visit methods are **guaranteed to converge** to the true value function, as the number of visits to each state-action pair approaches infinity.  (_So, in other words, as long as the agent gets enough experience with each state-action pair, the value function estimate will be pretty close to the true value._)\n\nWe won't use MC prediction to estimate the action-values corresponding to a deterministic policy; this is because many state-action pairs will _never_ be visited (since a deterministic policy always chooses the _same_ action from each state).  Instead, so that convergence is guaranteed, we will only estimate action-value functions corresponding to policies where each action has a nonzero probability of being selected from each state.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418780,
+              "key": "87cc0622-c396-480c-a2e3-eff3383538e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 2: MC Prediction: Action Values** of `Monte_Carlo.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Monte_Carlo_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 416072,
+          "key": "efbed560-72ae-4556-abd9-9e1622fca63f",
+          "title": "Mini Project: MC (Part 2)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 431214,
+              "key": "144438af-b847-4bdc-be99-7d5b05be0cfa",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6955c28f",
+              "pool_id": "jupyter",
+              "view_id": "8827ce46-0a55-43ef-ac1e-161693eee4c6",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Monte_Carlo.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 374802,
+          "key": "8bb0f6b2-de21-4d5a-9ac2-00b9049d423a",
+          "title": "Generalized Policy Iteration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486077,
+              "key": "a9741553-e2b2-472f-b4d3-e2866d43ce2e",
+              "title": "Generalized Policy Iteration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XRmz4nolEsw",
+                "china_cdn_id": "XRmz4nolEsw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 374803,
+          "key": "352a3998-fd96-4e7a-89fb-a5d462781575",
+          "title": "MC Control: Incremental Mean",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486082,
+              "key": "57f370a8-421a-4117-b217-c8c4a63b2c2a",
+              "title": "MC Control: Incremental Mean",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "E2RITH-2NUE",
+                "china_cdn_id": "E2RITH-2NUE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 377145,
+          "key": "1500d564-5bfc-4fe3-848c-3bcff316269d",
+          "title": "Quiz: Incremental Mean",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 416107,
+              "key": "57256a58-c6b5-4e7e-ad96-ebb71f86a755",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Incremental Mean",
+              "instructor_notes": ""
+            },
+            {
+              "id": 416109,
+              "key": "5de7f8d0-eb4c-48ef-bdca-9eb01b5f15fc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous video, we learned about an algorithm that can keep a running estimate of the mean of a sequence of numbers <span class=\"mathquill\">(x_1, x_2, \\ldots, x_n)</span>.  The algorithm looked at each number in the sequence in order, and successively updated the mean <span class=\"mathquill\">\\mu</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418806,
+              "key": "87edda0e-7215-4726-bdf7-91115835fe42",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d6690f_incremental/incremental.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/87edda0e-7215-4726-bdf7-91115835fe42",
+              "caption": "",
+              "alt": "",
+              "width": 227,
+              "height": 152,
+              "instructor_notes": null
+            },
+            {
+              "id": 416110,
+              "key": "058dd63c-3037-4392-8eac-7b3b8b17b7f4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Use the pseudocode to complete the `running_mean` function below.  Your function should accept a list of numbers `x` as input.  It should return a list `mean_values`, where `mean_values[k]` is the mean of `x[:k+1]`.\n\n**Note**: Pay careful attention to indexing!  Here, <span class=\"mathquill\">x_k</span> corresponds to `x[k-1]` (so <span class=\"mathquill\">x_1</span> = `x[0]`, <span class=\"mathquill\">x_2</span> = `x[1]`, etc).\n\nUse the **[ Test Run ]** button to check the accuracy of your code.  When you are ready to move on to the next concept, click on **[ Submit Answer ]**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418503,
+              "key": "bc25afa8-075a-4a0b-9447-c28eea1de252",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5047092824375296",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\ndef running_mean(x):\n    mu = 0\n    mean_values = []\n    for k in np.arange(0, len(x)):\n        # TODO: fill in the update step\n        mu = ...\n        mean_values.append(mu)\n    return mean_values",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "import numpy as np\n\ndef running_mean(x):\n    mu = 0\n    mean_values = []\n    for k in np.arange(0, len(x)):\n        mu = mu + (1.0/(k+1))*(x[k] - mu)\n        mean_values.append(mu)\n    return mean_values",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 377147,
+          "key": "32addb36-239a-43d3-b81e-ad34ac0f0f7c",
+          "title": "MC Control: Policy Evaluation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486078,
+              "key": "66fc838f-31b5-432c-86bf-e596e844874f",
+              "title": "MC Control: Policy Evaluation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3_opwMzpEEI",
+                "china_cdn_id": "3_opwMzpEEI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 374806,
+          "key": "b5c2f691-e67e-4fd2-8ff0-45747ce2b777",
+          "title": "MC Control: Policy Improvement",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486079,
+              "key": "36b940f4-367a-4fda-a97d-1316dc017b71",
+              "title": "MC Control: Policy Improvement",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2RKH-BInX7s",
+                "china_cdn_id": "2RKH-BInX7s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 418577,
+          "key": "945c310b-493e-4d9c-8f16-1f3d3b892cbb",
+          "title": "Quiz: Epsilon-Greedy Policies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 418578,
+              "key": "fc46e80e-cf7b-4730-bd47-f9e2dea708a3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Epsilon-Greedy Policies",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418579,
+              "key": "2eec7554-f0c0-4049-ad69-be8806e365e3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous concept, you learned about <span class=\"mathquill\">\\epsilon</span>-greedy policies.  \n\nYou can think of the agent who follows an <span class=\"mathquill\">\\epsilon</span>-greedy policy as always having a (potentially unfair) coin at its disposal, with probability <span class=\"mathquill\">\\epsilon</span> of landing heads.  After observing a state, the agent flips the coin.\n- If the coin lands tails (so, with probability <span class=\"mathquill\">1-\\epsilon</span>), the agent selects the greedy action.\n- If the coin lands heads (so, with probability <span class=\"mathquill\">\\epsilon</span>), the agent selects an action _uniformly_ at random from the set of available (non-greedy **AND** greedy) actions.\n\nIn order to construct a policy <span class=\"mathquill\">\\pi</span> that is <span class=\"mathquill\">\\epsilon</span>-greedy with respect to the current action-value function estimate <span class=\"mathquill\">Q</span>, we need only set",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418581,
+              "key": "cd71ea2c-3df6-4012-b65a-d11a90e60632",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d53a9a_screen-shot-2017-10-04-at-2.46.11-pm/screen-shot-2017-10-04-at-2.46.11-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cd71ea2c-3df6-4012-b65a-d11a90e60632",
+              "caption": "",
+              "alt": "",
+              "width": 661,
+              "height": 109,
+              "instructor_notes": null
+            },
+            {
+              "id": 418582,
+              "key": "6b0929df-0cec-4e08-a307-87c01a36bd26",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "for each <span class=\"mathquill\">s\\in\\mathcal{S}</span> and <span class=\"mathquill\">a\\in\\mathcal{A}(s)</span>.  Note that <span class=\"mathquill\">\\epsilon</span> must always be a value between 0 and 1, inclusive (that is, <span class=\"mathquill\">\\epsilon \\in [0,1]</span>).\n\nIn this quiz, you will answer a few questions to test your intuition.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418604,
+              "key": "2e179931-6f2d-43f4-9404-f8e38ebcc024",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the values for epsilon yields an epsilon-greedy policy that is guaranteed to **always** select the greedy action?  Select all that apply.",
+                "answers": [
+                  {
+                    "id": "a1507147623837",
+                    "text": "(1) epsilon = 0",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1507147688825",
+                    "text": "(2) epsilon = 0.3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147691258",
+                    "text": "(3) epsilon = 0.5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147693485",
+                    "text": "(4) epsilon = 1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147737357",
+                    "text": "(5) This is a trick question!  The *true answer* is that none of the values for epsilon satisfy this requirement.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 418606,
+              "key": "94ceabdb-e1d8-411b-a9bf-3ac3c429a1d8",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the values for epsilon yields an epsilon-greedy policy that is guaranteed to **always** select a non-greedy action?  Select all that apply.",
+                "answers": [
+                  {
+                    "id": "a1507147904863",
+                    "text": "(1) epsilon = 0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147984360",
+                    "text": "(2) epsilon = 0.3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147986417",
+                    "text": "(3) epsilon = 0.5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147988710",
+                    "text": "(4) epsilon = 1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147991149",
+                    "text": "(5) This is a trick question!  The *true answer* is that none of the values for epsilon satisfy this requirement.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 418605,
+              "key": "9d49309e-7256-4aea-9049-74c79346943d",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the values for epsilon yields an epsilon-greedy policy that is equivalent to the equiprobable random policy (where, from each state, each action is equally likely to be selected)?",
+                "answers": [
+                  {
+                    "id": "a1507147816843",
+                    "text": "(1) epsilon = 0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147871460",
+                    "text": "(2) epsilon = 0.3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147873321",
+                    "text": "(3) epsilon = 0.5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1507147875535",
+                    "text": "(4) epsilon = 1",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1507147877603",
+                    "text": "(5) This is a trick question!  The *true answer* is that none of the values for epsilon satisfy this requirement.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 486164,
+              "key": "63aeaedf-a903-4366-8153-43aa61156ce3",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the values for epsilon yields an epsilon-greedy policy where the agent has the _possibility_ of selecting a greedy action, but _might_ select a non-greedy action instead?  In other words, how might you guarantee that the agent selects each of the available (greedy and non-greedy) actions with nonzero probability?",
+                "answers": [
+                  {
+                    "id": "a1513475285345",
+                    "text": "(1) epsilon = 0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1513475539066",
+                    "text": "(2) epsilon = 0.3",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1513475561314",
+                    "text": "(3) epsilon = 0.5",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1513475566581",
+                    "text": "(4) epsilon = 1",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1513475578705",
+                    "text": "(5) This is a trick question!  The *true answer* is that none of the values for epsilon satisfy this requirement.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 418490,
+          "key": "30151e2d-760b-455e-9321-c7a8bc69a4c1",
+          "title": "Exploration vs. Exploitation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 418492,
+              "key": "1ea579fb-1699-4427-aff0-857b00f9b05b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Exploration vs. Exploitation",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418682,
+              "key": "f20a9195-bb91-48f6-9761-fde0af46c370",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d55ce3_exploration-vs.-exploitation/exploration-vs.-exploitation.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f20a9195-bb91-48f6-9761-fde0af46c370",
+              "caption": "Exploration-Exploitation Dilemma ([Source]( http://slides.com/ericmoura/deck-2/embed))",
+              "alt": "Exploration-Exploitation Dilemma",
+              "width": 600,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 418575,
+              "key": "54013167-8d4b-49da-92d7-5a062512470b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Solving Environments in OpenAI Gym\n---\nIn many cases, we would like our reinforcement learning (RL) agents to learn to maximize reward as quickly as possible.  This can be seen in many OpenAI Gym environments.  \n\nFor instance, the [FrozenLake-v0](https://gym.openai.com/envs/FrozenLake-v0/) environment is considered solved once the agent attains an average reward of 0.78 over 100 consecutive trials.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418675,
+              "key": "51937238-d240-4720-a729-acf729105707",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d559bf_screen-shot-2017-10-04-at-4.58.58-pm/screen-shot-2017-10-04-at-4.58.58-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/51937238-d240-4720-a729-acf729105707",
+              "caption": "",
+              "alt": "",
+              "width": 498,
+              "height": 373,
+              "instructor_notes": null
+            },
+            {
+              "id": 418676,
+              "key": "17ecbba4-bee5-4da0-a61d-72bb7bdb0671",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Algorithmic solutions to the [FrozenLake-v0](https://gym.openai.com/envs/FrozenLake-v0/) environment are ranked according to the number of episodes needed to find the solution.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418677,
+              "key": "8018fd20-a14c-45f1-b7ed-5586c0557455",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d55a58_screen-shot-2017-10-04-at-5.01.26-pm/screen-shot-2017-10-04-at-5.01.26-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8018fd20-a14c-45f1-b7ed-5586c0557455",
+              "caption": "",
+              "alt": "",
+              "width": 686,
+              "height": 224,
+              "instructor_notes": null
+            },
+            {
+              "id": 418678,
+              "key": "987165b2-9f09-4c7b-b001-75f5179f03b2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Solutions to [Taxi-v1](https://gym.openai.com/envs/Taxi-v1/), [Cartpole-v1](https://gym.openai.com/envs/CartPole-v1/), and [MountainCar-v0](https://gym.openai.com/envs/MountainCar-v0/) (along with many others) are also ranked according to the number of episodes before the solution is found.  Towards this objective, it makes sense to design an algorithm that learns the optimal policy <span class=\"mathquill\">\\pi_*</span> as quickly as possible.  ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418692,
+              "key": "f0df4bde-7482-407b-87ae-e6964305ac64",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Exploration-Exploitation Dilemma\n---\nRecall that the environment's dynamics are initially unknown to the agent.  Towards maximizing return, the agent must learn about the environment through interaction.\n\nAt every time step, when the agent selects an action, it bases its decision on past experience with the environment.  And, towards minimizing the number of episodes needed to solve environments in OpenAI Gym, our first instinct could be to devise a strategy where the agent always selects the action that it believes (_based on its past experience_) will maximize return.  With this in mind, the agent could follow the policy that is greedy with respect to the action-value function estimate.  We examined this approach in a previous video and saw that it can easily lead to convergence to a sub-optimal policy.\n\nTo see why this is the case, note that in early episodes, the agent's knowledge is quite limited (and potentially flawed).  So, it is highly likely that actions _estimated_ to be non-greedy by the agent are in fact better than the _estimated_ greedy action.\n\nWith this in mind, a successful RL agent cannot act greedily at every time step (_that is_, it cannot always **exploit** its knowledge); instead, in order to discover the optimal policy, it has to continue to refine the estimated return for all state-action pairs (_in other words_, it has to continue to **explore** the range of possibilities by visiting every state-action pair).  That said, the agent should always act _somewhat greedily_, towards its goal of maximizing return _as quickly as possible_.  This motivated the idea of an <span class=\"mathquill\">\\epsilon</span>-greedy policy.\n\nWe refer to the need to balance these two competing requirements as the **Exploration-Exploitation Dilemma**.  One potential solution to this dilemma is implemented by gradually modifying the value of <span class=\"mathquill\">\\epsilon</span> when constructing <span class=\"mathquill\">\\epsilon</span>-greedy policies.\n\n## Setting the Value of <span class=\"mathquill\">\\epsilon</span>, in Theory\n---\nIt makes sense for the agent to begin its interaction with the environment by favoring **exploration** over **exploitation**.  After all, when the agent knows relatively little about the environment's dynamics, it should distrust its limited knowledge and **explore**, or try out various strategies for maximizing return.  With this in mind, the best starting policy is the equiprobable random policy, as it is equally likely to explore all possible actions from each state.  You discovered in the previous quiz that setting <span class=\"mathquill\">\\epsilon = 1</span> yields an <span class=\"mathquill\">\\epsilon</span>-greedy policy that is equivalent to the equiprobable random policy.\n\nAt later time steps, it makes sense to favor **exploitation** over **exploration**, where the policy gradually becomes more greedy with respect to the action-value function estimate.  After all, the more the agent interacts with the environment, the more it can trust its estimated action-value function.  You discovered in the previous quiz that setting <span class=\"mathquill\">\\epsilon = 0</span> yields the greedy policy (or, the policy that most favors exploitation over exploration). \n\nThankfully, this strategy (of initially favoring exploration over exploitation, and then gradually preferring exploitation over exploration) can be demonstrated to be optimal. \n\n## Greedy in the Limit with Infinite Exploration (GLIE)\n---\nIn order to guarantee that MC control converges to the optimal policy <span class=\"mathquill\">\\pi_*</span>, we need to ensure that two conditions are met.  We refer to these conditions as __Greedy in the Limit with Infinite Exploration (GLIE)__.  In particular, if:\n- every state-action pair <span class=\"mathquill\">s, a</span> (for all <span class=\"mathquill\">s\\in\\mathcal{S}</span> and <span class=\"mathquill\">a\\in\\mathcal{A}(s)</span>) is visited infinitely many times, and \n- the policy converges to a policy that is greedy with respect to the action-value function estimate <span class=\"mathquill\">Q</span>,\n\nthen MC control is guaranteed to converge to the optimal policy (in the limit as the algorithm is run for infinitely many episodes).  These conditions ensure that:\n- the agent continues to explore for all time steps, and\n- the agent gradually exploits more (and explores less).\n\nOne way to satisfy these conditions  is to modify the value of <span class=\"mathquill\">\\epsilon</span> when specifying an <span class=\"mathquill\">\\epsilon</span>-greedy policy.  In particular, let <span class=\"mathquill\">\\epsilon_i</span> correspond to the <span class=\"mathquill\">i</span>-th time step.  Then, both of these conditions are met if:\n-  <span class=\"mathquill\">\\epsilon_i > 0</span> for all time steps <span class=\"mathquill\">i</span>, and \n- <span class=\"mathquill\">\\epsilon_i</span> decays to zero in the limit as the time step <span class=\"mathquill\">i</span> approaches infinity (that is, <span class=\"mathquill\">\\lim_{i\\to\\infty} \\epsilon_i = 0</span>).\n\nFor example, to ensure convergence to the optimal policy, we could set <span class=\"mathquill\">\\epsilon_i = \\frac{1}{i}</span>.  (You are encouraged to verify that <span class=\"mathquill\">\\epsilon_i > 0</span> for all <span class=\"mathquill\">i</span>, and <span class=\"mathquill\">\\lim_{i\\to\\infty} \\epsilon_i = 0</span>.)\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 620040,
+              "key": "4bb27907-02d1-4569-a2fb-fc803f13726e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Setting the Value of <span class=\"mathquill\">\\epsilon</span>, in Practice\n---\n\nAs you read in the above section, in order to guarantee convergence, we must let <span class=\"mathquill\">\\epsilon_i</span> decay in accordance with the GLIE conditions.  But sometimes \"guaranteed convergence\" *isn't good enough* in practice, since this really doesn't tell you how long you have to wait!  It is possible that you could need trillions of episodes to recover the optimal policy, for instance, and the \"guaranteed convergence\" would still be accurate! \n\n> Even though convergence is **not** guaranteed by the mathematics, you can often get better results by either:\n-  using fixed <span class=\"mathquill\">\\epsilon</span>, or\n- letting <span class=\"mathquill\">\\epsilon_i</span> decay to a small positive number, like 0.1.  \n\nThis is because one has to be very careful with setting the decay rate for <span class=\"mathquill\">\\epsilon</span>; letting it get too small too fast can be disastrous.  If you get late in training and <span class=\"mathquill\">\\epsilon</span> is really small, you pretty much want the agent to have already converged to the optimal policy, as it will take way too long otherwise for it to test out new actions!\n\nAs a famous example in practice, you can read more about how the value of <span class=\"mathquill\">\\epsilon</span> was set in the famous DQN algorithm by reading the Methods section of [the research paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf): \n> _The behavior policy during training was epsilon-greedy with epsilon annealed linearly from 1.0 to 0.1 over the first million frames, and fixed at 0.1 thereafter._\n\nWhen you implement your own algorithm for MC control later in this lesson, you are strongly encouraged to experiment with setting the value of <span class=\"mathquill\">\\epsilon</span> to build your intuition.  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 419804,
+          "key": "896132f3-35d0-4b90-8d08-1add9a6638dc",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 419913,
+              "key": "86c08aef-5b1b-4dc7-835a-5f11d6fb214d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: MC Control: GLIE",
+              "instructor_notes": ""
+            },
+            {
+              "id": 419905,
+              "key": "9e6b05e5-8604-4281-9a8e-26c4b0c89392",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for (first-visit) GLIE MC control can be found below.  (_Feel free to implement either the first-visit or every-visit MC method.  In the game of Blackjack, both the first-visit and every-visit methods return identical results._)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431198,
+              "key": "7561191d-f043-4dcb-9cf8-1f7751f244f2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe20e_mc-control-glie/mc-control-glie.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7561191d-f043-4dcb-9cf8-1f7751f244f2",
+              "caption": "",
+              "alt": "",
+              "width": 540,
+              "height": 435,
+              "instructor_notes": null
+            },
+            {
+              "id": 419907,
+              "key": "df2448ce-fbf1-4c07-84c3-9c85c7c6d16d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 3: MC Control: GLIE** of `Monte_Carlo.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Monte_Carlo_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 419805,
+          "key": "8a50cbdb-5a91-456f-afe1-e19e8dd58167",
+          "title": "Mini Project: MC (Part 3)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 431215,
+              "key": "fe9d932e-836f-4704-9494-5d3565ec7a4a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6955c28f",
+              "pool_id": "jupyter",
+              "view_id": "4521a0c5-dbca-460c-b84e-2c4c970ac217",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Monte_Carlo.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 378092,
+          "key": "09a009ed-326b-477d-a941-9d397f9a2f02",
+          "title": "MC Control: Constant-alpha, Part 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 486080,
+              "key": "c9d33e41-8777-4410-9fe1-c2a3fc8d0b8c",
+              "title": "MC Control: Constant-alpha",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QFV1nI9Zpoo",
+                "china_cdn_id": "QFV1nI9Zpoo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 418499,
+          "key": "eba180f2-e5f0-4370-b322-8202829e2348",
+          "title": "MC Control: Constant-alpha, Part 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 418513,
+              "key": "8baa4fbb-9470-4478-9a1a-296e53677391",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# MC Control: Constant-alpha",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418500,
+              "key": "debda18e-39fc-42cb-8a6a-67e044194c0e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In an earlier quiz (**Quiz: Incremental Mean**), you completed an algorithm that maintains a running estimate of the mean of a sequence of numbers <span class=\"mathquill\">(x_1, x_2, \\ldots, x_n)</span>.  The `running_mean` function accepted a list of numbers `x` as input and returned a list `mean_values`, where `mean_values[k]` was the mean of `x[:k+1]`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418807,
+              "key": "0f297b78-fc29-4e47-a6f5-010084e6f7e9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d6690f_incremental/incremental.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0f297b78-fc29-4e47-a6f5-010084e6f7e9",
+              "caption": "",
+              "alt": "",
+              "width": 227,
+              "height": 152,
+              "instructor_notes": null
+            },
+            {
+              "id": 418510,
+              "key": "fe6b2738-6be1-4b5e-bdff-35848e4bc90b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When we adapted this algorithm for Monte Carlo control in the following concept (**MC Control: Policy Evaluation**), the sequence <span class=\"mathquill\">(x_1, x_2, \\ldots, x_n)</span> corresponded to returns obtained after visiting the _same_ state-action pair. \n\nThat said, the sampled returns (for the _same_ state-action pair) likely corresponds to many _different_ policies.  This is because the control algorithm proceeds as a sequence of alternating evaluation and improvement steps, where the policy is improved after every episode of interaction.  In particular, we discussed that returns sampled at later time steps likely correspond to policies that are more optimal.  \n\nWith this in mind, it made sense to amend the policy evaluation step to instead use a constant step size, which we denoted by <span class=\"mathquill\">\\alpha</span> in the previous video (**MC Control: Constant-alpha, Part 1**).  This ensures that the agent primarily considers the most recently sampled returns when estimating the action-values and gradually forgets about returns in the distant past.\n\nThe analogous pseudocode (for taking a _forgetful_ mean of a sequence <span class=\"mathquill\">(x_1, x_2, \\ldots, x_n)</span>) can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418811,
+              "key": "10fd7084-a54f-4b16-9d9f-73ab99e035f8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d669cd_constant-alpha/constant-alpha.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/10fd7084-a54f-4b16-9d9f-73ab99e035f8",
+              "caption": "",
+              "alt": "",
+              "width": 225,
+              "height": 137,
+              "instructor_notes": null
+            },
+            {
+              "id": 418509,
+              "key": "e4d48b1f-c0bf-4e38-b9fc-502bd87d08bf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This change has been implemented in the `forgetful_mean` function below.  The function accepts a list of numbers `x` and the step size `alpha` as input.  It returns a list `mean_values`, where `mean_values[i]` is the (`i+1`)-st estimated state-action value.\n\nThe `print_results` function analyzes the difference between the `running_mean` and `forgetful_mean` functions.  It passes the same value for `x` to both functions and tests multiple values for `alpha` in the `forgetful_mean` function.  \n\nTake the time to become familiar with the code below.  Then, click on the **[ Test Run ]** button to execute the `print_results` function.  Feel free to change the values for `x` and `alpha_values`, if you would like to run more tests to further develop your intuition.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418501,
+              "key": "2ab1ab75-90eb-4a47-8cd0-986627f7f626",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4969868960071680",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\n# This is the sequence (corresponding to successively sampled returns). \n# Feel free to change it!\nx = np.hstack((np.ones(10), 10*np.ones(10)))\n\n# These are the different step sizes alpha that we will test.  \n# Feel free to change it!\nalpha_values = np.arange(0,.3,.01)+.01\n\n#########################################################\n# Please do not change any of the code below this line. #\n#########################################################\n\ndef running_mean(x):\n    mu = 0\n    mean_values = []\n    for k in np.arange(0, len(x)):\n        mu = mu + (1.0/(k+1))*(x[k] - mu)\n        mean_values.append(mu)\n    return mean_values\n    \ndef forgetful_mean(x, alpha):\n    mu = 0\n    mean_values = []\n    for k in np.arange(0, len(x)):\n        mu = mu + alpha*(x[k] - mu)\n        mean_values.append(mu)\n    return mean_values\n\ndef print_results():\n    \"\"\"\n    prints the mean of the sequence \"x\" (as calculated by the\n    running_mean function), along with analogous results for each value of alpha \n    in \"alpha_values\" (as calculated by the forgetful_mean function).\n    \"\"\"\n    print('The running_mean function returns:', running_mean(x)[-1])\n    print('The forgetful_mean function returns:')\n    for alpha in alpha_values:\n        print(np.round(forgetful_mean(x, alpha)[-1],4), \\\n        '(alpha={})'.format(np.round(alpha,2)))\n",
+                    "name": "quiz.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 418823,
+              "key": "181ef776-2896-40c1-86c9-33c8e35f3ab9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Setting the Value of <span class=\"mathquill\">\\alpha</span>\n\nRemember that the `forgetful_mean` function is closely related to the **Evaluation** step in constant-<span class=\"mathquill\">\\alpha</span> MC control.  You can find the associated pseudocode below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431212,
+              "key": "508712e1-7931-4bd6-88a6-59df53fbc974",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dff13c_screen-shot-2017-10-12-at-5.47.45-pm/screen-shot-2017-10-12-at-5.47.45-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/508712e1-7931-4bd6-88a6-59df53fbc974",
+              "caption": "",
+              "alt": "",
+              "width": 545,
+              "height": 121,
+              "instructor_notes": null
+            },
+            {
+              "id": 418841,
+              "key": "747f06a7-118a-47e8-941e-43f0a628a80f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Before moving on to the next concept, use the above coding environment to verify the following facts about about how to set the value of <span class=\"mathquill\">\\alpha</span> when implementing constant-<span class=\"mathquill\">\\alpha</span> MC control.\n\n- You should always set the value for <span class=\"mathquill\">\\alpha</span> to a number greater than zero and less than (or equal to) one.  \n - If <span class=\"mathquill\">\\alpha=0</span>, then the action-value function estimate is never updated by the agent.\n - If <span class=\"mathquill\">\\alpha = 1</span>, then the final value estimate for each state-action pair is always equal to the last return that was experienced by the agent (after visiting the pair).\n\n- Smaller values for <span class=\"mathquill\">\\alpha</span> encourage the agent to consider a longer history of returns when calculating the action-value function estimate.  Increasing the value of <span class=\"mathquill\">\\alpha</span> ensures that the agent focuses more on the most recently sampled returns.\n\nNote that it is also possible to verify the above facts by slightly rewriting the update step as follows:\n\n<span class=\"mathquill\">Q(S_t,A_t) \\leftarrow (1-\\alpha)Q(S_t,A_t) + \\alpha G_t</span>\n\nwhere it is now more obvious that <span class=\"mathquill\">\\alpha</span> controls how much the agent trusts the most recent return <span class=\"mathquill\">G_t</span> over the estimate <span class=\"mathquill\">Q(S_t,A_t)</span> constructed by considering all past returns.\n\n**IMPORTANT NOTE**: It is important to mention that when implementing constant-<span class=\"mathquill\">\\alpha</span> MC control, you must be careful to not set the value of <span class=\"mathquill\">\\alpha</span> too close to 1.  This is because very large values can keep the algorithm from converging to the optimal policy <span class=\"mathquill\">\\pi_*</span>.  However, you must also be careful to not set the value of <span class=\"mathquill\">\\alpha</span> too low, as this can result in an agent who learns too slowly.  The best value of <span class=\"mathquill\">\\alpha</span> for your implementation will greatly depend on your environment and is best gauged through trial-and-error.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 418491,
+          "key": "371b875f-47dd-4431-b621-089f521d12b3",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 418493,
+              "key": "4c55300b-5694-4d66-b75a-42e4846c6fc8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: MC Control: Constant-alpha",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418759,
+              "key": "e09481e2-0245-41f2-b897-8fa3347685cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for (first-visit) constant-<span class=\"mathquill\">\\alpha</span> MC control can be found below.  (_Feel free to implement either the first-visit or every-visit MC method.  In the game of Blackjack, both the first-visit and every-visit methods return identical results._)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431199,
+              "key": "91de6a46-3f3e-42ad-a9fa-d23569cc461c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe21e_mc-control-constant-a/mc-control-constant-a.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/91de6a46-3f3e-42ad-a9fa-d23569cc461c",
+              "caption": "",
+              "alt": "",
+              "width": 627,
+              "height": 401,
+              "instructor_notes": null
+            },
+            {
+              "id": 418760,
+              "key": "68509969-d597-4e00-90e8-f142cdf821ef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 4: MC Control: Constant-alpha** of `Monte_Carlo.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Monte_Carlo_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 374804,
+          "key": "cee09d0c-4207-4341-8b6d-9612967dcec4",
+          "title": "Mini Project: MC (Part 4)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 431216,
+              "key": "6bcb9ea9-3569-4dae-8d34-e2743333925f",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6955c28f",
+              "pool_id": "jupyter",
+              "view_id": "146ec2f1-07f1-4dda-b334-ad2dca9df894",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Monte_Carlo.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 374808,
+          "key": "8c9f974e-e90c-4136-a4e9-f8b3b697bdaf",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 377106,
+              "key": "283e9857-1d49-4778-b10c-e496bfa99a7e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418961,
+              "key": "d66fea76-12eb-4d85-8f2c-716a2a814b54",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d69c65_screen-shot-2017-10-05-at-3.55.40-pm/screen-shot-2017-10-05-at-3.55.40-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d66fea76-12eb-4d85-8f2c-716a2a814b54",
+              "caption": "Optimal policy and state-value function in blackjack (Sutton and Barto, 2017)",
+              "alt": "",
+              "width": 732,
+              "height": 532,
+              "instructor_notes": null
+            },
+            {
+              "id": 415758,
+              "key": "19503afb-f3f7-4061-89b6-bb3e891f9d9d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## MC Prediction: State Values\n---\n- Algorithms that solve the **prediction problem** determine the value function <span class=\"mathquill\">v_\\pi</span> (or <span class=\"mathquill\">q_\\pi</span>) corresponding to a policy <span class=\"mathquill\">\\pi</span>.\n- Methods that evaluate a policy <span class=\"mathquill\">\\pi</span> from interaction with the environment fall under one of two categories:\n - **On-policy** methods have the agent interact with the environment by following the same policy <span class=\"mathquill\">\\pi</span> that it seeks to evaluate (or improve).\n - **Off-policy** methods have the agent interact with the environment by following a policy <span class=\"mathquill\">b</span> (where <span class=\"mathquill\">b\\neq\\pi</span>) that is different from the policy that it seeks to evaluate (or improve).\n- Each occurrence of state <span class=\"mathquill\">s\\in\\mathcal{S}</span> in an episode is called a **visit to <span class=\"mathquill\">s</span>**.\n- There are two types of Monte Carlo (MC) prediction methods (for estimating <span class=\"mathquill\">v_\\pi</span>):\n - **First-visit MC** estimates <span class=\"mathquill\">v_\\pi(s)</span> as the average of the returns following _only first_ visits to <span class=\"mathquill\">s</span> (that is, it ignores returns that are associated to later visits).\n - **Every-visit MC** estimates <span class=\"mathquill\">v_\\pi(s)</span> as the average of the returns following _all_ visits to <span class=\"mathquill\">s</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431200,
+              "key": "c46f7b7a-8343-4a21-a6e1-9dd8f144d3a5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe1e7_mc-pred-state/mc-pred-state.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c46f7b7a-8343-4a21-a6e1-9dd8f144d3a5",
+              "caption": "",
+              "alt": "",
+              "width": 602,
+              "height": 420,
+              "instructor_notes": null
+            },
+            {
+              "id": 415759,
+              "key": "e89d02e1-df4d-4b24-9fc8-2485efc0bc44",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## MC Prediction: Action Values\n---\n- Each occurrence of the state-action pair <span class=\"mathquill\">s,a</span> (<span class=\"mathquill\">s\\in\\mathcal{S},a\\in\\mathcal{A}</span>) in an episode is called a **visit to <span class=\"mathquill\">s,a</span>**.\n- There are two types of MC prediction methods (for estimating <span class=\"mathquill\">q_\\pi</span>):\n - **First-visit MC** estimates <span class=\"mathquill\">q_\\pi(s,a)</span> as the average of the returns following _only first_ visits to <span class=\"mathquill\">s,a</span> (that is, it ignores returns that are associated to later visits).\n - **Every-visit MC** estimates <span class=\"mathquill\">q_\\pi(s,a)</span> as the average of the returns following _all_ visits to <span class=\"mathquill\">s,a</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431201,
+              "key": "0d911b4b-550c-494d-8324-31f703a93c26",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe1f8_mc-pred-action/mc-pred-action.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0d911b4b-550c-494d-8324-31f703a93c26",
+              "caption": "",
+              "alt": "",
+              "width": 602,
+              "height": 420,
+              "instructor_notes": null
+            },
+            {
+              "id": 415760,
+              "key": "f5ddbb59-d60e-4f29-9221-9fb54153f01f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Generalized Policy Iteration\n---\n- Algorithms designed to solve the **control problem** determine the optimal policy <span class=\"mathquill\">\\pi_*</span> from interaction with the environment.\n- **Generalized policy iteration (GPI)** refers to the general method of using alternating rounds of policy evaluation and improvement in the search for an optimal policy,  All of the reinforcement learning algorithms we examine in this course can be classified as GPI.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 415761,
+              "key": "3b12d40b-0ae8-4248-bb77-de615bba61d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## MC Control: Incremental Mean\n---\n- (In this concept, we derived an algorithm that keeps a running average of a sequence of numbers.)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 415763,
+              "key": "f69f6790-81aa-4755-892d-7897e0572ce0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## MC Control: Policy Evaluation\n---\n-  (In this concept, we amended the policy evaluation step to update the value function after every episode of interaction.)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 415784,
+              "key": "6e4882ad-05b2-4a93-be7e-b322b94ca129",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## MC Control: Policy Improvement\n---\n- A policy is **greedy** with respect to an action-value function estimate <span class=\"mathquill\">Q</span> if for every state <span class=\"mathquill\">s\\in\\mathcal{S}</span>, it is guaranteed to select an action <span class=\"mathquill\">a\\in\\mathcal{A}(s)</span> such that <span class=\"mathquill\">a = \\arg\\max_{a\\in\\mathcal{A}(s)}Q(s,a)</span>.  (It is common to refer to the selected action as the **greedy action**.)\n- A policy is **<span class=\"mathquill\">\\epsilon</span>-greedy** with respect to an action-value function estimate <span class=\"mathquill\">Q</span> if for every state <span class=\"mathquill\">s\\in\\mathcal{S}</span>, \n - with probability <span class=\"mathquill\">1-\\epsilon</span>, the agent selects the greedy action, and\n - with probability <span class=\"mathquill\">\\epsilon</span>, the agent selects an action (uniformly) at random.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418494,
+              "key": "c0ab0510-7729-4185-87a1-c682e11509e2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Exploration vs. Exploitation\n---\n- All reinforcement learning agents face the **Exploration-Exploitation Dilemma**, where they must find a way to balance the drive to behave optimally based on their current knowledge (**exploitation**) and the need to acquire knowledge to attain better judgment (**exploration**).\n- In order for MC control to converge to the optimal policy, the **Greedy in the Limit with Infinite Exploration (GLIE)** conditions must be met:\n - every state-action pair <span class=\"mathquill\">s, a</span> (for all <span class=\"mathquill\">s\\in\\mathcal{S}</span> and <span class=\"mathquill\">a\\in\\mathcal{A}(s)</span>) is visited infinitely many times, and \n - the policy converges to a policy that is greedy with respect to the action-value function estimate <span class=\"mathquill\">Q</span>.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431202,
+              "key": "2eba43ac-3b4f-470a-8783-a0c80277c16f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe20e_mc-control-glie/mc-control-glie.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2eba43ac-3b4f-470a-8783-a0c80277c16f",
+              "caption": "",
+              "alt": "",
+              "width": 540,
+              "height": 437,
+              "instructor_notes": null
+            },
+            {
+              "id": 415778,
+              "key": "94a16430-4a37-4a0f-b794-6c5a049e73cb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## MC Control: Constant-alpha\n---\n- (In this concept, we derived the algorithm for **constant-<span class=\"mathquill\">\\alpha</span> MC control**, which uses a constant step-size parameter <span class=\"mathquill\">\\alpha</span>.)\n- The step-size parameter <span class=\"mathquill\">\\alpha</span> must satisfy <span class=\"mathquill\">0 < \\alpha \\leq 1</span>.  Higher values of <span class=\"mathquill\">\\alpha</span> will result in faster learning, but values of <span class=\"mathquill\">\\alpha</span> that are too high can prevent MC control from converging to <span class=\"mathquill\">\\pi_*</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 431203,
+              "key": "4c12506d-c61a-4c54-8f06-18e65940cae0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59dfe21e_mc-control-constant-a/mc-control-constant-a.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4c12506d-c61a-4c54-8f06-18e65940cae0",
+              "caption": "",
+              "alt": "",
+              "width": 627,
+              "height": 401,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

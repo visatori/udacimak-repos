@@ -1,0 +1,274 @@
+{
+  "data": {
+    "lesson": {
+      "id": 288460,
+      "key": "337b6cd6-a1a2-46af-937e-1d8e5de2fa41",
+      "title": "Transfer Learning in TensorFlow",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In practice, most people don't train their own networks on massive datasets. In this lesson, you'll learn how to use a pretrained network on a new problem with transfer learning.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/337b6cd6-a1a2-46af-937e-1d8e5de2fa41/288460/1544457199736/Transfer+Learning+in+TensorFlow+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/337b6cd6-a1a2-46af-937e-1d8e5de2fa41/288460/1544457196012/Transfer+Learning+in+TensorFlow+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 288468,
+          "key": "72d1261f-2bc5-4afd-a942-b1772a8fce83",
+          "title": "Transfer Learning Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 288984,
+              "key": "c3c2d676-7ae3-45d5-85f4-46929830ec54",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c3c2d676-7ae3-45d5-85f4-46929830ec54",
+              "caption": "Hi there, it's Mat again!",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 288986,
+              "key": "8f50a70f-8d3c-4622-82ea-a0c6582d53fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Transfer Learning\n\nIn this lesson you'll be learning about transfer learning. In practice, you won't typically be training your own huge networks. There are multiple models out there that have been trained for weeks on huge datasets like [ImageNet](http://www.image-net.org/). In this lesson, you'll be using one of these pretrained networks, [VGGNet](http://www.robots.ox.ac.uk/~vgg/research/very_deep/), to classify images of flowers.\n\n## The lesson notebooks\n\nAs always, you can find the notebooks used in this lesson in our [public GitHub repository](https://github.com/udacity/deep-learning).\n\nTo get the files:\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\nThe notebooks are in the `transfer-learning` directory.\n\nWe'll be using a pretrained network from https://github.com/machrisaa/tensorflow-vgg. Make sure you clone this repository into the `transfer-learning` directory.\n\n```bash\ncd  transfer-learning\ngit clone https://github.com/machrisaa/tensorflow-vgg.git tensorflow_vgg\n```\n\n## Additional Packages\n\nTo run this code, you'll need a few packages you might not have installed in your environment. You'll need all the normal ones, plus `tqdm` and `scikit-image`. To install them, use Conda as usual:\n\n```bash\npip install tqdm\nconda install scikit-image\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 288987,
+          "key": "7abba08b-01c5-44d0-a24e-75be0e73381d",
+          "title": "Transfer Learning with VGGNet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 288988,
+              "key": "606f2e93-5dd6-4df6-b046-9dc0458c5628",
+              "title": "Transfer Learning-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WmQwYr0DYjY",
+                "china_cdn_id": "WmQwYr0DYjY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 288991,
+          "key": "0cf633c8-3248-475c-b15e-db648d87a631",
+          "title": "VGGNet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 288992,
+              "key": "ea4afc59-0f47-460c-898e-1e505aade14d",
+              "title": "Building VGGNet",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "615SslQiGvo",
+                "china_cdn_id": "615SslQiGvo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 288989,
+          "key": "4ca853f7-5cec-45f1-9b7d-1efea922ec2f",
+          "title": "VGGNet Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 288990,
+              "key": "d096df6b-5198-4089-ade3-7ec5046747fc",
+              "title": "Pretrained VGGNet",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BpzI6Svmuv8",
+                "china_cdn_id": "BpzI6Svmuv8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 288993,
+          "key": "740e5042-ad2c-4f51-b647-f9d60a966919",
+          "title": "Data Preparation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 288994,
+              "key": "367457c9-c124-4e22-8e49-353ac4d35037",
+              "title": "Data Preparation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WfsDMq-b3y4",
+                "china_cdn_id": "WfsDMq-b3y4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 288995,
+          "key": "9ac8c4b6-fb95-4997-a698-87edf96f67e7",
+          "title": "Data Preparation Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 288997,
+              "key": "5da210c9-ac35-49ad-8ef3-88d9cd0e6b7b",
+              "title": "Data Preparation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WEtKkHlhhZA",
+                "china_cdn_id": "WEtKkHlhhZA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 288998,
+          "key": "9ba1ccb7-41b1-46e0-bfe1-5c4a60c1ac11",
+          "title": "Classifier",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289000,
+              "key": "3316f556-0d5d-4f7d-8b93-c87897402cb2",
+              "title": "Building The Classifier",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pPHiVddBY0Q",
+                "china_cdn_id": "pPHiVddBY0Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 288999,
+          "key": "b2652fc3-7340-4cd2-be1a-9381d5f1a913",
+          "title": "Classifier Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289001,
+              "key": "3262381f-128a-4d89-82dc-5335ec9e51d6",
+              "title": "Building The Classifier",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6ifxRQ_gL7w",
+                "china_cdn_id": "6ifxRQ_gL7w.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 289002,
+          "key": "48af7cbf-01e9-456e-b89e-fc07cc611f0c",
+          "title": "Training",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289004,
+              "key": "5594f6e1-b3dd-40d4-9d19-0bf86c300464",
+              "title": "Training The Classifier",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "b7Fy3cIoJ1Y",
+                "china_cdn_id": "b7Fy3cIoJ1Y.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 289003,
+          "key": "58bb2a29-4748-4c37-aef9-74d6f435a6eb",
+          "title": "Training solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289005,
+              "key": "70b8149e-3a26-47a9-9df2-ddcb7dcb78bb",
+              "title": "Training And Testing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NLPtmQjGYCA",
+                "china_cdn_id": "NLPtmQjGYCA.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

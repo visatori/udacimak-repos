@@ -1,0 +1,279 @@
+{
+  "data": {
+    "lesson": {
+      "id": 278899,
+      "key": "98afa405-585c-4c4d-99aa-1fc6d18161eb",
+      "title": "Embeddings and Word2vec",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you'll learn about embeddings in neural networks by implementing the word2vec model.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/98afa405-585c-4c4d-99aa-1fc6d18161eb/278899/1544457438529/Embeddings+and+Word2vec+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/98afa405-585c-4c4d-99aa-1fc6d18161eb/278899/1544457434294/Embeddings+and+Word2vec+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 278901,
+          "key": "f49ee091-e331-4eac-8140-be6b91dad3a9",
+          "title": "Embeddings Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 278930,
+              "key": "27b6549c-d052-4df7-ac6f-c76993bbcff8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/27b6549c-d052-4df7-ac6f-c76993bbcff8",
+              "caption": "Hi, it's Mat again!",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 278941,
+              "key": "8f1e7911-e305-464b-abae-154cf121bb02",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Word Embeddings\n\nThis week, we'll be covering embeddings. This is a deep neural network method for representing data with a huge number of classes more efficiently. Embeddings greatly improve the ability of networks to learn from data of this sort by representing the data with lower dimensional vectors.\n\nWord embeddings in particular are interesting because the networks are able to learn semantic relationships between words. For example, the embeddings will know that the male equivalent of a queen is a king.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 278942,
+              "key": "d7e556b5-36e2-4808-ae98-ec5ac23201bd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58c0aaf4_linear-relationships/linear-relationships.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d7e556b5-36e2-4808-ae98-ec5ac23201bd",
+              "caption": "",
+              "alt": null,
+              "width": 1505,
+              "height": 527,
+              "instructor_notes": null
+            },
+            {
+              "id": 278943,
+              "key": "d0a6a470-1912-44a7-bf36-5910c3fdd0ef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "These word embeddings are learned using a model called [Word2vec](https://en.wikipedia.org/wiki/Word2vec). In this lesson, you'll implement Word2vec yourself.\n\nWe've built a notebook with exercises and also provided our solutions. You can find the notebooks in our [GitHub repo](https://github.com/udacity/deep-learning/tree/master/embeddings) in the `embeddings` folder. \n\n> **Requirements:** You'll need Numpy, Matplotlib, Scikit-learn, tqdm, and **TensorFlow 1.0** to run this code.\n\nNext up, I'll walk you through implementing the Word2Vec model.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 309402,
+          "key": "fbb299dc-4e42-4615-985c-302e246a7cff",
+          "title": "Implementing Word2Vec",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309412,
+              "key": "53c3326e-8ef0-4f07-afa3-68d1eedbe83b",
+              "title": "Implementing Word2Vec",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7M431_f9HgE",
+                "china_cdn_id": "7M431_f9HgE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309403,
+          "key": "86aba8e2-851e-4459-af77-22dbc69f8837",
+          "title": "Subsampling Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309413,
+              "key": "6b8a0f87-e1a1-43b5-9eae-5cc25a155599",
+              "title": "Subsampling Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MAUM_mV_lj8",
+                "china_cdn_id": "MAUM_mV_lj8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309404,
+          "key": "d2e0d291-a2ec-4628-9184-ede3780b7c45",
+          "title": "Making Batches",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309414,
+              "key": "f032c422-90ef-4734-89da-a1c3de3fd1a6",
+              "title": "Making Batches",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jx7qwdw-94k",
+                "china_cdn_id": "jx7qwdw-94k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309405,
+          "key": "ef4071ea-5f95-4521-b18e-21c760bc7fb0",
+          "title": "Batches Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309416,
+              "key": "7a29f2a7-b6e7-4577-8474-007a2b9e9a1d",
+              "title": "Batches Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DdfR0RjSC-Q",
+                "china_cdn_id": "DdfR0RjSC-Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309406,
+          "key": "f945117c-be33-49be-aad6-bd6f5f1033b9",
+          "title": "Building the Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309417,
+              "key": "22ee3054-fe22-4d86-bb38-0f80ba1a984e",
+              "title": "Building The Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fhSb5c6UX6M",
+                "china_cdn_id": "fhSb5c6UX6M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309409,
+          "key": "8e51682e-d016-45c6-aa91-ff1f36049342",
+          "title": "Negative Sampling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309418,
+              "key": "97b2a252-9795-4340-b325-4bc374cba5b8",
+              "title": "Negative Sampling",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gW17AHBKbHY",
+                "china_cdn_id": "gW17AHBKbHY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309407,
+          "key": "7b1f708d-a31a-4f48-b0f1-0c28669e7c23",
+          "title": "Building the Network Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309419,
+              "key": "35c8e2bb-cd01-47df-ae2e-5964ca4fbeea",
+              "title": "Building The Network Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pkBAhQ2Ki-8",
+                "china_cdn_id": "pkBAhQ2Ki-8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 309410,
+          "key": "59019374-0916-4e49-8145-dd298acfef0c",
+          "title": "Training Results",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309420,
+              "key": "4b227da7-2e5e-459e-98ca-05337f2cbc70",
+              "title": "Training Results",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uISA5ns47s8",
+                "china_cdn_id": "uISA5ns47s8.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

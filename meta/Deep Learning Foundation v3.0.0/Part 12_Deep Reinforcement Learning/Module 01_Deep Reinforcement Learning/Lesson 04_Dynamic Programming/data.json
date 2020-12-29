@@ -1,0 +1,1651 @@
+{
+  "data": {
+    "lesson": {
+      "id": 356646,
+      "key": "9cc18f72-766e-433e-a764-46338e09cf79",
+      "title": "Dynamic Programming",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "The dynamic programming setting is a useful first step towards tackling the reinforcement learning problem.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/9cc18f72-766e-433e-a764-46338e09cf79/356646/1547827165296/Dynamic+Programming+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/9cc18f72-766e-433e-a764-46338e09cf79/356646/1547827161867/Dynamic+Programming+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 356649,
+          "key": "a988723b-316d-469c-a4c5-9bb8a321e738",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478510,
+              "key": "e12dee91-fe8e-47ad-8334-4e87a30dc139",
+              "title": "Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ek2PD9RDrWw",
+                "china_cdn_id": "ek2PD9RDrWw.mp4"
+              }
+            },
+            {
+              "id": 369162,
+              "key": "199408c2-9633-453e-8337-ce5a5a5590a3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the **dynamic programming** setting, the agent has full knowledge of the Markov decision process (MDP) that characterizes the environment.  (This is much easier than the **reinforcement learning** setting, where the agent initially knows nothing about how the environment decides state and reward and must learn entirely from interaction how to select actions.)\n\n\n\nThis lesson covers material in **Chapter 4** (especially 4.1-4.4) of the [textbook](http://go.udacity.com/rl-textbook).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 410774,
+          "key": "c0916676-e356-46df-9b22-cd63cc17e0a5",
+          "title": "OpenAI Gym: FrozenLakeEnv",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 410777,
+              "key": "20c14316-63d1-4fbc-ab24-6708d4234205",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# OpenAI Gym: FrozenLakeEnv",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410775,
+              "key": "fdb0c85b-e13a-41f9-b699-69e56d74390a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, you will write your own Python implementations of all of the algorithms that we discuss.  While your algorithms will be designed to work with any OpenAI Gym environment, you will test your code with the FrozenLake environment.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410776,
+              "key": "53464881-2417-474f-a475-42ed7304921a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cc32c6_frozen-lake-6/frozen-lake-6.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/53464881-2417-474f-a475-42ed7304921a",
+              "caption": "Source: http://eskipaper.com/images/frozen-lake-6.jpg",
+              "alt": "",
+              "width": 493,
+              "height": 267,
+              "instructor_notes": null
+            },
+            {
+              "id": 410778,
+              "key": "f6ae59f0-888c-41cd-9437-0d29b6cd3f0f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the FrozenLake environment, the agent navigates a 4x4 gridworld.  You can read more about the environment in its corresponding [GitHub file](https://github.com/openai/gym/blob/master/gym/envs/toy_text/frozen_lake.py), by reading the commented block in the `FrozenLakeEnv` class.  For clarity, we have also pasted the description of the environment below:\n```text\n    \"\"\"\n    Winter is here. You and your friends were tossing around a frisbee at the park\n    when you made a wild throw that left the frisbee out in the middle of the lake.\n    The water is mostly frozen, but there are a few holes where the ice has melted.\n    If you step into one of those holes, you'll fall into the freezing water.\n    At this time, there's an international frisbee shortage, so it's absolutely imperative that\n    you navigate across the lake and retrieve the disc.\n    However, the ice is slippery, so you won't always move in the direction you intend.\n    The surface is described using a grid like the following\n        SFFF\n        FHFH\n        FFFH\n        HFFG\n    S : starting point, safe\n    F : frozen surface, safe\n    H : hole, fall to your doom\n    G : goal, where the frisbee is located\n    The episode ends when you reach the goal or fall in a hole.\n    You receive a reward of 1 if you reach the goal, and zero otherwise.\n\n    \"\"\"\"\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410779,
+              "key": "5d4d833a-91ee-415b-8670-598b94f73e87",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The Dynamic Programming Setting",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410781,
+              "key": "e5229b1c-43a3-44af-a63d-8349102b8e6f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Environments in OpenAI Gym are designed with the reinforcement learning setting in mind.  For this reason, OpenAI Gym does not allow easy access to the underlying one-step dynamics of the Markov decision process (MDP).\n\nTowards using the FrozenLake environment for the dynamic programming setting, we had to first download the [file](https://github.com/openai/gym/blob/master/gym/envs/toy_text/frozen_lake.py) containing the `FrozenLakeEnv` class.  Then, we added a single line of code to share the one-step dynamics of the MDP with the agent.\n\n```python\n# obtain one-step dynamics for dynamic programming setting\nself.P = P\n```\n\nThe new `FrozenLakeEnv` class was then saved in a Python file **frozenlake.py**, which we will use (instead of the original OpenAI Gym file) to create an instance of the environment.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598932,
+          "key": "dd004fdc-62cf-4a5f-9d9d-3b433681117a",
+          "title": "Your Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 598933,
+              "key": "b6ab79bc-f88c-4bf3-8556-fb74f90048c9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Your Workspace",
+              "instructor_notes": ""
+            },
+            {
+              "id": 598934,
+              "key": "d2174567-8140-4d64-9079-cdc65d248119",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You will write all of your implementations within the classroom, using an interface identical to the one shown below.  Your Workspace contains five files:\n- **frozenlake.py** - contains the `FrozenLakeEnv` class \n- **Dynamic_Programming.ipynb** - the mini project notebook where you will write all of your implementations (_this is the **only** file that you will modify!_)\n- **Dynamic_Programming_Solution.ipynb** - the instructor solutions corresponding to the mini project notebook\n- **check_test.py** - contains unit tests that you will use to verify that your implementations are correct\n- **plot_utils.py** - contains a plotting function for visualizing state-value functions\n\nThe **Dynamic_Programming.ipynb** notebook can be found below.  \n\n> Note that it is broken into parts, which are designed to be completed at different parts of the lesson.  For instance, you will complete Parts 0 and 1 in the concept titled **Mini Project: DP (Parts 0 and 1)**.  Then, you should wait to complete Part 2 until you reach the **Mini Project: DP (Part 2)** concept.  DO NOT COMPLETE THE ENTIRE NOTEBOOK ALL AT ONCE! :)\n\nTo peruse the other files, you need only click on \"jupyter\" in the top left corner to return to the Notebook dashboard.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 598938,
+              "key": "0b646e69-35be-4acb-8eee-ebc9af3ba09b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ad2509c_screen-shot-2017-12-17-at-9.41.03-am/screen-shot-2017-12-17-at-9.41.03-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0b646e69-35be-4acb-8eee-ebc9af3ba09b",
+              "caption": "",
+              "alt": "",
+              "width": 475,
+              "height": 148,
+              "instructor_notes": null
+            },
+            {
+              "id": 598937,
+              "key": "1d3905e5-3a63-4041-b153-5bfab85a5e20",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please do not write or execute any code just yet.  We'll get started with coding within the Workspace in a few concepts!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 598936,
+              "key": "ff0d27c1-cf55-4655-ac09-998dfc7a62c9",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6334fbe5",
+              "pool_id": "jupyter",
+              "view_id": "346c26d7-1d75-4e09-974d-a1469ac3a41b",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dynamic_Programming.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 410020,
+          "key": "c804667d-e77c-4f05-95b6-2de80fcd6f5c",
+          "title": "Another Gridworld Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478511,
+              "key": "81b7d3a9-e5e6-4c16-87dc-6f83f855d6a7",
+              "title": "Another Gridworld Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "n9SbomnLb-U",
+                "china_cdn_id": "n9SbomnLb-U.mp4"
+              }
+            },
+            {
+              "id": 467582,
+              "key": "ca3e0ecb-d7b0-4446-bb2a-9d32bbb6a278",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this simple gridworld example, you may find it easy to determine the optimal policy by visual inspection.  Of course, solving Markov decision processes (MDPs) corresponding to real world problems will prove far more challenging! :)\n\nTo avoid over-complicating the theory, we'll use this simple example to illustrate the same algorithms that are used to solve much more complicated MDPs.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 410021,
+          "key": "1c6c7343-2336-4b43-a5bc-666f199870db",
+          "title": "An Iterative Method, Part 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478512,
+              "key": "391912e7-fa0c-4c9d-b292-21240de7cbb4",
+              "title": "An Iterative Method",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AX-hG3KvwzY",
+                "china_cdn_id": "AX-hG3KvwzY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 410297,
+          "key": "fa886896-a8af-4c1e-b8c1-32b98ec6abe5",
+          "title": "An Iterative Method, Part 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 410300,
+              "key": "76f2a6a9-736a-4ec1-b672-b8755fb30b68",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# An Iterative Method",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410301,
+              "key": "b3b13588-93a3-4e86-965b-a42081f5fe43",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this concept, we will examine some ideas from the last video in more detail.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410303,
+              "key": "04ec2bef-99d6-4cce-a5bc-f309805898a2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59caa822_screen-shot-2017-09-26-at-2.18.38-pm/screen-shot-2017-09-26-at-2.18.38-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/04ec2bef-99d6-4cce-a5bc-f309805898a2",
+              "caption": "",
+              "alt": "",
+              "width": 450,
+              "height": 368,
+              "instructor_notes": null
+            },
+            {
+              "id": 410305,
+              "key": "938a8cbe-5745-4f12-97ea-3b3a2e0d13c2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Notes on the Bellman Expectation Equation",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410298,
+              "key": "ffa15d05-54bc-457b-871d-d5d15aba8c73",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous video, we derived one equation for each environment state.  For instance, for state <span class=\"mathquill\">s_1</span>, we saw that:\n\n<span class=\"mathquill\">v_\\pi(s_1) = \\frac{1}{2}(-1 + v_\\pi(s_2)) + \\frac{1}{2}(-3 + v_\\pi(s_3))</span>.\n\nWe mentioned that this equation follows directly from the Bellman expectation equation for <span class=\"mathquill\">v_\\pi</span>.  \n\n> <span class=\"mathquill\">v_\\pi(s) = \\text{} \\mathbb{E}_\\pi[R_{t+1} + \\gamma v_\\pi(S_{t+1}) | S_t=s] = \\sum_{a \\in \\mathcal{A}(s)}\\pi(a|s)\\sum_{s' \\in \\mathcal{S}, r\\in\\mathcal{R}}p(s',r|s,a)(r + \\gamma v_\\pi(s'))</span> (**The Bellman expectation equation for <span class=\"mathquill\">v_\\pi</span>**)\n\nIn order to see this, we can begin by looking at what the Bellman expectation equation tells us about the value of state <span class=\"mathquill\">s_1</span> (where we just need to plug in <span class=\"mathquill\">s_1</span> for state <span class=\"mathquill\">s</span>).\n\n<span class=\"mathquill\">v_\\pi(s_1) = \\sum_{a \\in \\mathcal{A}(s_1)}\\pi(a|s_1)\\sum_{s' \\in \\mathcal{S}, r\\in\\mathcal{R}}p(s',r|s_1,a)(r + \\gamma v_\\pi(s'))</span>\n\nThen, it's possible to derive the equation for state <span class=\"mathquill\">s_1</span> by using the following:\n- <span class=\"mathquill\">\\mathcal{A}(s_1)=\\{ \\text{down}, \\text{right} \\}</span> (*When in state <span class=\"mathquill\">s_1</span>, the agent only has two potential actions: down or right.)*\n- <span class=\"mathquill\">\\pi({down}|s_1) = \\pi(\\text{right}|s_1) = \\frac{1}{2}</span> (*We are currently examining the policy where the agent goes down with 50% probability and right with 50% probability when in state <span class=\"mathquill\">s_1</span>.*)\n- <span class=\"mathquill\">p(s_3,-3|s_1,\\text{down}) = 1</span> (and <span class=\"mathquill\">p(s',r|s_1,\\text{down}) = 0</span> if <span class=\"mathquill\">s'\\neq s_3</span> or <span class=\"mathquill\">r\\neq -3</span>) (*If the agent chooses to go down in state <span class=\"mathquill\">s_1</span>, then with 100% probability, the next state is <span class=\"mathquill\">s_3</span>, and the agent receives a reward of -3.*)\n- <span class=\"mathquill\">p(s_2,-1|s_1,\\text{right}) = 1</span> (and <span class=\"mathquill\">p(s',r|s_1,\\text{right}) = 0</span> if <span class=\"mathquill\">s'\\neq s_2</span> or <span class=\"mathquill\">r\\neq -1</span>) (*If the agent chooses to go right in state <span class=\"mathquill\">s_1</span>, then with 100% probability, the next state is <span class=\"mathquill\">s_2</span>, and the agent receives a reward of -1.*)\n- <span class=\"mathquill\">\\gamma = 1</span> (*We chose to set the discount rate to 1 in this gridworld example.*)\n\nIf this is not entirely clear to you, please take the time now to plug in the values to derive the equation from the video.  Then, you are encouraged to repeat the same process for the other states.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410306,
+              "key": "c33139ef-b0f3-4660-a6a7-dca22dd0b11a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Notes on Solving the System of Equations",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410299,
+              "key": "ce0c11ee-df6e-4595-b759-94f7878c9c61",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the video, we mentioned that you can directly solve the system of equations:\n\n<span class=\"mathquill\">v_\\pi(s_1) = \\frac{1}{2}(-1 + v_\\pi(s_2)) + \\frac{1}{2}(-3 + v_\\pi(s_3))</span>\n\n<span class=\"mathquill\">v_\\pi(s_2) = \\frac{1}{2}(-1 + v_\\pi(s_1)) + \\frac{1}{2}(5 + v_\\pi(s_4))</span>\n\n<span class=\"mathquill\">v_\\pi(s_3) = \\frac{1}{2}(-1 + v_\\pi(s_1)) + \\frac{1}{2}(5 + v_\\pi(s_4))</span>\n\n<span class=\"mathquill\">v_\\pi(s_4) = 0</span>\n\nSince the equations for <span class=\"mathquill\">v_\\pi(s_2)</span> and <span class=\"mathquill\">v_\\pi(s_3)</span> are identical, we must have that <span class=\"mathquill\">v_\\pi(s_2) = v_\\pi(s_3)</span>.\n\nThus, the equations for <span class=\"mathquill\">v_\\pi(s_1)</span> and <span class=\"mathquill\">v_\\pi(s_2)</span> can be changed to: \n\n<span class=\"mathquill\">v_\\pi(s_1) = \\frac{1}{2}(-1 + v_\\pi(s_2)) + \\frac{1}{2}(-3 + v_\\pi(s_2)) = -2 + v_\\pi(s_2)</span>\n\n<span class=\"mathquill\">v_\\pi(s_2) = \\frac{1}{2}(-1 + v_\\pi(s_1)) + \\frac{1}{2}(5 + 0) = 2 + \\frac{1}{2}v_\\pi(s_1)</span>\n\nCombining the two latest equations yields\n\n<span class=\"mathquill\">v_\\pi(s_1) = -2 + 2 + \\frac{1}{2}v_\\pi(s_1) = \\frac{1}{2}v_\\pi(s_1)</span>,\n\nwhich implies <span class=\"mathquill\">v_\\pi(s_1)=0</span>.   Furthermore, <span class=\"mathquill\">v_\\pi(s_3)  = v_\\pi(s_2) = 2 + \\frac{1}{2}v_\\pi(s_1) = 2 + 0 = 2</span>.\n\nThus, the state-value function is given by:\n\n<span class=\"mathquill\">v_\\pi(s_1) = 0</span>\n\n<span class=\"mathquill\">v_\\pi(s_2) = 2</span>\n\n<span class=\"mathquill\">v_\\pi(s_3) = 2</span>\n\n<span class=\"mathquill\">v_\\pi(s_4) = 0</span>\n\n**Note**.  This example serves to illustrate the fact that it is **_possible_** to _directly_ solve the system of equations given by the Bellman expectation equation for <span class=\"mathquill\">v_\\pi</span>.  However, in practice, and especially for much larger Markov decision processes (MDPs), we will instead use an _iterative_ solution approach.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 410023,
+          "key": "86e476df-41ac-4f78-9319-f6059fc8a4d7",
+          "title": "Quiz: An Iterative Method",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 410259,
+              "key": "61e88394-bc05-438b-85a4-21f050f01040",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: An Iterative Method",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410268,
+              "key": "b9d0acdb-f60e-4db7-a9dd-31574a7939df",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So far in this lesson, we have discussed how an agent might obtain the state-value function <span class=\"mathquill\">v_\\pi</span> corresponding to a policy <span class=\"mathquill\">\\pi</span>.\n\nIn the dynamic programming setting, the agent has full knowledge of the Markov decision process (MDP).  In this case, it's possible to use the one-step dynamics <span class=\"mathquill\">p(s',r|s,a)</span> of the MDP to obtain a system of equations corresponding to the Bellman expectation equation for <span class=\"mathquill\">v_\\pi</span>.\n\nIn the gridworld example, the system of equations corresponding to the equiprobable random policy was given by:\n\n<span class=\"mathquill\">v_\\pi(s_1) = \\frac{1}{2}(-1 + v_\\pi(s_2)) + \\frac{1}{2}(-3 + v_\\pi(s_3))</span>\n\n<span class=\"mathquill\">v_\\pi(s_2) = \\frac{1}{2}(-1 + v_\\pi(s_1)) + \\frac{1}{2}(5 + v_\\pi(s_4))</span>\n\n<span class=\"mathquill\">v_\\pi(s_3) = \\frac{1}{2}(-1 + v_\\pi(s_1)) + \\frac{1}{2}(5 + v_\\pi(s_4))</span>\n\n<span class=\"mathquill\">v_\\pi(s_4) = 0</span>\n\nIn order to obtain the state-value function, we need only solve the system of equations.\n\nWhile it is always possible to *directly* solve the system, we will instead use an *iterative* solution approach.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410330,
+              "key": "39bf2222-9cc4-49d7-8f6e-511e9c9018d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## An Iterative Method",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410329,
+              "key": "8ef252d6-9551-44b0-bf12-6925026a0ba4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The iterative method begins with an initial guess for the value of each state.  In particular, we began by assuming that the value of each state was zero.\n\nThen, we looped over the state space and amended the estimate for the state-value function through applying successive update equations.\n\nRecall that <span class=\"mathquill\">V</span> denotes the most recent guess for the state-value function, and the update equations are:\n\n<span class=\"mathquill\">V(s_1) \\leftarrow \\frac{1}{2}(-1 + V(s_2)) + \\frac{1}{2}(-3 + V(s_3))</span>\n\n<span class=\"mathquill\">V(s_2) \\leftarrow \\frac{1}{2}(-1 + V(s_1)) + \\frac{1}{2}(5)</span>\n\n<span class=\"mathquill\">V(s_3) \\leftarrow \\frac{1}{2}(-1 + V(s_1)) + \\frac{1}{2}(5)</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410354,
+              "key": "0f0c5109-862c-42df-a977-cb627aa9f833",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quiz Question",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410355,
+              "key": "17ae1ba1-0466-41af-b744-4c539c2793af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Say that the most recent guess for the state-value function is given in the figure below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410356,
+              "key": "097f9c40-2d50-4986-bbe5-d6667dc37493",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cac518_screen-shot-2017-09-26-at-4.22.09-pm/screen-shot-2017-09-26-at-4.22.09-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/097f9c40-2d50-4986-bbe5-d6667dc37493",
+              "caption": "",
+              "alt": "",
+              "width": 326,
+              "height": 265,
+              "instructor_notes": null
+            },
+            {
+              "id": 410366,
+              "key": "c14c82ad-2158-42c9-beba-0968d05bf6e7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Currently, the estimate for <span class=\"mathquill\">v_\\pi(s_2) </span> is given by <span class=\"mathquill\">V(s_2) = 1</span>.\n\nSay that the next step in the algorithm is to update <span class=\"mathquill\">V(s_2)</span>.  \n\nWhat is the new value for  <span class=\"mathquill\">V(s_2)</span> after applying the update step once?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410369,
+              "key": "c59142c9-732a-4021-bff9-a1af242a10dd",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Select the appropriate value.",
+                "answers": [
+                  {
+                    "id": "a1506461377648",
+                    "text": "-1.5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506461395638",
+                    "text": ".5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506461402952",
+                    "text": "0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506461405034",
+                    "text": ".5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1506461407542",
+                    "text": "1.5",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 356651,
+          "key": "cc964676-d852-4aa6-8fdf-e25b807fb037",
+          "title": "Iterative Policy Evaluation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 813313,
+              "key": "7cbfed6b-2619-43ec-a8cf-b11394dbe58a",
+              "title": "M1 L1 C05 V3 No Slack-OH",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fVUpoyZDyGE",
+                "china_cdn_id": "fVUpoyZDyGE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 356652,
+          "key": "90db191c-be3f-42d8-ac98-11fe6ad8d1de",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 410438,
+              "key": "27133102-fe48-47b5-a005-a32c3a492f43",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Iterative Policy Evaluation",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410738,
+              "key": "0e0f6d8b-edf6-48ab-99cd-f5f3b4d38ec0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The pseudocode for **iterative policy evaluation** can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410731,
+              "key": "9958fa11-58c5-4dfa-9b3a-35669d37eaef",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cc184c_policy-eval/policy-eval.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9958fa11-58c5-4dfa-9b3a-35669d37eaef",
+              "caption": "",
+              "alt": "",
+              "width": 475,
+              "height": 295,
+              "instructor_notes": null
+            },
+            {
+              "id": 413050,
+              "key": "fa063bbb-bf61-4983-95ee-3bf334b77082",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that policy evaluation is guaranteed to converge to the state-value function <span class=\"mathquill\">v_\\pi</span> corresponding to a policy <span class=\"mathquill\">\\pi</span>, as long as <span class=\"mathquill\">v_\\pi(s)</span> is finite for each state <span class=\"mathquill\">s\\in\\mathcal{S}</span>.  For a finite Markov decision process (MDP), this is guaranteed as long as either:\n- <span class=\"mathquill\">\\gamma < 1</span>, or\n- if the agent starts in any state <span class=\"mathquill\">s\\in\\mathcal{S}</span>, it is guaranteed to eventually reach a terminal state if it follows policy <span class=\"mathquill\">\\pi</span>.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410739,
+              "key": "957e1012-da3a-42d4-936a-a5526da17332",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 0: Explore FrozenLakeEnv** and **Part 1: Iterative Policy Evaluation** of `Dynamic_Programming.ipynb`.  Remember to save your work!  \n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding sections in `Dynamic_Programming_Solution.ipynb`. (_In order to access this file, you need only click on \"jupyter\" in the top left corner to return to the Notebook dashboard._)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508705,
+              "key": "75399b2d-3903-4765-85c2-e62af5e9d0bc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a61eb50_screen-shot-2017-12-17-at-9.41.03-am/screen-shot-2017-12-17-at-9.41.03-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/75399b2d-3903-4765-85c2-e62af5e9d0bc",
+              "caption": "To find `Dynamic_Programming_Solution.ipynb`, return to the Notebook dashboard.",
+              "alt": "",
+              "width": 475,
+              "height": 148,
+              "instructor_notes": null
+            },
+            {
+              "id": 467584,
+              "key": "b7da3651-687d-4331-a08b-4d6d5369ec9a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### (Optional) Additional Note on the Convergence Conditions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 467583,
+              "key": "d1020d18-012c-4d51-b468-58c134fbbb49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To see intuitively _why_ the conditions for convergence make sense, consider the case that neither of the conditions are satisfied, so:\n- <span class=\"mathquill\">\\gamma = 1</span>, and\n- there is some state <span class=\"mathquill\">s\\in\\mathcal{S}</span> where if the agent starts in that state, it will never encounter a terminal state if it follows policy <span class=\"mathquill\">\\pi</span>.\n\nIn this case, \n- reward is not discounted, and \n- an episode may never finish.  \n\nThen, it is possible that iterative policy evaluation will not converge, and this is because the state-value function may not be well-defined!  To see this, note that in this case, calculating a state value could involve adding up an infinite number of (expected) rewards, where the sum may not [converge](https://en.wikipedia.org/wiki/Convergent_series).\n\nIn case it would help to see a concrete example, consider an MDP with:\n- two states <span class=\"mathquill\">s_1</span> and <span class=\"mathquill\">s_2</span>, where <span class=\"mathquill\">s_2</span> is a terminal state  \n- one action <span class=\"mathquill\">a</span> (_Note: An MDP with only one action can also be referred to as a [Markov Reward Process (MRP)](https://goo.gl/BNi4qu)._)\n- <span class=\"mathquill\">p(s_1,1|s_1, a) = 1</span>\n\nIn this case, say the agent's policy <span class=\"mathquill\">\\pi</span> is to \"select\" the only action that's available, so <span class=\"mathquill\">\\pi(s_1) = a</span>.  Say <span class=\"mathquill\">\\gamma = 1</span>.  According to the one-step dynamics, if the agent starts in state <span class=\"mathquill\">s_1</span>, it will stay in that state forever and never encounter the terminal state <span class=\"mathquill\">s_2</span>.\n\nIn this case, **<span class=\"mathquill\">v_\\pi(s_1)</span> is not well-defined**.  To see this, remember that <span class=\"mathquill\">v_\\pi(s_1)</span> is the (expected) return after visiting state <span class=\"mathquill\">s_1</span>, and we have that \n\n<span class=\"mathquill\">v_\\pi(s_1) = 1 + 1 + 1 + 1 + ...</span> \n\nwhich [diverges](https://en.wikipedia.org/wiki/Divergent_series) to infinity.  (Take the time now to convince yourself that if either of the two convergence conditions were satisfied in this example, then <span class=\"mathquill\">v_\\pi(s_1)</span> would be well-defined.  As a **very optional** next step, if you want to verify this mathematically, you may find it useful to review [geometric series](https://en.wikipedia.org/wiki/Geometric_series) and the [negative binomial distribution](https://en.wikipedia.org/wiki/Negative_binomial_distribution).)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 356653,
+          "key": "01b6648d-9fc2-4241-a2f0-5db4a3e9a318",
+          "title": "Mini Project: DP (Parts 0 and 1)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412951,
+              "key": "4ac84c20-5bc8-4e4c-a10c-52496dfaab9e",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6334fbe5",
+              "pool_id": "jupyter",
+              "view_id": "5a65e1b7-1717-491a-bebe-c03f31c62137",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dynamic_Programming.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 467585,
+          "key": "2cc2bbe9-696c-45d1-91dc-b23a587df0b2",
+          "title": "Action Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 467587,
+              "key": "08b40de3-4efc-4f94-b62c-1ea02d46f7b0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Action Values",
+              "instructor_notes": ""
+            },
+            {
+              "id": 467586,
+              "key": "1cf23f6d-db22-4087-83c4-35e07a8d3a1f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In a previous concept, you wrote your own implementation of iterative policy evaluation to estimate the state-value function <span class=\"mathquill\">v_\\pi</span> for a policy <span class=\"mathquill\">\\pi</span>.  In this concept, you will use the simple gridworld from the videos to practice converting a state-value function <span class=\"mathquill\">v_\\pi</span> to an action-value function <span class=\"mathquill\">q_\\pi</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 475714,
+              "key": "a971ed4f-7782-481f-8e89-36863ba88729",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Consider the small gridworld that we used to illustrate iterative policy evaluation.  The **state-value function** for the equiprobable random policy is visualized below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 475727,
+              "key": "e8777b83-4056-4225-af7a-9265ffd370a6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/December/5a2eccd6_statevalue/statevalue.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e8777b83-4056-4225-af7a-9265ffd370a6",
+              "caption": "",
+              "alt": "",
+              "width": 414,
+              "height": 344,
+              "instructor_notes": null
+            },
+            {
+              "id": 475732,
+              "key": "7c67ae49-3750-4bcc-af27-b8f68233cef6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Take the time now to verify that the below image corresponds to the **action-value function** for the same policy.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 475735,
+              "key": "767e58a3-b80c-4b25-9765-6a8fd7287701",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/December/5a2ecf72_actionvalue/actionvalue.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/767e58a3-b80c-4b25-9765-6a8fd7287701",
+              "caption": "",
+              "alt": "",
+              "width": 447,
+              "height": 354,
+              "instructor_notes": null
+            },
+            {
+              "id": 475733,
+              "key": "a7e6a006-3482-4cd2-9128-3fb858f88dd7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As an example, consider <span class=\"mathquill\">q_\\pi(s_1, \\text{right})</span>.  This action value can be calculated as\n\n<span class=\"mathquill\">q_\\pi(s_1, \\text{right}) = -1 + v_\\pi(s_2) = -1 + 2 = 1</span>,\n\nwhere we just use the fact that we can express the value of the state-action pair <span class=\"mathquill\">s_1, \\text{right}</span> as the sum of two quantities: (1) the immediate reward after moving right and landing on state <span class=\"mathquill\">s_2</span>, and (2) the cumulative reward obtained if the agent begins in state <span class=\"mathquill\">s_2</span> and follows the policy. \n\nPlease now use the state-value function <span class=\"mathquill\">v_\\pi</span> to calculate <span class=\"mathquill\">q_\\pi(s_1, \\text{down})</span>, <span class=\"mathquill\">q_\\pi(s_2, \\text{left})</span>, <span class=\"mathquill\">q_\\pi(s_2, \\text{down})</span>, <span class=\"mathquill\">q_\\pi(s_3, \\text{up})</span>, and <span class=\"mathquill\">q_\\pi(s_3, \\text{right})</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 475760,
+              "key": "04ee3e09-49f6-4004-9862-eaef10994658",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## For More Complex Environments",
+              "instructor_notes": ""
+            },
+            {
+              "id": 468389,
+              "key": "1231f323-636e-4a40-81da-16a69d0a96e7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this simple gridworld example, the environment is **deterministic**.  In other words, after the agent selects an action, the next state and reward are 100% guaranteed and non-random.  For deterministic environments, <span class=\"mathquill\">p(s',r|s,a) \\in \\{ 0,1 \\}</span> for all <span class=\"mathquill\">s', r, s, a</span>.    \n\n> In this case, when the agent is in state <span class=\"mathquill\">s</span> and takes action <span class=\"mathquill\">a</span>, the next state <span class=\"mathquill\">s'</span> and reward <span class=\"mathquill\">r</span> can be predicted with certainty, and we must have <span class=\"mathquill\">q_\\pi(s,a) = r + \\gamma v_\\pi(s')</span>.\n\nIn general, the environment need not be deterministic, and instead may be **stochastic**.  This is the default behavior of the `FrozenLake` environment from the mini project; in this case, once the agent selects an action, the next state and reward cannot be predicted with certainty and instead are random draws from a [(conditional) probability distribution](https://en.wikipedia.org/wiki/Conditional_probability_distribution) <span class=\"mathquill\">p(s',r|s,a)</span>.\n\n> In this case, when the agent is in state <span class=\"mathquill\">s</span> and takes action <span class=\"mathquill\">a</span>, the probability of each possible next state <span class=\"mathquill\">s'</span> and reward <span class=\"mathquill\">r</span> is given by <span class=\"mathquill\">p(s',r|s,a)</span>.  In this case, we must have <span class=\"mathquill\">q_\\pi(s,a) = \\sum_{s'\\in\\mathcal{S}^+, r\\in\\mathcal{R}}p(s',r|s,a)(r+\\gamma v_\\pi(s'))</span>, where we take the [expected value](https://en.wikipedia.org/wiki/Expected_value) of the sum <span class=\"mathquill\">r + \\gamma v_\\pi(s')</span>.\n\nOver the next couple concepts, you'll use this equation to write a function that yields an action-value function <span class=\"mathquill\">q_\\pi</span> corresponding to a policy <span class=\"mathquill\">\\pi</span> for the `FrozenLake` environment.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 356654,
+          "key": "a9fb7ba6-968c-4df3-a4a4-79aa73b295c1",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 410540,
+              "key": "2d259089-4297-44a0-9aa1-7969ee231141",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Estimation of Action Values",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410539,
+              "key": "6b3bac7a-1a0c-434a-9258-678cd6ecdf18",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the next concept, you will write an algorithm that accepts an estimate <span class=\"mathquill\">V</span> of the state-value function <span class=\"mathquill\">v_\\pi</span>, along with the one-step dynamics of the MDP <span class=\"mathquill\">p(s',r|s,a)</span>, and returns an estimate <span class=\"mathquill\">Q</span> the action-value function <span class=\"mathquill\">q_\\pi</span>.\n\nIn order to do this, you will need to use the equation discussed in the previous concept, which uses the one-step dynamics <span class=\"mathquill\">p(s',r|s,a)</span> of the Markov decision process (MDP) to obtain <span class=\"mathquill\">q_\\pi</span> from <span class=\"mathquill\">v_\\pi</span>.  Namely, \n\n<span class=\"mathquill\">q_\\pi(s,a) = \\sum_{s'\\in\\mathcal{S}^+, r\\in\\mathcal{R}}p(s',r|s,a)(r+\\gamma v_\\pi(s'))</span>\n\nholds for all <span class=\"mathquill\">s\\in\\mathcal{S}</span> and <span class=\"mathquill\">a\\in\\mathcal{A}(s)</span>.  \n\nYou can find the associated pseudocode below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410672,
+              "key": "f42b92b2-446e-4229-a131-e4c5a7801a9c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cc021b_est-action/est-action.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f42b92b2-446e-4229-a131-e4c5a7801a9c",
+              "caption": "",
+              "alt": "",
+              "width": 450,
+              "height": 202,
+              "instructor_notes": null
+            },
+            {
+              "id": 411206,
+              "key": "f22190fe-d70d-467f-a242-a6cd3d24cd8f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 2: Obtain <span class=\"mathquill\">q_\\pi</span> from <span class=\"mathquill\">v_\\pi</span>** of `Dynamic_Programming.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Dynamic_Programming_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 371475,
+          "key": "1656c9df-ab33-4dcf-bdc9-b30fd19a40ca",
+          "title": "Mini Project: DP (Part 2)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412952,
+              "key": "42ef0071-cad7-43ce-b03d-1b0244a7def0",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6334fbe5",
+              "pool_id": "jupyter",
+              "view_id": "a6f64619-306e-4319-9f09-21200e3dd923",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dynamic_Programming.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 356655,
+          "key": "47d3f650-eeca-40fa-b93e-d41bb363e84e",
+          "title": "Policy Improvement",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478515,
+              "key": "fb7b80fa-a2bf-40a0-89ba-44ac91990840",
+              "title": "Policy Improvement",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4_adUEK0IHg",
+                "china_cdn_id": "4_adUEK0IHg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 410024,
+          "key": "1763b8b5-ff50-49db-8b2f-52b1401e253e",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 410667,
+              "key": "154d99a4-7b24-485e-af98-d24d30c8b230",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Policy Improvement\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410666,
+              "key": "fbfe4e61-8af5-41d9-80c2-aae6cbca000d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the last lesson, you learned that given an estimate <span class=\"mathquill\">Q</span> of the action-value function <span class=\"mathquill\">q_\\pi</span> corresponding to a policy <span class=\"mathquill\">\\pi</span>, it is possible to construct an improved (or equivalent) policy <span class=\"mathquill\">\\pi'</span>, where <span class=\"mathquill\">\\pi'\\geq\\pi</span>.\n\nFor each state <span class=\"mathquill\">s\\in\\mathcal{S}</span>, you need only select the action that maximizes the action-value function estimate.  In other words,\n\n<span class=\"mathquill\">\\pi'(s) = \\arg\\max_{a\\in\\mathcal{A}(s)}Q(s,a)</span> for all <span class=\"mathquill\">s\\in\\mathcal{S}</span>.\n\nThe full pseudocode for **policy improvement** can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410751,
+              "key": "3c4cfed9-c788-4ce7-8a85-61649dbb7770",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cc057d_improve/improve.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3c4cfed9-c788-4ce7-8a85-61649dbb7770",
+              "caption": "",
+              "alt": "",
+              "width": 1416,
+              "height": 644,
+              "instructor_notes": null
+            },
+            {
+              "id": 411634,
+              "key": "e920ccc6-e18f-4d08-8623-ead63203f688",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the event that there is some state <span class=\"mathquill\">s\\in\\mathcal{S}</span> for which <span class=\"mathquill\">\\arg\\max_{a\\in\\mathcal{A}(s)}Q(s,a)</span> is not unique, there is some flexibility in how the improved policy <span class=\"mathquill\">\\pi'</span> is constructed.  \n\nIn fact, as long as the policy <span class=\"mathquill\">\\pi'</span> satisfies for each <span class=\"mathquill\">s\\in\\mathcal{S}</span> and <span class=\"mathquill\">a\\in\\mathcal{A}(s)</span>:\n\n<span class=\"mathquill\">\\pi'(a|s) = 0</span> if <span class=\"mathquill\">a \\notin \\arg\\max_{a'\\in\\mathcal{A}(s)}Q(s,a')</span>,\n\nit is an improved policy.  In other words, any policy that (for each state) assigns zero probability to the actions that do not maximize the action-value function estimate (for that state) is an improved policy.  Feel free to play around with this in your implementation!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410727,
+              "key": "64003ea0-2771-4416-9c5d-251d2b20caff",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 3: Policy Improvement** of `Dynamic_Programming.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Dynamic_Programming_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 356656,
+          "key": "25a2f5a7-0b39-4c5a-b5da-695c05acc85b",
+          "title": "Mini Project: DP (Part 3)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412954,
+              "key": "68bb3bce-c5ee-410f-ae9a-7394f8f4e587",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6334fbe5",
+              "pool_id": "jupyter",
+              "view_id": "df3949a5-f9ec-4794-ad97-4122bcdb7962",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dynamic_Programming.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 356657,
+          "key": "1a923e29-13dd-4543-b1b1-02fa7cfd0568",
+          "title": "Policy Iteration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478516,
+              "key": "18a0001c-a4e1-42e8-bafe-b3216a6db13b",
+              "title": "Policy Iteration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gqv7o1kBDc0",
+                "china_cdn_id": "gqv7o1kBDc0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 410733,
+          "key": "75578d5a-7d2d-4afd-b4ef-2727c7aacc5e",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 410735,
+              "key": "3fe2e755-ccc1-4186-89dd-1478ab484f51",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Policy Iteration",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412398,
+              "key": "d342a519-e1e4-408c-b230-97361a59a4df",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous concept, you learned about **policy iteration**, which proceeds as a series of alternating policy evaluation and improvement steps.  Policy iteration is guaranteed to find the optimal policy for any finite Markov decision process (MDP) in a finite number of iterations.  The pseudocode can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412395,
+              "key": "48669138-0fe4-40ea-8de5-e4fc187c09f3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cd57e2_iteration/iteration.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48669138-0fe4-40ea-8de5-e4fc187c09f3",
+              "caption": "",
+              "alt": "",
+              "width": 633,
+              "height": 390,
+              "instructor_notes": null
+            },
+            {
+              "id": 412400,
+              "key": "f9f4109f-9bfa-486f-93f2-4ce18c99a6af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 4: Policy Iteration** of `Dynamic_Programming.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Dynamic_Programming_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 356658,
+          "key": "6c50a2fb-6d90-48f6-954b-381a8e9cfee9",
+          "title": "Mini Project: DP (Part 4)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412955,
+              "key": "a2e2c8cf-74b6-445f-8512-861582c692a8",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6334fbe5",
+              "pool_id": "jupyter",
+              "view_id": "866d8802-68f1-4cfc-925d-3335b143aec1",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dynamic_Programming.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 357112,
+          "key": "6437a70c-79eb-4968-99fa-cc32a1ebd7b4",
+          "title": "Truncated Policy Iteration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478517,
+              "key": "45613038-1194-43d6-9bb5-7f1e59140aea",
+              "title": "Truncated Policy Iteration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "a-RvCxlPMho",
+                "china_cdn_id": "a-RvCxlPMho.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 410736,
+          "key": "075a1e66-4230-41ae-b93c-f3f2785b2ccd",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412407,
+              "key": "4cb1d4de-52c8-40f8-91bc-0e66a20a91bf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Truncated Policy Iteration",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412674,
+              "key": "ba3e2fe9-6594-42da-b56e-67d528557dac",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous concept, you learned about **truncated policy evaluation**.  Whereas (iterative) policy evaluation applies as many Bellman updates as needed to attain convergence, truncated policy evaluation only performs a fixed number of sweeps through the state space.\n\nThe pseudocode can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412673,
+              "key": "d15c24bc-085c-4d4b-833f-d94a6d38f48e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cda462_truncated-eval/truncated-eval.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d15c24bc-085c-4d4b-833f-d94a6d38f48e",
+              "caption": "",
+              "alt": "",
+              "width": 632,
+              "height": 316,
+              "instructor_notes": null
+            },
+            {
+              "id": 412676,
+              "key": "f9a41ffc-9235-4421-b0aa-b61c9da009c6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We can incorporate this amended policy evaluation algorithm into an algorithm similar to policy iteration, called **truncated policy iteration**.  \n\nThe pseudocode can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412675,
+              "key": "33d5e37c-6391-46c3-af4c-b9e62b4e4bf0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cda5ad_truncated-iter/truncated-iter.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/33d5e37c-6391-46c3-af4c-b9e62b4e4bf0",
+              "caption": "",
+              "alt": "",
+              "width": 631,
+              "height": 325,
+              "instructor_notes": null
+            },
+            {
+              "id": 412678,
+              "key": "689b24cf-9933-46ac-9c7c-ecbac15d16af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You may also notice that the stopping criterion for truncated policy iteration differs from that of policy iteration.  In policy iteration, we terminated the loop when the policy was unchanged after a single policy improvement step.  In truncated policy iteration, we stop the loop only when the value function estimate has converged.  \n\nYou are strongly encouraged to try out both stopping criteria, to build your intuition.  However, we note that checking for an unchanged policy is unlikely to work if the hyperparameter `max_iterations` is set too small.  (To see this, consider the case that `max_iterations` is set to a small value.  Then even if the algorithm is far from convergence to the optimal value function <span class=\"mathquill\">v_*</span> or optimal policy <span class=\"mathquill\">\\pi_*</span>, you can imagine that updates to the value function estimate <span class=\"mathquill\">V</span> may be too small to result in any updates to its corresponding policy.)\n\nPlease use the next concept to complete **Part 5: Truncated Policy Iteration** of `Dynamic_Programming.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Dynamic_Programming_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 356660,
+          "key": "0dd9b1b9-ef53-4bad-b583-f31a15a09ac6",
+          "title": "Mini Project: DP (Part 5)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412956,
+              "key": "903c3b15-f709-41cd-83af-4e0d16fdc14a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6334fbe5",
+              "pool_id": "jupyter",
+              "view_id": "f44a7e99-8985-4521-8d3f-293fc90bc33a",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dynamic_Programming.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 356659,
+          "key": "e2746ec0-8816-4be3-9ab2-94da706ebc64",
+          "title": "Value Iteration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 478518,
+              "key": "49041f88-f7f2-443a-9c8a-0f31d543856a",
+              "title": "Value Iteration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XNeQn8N36y8",
+                "china_cdn_id": "XNeQn8N36y8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 412402,
+          "key": "1db2acaa-47b0-456c-9f38-c65a3bfb2ef2",
+          "title": "Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412683,
+              "key": "cfbcfe13-c0b0-4999-80dd-33d4021c80f1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementation: Value Iteration",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412935,
+              "key": "3387c511-33a3-4db5-a30a-5a2285beb7b0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous concept, you learned about **value iteration**.  In this algorithm, each sweep over the state space effectively performs both policy evaluation and policy improvement.  Value iteration is guaranteed to find the optimal policy <span class=\"mathquill\">\\pi_*</span> for any finite MDP.\n\nThe pseudocode can be found below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412713,
+              "key": "64b84c1a-aa92-4d78-84a1-da5587c7bc29",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cdf750_value-iteration/value-iteration.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/64b84c1a-aa92-4d78-84a1-da5587c7bc29",
+              "caption": "",
+              "alt": "",
+              "width": 576,
+              "height": 410,
+              "instructor_notes": null
+            },
+            {
+              "id": 413029,
+              "key": "f520ad33-4dc7-4f00-9240-c9d27c9d1807",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that the stopping criterion is satisfied when the difference between successive value function estimates is sufficiently small.  In particular, the loop terminates if the difference is less than <span class=\"mathquill\">\\theta</span> for each state.  And, the closer we want the final value function estimate to be to the optimal value function, the smaller we need to set the value of <span class=\"mathquill\">\\theta</span>.\n\nFeel free to play around with the value of <span class=\"mathquill\">\\theta</span> in your implementation; note that in the case of the FrozenLake environment, values around `1e-8` seem to work reasonably well.  \n\nFor those of you who are interested in *more rigorous* guidelines on how exactly to set the value of <span class=\"mathquill\">\\theta</span>, you might be interested in perusing  [this paper](http://www.leemon.com/papers/1993wb2.pdf), where you are encouraged to pay particular attention to Theorem 3.2.  Their main result of interest can be summarized as follows:  \n> Let <span class=\"mathquill\">V^{\\text{final}}</span> denote the final value function estimate that is calculated by the algorithm.  Then it can be shown that <span class=\"mathquill\">V^{\\text{final}}</span> differs from the optimal value function <span class=\"mathquill\">v_*</span> by at most <span class=\"mathquill\">\\frac{2\\theta\\gamma}{1-\\gamma}</span>.  In other words, for each <span class=\"mathquill\">s\\in\\mathcal{S}</span>,\n\n> <span class=\"mathquill\">\\max_{s\\in\\mathcal{S}}|V^{\\text{final}}(s) - v_*(s)| < \\frac{2\\theta\\gamma}{1-\\gamma}</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412942,
+              "key": "8532cc38-e84c-47a0-9047-755b62210c3e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please use the next concept to complete **Part 6: Value Iteration** of `Dynamic_Programming.ipynb`.  Remember to save your work!\n\nIf you'd like to reference the pseudocode while working on the notebook, you are encouraged to open [this sheet](https://github.com/udacity/rl-cheatsheet/blob/master/cheatsheet.pdf) in a new window.  \n\nFeel free to check your solution by looking at the corresponding section in `Dynamic_Programming_Solution.ipynb`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 357113,
+          "key": "7e79285f-3c76-4e1a-bcf8-288e01e1189f",
+          "title": "Mini Project: DP (Part 6)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412957,
+              "key": "eff90991-db90-4d81-98e2-1fb66b204836",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6334fbe5",
+              "pool_id": "jupyter",
+              "view_id": "d42d7b1a-f957-4162-8734-e1e1fd5807ec",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dynamic_Programming.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 477679,
+          "key": "ababe30b-5537-44cc-88ea-b0bfc178a494",
+          "title": "Check Your Understanding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 477698,
+              "key": "d84506e8-8837-4de5-b803-2b40229dd45c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Check Your Understanding",
+              "instructor_notes": ""
+            },
+            {
+              "id": 477708,
+              "key": "9510e058-b2a2-4d55-8c4b-a9517d478efe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Congratulations!  At this point in the lesson, you have written your own implementations of many classical dynamic programming algorithms.  This is no easy feat, and you should be proud of all of your hard work!\n\nWe encourage you to take your time with this content.  Tinker more with the mini project to develop your intuition, and read Chapter 4 (especially 4.1-4.4) of the [textbook](http://go.udacity.com/rl-textbook) to supplement your understanding.  \n\n**You are strongly encouraged to take your own notes**.  You may find it useful to compare your notes with the next concept, which contains a summary of the main ideas from the lesson.\n\nWhen you're ready, answer the question below to check your memory of the terminology.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 477680,
+              "key": "b46489de-90a6-429e-be6b-7859e2088f82",
+              "title": "Question 1",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "complex_prompt": {
+                  "text": "Match each algorithm to its appropriate description."
+                },
+                "concepts_label": "Description",
+                "answers_label": "Algorithm",
+                "concepts": [
+                  {
+                    "text": "Finds the optimal policy through successive rounds of evaluation and improvement.",
+                    "correct_answer": {
+                      "id": "a1513110926204",
+                      "text": "Policy Iteration"
+                    }
+                  },
+                  {
+                    "text": "Given a value function corresponding to a policy, proposes a better (or equal) policy.",
+                    "correct_answer": {
+                      "id": "a1513110987709",
+                      "text": "Policy Improvement"
+                    }
+                  },
+                  {
+                    "text": "Computes the value function corresponding to an arbitrary policy.",
+                    "correct_answer": {
+                      "id": "a1513111507377",
+                      "text": "(Iterative) Policy Evaluation"
+                    }
+                  },
+                  {
+                    "text": "Finds the optimal policy through successive rounds of evaluation and improvement (where the evaluation step is stopped after a single sweep through the state space).",
+                    "correct_answer": {
+                      "id": "a1513111606499",
+                      "text": "Value Iteration"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1513111606499",
+                    "text": "Value Iteration"
+                  },
+                  {
+                    "id": "a1513110987709",
+                    "text": "Policy Improvement"
+                  },
+                  {
+                    "id": "a1513110926204",
+                    "text": "Policy Iteration"
+                  },
+                  {
+                    "id": "a1513111507377",
+                    "text": "(Iterative) Policy Evaluation"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 356661,
+          "key": "d7a2e040-96f2-4e2c-b8a3-d6ac6b0595a6",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 369181,
+              "key": "7816af91-8fdd-4d70-8699-a8f712a61791",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 415757,
+              "key": "a7f0af1e-e969-472d-b8f9-e796a8dc5a4b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d25e6d_screen-shot-2017-10-02-at-10.41.44-am/screen-shot-2017-10-02-at-10.41.44-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a7f0af1e-e969-472d-b8f9-e796a8dc5a4b",
+              "caption": "First step of policy iteration in gridworld example (Sutton and Barto, 2017)",
+              "alt": "",
+              "width": 369,
+              "height": 137,
+              "instructor_notes": null
+            },
+            {
+              "id": 410371,
+              "key": "37464181-c1ef-4715-98a0-bb949e7d4a60",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Introduction\n---\n- In the **dynamic programming** setting, the agent has full knowledge of the MDP.  (This is much easier than the **reinforcement learning** setting, where the agent initially knows nothing about how the environment decides state and reward and must learn entirely from interaction how to select actions.)\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410262,
+              "key": "c05e2ef2-97c9-47d3-929c-d5d7ff08fc62",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### An Iterative Method\n---\n- In order to obtain the state-value function <span class=\"mathquill\">v_\\pi</span> corresponding to a policy <span class=\"mathquill\">\\pi</span>, we need only solve the system of equations corresponding to the Bellman expectation equation for <span class=\"mathquill\">v_\\pi</span>.\n- While it is possible to analytically solve the system, we will focus on an iterative solution approach.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410387,
+              "key": "31a227e8-6322-4cf6-9bd4-c1b6e42fdac4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Iterative Policy Evaluation\n---\n- **Iterative policy evaluation** is an algorithm used in the dynamic programming setting to estimate the state-value function <span class=\"mathquill\">v_\\pi</span>  corresponding to a policy <span class=\"mathquill\">\\pi</span>.  In this approach, a Bellman update is applied to the value function estimate until the changes to the estimate are nearly imperceptible.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410450,
+              "key": "969aeff0-ee0e-4ac3-a0bf-f933f2f55154",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cb2330_screen-shot-2017-09-26-at-11.03.16-pm/screen-shot-2017-09-26-at-11.03.16-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/969aeff0-ee0e-4ac3-a0bf-f933f2f55154",
+              "caption": "",
+              "alt": "",
+              "width": 427,
+              "height": 266,
+              "instructor_notes": null
+            },
+            {
+              "id": 410388,
+              "key": "8fc49567-5073-4099-8cfd-fcc9ad5fb664",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Estimation of Action Values\n---\n- In the dynamic programming setting, it is possible to quickly obtain the action-value function <span class=\"mathquill\">q_\\pi</span> from the state-value function <span class=\"mathquill\">v_\\pi</span> with the equation: <span class=\"mathquill\">q_\\pi(s,a) = \\sum_{s'\\in\\mathcal{S}, r\\in\\mathcal{R}}p(s',r|s,a)(r+\\gamma v_\\pi(s'))</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410674,
+              "key": "e2f11231-1c11-4f33-b1ce-17bdfa797617",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cc0231_est-action/est-action.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e2f11231-1c11-4f33-b1ce-17bdfa797617",
+              "caption": "",
+              "alt": "",
+              "width": 507,
+              "height": 229,
+              "instructor_notes": null
+            },
+            {
+              "id": 410389,
+              "key": "28fa0786-6138-4382-944f-f1158ed79264",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Policy Improvement\n---\n-  **Policy improvement** takes an estimate <span class=\"mathquill\">V</span> of the action-value function <span class=\"mathquill\">v_\\pi</span> corresponding to a policy <span class=\"mathquill\">\\pi</span>, and returns an improved (or equivalent) policy <span class=\"mathquill\">\\pi'</span>, where <span class=\"mathquill\">\\pi'\\geq\\pi</span>.  The algorithm first constructs the action-value function estimate <span class=\"mathquill\">Q</span>.  Then, for each state <span class=\"mathquill\">s\\in\\mathcal{S}</span>, you need only select the action <span class=\"mathquill\">a</span> that maximizes <span class=\"mathquill\">Q(s,a)</span>.  In other words, <span class=\"mathquill\">\\pi'(s) = \\arg\\max_{a\\in\\mathcal{A}(s)}Q(s,a)</span> for all <span class=\"mathquill\">s\\in\\mathcal{S}</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 410694,
+              "key": "e3fbf474-e22f-4bcd-b5e7-0c2db9240c24",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cc057d_improve/improve.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e3fbf474-e22f-4bcd-b5e7-0c2db9240c24",
+              "caption": "",
+              "alt": "",
+              "width": 531,
+              "height": 242,
+              "instructor_notes": null
+            },
+            {
+              "id": 410391,
+              "key": "f8b37027-db44-44c6-a0e0-1832f77f7915",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Policy Iteration\n---\n- **Policy iteration** is an algorithm that can solve an MDP in the dynamic programming setting.  It proceeds as a sequence of policy evaluation and improvement steps, and is guaranteed to converge to the optimal policy (for an arbitrary _finite_ MDP).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412394,
+              "key": "c7ba887a-451a-42b6-8283-cb5d7450f4e6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cd57e2_iteration/iteration.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c7ba887a-451a-42b6-8283-cb5d7450f4e6",
+              "caption": "",
+              "alt": "",
+              "width": 475,
+              "height": 293,
+              "instructor_notes": null
+            },
+            {
+              "id": 412681,
+              "key": "23f4cd8c-98a4-4062-9731-fe890e970e05",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Truncated Policy Iteration\n---\n- **Truncated policy iteration** is an algorithm used in the dynamic programming setting to estimate the state-value function <span class=\"mathquill\">v_\\pi</span>  corresponding to a policy <span class=\"mathquill\">\\pi</span>.  In this approach, the evaluation step is stopped after a fixed number of sweeps through the state space.  We refer to the algorithm in the evaluation step as **truncated policy evaluation**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412679,
+              "key": "331504f7-cbef-4d0f-b919-5c26bf7ff707",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cda462_truncated-eval/truncated-eval.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/331504f7-cbef-4d0f-b919-5c26bf7ff707",
+              "caption": "",
+              "alt": "",
+              "width": 474,
+              "height": 237,
+              "instructor_notes": null
+            },
+            {
+              "id": 412680,
+              "key": "a050158f-1833-4ff7-b51c-4af3868965b3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cda5ad_truncated-iter/truncated-iter.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a050158f-1833-4ff7-b51c-4af3868965b3",
+              "caption": "",
+              "alt": "",
+              "width": 473,
+              "height": 244,
+              "instructor_notes": null
+            },
+            {
+              "id": 410393,
+              "key": "94cbbd81-cd22-4ea7-b171-70d1fb9b75cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Value Iteration\n---\n- **Value iteration** is an algorithm used in the dynamic programming setting to estimate the state-value function <span class=\"mathquill\">v_\\pi</span> corresponding to a policy <span class=\"mathquill\">\\pi</span>.  In this approach, each sweep over the state space simultaneously performs policy evaluation and policy improvement.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 412712,
+              "key": "6c0e0ed5-f481-487b-8ff3-159051fce0d2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59cdf750_value-iteration/value-iteration.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6c0e0ed5-f481-487b-8ff3-159051fce0d2",
+              "caption": "",
+              "alt": "",
+              "width": 432,
+              "height": 307,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

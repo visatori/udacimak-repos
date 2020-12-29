@@ -1,0 +1,383 @@
+{
+  "data": {
+    "lesson": {
+      "id": 439303,
+      "key": "7c042ed0-08e7-4138-ad78-1a8d671d5da5",
+      "title": "Keras",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this section you'll get a hands-on introduction to Keras. You'll learn to apply it to analyze movie reviews.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7c042ed0-08e7-4138-ad78-1a8d671d5da5/439303/1544465340288/Keras+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7c042ed0-08e7-4138-ad78-1a8d671d5da5/439303/1544465338133/Keras+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 462417,
+          "key": "fa526313-18c2-404b-b66e-17dd109a54ef",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 462418,
+              "key": "8515c317-361d-4c15-8663-956f6e6df60f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/59406a18_meme/meme.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8515c317-361d-4c15-8663-956f6e6df60f",
+              "caption": "Hello! Luis again.",
+              "alt": "",
+              "width": 200,
+              "height": 200,
+              "instructor_notes": null
+            },
+            {
+              "id": 462419,
+              "key": "40261b9e-a9c4-42de-9c44-cb4daa806e68",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Keras\nHi again! Now, we know all there is about training and optimizing neural networks, and we've actually trained a few of them in NumPy, But this is not what we normally do in real life. There are many packages which will make our life much easier. The two main ones that we'll learn in this course are Keras and TensorFlow. In this lesson, we'll learn to use Keras.\n\nThe way we'll learn is by writing lots of code and building lots of models. We'll start by building a simple neural network that will solve the XOR problem. Then, we'll build a bigger neural network that will analyze the student data that we have analyzed in a previous section.\n\nAnd finally, we'll have a lab in which you'll be able to build a neural network yourself, which will process text, and make predictions on the sentiment of movie reviews in IMDB.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 301743,
+          "key": "7c3d9b4c-206d-4430-9459-c78357181d9a",
+          "title": "Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308193,
+              "key": "cb03b861-d46e-4106-8b37-d382ce55021e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Neural Networks in Keras\n\nLuckily, every time we need to use a neural network, we won't need to code the activation function, gradient descent, etc. There are lots of packages for this, which we recommend you to check out, including the following:\n- [Keras](https://keras.io/)\n- [TensorFlow](https://www.tensorflow.org/)\n- [Caffe](http://caffe.berkeleyvision.org/)\n- [Theano](http://deeplearning.net/software/theano/)\n- [Scikit-learn](http://scikit-learn.org/)\n- And many others!\n\nIn this course, we will learn [Keras](https://keras.io/). Keras makes coding deep neural networks simpler. To demonstrate just how easy it is, you're going to build a simple fully-connected network in a few dozen lines of code.\n\nWe’ll be connecting the concepts that you’ve learned in the previous lessons to the methods that Keras provides.\n\nThe general idea for this example is that you'll first load the data, then define the network, and then finally train the network.\n\n## Building a Neural Network in Keras\nHere are some core concepts you need to know for working with Keras.\n\n## Sequential Model\n\n```python\n    from keras.models import Sequential\n\n    #Create the Sequential model\n    model = Sequential()\n```\n\nThe [keras.models.Sequential](https://keras.io/models/sequential/) class is a wrapper for the neural network model that treats the network as a sequence of layers. It implements the Keras model interface with common methods like `compile()`, `fit()`, and `evaluate()` that are used to train and run the model. We'll cover these functions soon, but first let's start looking at the layers of the model.\n\n## Layers\nThe Keras Layer class provides a common interface for a variety of standard neural network layers. There are fully connected layers, max pool layers, activation layers, and more. You can add a layer to a model using the model's `add()` method. For example, a simple model with a single hidden layer might look like this:\n\n```python\n    import numpy as np\n    from keras.models import Sequential\n    from keras.layers.core import Dense, Activation\n\n    # X has shape (num_rows, num_cols), where the training data are stored\n    # as row vectors\n    X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]], dtype=np.float32)\n\n    # y must have an output vector for each input vector\n    y = np.array([[0], [0], [0], [1]], dtype=np.float32)\n\n    # Create the Sequential model\n    model = Sequential()\n\n    # 1st Layer - Add an input layer of 32 nodes with the same input shape as\n    # the training samples in X\n    model.add(Dense(32, input_dim=X.shape[1]))\n\n    # Add a softmax activation layer\n    model.add(Activation('softmax'))\n\n    # 2nd Layer - Add a fully connected output layer\n    model.add(Dense(1))\n\n    # Add a sigmoid activation layer\n    model.add(Activation('sigmoid'))\n```\n\nKeras requires the input shape to be specified in the first layer, but it will automatically infer the shape of all other layers. This means you only have to explicitly set the input dimensions for the first layer.\n\nThe first (hidden) layer from above, `model.add(Dense(32, input_dim=X.shape[1]))`, creates 32 nodes which each expect to receive 2-element vectors as inputs. Each layer takes the outputs from the previous layer as inputs and pipes through to the next layer. This chain of passing output to the next layer continues until the last layer, which is the output of the model. We can see that the output has dimension 1.\n\nThe activation \"layers\" in Keras are equivalent to specifying an activation function in the Dense layers (e.g., `model.add(Dense(128)); model.add(Activation('softmax'))` is computationally equivalent to `model.add(Dense(128, activation=\"softmax\")))`), but it is common to explicitly separate the activation layers because it allows direct access to the outputs of each layer before the activation is applied (which is useful in some model architectures).\n\nOnce we have our model built, we need to compile it before it can be run. Compiling the Keras model calls the backend (tensorflow, theano, etc.) and binds the optimizer, loss function, and other parameters required before the model can be run on any input data. We'll specify the loss function to be `categorical_crossentropy` which can be used when there are only two classes, and specify `adam` as the optimizer (which is a reasonable default when speed is a priority). And finally, we can specify what metrics we want to evaluate the model with. Here we'll use accuracy.\n\n```python\nmodel.compile(loss=\"categorical_crossentropy\", optimizer=\"adam\", metrics = [\"accuracy\"])\n```\n\nWe can see the resulting model architecture with the following command:\n\n```python\nmodel.summary()\n```\n\nThe model is trained with the `fit()` method, through the following command that specifies the number of training epochs and the message level (how much information we want displayed on the screen during training).\n\n```python\nmodel.fit(X, y, nb_epoch=1000, verbose=0)\n```\n\n**Note:** In Keras 1, `nb_epoch` sets the number of epochs, but in Keras 2 this changes to the keyword `epochs`.\n\nFinally, we can use the following command to evaluate the model:\n\n```python\nmodel.evaluate()\n```\n\nPretty simple, right? Let's put it into practice.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308190,
+              "key": "d70cf717-e602-42dc-ac9e-7036160f27e9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quiz\nLet's start with the simplest example. In this quiz you will build a simple multi-layer feedforward neural network to solve the XOR problem.\n\n1. Set the first layer to a `Dense()` layer with an output width of 8 nodes and the `input_dim` set to the size of the training samples (in this case 2).\n2. Add a `tanh` activation function.\n5. Set the output layer width to 1, since the output has only two classes. (We can use 0 for one class and 1 for the other)\n6. Use a `sigmoid` activation function after the output layer.\n7. Run the model for 50 epochs.\n\nThis should give you an accuracy of 50%. That's ok, but certainly not great. Out of 4 input points, we're correctly classifying only 2 of them. Let's try to change some parameters around to improve. For example, you can increase the number of epochs. You'll pass this quiz if you get 75% accuracy. Can you reach 100%?\n\nTo get started, review the Keras documentation about models and layers.\nThe Keras example of a [Multi-Layer Perceptron](https://github.com/fchollet/keras/blob/master/examples/mnist_mlp.py) network is similar to what you need to do here. Use that as a guide, but keep in mind that there will be a number of differences.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308191,
+              "key": "bfff2ac1-0262-4dcc-a72c-491bd744e052",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6176481718960128",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\r\nfrom keras.utils import np_utils\r\nimport tensorflow as tf\r\n# Using TensorFlow 1.0.0; use tf.python_io in later versions\r\ntf.python.control_flow_ops = tf\r\n\r\n# Set random seed\r\nnp.random.seed(42)\r\n\r\n# Our data\r\nX = np.array([[0,0],[0,1],[1,0],[1,1]]).astype('float32')\r\ny = np.array([[0],[1],[1],[0]]).astype('float32')\r\n\r\n# Initial Setup for Keras\r\nfrom keras.models import Sequential\r\nfrom keras.layers.core import Dense, Activation\r\n# One-hot encoding the output\r\ny = np_utils.to_categorical(y)\r\n\r\n# Building the model\r\nxor = Sequential()\r\n\r\n# Add required layers\r\n# xor.add()\r\n\r\n# Specify loss as \"binary_crossentropy\", optimizer as \"adam\",\r\n# and add the accuracy metric\r\n# xor.compile()\r\n\r\n# Uncomment this line to print the model architecture\r\n# xor.summary()\r\n\r\n# Fitting the model\r\nhistory = xor.fit(X, y, nb_epoch=50, verbose=0)\r\n\r\n# Scoring the model\r\nscore = xor.evaluate(X, y)\r\nprint(\"\\nAccuracy: \", score[-1])\r\n\r\n# Checking the predictions\r\nprint(\"\\nPredictions:\")\r\nprint(xor.predict_proba(X))",
+                    "name": "network.py"
+                  },
+                  {
+                    "text": "import numpy as np\r\nfrom keras.utils import np_utils\r\nimport tensorflow as tf\r\ntf.python.control_flow_ops = tf\r\n\r\n# Set random seed\r\nnp.random.seed(42)\r\n\r\n# Our data\r\nX = np.array([[0,0],[0,1],[1,0],[1,1]]).astype('float32')\r\ny = np.array([[0],[1],[1],[0]]).astype('float32')\r\n\r\n# Initial Setup for Keras\r\nfrom keras.models import Sequential\r\nfrom keras.layers.core import Dense, Activation, Flatten\r\n\r\n# One-hot encoding the output\r\ny = np_utils.to_categorical(y)\r\n\r\n# Building the model\r\nxor = Sequential()\r\nxor.add(Dense(32, input_dim=2))\r\nxor.add(Activation(\"tanh\"))\r\nxor.add(Dense(2))\r\nxor.add(Activation(\"sigmoid\"))\r\n\r\nxor.compile(loss=\"categorical_crossentropy\", optimizer=\"adam\", metrics = ['accuracy'])\r\n\r\n# Uncomment this line to print the model architecture\r\n# xor.summary()\r\n\r\n# Fitting the model\r\nhistory = xor.fit(X, y, nb_epoch=1000, verbose=0)\r\n\r\n# Scoring the model\r\nscore = xor.evaluate(X, y)\r\nprint(\"\\nAccuracy: \", score[-1])\r\n\r\n# Checking the predictions\r\nprint(\"\\nPredictions:\")\r\nprint(xor.predict_proba(X))",
+                    "name": "network_solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 410773,
+          "key": "bb1f6b73-b886-4ed5-ba63-a992faf7d873",
+          "title": "Pre-Lab: Student Admissions in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 439367,
+              "key": "e0f1b4e0-203e-44c1-8c7b-af9e5c74f15e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Mini Project: Student Admissions in Keras\n\nSo, now we're ready to use Keras with real data. We'll now build a neural network which analyzes the dataset of student admissions at UCLA that we've previously studied.\n\nAs you follow along with this lesson, you are encouraged to work in the referenced Jupyter notebooks at the end of the page.  We will present a solution to you, but please try creating your own deep learning models! Much of the value in this experience will come from playing around with the code in your own way. \n\n# Workspace\nTo open this notebook, you have two options:\n- Go to the next page in the classroom (recommended)\n- Clone the repo from [Github](https://github.com/udacity/deep-learning) and open the notebook **StudentAdmissionsKeras.ipynb** in the **student_admissions_keras** folder. You can either download the repository with `git clone https://github.com/udacity/deep-learning.git`, or download it as an archive file from [this link](https://github.com/udacity/deep-learning/archive/master.zip).\n\n# Instructions\nThis is more of a follow-along lab. We'll show you the steps to build the network. However, at the end of the lab you'll be given the opportunity to improve the model, and try to improve on its performance. Here are the main steps in this lab.\n\n### Studying the data\nThe dataset has the following columns:\n- Student GPA (grades)\n- Score on the GRE (test)\n- Class rank (1-4)\n\nFirst, let's start by looking at the data. For that, we'll use the read_csv function in pandas.\n\n    import pandas as pd\n    data = pd.read_csv('student_data.csv')\n    print(data)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 439368,
+              "key": "1568bb44-f2cf-4ea8-8503-7c8c94e6f231",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59baed82_data/data.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1568bb44-f2cf-4ea8-8503-7c8c94e6f231",
+              "caption": "",
+              "alt": "",
+              "width": 394,
+              "height": 646,
+              "instructor_notes": null
+            },
+            {
+              "id": 439369,
+              "key": "d86e0394-0516-4983-9f35-94a900b35285",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here we can see that the first column is the label `y`, which corresponds to acceptance/rejection. Namely, a label of `1` means the student got accepted, and a label of `0` means the student got rejected.\n\nWhen we plot the data, we get the following graphs, which show that unfortunately, the data is not as nicely separable as we'd hope:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 439370,
+              "key": "a60651d6-aeee-432d-9a89-25fb0750ece8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59baedcc_student-acceptance/student-acceptance.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a60651d6-aeee-432d-9a89-25fb0750ece8",
+              "caption": "",
+              "alt": "",
+              "width": 396,
+              "height": 266,
+              "instructor_notes": null
+            },
+            {
+              "id": 439371,
+              "key": "b5c655ae-29f1-411d-95d3-18678b121412",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So one thing we can do is make one graph for each of the 4 ranks. In that case, we get this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 439372,
+              "key": "9e661743-b9cf-41b1-999e-614f491ea0ea",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59baee23_all-ranks/all-ranks.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9e661743-b9cf-41b1-999e-614f491ea0ea",
+              "caption": "",
+              "alt": "",
+              "width": 1514,
+              "height": 1074,
+              "instructor_notes": null
+            },
+            {
+              "id": 439373,
+              "key": "ec26c7c8-b024-4035-b661-af84a918cf16",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Pre-processing the data\nOk, there's a bit more hope here. It seems like the better grades and test scores the student has, the more likely they are to be accepted. And the rank has something to do with it. So what we'll do is, we'll one-hot encode the rank, and our 6 input variables will be:\n- Test (GPA)\n- Grades (GRE)\n- Rank 1\n- Rank 2\n- Rank 3\n- Rank 4.\n\nThe last 4 inputs will be binary variables that have a value of 1 if the student has that rank, or 0 otherwise.\n\nSo, first things first, let's notice that the test scores have a range of 800, while the grades have a range of 4. This is a huge discrepancy, and it will affect our training. Normally, the best thing to do is to normalize the scores so they are between 0 and 1. We can do this as follows:\n\n     data[\"gre\"] = data[\"gre\"]/800\n     data[\"gpa\"] = data[\"gpa\"]/4.0\n\nNow, we split our data input into X, and the labels y , and one-hot encode the output, so it appears as two classes (accepted and not accepted).\n\n     X = np.array(data)[:,1:]\n     y = keras.utils.to_categorical(np.array(data[\"admit\"]))\n\n### Building the model architecture\nAnd finally, we define the model architecture. We can use different architectures, but here's an example:\n\n     model = Sequential()\n     model.add(Dense(128, input_dim=6))\n     model.add(Activation('sigmoid'))\n     model.add(Dense(32))\n     model.add(Activation('sigmoid'))\n     model.add(Dense(2))\n     model.add(Activation('sigmoid'))\n     model.compile(loss = 'categorical_crossentropy', optimizer='adam', metrics=['accuracy'])\n     model.summary()\n\nThe error function is given by `categorical_crossentropy`, which is the one we've been using, but there are other options. There are several optimizers which you can choose from in order to improve your training. Here we use _adam_, but there are others that are useful, such as _rmsprop_. These use a variety of techniques that we'll outline in upcoming pages in this lesson.\n\nThe model summary will tell us the following:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 439374,
+              "key": "e933310a-f8cb-4594-8d6e-e038897dbfb0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59baee60_summary/summary.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e933310a-f8cb-4594-8d6e-e038897dbfb0",
+              "caption": "",
+              "alt": "",
+              "width": 1171,
+              "height": 648,
+              "instructor_notes": null
+            },
+            {
+              "id": 439375,
+              "key": "a39d9d57-9909-4440-8a0c-decbc56e6404",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Training the model\nNow, we train the model, with 1000 epochs. Don't worry about the batch_size, we'll learn about it soon.\n\n    model.fit(X_train, y_train, epochs=1000, batch_size=100, verbose=0)\n\n### Evaluating the model\nAnd finally, we can evaluate our model.\n\n     score = model.evaluate(X_train, y_train)\nResults may vary, but you should get somewhere over 70% accuracy.\n\nAnd there you go, you've trained your first neural network to analyze a dataset. Now, in the following pages, you'll learn many techniques to improve the training process.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 439888,
+          "key": "4d086d3f-17d5-4982-a5d7-595c6c1cd2e9",
+          "title": "Lab: Student Admissions in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 439889,
+              "key": "7757119c-0fb3-426f-ab99-7613eaae8def",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view789caf36",
+              "pool_id": "jupyter",
+              "view_id": "2af14764-3c8f-488c-b8f6-1cd7db79e9a0",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/StudentAdmissionsKeras.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 308412,
+          "key": "ff0ab4d8-5441-4d00-baa3-88735b503b76",
+          "title": "Optimizers in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308447,
+              "key": "bf44fcee-1375-4ab1-9177-c8c7e8b90862",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Keras Optimizers\n\nThere are many optimizers in Keras, that we encourage you to explore further, in this [link](https://keras.io/optimizers/), or in this excellent [blog post](http://ruder.io/optimizing-gradient-descent/index.html#rmsprop). These optimizers use a combination of the tricks above, plus a few others. Some of the most common are:\n\n#### SGD\nThis is Stochastic Gradient Descent. It uses the following parameters:\n- Learning rate.\n- Momentum (This takes the weighted average of the previous steps, in order to get a bit of momentum and go over bumps, as a way to not get stuck in local minima).\n- Nesterov Momentum (This slows down the gradient when it's close to the solution).\n\n#### Adam\nAdam (Adaptive Moment Estimation) uses a more complicated exponential decay that consists of not just considering the average (first moment), but also the variance (second moment) of the previous steps.\n\n#### RMSProp\nRMSProp (RMS stands for Root Mean Squared Error) decreases the learning rate by dividing it by an exponentially decaying average of squared gradients. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 309647,
+          "key": "6d1b6bc4-d9cc-46a1-b5b5-a7dae40458df",
+          "title": "Mini Project Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309648,
+              "key": "1ffc86d1-afd3-4d5f-b688-faf548cffc41",
+              "title": "Keras Lab",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "a50un22BsLI",
+                "china_cdn_id": "a50un22BsLI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 410785,
+          "key": "5e22aa8d-9d4d-4b83-8b34-9f606d0abee4",
+          "title": "Pre-Lab: IMDB Data in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 439365,
+              "key": "19bccba1-e3ca-4bcd-a799-0cd691f188cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Mini Project: Using Keras to analyze IMDB Movie Data\nNow, you're ready to shine! In this project, we will analyze a dataset from IMDB and use it to predict the sentiment analysis of a review.\n\n# Workspace\nTo open this notebook, you have two options:\n- Go to the next page in the classroom (recommended)\n- Clone the repo from [Github](https://github.com/udacity/deep-learning) and open the notebook **IMDB_in_Keras.ipynb** in the **imdb_keras** folder. You can either download the repository with `git clone https://github.com/udacity/deep-learning.git`, or download it as an archive file from [this link](https://github.com/udacity/deep-learning/archive/master.zip).\n\n# Instructions\nIn this lab, we will preprocess the data for you, and you'll be in charge of building and training the model in Keras.\n\n### The dataset\nThis lab uses a dataset of 25,000 [IMDB](http://www.imdb.com) reviews. Each review comes with a label. A label of 0 is given to a negative review, and a label of 1 is given to a positive review. The goal of this lab is to create a model that will predict the sentiment of a review, based on the words in the review. You can see more information about this dataset in the [Keras](https://keras.io/datasets) website.\n\nNow, the input already comes preprocessed for us for convenience. Each review is encoded as a sequence of indexes, corresponding to the words in the review. The words are ordered by frequency, so the integer 1 corresponds to the most frequent word  (\"the\"), the integer 2 to the second most frequent word, etc. By convention, the integer 0 corresponds to unknown words.\n\nThen, the sentence is turned into a vector by simply concatenating these integers. For instance, if the sentence is \"To be or not to be.\" and the indices of the words are as follows:\n- \"to\": 5\n- \"be\": 8\n- \"or\": 21\n- \"not\": 3\n\nThen the sentence gets encoded as the vector `[5,8,21,3,5,8]`.\n\n### Loading the data\nThe data comes preloaded in Keras, which means we don't need to open or read any files manually. The command to load it is the following, which will actually split the words into training and testing sets and labels!:\n\n```python\nfrom keras.datasets import imdb\n(x_train, y_train), (x_test, y_test) = imdb.load_data(path=\"imdb.npz\",\n                                                     num_words=None,\n                                                     skip_top=0,\n                                                     maxlen=None,\n                                                     seed=113,\n                                                     start_char=1,\n                                                     oov_char=2,\n                                                     index_from=3)\n```\nThe meanings of all of these arguments are [here](https://keras.io/datasets). But in a nutshell, the most important ones are:\n- **num_words**: Top most frequent words to consider. This is useful if you don't want to consider very obscure words such as \"Ultracrepidarian.\"\n- **skip_top**: Top words to ignore. This is useful if you don't want to consider the most common words. For example, the word \"the\" would add no information to the review, so we can skip it by setting `skip_top` to 2 or higher.\n\n### Pre-processing the data\nWe first prepare the data by one-hot encoding it into (0,1)-vectors as follows: If, for example, we have 10 words in our vocabulary, and the vector is (4,1,8), we'll turn it into the vector (1,0,0,1,0,0,0,1,0,0).\n\n### Building the model\nNow it's your turn to use all you've learned! You can build a neural network using Keras, train it, and evaluate it! Make sure you also use methods such as dropout or regularization, and good Keras optimizers to do this. A good accuracy to aim for is 85%. Can your model achieve this?\n\n### Help\nThis is a self-assessed lab. If you need any help or want to check your answers, feel free to check out the solutions notebook in the same folder, or click [here](https://github.com/udacity/deep-learning/blob/master/IMDB-keras/IMDB_In_Keras_Solutions.ipynb).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 439890,
+          "key": "05134e3b-883e-4163-b821-49aa2f533c29",
+          "title": "Lab: IMDB Data in Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 439891,
+              "key": "7dff5601-5da4-4fa9-940a-dcd11cba6fa2",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6583101a",
+              "pool_id": "jupyter",
+              "view_id": "3ccaf38f-91db-4592-ae29-ff65fac9e792",
+              "gpu_capable": null,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/IMDB_In_Keras.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

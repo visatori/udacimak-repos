@@ -1,0 +1,461 @@
+{
+  "data": {
+    "lesson": {
+      "id": 300574,
+      "key": "61a406ec-8720-4a70-a0c0-2e5086131698",
+      "title": "Generative Adversarial Networks",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Ian Goodfellow, the inventor of GANs, introduces you to these exciting models. You'll also implement your own GAN on the MNIST dataset.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/61a406ec-8720-4a70-a0c0-2e5086131698/300574/1544457393531/Generative+Adversarial+Networks+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/61a406ec-8720-4a70-a0c0-2e5086131698/300574/1544457388010/Generative+Adversarial+Networks+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 303787,
+          "key": "5b0098c6-53e6-49c0-8488-86b97264efee",
+          "title": "Introducing Ian Goodfellow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305050,
+              "key": "bb83f586-7edd-46b3-b4e7-77ed91201e5f",
+              "title": "GANs Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "F7XgI6TmaGI",
+                "china_cdn_id": "F7XgI6TmaGI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300576,
+          "key": "6ab00f20-60f3-4acc-a9fa-a5abde2dfcaa",
+          "title": "What can you do with GANs?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 303789,
+              "key": "0ebecb92-b869-4c08-a5dc-5a253eb158aa",
+              "title": "Cool Things To Do With GANs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bo-ToTdhgew",
+                "china_cdn_id": "bo-ToTdhgew.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300577,
+          "key": "1269889f-f44e-452d-be8e-d3d0f7f66e92",
+          "title": "How GANs work",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 328535,
+              "key": "1962822b-dc39-4251-8063-8487bf1c4bcc",
+              "title": "Other Generative Models, How GANs Work",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MF0QCP1OC9I",
+                "china_cdn_id": "MF0QCP1OC9I.mp4"
+              }
+            },
+            {
+              "id": 301436,
+              "key": "83e615cf-c60b-4585-acc8-de565fd77afc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can find more information on the graph in the video in Figure 1 of https://arxiv.org/pdf/1406.2661.pdf.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 300578,
+          "key": "61fd01ef-57e8-4f86-86be-397ea5e898dd",
+          "title": "Games and Equilibria",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 331194,
+              "key": "0b108107-e3ce-4096-9df7-5113ba61b660",
+              "title": "Games, Equilibrium, GANs Solution Render",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2zi8DOWIVas",
+                "china_cdn_id": "2zi8DOWIVas.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300579,
+          "key": "26041313-c8f4-40ac-88f8-3b35a85ec5db",
+          "title": "Practical tips and tricks for training GANs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 329930,
+              "key": "f008cd36-25b5-4be5-8ca4-fc4d82fc80aa",
+              "title": "GANs Architecture ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gaEs7ccZv_Q",
+                "china_cdn_id": "gaEs7ccZv_Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300581,
+          "key": "d406ab8b-121a-4bf5-b21f-05f6426f6506",
+          "title": "Build a GAN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301424,
+              "key": "dcfa146d-0b16-4d08-8182-3f1885baf749",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dcfa146d-0b16-4d08-8182-3f1885baf749",
+              "caption": "Hi again, it's Mat!",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 301435,
+              "key": "65e56720-3201-4ae2-8403-7adfec349283",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Building a GAN\n\nTogether with Ian, we've built a notebook that will lead you through building your own GAN and train it on MNIST. You'll build the generator and discriminator networks, as well as set up the losses and optimizers which requires something new since we need to train the networks in parallel. We've included a notebook with exercises where you'll implement the network and another notebook with solutions.\n\n## Getting the Notebooks\n\nAs usual, the notebooks are available from our [public GitHub repo](https://github.com/udacity/deep-learning) in the `gan_mnist` directory. To get the new notebooks, use `git pull` in your cloned repository.\n\nIf you don't have the repo yet, clone it with Git\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 300583,
+          "key": "96293686-4b8b-40ca-96f2-37ceee44812c",
+          "title": "Get started with a GAN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301399,
+              "key": "6bcaa4ff-d81c-48a2-9710-21f22f8c830d",
+              "title": "Getting Started with GANs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QA2ntKUha4g",
+                "china_cdn_id": "QA2ntKUha4g.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300584,
+          "key": "f334758b-aa97-49cf-9a5d-45eadad448f0",
+          "title": "Generator Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301400,
+              "key": "9c0cd955-f44a-44a9-9a95-b8ba73e04120",
+              "title": "Generator Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "btHVXnICmzQ",
+                "china_cdn_id": "btHVXnICmzQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300585,
+          "key": "d6a951ba-7479-4361-a561-6ebacff14607",
+          "title": "Discriminator Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301401,
+              "key": "c3628101-a520-40a1-acf7-176c22111719",
+              "title": "Discriminator Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nWXxT8OqCfs",
+                "china_cdn_id": "nWXxT8OqCfs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300586,
+          "key": "23e3839c-852a-42c0-b9b3-d04c1ad8d747",
+          "title": "Generator and Discriminator Solutions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301402,
+              "key": "bf4c45a6-4a56-4fcf-9714-a12d7a46ac04",
+              "title": "Generator and Discriminator Solutions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9By2pAck044",
+                "china_cdn_id": "9By2pAck044.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300588,
+          "key": "1a8b547d-49fc-46d3-a3d8-8507e0997428",
+          "title": "Building the Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301403,
+              "key": "3165493a-4380-4c1c-a1f9-20fb85d479f9",
+              "title": "Building the Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5sZkRSHfiAE",
+                "china_cdn_id": "5sZkRSHfiAE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300592,
+          "key": "daa654aa-5925-415d-8d09-ea45343ddf13",
+          "title": "Building the Network Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301404,
+              "key": "b945cae5-ef00-44dd-8093-f28b63c1e58c",
+              "title": "Building the Network Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ikp3rVzG970",
+                "china_cdn_id": "Ikp3rVzG970.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301408,
+          "key": "a156e2cf-1fc8-4ac1-b33b-b714cb0cdb41",
+          "title": "Training Losses",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301411,
+              "key": "82ab5759-edc5-4043-897d-25cb87ae35a1",
+              "title": "Training Losses",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IaAeDrXMEcU",
+                "china_cdn_id": "IaAeDrXMEcU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300589,
+          "key": "0152688d-513b-42e5-bf5c-d2967ed5134b",
+          "title": "Training Optimizers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301405,
+              "key": "78797c3a-2183-405d-b640-2cf106cc7cbb",
+              "title": "Training Optimizers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AU5gH7LS57E",
+                "china_cdn_id": "AU5gH7LS57E.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301409,
+          "key": "5d3010db-15ed-4b88-9c57-4c2020eb577a",
+          "title": "Training Losses and Optimizers Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301412,
+              "key": "ac62ecb1-cc7d-48a0-85cd-9ae8ae948712",
+              "title": "Training Losses and Optimizers Solutions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HlABZ9Q7xEo",
+                "china_cdn_id": "HlABZ9Q7xEo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 300591,
+          "key": "db85a530-aa42-42d4-ba14-f61700c748d7",
+          "title": "A Trained GAN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301416,
+              "key": "3d097828-7e17-4478-81a6-dae19641b32b",
+              "title": "A Trained GAN",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TR-uEJcjig4",
+                "china_cdn_id": "TR-uEJcjig4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301417,
+          "key": "01526b6f-199c-4881-b966-07ac782ec8c2",
+          "title": "Doing More With Your GAN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301419,
+              "key": "4af69c4a-6a96-4edf-b538-0e9ddd485f60",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Doing More with Your GAN\n\nThe GAN I showed you used only one hidden layer in the generator and discriminator. The results of this GAN were pretty impressive, but there were still a lot of noisy images and images that didn't really look like numbers. But, it's completely possible to have the generator make images indistinguishable from the MNIST dataset.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 301418,
+              "key": "7ba0106c-5394-4e4e-9406-9dfbb5fa72d8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/590127b8_generated-mnist/generated-mnist.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7ba0106c-5394-4e4e-9406-9dfbb5fa72d8",
+              "caption": "MNIST images generated from a trained GAN (https://arxiv.org/pdf/1606.03498.pdf)",
+              "alt": null,
+              "width": 487,
+              "height": 487,
+              "instructor_notes": null
+            },
+            {
+              "id": 301423,
+              "key": "38390e66-33fb-4570-8402-e57a6079d0fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This is from a paper called [Improved Techniques for Training GANs](https://arxiv.org/pdf/1606.03498.pdf). So, how did they make such nice looking images?\n\nAs with most neural networks, using more layers will improve performance. Instead of just one layer, try two or three. Try larger layers with more units. See how that affects your results.\n\n## Batch Normalization\nJust as a heads up, you probably won't get it to work with three layers. The networks become really sensitive to the initial values of the weights and will fail to train. We can solve this problem using [batch normalization](https://arxiv.org/abs/1502.03167). The idea is pretty simple. Just like what we do with the inputs to our networks, we can normalize the inputs to each layer. That is, scale the layer inputs to have zero mean and standard deviations of 1. It's been found that batch normalization is necessary to make deep GANs. \n\nWe'll cover batch normalization in next week's lesson, as well as using convolutional networks for the generator and discriminator.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "data": {
+    "lesson": {
+      "id": 350716,
+      "key": "2faec296-1a78-4393-9aea-2b91310713ed",
+      "title": "Deep Q-Learning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Extend value-based reinforcement learning methods to complex problems using deep neural networks.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2faec296-1a78-4393-9aea-2b91310713ed/350716/1544926973662/Deep+Q-Learning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2faec296-1a78-4393-9aea-2b91310713ed/350716/1544926969193/Deep+Q-Learning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 389954,
+          "key": "947d4613-57d8-48d1-b22e-fc74a252b85a",
+          "title": "Intro to Deep Q-Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501623,
+              "key": "7ee00fdb-c3f9-4c93-ad4e-65a2fe227b1b",
+              "title": "Intro to Deep Q-Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o3cmuUDhP3I",
+                "china_cdn_id": "o3cmuUDhP3I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 389955,
+          "key": "9a3073f0-bc7f-4ea0-9112-11e0462ef58c",
+          "title": "Neural Nets as Value Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501624,
+              "key": "fbe4de49-6570-4045-9ab8-a7daa4fd8c0f",
+              "title": "Neural Nets as Value Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cBi7vLrk8QQ",
+                "china_cdn_id": "cBi7vLrk8QQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 389956,
+          "key": "4449b635-d676-470a-902e-a7c023cd15fc",
+          "title": "Monte Carlo Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501625,
+              "key": "57cad3b4-d515-4723-b94f-5e1154655692",
+              "title": "Monte Carlo Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qOviWYwcvsg",
+                "china_cdn_id": "qOviWYwcvsg.mp4"
+              }
+            },
+            {
+              "id": 389983,
+              "key": "9d688035-50fb-42c5-aefc-35659fe2f89a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note**: MC is guaranteed to converge on a local optimum in general; in case of a linear function approximation, it will converge on the global optimum.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 389957,
+          "key": "f9b63bf1-b4b3-4ede-9c76-e9773f879cc0",
+          "title": "Temporal Difference Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501626,
+              "key": "666cb61e-2e37-4f83-8f1b-fcdbfa30dd5e",
+              "title": "Temporal Difference Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lpmDi0QeUm8",
+                "china_cdn_id": "lpmDi0QeUm8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 389958,
+          "key": "b0f459db-00d1-4bc7-bf67-0c4dab3c9fcd",
+          "title": "Q-Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501627,
+              "key": "98d0cf27-7404-4795-89b1-f593a56f50f6",
+              "title": "Q-Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AI5gLgYMSq8",
+                "china_cdn_id": "AI5gLgYMSq8.mp4"
+              }
+            },
+            {
+              "id": 389981,
+              "key": "04accdcc-03b9-41c1-b1f7-0affa87528ef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note**: One drawback of both SARSA & Q-Learning, since they are TD approaches, is that they may not converge on the global optimum when using non-linear function approximation.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 389959,
+          "key": "ea737060-377d-4443-8920-ad985f37b77e",
+          "title": "Deep Q Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501628,
+              "key": "3f37063a-6631-474e-a641-55ebe9808b49",
+              "title": "Deep Q Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GgtR_d1OB-M",
+                "china_cdn_id": "GgtR_d1OB-M.mp4"
+              }
+            },
+            {
+              "id": 389985,
+              "key": "183dfb1e-46d5-443c-ae23-33f7d299dbef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Readings**\n\n- Mnih et al., 2015. [Human-level control through deep reinforcement learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 389960,
+          "key": "0fbb4781-9019-47ea-a494-e5e758b48867",
+          "title": "Experience Replay",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501633,
+              "key": "1a614f69-9655-48b8-a4c0-cd7a7a5316d5",
+              "title": "Experience Replay",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wX_-SZG-YMQ",
+                "china_cdn_id": "wX_-SZG-YMQ.mp4"
+              }
+            },
+            {
+              "id": 389986,
+              "key": "5d246d4b-8ab3-45e3-92da-0f6f5c0d3a30",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Readings**\n\n- Long-Ji Lin, 1993. [Reinforcement learning for robots using neural networks](https://pdfs.semanticscholar.org/54c4/cf3a8168c1b70f91cf78a3dc98b671935492.pdf).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 389961,
+          "key": "46221098-2ac2-4981-b639-99f0af698e96",
+          "title": "Fixed Q Targets",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501629,
+              "key": "528d77d0-ecf0-458a-a8d9-f888d09698e4",
+              "title": "Fixed Q Targets",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SWpyiEezfp4",
+                "china_cdn_id": "SWpyiEezfp4.mp4"
+              }
+            },
+            {
+              "id": 389987,
+              "key": "7ecec6f5-6fab-4b99-82cf-fe1fe3eb1e1e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Ever wondered how this would look in real life? See: [Carrot Stick Riding](https://www.youtube.com/watch?v=-PVFBGN_zoM).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 389962,
+          "key": "10c5aa3a-b77f-4dcb-ab19-65aa119d2842",
+          "title": "Deep Q-Learning Algorithm",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501630,
+              "key": "7c9532cf-0ebd-4dda-aa7f-677ed7e24c7a",
+              "title": "Deep Q-Learning Algorithm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MqTXoCxQ_eY",
+                "china_cdn_id": "MqTXoCxQ_eY.mp4"
+              }
+            },
+            {
+              "id": 389988,
+              "key": "e421da74-eab5-4398-b9b5-9af460aaeeda",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Readings**\n\n- Mnih et al., 2015. [Human-level control through deep reinforcement learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). (DQN paper)\n- He et al., 2015. [Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification](https://arxiv.org/abs/1502.01852). (weight initialization)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 389963,
+          "key": "b9b17194-8012-4e77-a00f-aa4eb078f844",
+          "title": "DQN Improvements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501631,
+              "key": "69a4e11d-e792-459a-af20-b13be75e475a",
+              "title": "DQN Improvements",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Zfdbp93A2GU",
+                "china_cdn_id": "Zfdbp93A2GU.mp4"
+              }
+            },
+            {
+              "id": 389989,
+              "key": "417f957d-c7c6-4018-86db-4b63e9d9434c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Readings**\n\n- Thrun & Schwartz, 1993. [Issues in Using Function Approximation for Reinforcement Learning](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.73.3097). (overestimation of Q-values)\n- van Hasselt et al., 2015. [Deep Reinforcement Learning with Double Q-Learning](https://arxiv.org/abs/1509.06461).\n- Schaul et al., 2016. [Prioritized Experience Replay](https://arxiv.org/abs/1511.05952).\n- Wang et al., 2015. [Dueling Network Architectures for Deep Reinforcement Learning](https://arxiv.org/abs/1511.06581).\n- Hausknecht & Stone, 2015. [Deep Recurrent Q-Learning for Partially Observable MDPs](https://arxiv.org/abs/1507.06527).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 514174,
+          "key": "ac3a52f6-05d4-4b61-abf9-6ed07d249cc3",
+          "title": "Implementing Deep Q-Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514194,
+              "key": "b50ace81-bbeb-49eb-9f7e-95fa56bc0974",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a66800a_atari-network/atari-network.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b50ace81-bbeb-49eb-9f7e-95fa56bc0974",
+              "caption": "",
+              "alt": "",
+              "width": 450,
+              "height": 260,
+              "instructor_notes": null
+            },
+            {
+              "id": 514176,
+              "key": "fff22912-0f74-4051-84bf-886a89fed315",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementing Deep Q-Learning",
+              "instructor_notes": ""
+            },
+            {
+              "id": 514177,
+              "key": "a1973534-46a3-4b3c-abc8-3b8047998f99",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the **next concept**, you will explore a Jupyter notebook with a TensorFlow implementation of the deep Q-learning algorithm.\n\nTo run the code on GPU, select **\"YES\"** in the pop-up window.  This will allow you to run the notebook on GPU.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 514185,
+              "key": "0245602d-4859-4da3-baa4-bc24940da475",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a667d56_enable-gpu/enable-gpu.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0245602d-4859-4da3-baa4-bc24940da475",
+              "caption": "",
+              "alt": "",
+              "width": 331,
+              "height": 223,
+              "instructor_notes": null
+            },
+            {
+              "id": 514193,
+              "key": "cf19e72a-c756-49b5-b3bf-3ffae440f242",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you would like to learn how to write an implementation in another Python framework, check out:\n- (Keras) https://keon.io/deep-q-learning/\n- (PyTorch) http://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 514128,
+          "key": "d0806599-a169-41ab-ae31-5bcbf848f091",
+          "title": "TensorFlow Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514129,
+              "key": "88894dc9-5b47-49dc-85b4-a3b88af862a8",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewf8418ed9",
+              "pool_id": "jupytergpu",
+              "view_id": "f8418ed9-4a16-4c53-abd5-4acb49294d6b",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Q-learning-cart.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 389964,
+          "key": "2b57c64d-cf59-42c4-b64b-7254a8b541e7",
+          "title": "Wrap Up",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501632,
+              "key": "0642f605-f9ef-463b-9393-d9588a5fc844",
+              "title": "Wrap Up",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "x6JggcDTcys",
+                "china_cdn_id": "x6JggcDTcys.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

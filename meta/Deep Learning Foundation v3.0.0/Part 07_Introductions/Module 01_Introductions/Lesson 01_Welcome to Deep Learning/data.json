@@ -1,0 +1,473 @@
+{
+  "data": {
+    "lesson": {
+      "id": 436070,
+      "key": "6f134b7e-7dbf-4c83-a5d7-dff0d048b6c0",
+      "title": "Welcome to Deep Learning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Welcome to the Deep Learning Nanodegree program!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/6f134b7e-7dbf-4c83-a5d7-dff0d048b6c0/436070/1544444098364/Welcome+to+Deep+Learning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/6f134b7e-7dbf-4c83-a5d7-dff0d048b6c0/436070/1544444093896/Welcome+to+Deep+Learning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 436071,
+          "key": "0e084776-c466-4d28-909b-4bdca8c43215",
+          "title": "Welcome to the Deep Learning Nanodegree Program",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 462460,
+              "key": "25b38b0f-0676-45d9-a830-061c14af753c",
+              "title": "01 Welcome To The Deep Learning Program",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3QPEmwq2NaE",
+                "china_cdn_id": "3QPEmwq2NaE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 436073,
+          "key": "c09c63d0-c7f7-4034-9ea2-8ac1f9e2c425",
+          "title": "Meet Your Instructors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 439295,
+              "key": "b680bc35-9af4-414e-867d-c137d351525e",
+              "title": "Meet Your Instructors",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-UOFRxCu414",
+                "china_cdn_id": "-UOFRxCu414.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 436074,
+          "key": "36217037-98a7-441e-874a-251a0d13b2b4",
+          "title": "Program Structure",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 436079,
+              "key": "8d1af0c1-21c5-4f76-a6aa-15ad260659cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Program Structure\n\nThe Deep Learning Nanodegree program is divided into five parts, giving you a thorough understanding of deep learning, and covering some of the major topics. \n\n## Introduction\nThe first part is an introduction to the program as well as a couple lessons covering tools you'll be using. You'll also get a chance to apply some deep learning models to do cool things like transferring the style of artwork to another image.\n\nWe’ll start off with a simple introduction to linear regression and machine learning. This will give you the vocabulary you need to understand recent advancements, and make clear where deep learning fits into the broader picture of Machine Learning techniques.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436078,
+              "key": "b08a22c7-0a7c-49b7-8b8f-99ebe20ca26c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Neural Networks\n\nIn this part, you'll learn how to build a simple neural network from scratch using python. We'll cover the algorithms used to train networks such as gradient descent and backpropagation.\n\nThe **first project** is also available this week. In this project, you'll predict bike ridership using a simple neural network.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436081,
+              "key": "506fa57e-ecbf-4951-86f6-a28321d12bca",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58db494a_karpathy-network/karpathy-network.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/506fa57e-ecbf-4951-86f6-a28321d12bca",
+              "caption": "",
+              "alt": "",
+              "width": 791,
+              "height": 388,
+              "instructor_notes": null
+            },
+            {
+              "id": 436082,
+              "key": "52d229f3-6571-4578-8a54-85584ebeee73",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You'll also learn about model evaluation and validation, an important technique for training and assessing neural networks. We also have guest instructor Andrew Trask, author of [Grokking Deep Learning](https://www.manning.com/books/grokking-deep-learning), developing a neural network for processing text and predicting sentiment.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436083,
+              "key": "a3ab8c52-d3ab-4ee6-a78d-8748ab270d58",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Convolutional Networks\n\nConvolutional networks have achieved state of the art results in computer vision. These types of networks can detect and identify objects in images. You'll learn how to build convolutional networks in TensorFlow.\n\nYou'll also get the **second project,** where you'll build a convolutional network to classify dog breeds in pictures.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436095,
+              "key": "587aea1b-d176-43ac-bd6e-ddc2b778b693",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58ae42c9_convolutional-neural-networks-2/convolutional-neural-networks-2.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/587aea1b-d176-43ac-bd6e-ddc2b778b693",
+              "caption": "",
+              "alt": "",
+              "width": 949,
+              "height": 548,
+              "instructor_notes": null
+            },
+            {
+              "id": 436084,
+              "key": "97396960-2d05-4d31-bd0c-2bc4475e22d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You'll also use convolutional networks to build an _autoencoder_, a network architecture used for image compression and denoising. Then, you'll use a pretrained neural network ([VGGnet](https://arxiv.org/pdf/1409.1556.pdf)), to classify images of flowers the network has never seen before, a technique known as _transfer learning_.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436085,
+              "key": "a05919ce-6746-431b-b1c2-648b2fe3820f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Recurrent Neural Networks\n\nIn this part, you’ll learn about Recurrent Neural Networks (RNNs) — a type of network architecture particularly well suited to data that forms sequences like text, music, and time series data. You'll build a recurrent neural network that can generate new text character by character.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436098,
+              "key": "70e9dc20-ccf2-4985-8080-4d7bb9a0a07f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/588b73bb_rnn/rnn.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/70e9dc20-ccf2-4985-8080-4d7bb9a0a07f",
+              "caption": "",
+              "alt": "",
+              "width": 1329,
+              "height": 416,
+              "instructor_notes": null
+            },
+            {
+              "id": 436086,
+              "key": "7a82d5c7-2fa3-4ff1-b489-5c35f8130ed2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Then, you'll learn about word embeddings and implement the [Word2Vec](https://en.wikipedia.org/wiki/Word2vec) model, a network that can learn about semantic relationships between words. These are used to increase the efficiency of networks when you're processing text.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436099,
+              "key": "6d3d58ee-64e8-4416-abbd-e42b9e1846cd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58ed4e59_word-embeddings/word-embeddings.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6d3d58ee-64e8-4416-abbd-e42b9e1846cd",
+              "caption": "",
+              "alt": "",
+              "width": 1000,
+              "height": 1000,
+              "instructor_notes": null
+            },
+            {
+              "id": 436087,
+              "key": "b14c6d16-2df3-4e7b-88f0-c2e515d23698",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You'll combine embeddings and an RNN to predict the sentiment of movie reviews, an example of common tasks in natural language processing.\n\nIn the **third project**, you'll use what you've learned here to generate new TV scripts from episodes of The Simpson's. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436100,
+              "key": "a98402cb-ad60-46bd-9b98-3d57284152c0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e5893b_sequence-to-sequence-unrolled-encoder-decoder/sequence-to-sequence-unrolled-encoder-decoder.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a98402cb-ad60-46bd-9b98-3d57284152c0",
+              "caption": "",
+              "alt": "",
+              "width": 1329,
+              "height": 616,
+              "instructor_notes": null
+            },
+            {
+              "id": 436089,
+              "key": "c3425ce1-459d-4b07-915e-da765be3d37b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Generative Adversarial Networks\n\nGenerative adversarial networks (GANs) are one of the newest and most exciting deep learning architectures, showing incredible capacity for understanding real-world data. The networks can be used for generating images such as the [CycleGAN](https://github.com/junyanz/CycleGAN) project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436101,
+              "key": "11ae7979-93ce-4e3e-9982-8dcb337811fa",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/592de00c_examples/examples.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/11ae7979-93ce-4e3e-9982-8dcb337811fa",
+              "caption": "",
+              "alt": "",
+              "width": 2044,
+              "height": 753,
+              "instructor_notes": null
+            },
+            {
+              "id": 436090,
+              "key": "d1a21382-3162-45f8-9031-9c24d4de644b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The inventor of GANs, Ian Goodfellow, will show you how GANs work and how to implement them. You'll also learn about semi-supervised learning, a technique for training classifiers with data mostly missing labels.\n\nIn the **fourth project,** you'll use a deep convolutional GAN to generate completely new images of human faces.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436102,
+              "key": "f0f1caa7-10d6-4a0f-ba6c-d646f6d5a4cf",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/592de11c_faces/faces.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f0f1caa7-10d6-4a0f-ba6c-d646f6d5a4cf",
+              "caption": "",
+              "alt": "",
+              "width": 261,
+              "height": 252,
+              "instructor_notes": null
+            },
+            {
+              "id": 436091,
+              "key": "ba4dcf37-9680-4787-8528-0cb05ce340b6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Deep Reinforcement Learning\n\nDeep reinforcement learning has been in the center of some of the most recent advances in artificial intelligence. For example, it was widely used in the construction of AlphaGo by DeepMind.\n\nIn this section you'll use deep neural networks to design agents that can learn to take actions in a simulated environment. You'll then apply it to complex control tasks like video games and robotics.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 439297,
+              "key": "b389b5ba-5854-493e-8b53-218b1ac0616b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59ee91f2_quadcopter/quadcopter.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b389b5ba-5854-493e-8b53-218b1ac0616b",
+              "caption": "",
+              "alt": "",
+              "width": 1151,
+              "height": 499,
+              "instructor_notes": null
+            },
+            {
+              "id": 439296,
+              "key": "8ac8292a-5bec-4229-bb9f-4419548dc8e0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the **fifth project**, you will design a Deep Reinforcement Learning agent to control several quadcopter flying tasks, including take-off, hover, and landing.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 436072,
+          "key": "32cec665-f359-4a0e-9274-014fa4896cae",
+          "title": "Projects You Will Build",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 439294,
+              "key": "6da6ec50-344e-42a6-bf71-632a7e263ff6",
+              "title": "Projects You will Build",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PqpdX7YxTlU",
+                "china_cdn_id": "PqpdX7YxTlU.mp4"
+              }
+            },
+            {
+              "id": 440928,
+              "key": "bb59c3fd-6429-4bdd-ac3d-3cba47b1e3e1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Deadlines\nWe provide deadlines for these projects to help you stay on track. You will find these deadlines posted in the classroom. The deadlines aren't mandatory, and there are no consequences for missing them. But, do try to stick to them so you complete the program in time.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 262147,
+          "key": "fde81b4c-59dc-488e-b2da-354b37b296ce",
+          "title": "Deadline Policy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 262149,
+              "key": "7494546b-dd1c-4f51-aa7c-aacee94ec940",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Deadline Policy\n\nThis program is project-based, and each project has a suggested deadline to keep students on pace towards graduation. In addition to the suggested project deadlines, each class has a **term end deadline**, by which date all required projects must be passed in order to successfully complete the course and receive a certificate. To review all the project deadlines and Term deadline for this Nanodegree program, visit your Program Dashboard [here](https://classroom.udacity.com/nanodegrees/nd101/dashboard/overview).\n\n---\n## Deadlines FAQ\n\n#### What is a “suggested deadline”?\nThe “suggested deadlines” are flexible deadlines that are meant to guide students towards graduation and there’s no penalty if you miss the project deadlines we’ve laid out for you. You are welcome to turn in your projects before or after the suggested deadline as long as you turn everything in by the **term end date**.\n\n#### Do I have to turn my projects in by the dates Udacity has laid out?\nNo. The project deadline dates we’ve laid out are suggestions from our team to help keep you on pace to successfully graduate by the end of the Nanodegree term. The date that you should use as your compass is the **term end deadline**. \n\n#### What happens if I don’t complete a project by the date Udacity has laid out?\nNothing. **There is no penalty for missing a suggested project deadline and you can turn projects in at any time (before or after the suggested deadline), as long as it is by your term end deadline**. Although the project deadlines you see are soft deadlines, we highly recommend you try your best to keep up with the suggested deadlines to ensure you can get through the content at a reasonable pace and so all your projects don’t pile up a few weeks before your **term-end deadline**.\n\n#### What do I need to do in order to complete the course?\nStudents must complete and pass all the required projects by the **term-end date** in order to successfully graduate from the program. Passing a project means that a Udacity Reviewer has marked your project as “Meets Specifications.” The project review process can take anywhere between a couple of hours to a couple of days, so please plan accordingly as you turn in your projects towards the end of your term. Your projects must be reviewed and passed by the last day of the term. NOTE: you can submit your project as many times as you need to in order to pass.\n\n#### Can I graduate from the Nanodegree program without completing and passing all the required projects?\nNo, all required projects must be completed and passed in order to receive a Nandodegree certificate. However, the course may have a few extra projects or labs (those not mentioned in the Deadlines calendar), which are solely for your benefit and are not required for graduation.\n\n#### Do I need to wait until the last day of the term in order to graduate?\nNo. Students can graduate from the program at anytime after they complete and pass all the required projects. Once your final project has been passed by a Udacity Reviewer, you will see the option to begin the graduation process.\n\n#### Is the term end date also a suggested deadline?\n**No.** That is the date you should be working towards as the last date you can turn projects in.\n\n#### What happens if I don’t turn all my project in by the term end date?\nIf you do not pass all projects by the last day of the term, you will receive an **automatic and free 4-week extension (no need to write in to support to receive this extension)** to complete any outstanding projects. You will only receive this extension once, so please do not aim to use this extension unless you absolutely need to and certainly do not leave a majority of your projects unattempted until this extension period. \n\n#### Do I need to write in to support to get an extension, should I need it?\nNo. You will automatically receive a free 4-week extension if you don’t complete and pass all the required projects by the **term end date**. \n\n#### What are my options if I still don’t complete all the required projects within the 4-week extension?\nIf you do not complete the term within the extension period, you will be removed from the program and will no longer be able to access course content. To resume access to the course, you would need to re-enroll in a new term and pay the associated enrollment fees again. However, your course progress will carry over to the new term, so you will be able to continue where you left off.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 556340,
+          "key": "7f080e17-255f-4397-8095-9f3f363a39e0",
+          "title": "Community Guidelines",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556341,
+              "key": "58d570c3-5fc6-44a0-b733-fc583fd547c5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Community Guidelines\n\nYour experience in the Nanodegree program and community should be an engaging, fulfilling, and positive one. As such, we have outlined the following system for reporting behavior that does not live up to Udacity’s standards, so it can quickly be addressed by our staff. \n\nAll reports of suspected violations to the [TOU](https://www.udacity.com/legal/terms-of-service), [Community Code of Conduct](https://www.udacity.com/legal/community-guidelines) or [Honor Code](https://www.udacity.com/legal/community-guidelines) should be submitted to report@udacity.com  and will be reviewed. If you witness or are experiencing any violations of our policies please get in touch with us. Below prohibited actions as set forth on our [Community Code of Conduct](https://www.udacity.com/legal/community-guidelines):\n\n- **Harassment:** Inappropriate, harassing, abusive, discriminatory, derogatory or violent comments or conduct. \n- **Discrimination:** Offensive comments related to gender or gender identity, sexual orientation, race, ethnicity, religion, national origin, disability or disease\n- **Distributing inappropriate content:** Use of sexual, violent, graphic, or derogatory images\n- **Bullying:** Deliberate intimidation, threats of violence or violent language directed against another person\n- **Sexual harassment:** Unwelcome sexual attention \n- **Defamation:** Obscene, fraudulent, indecent, or libelous acts that defame, abuse, harass, discriminate against or threaten others\n- **Plagiarism:** will not cheat on any homework assignment, projects or exams for the Online Courses and, specifically, will not plagiarize materials created by others\n- **Self-injury or Suicide:** We do not encourage community postings in Slack or Forums related to self-injury or suicide. If you or someone you know is exhibiting signs of self-injury or suicide, find help at the [Suicide Prevention Lifeline](https://suicidepreventionlifeline.org/) in the U.S. and [Befrienders.org](https://www.befrienders.org/) globally. \n\nWhen a potential violation is brought to our attention, we will make every effort to investigate the case thoroughly and make a decision that is fair to all parties.\n\nThank you, \nThe Udacity Team",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 262156,
+          "key": "bfe1675b-e196-452f-91dd-f7bfccfdc166",
+          "title": "Prerequisites",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 262160,
+              "key": "3423097a-c3bb-430b-85b3-3fb800d2021f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Prerequisites\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262162,
+              "key": "f8f166d6-3c7e-451b-ba61-a4316407089f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We've designed this program such that you only require the following prerequisite knowledge:\n\n* Required\n    * [Intermediate Python experience](https://www.udacity.com/course/programming-foundations-with-python--ud036).\n* Optional\n    * [Multivariable Calculus](https://www.khanacademy.org/math/multivariable-calculus) and [Linear Algebra](https://www.khanacademy.org/math/linear-algebra) if possible.\n\nThat being said, we've included a lot of the detailed mathematics for those of you who do want to go in depth and understand the theory behind these concepts. Such content is optional and shouldn't prevent you from doing the projects. However, it is encouraged for a theoretical understanding.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 262775,
+          "key": "1e2438e3-5667-40fc-829a-3101177a23f1",
+          "title": "Getting Set Up",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 442031,
+              "key": "e13fd4b0-dd4d-4f86-977c-0358e8f34ad1",
+              "title": "Getting-Setup",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1SuxTnuQkeE",
+                "china_cdn_id": "1SuxTnuQkeE.mp4"
+              }
+            },
+            {
+              "id": 262777,
+              "key": "449f43df-49e6-4ab6-8381-971560a6de41",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you haven't used Numpy, Pandas, or Matplotlib before, please take our [Intro to Data Analysis](https://www.udacity.com/course/intro-to-data-analysis--ud170) course. These are the main tools for working with and visualizing data in Python, so you'll need some experience with them.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

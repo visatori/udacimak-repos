@@ -1,0 +1,59 @@
+{
+  "data": {
+    "lesson": {
+      "id": 280299,
+      "key": "36ec758d-f5b8-4e32-948a-69142e8a3298",
+      "title": "Q&A with FloydHub Founders",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "A Q&A Session with Sai Soundararaj and Naren Thiagarajan from FloydHub.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/36ec758d-f5b8-4e32-948a-69142e8a3298/280299/1544457582517/Q%26A+with+FloydHub+Founders+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/36ec758d-f5b8-4e32-948a-69142e8a3298/280299/1544457575735/Q%26A+with+FloydHub+Founders+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 280308,
+          "key": "18125824-a5bd-40a2-96c6-cee3058361fd",
+          "title": "FloydHub Q&A",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283355,
+              "key": "37197fd8-f1fe-4cc9-a275-6b7d017612d5",
+              "title": "Floyd QA",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KUc59DPfBeo",
+                "china_cdn_id": "KUc59DPfBeo.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

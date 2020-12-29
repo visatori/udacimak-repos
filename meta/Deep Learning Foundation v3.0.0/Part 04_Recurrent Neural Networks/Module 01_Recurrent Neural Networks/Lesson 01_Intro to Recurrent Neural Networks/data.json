@@ -1,0 +1,361 @@
+{
+  "data": {
+    "lesson": {
+      "id": 269250,
+      "key": "d74891dc-49c8-4569-9cab-6d508083e841",
+      "title": "Intro to Recurrent Neural Networks",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Recurrent neural networks are able to learn from sequences of data. In this lesson, you'll learn the concepts behind recurrent networks and see how a character-wise recurrent network is implemented in TensorFlow.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/d74891dc-49c8-4569-9cab-6d508083e841/269250/1544457290476/Intro+to+Recurrent+Neural+Networks+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/d74891dc-49c8-4569-9cab-6d508083e841/269250/1544457286114/Intro+to+Recurrent+Neural+Networks+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 269252,
+          "key": "a10e7178-8abe-44bf-8c0a-6cc35dccb61a",
+          "title": "Intro to RNNs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 278796,
+              "key": "2ff9a73f-193b-4657-9e81-9f347786ab44",
+              "title": "Intro To RNNs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Note: The last neural network shown is during training.  The characters \"t\", \"e\", \"e\", and \"p\" aren't outputs, but the targets.",
+              "video": {
+                "youtube_id": "64HSG6HAfEI",
+                "china_cdn_id": "64HSG6HAfEI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 269253,
+          "key": "3c4d1f7f-e338-4386-9f83-792f5bbcd782",
+          "title": "LSTMs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269264,
+              "key": "af6501cf-a8f6-460c-bfe9-cab1a349ef97",
+              "title": "LSTMs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RYbSHogZetc",
+                "china_cdn_id": "RYbSHogZetc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305304,
+          "key": "6538eb14-1ec2-4a25-bc73-5942a48b1141",
+          "title": "Character-wise RNNs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306074,
+              "key": "a1b53a77-896f-46d1-9827-2127679400fc",
+              "title": "Character-Wise RNN",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dXl3eWCGLdU",
+                "china_cdn_id": "dXl3eWCGLdU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305305,
+          "key": "5a65c5b3-5cfc-4753-bcde-25a490978e6c",
+          "title": "Sequence Batching",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306077,
+              "key": "3eb4b04b-ea18-44b9-82fe-ad8d094bca10",
+              "title": "Sequence-Batching",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Z4OiyU0Cldg",
+                "china_cdn_id": "Z4OiyU0Cldg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 269358,
+          "key": "7076c726-bd0e-49ca-94b2-be7d577f7321",
+          "title": "Character-wise RNN Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269365,
+              "key": "1fb7a2dc-b16f-4bf1-8f8e-65e6dbc3e5fc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Character-wise RNN Notebook\n\nYou can get the notebook with the character-wise RNN from our [public GitHub repo](https://github.com/udacity/deep-learning/tree/master/intro-to-rnns) in the `intro-to-rnns` folder.\n\nTo clone the entire repository to your machine:\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\n\nThis code requires **TensorFlow 1.0**, so make sure you upgrade if you're using an older version.\nPlay with the network, improve it, train it on your own text. This thing is for you to build off of.\n\nIf you find ways to improve it, make a pull request and we'll add it in. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 305373,
+          "key": "78b12952-5909-421c-ba58-1f900bf2558b",
+          "title": "Implementing a Character-wise RNN",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306091,
+              "key": "17a19878-9c36-4730-93c5-77c6a973f503",
+              "title": "Implementing a Character-wise RNN",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KPCMn_jg2oY",
+                "china_cdn_id": "KPCMn_jg2oY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305374,
+          "key": "33feb360-e494-47d3-83c2-9dd61e8c5078",
+          "title": "Batching Data Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305417,
+              "key": "f8d5ed93-56d4-4db0-b5f4-1dc35fca1c4e",
+              "title": "Batching Data Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o3nBxHJLQcc",
+                "china_cdn_id": "o3nBxHJLQcc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305375,
+          "key": "dc3e2e87-c1e0-4a20-96a2-1c0fd66bd04a",
+          "title": "LSTM Cell",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305418,
+              "key": "96a9a03c-00c1-4700-bc5f-f8e9d0bc5aac",
+              "title": "LSTM Cell",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ajC-5uWB8S4",
+                "china_cdn_id": "ajC-5uWB8S4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305376,
+          "key": "66ecca50-eb86-418b-b9ba-98b834243820",
+          "title": "LSTM Cell Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305419,
+              "key": "53344f09-0463-434b-a5d0-91ec97db7977",
+              "title": "LSTM Cell Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X4uA0dq_4jA",
+                "china_cdn_id": "X4uA0dq_4jA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305377,
+          "key": "393ed7a9-b909-44e2-ba4e-2e28cc7fd221",
+          "title": "RNN Output",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305420,
+              "key": "7d04073e-e6a0-4829-92b3-e908bf4d8848",
+              "title": "RNN Output",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RkanDkcrTxs",
+                "china_cdn_id": "RkanDkcrTxs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305378,
+          "key": "4385494c-6e94-491f-8cc2-858229264e69",
+          "title": "Network Loss",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305421,
+              "key": "8fb4f99c-be70-44f4-b486-603055716513",
+              "title": "Network Loss",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "itu-uNK4brc",
+                "china_cdn_id": "itu-uNK4brc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305379,
+          "key": "abc721bd-359e-4be3-93ec-18df405c65be",
+          "title": "Output and Loss Solutions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305422,
+              "key": "c3daa690-8012-4aa9-a2bf-853794a71bf7",
+              "title": "Output And Loss Solutions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CT8hcU7FmGc",
+                "china_cdn_id": "CT8hcU7FmGc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305380,
+          "key": "6dd4e0b7-ef8f-4584-8cda-3e3b23898d8f",
+          "title": "Build the Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305423,
+              "key": "e5a1604b-4829-41b6-8555-5e574eb7281a",
+              "title": "Build The Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RVNjDlWTBQU",
+                "china_cdn_id": "RVNjDlWTBQU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 305381,
+          "key": "a6fe1573-0138-4ca1-ad4e-33fb91ee31a8",
+          "title": "Build the Network Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 305424,
+              "key": "b82fc13b-b2b2-42ce-a57c-3d0f0074cc17",
+              "title": "Build The Network And Results",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hu8iMMqajmQ",
+                "china_cdn_id": "hu8iMMqajmQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 269356,
+          "key": "ba129eae-f5a1-492b-881a-be10940522dc",
+          "title": "RNN Resources",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269357,
+              "key": "3a7e246b-fa2c-470b-ad13-b8b2880dd6ed",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# RNN Resources\n\nHere are a few great resources for you to learn more about recurrent neural networks. We'll also continue to cover RNNs over the coming weeks.\n\n* [Andrej Karpathy's lecture](https://www.youtube.com/watch?v=iX5V1WpxxkY) on RNNs and LSTMs from CS231n\n* [A great blog post](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) by Christopher Olah on how LSTMs work.\n* [Building an RNN](http://r2rt.com/recurrent-neural-networks-in-tensorflow-i.html) from the ground up, this is a little more advanced, but has an implementation in TensorFlow.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "data": {
+    "lesson": {
+      "id": 298922,
+      "key": "fecfe10a-1c69-4598-b2c8-3be71f2e6834",
+      "title": "Siraj's Image Generation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Siraj is going to build a variational autoencoder capable of generating novel images after being trained on a collection of images, using handwritten digit images as training data.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/fecfe10a-1c69-4598-b2c8-3be71f2e6834/298922/1544457480576/Siraj%27s+Image+Generation+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/fecfe10a-1c69-4598-b2c8-3be71f2e6834/298922/1544457477707/Siraj%27s+Image+Generation+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 298923,
+          "key": "410e4cdd-e16f-4051-aa57-5c2db13749e9",
+          "title": "How to Generate Images",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 298930,
+              "key": "064c49da-baad-4e74-b39b-016bde04a8a0",
+              "title": "How to Generate Images - Intro to Deep Learning #14",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3-UDwk1U77s",
+                "china_cdn_id": "3-UDwk1U77s.mp4"
+              }
+            },
+            {
+              "id": 298932,
+              "key": "842116a4-36d6-4bbc-8273-4aed1a4005cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* Code for this video: https://github.com/llSourcell/how_to_generate_images\n* Mike's Winning Code: https://github.com/xkortex/how_to_win_slot_machines/blob/master/WallStBandits.ipynb\n* SG's Runner up Code: https://github.com/esha-sg/Intro-DeepLearning-Siraj-Week13\n\nNotes: \n- The embedding visualization at the end would be more spread out if i trained it for more epochs (50 is recommended) but i just used 5.\n- The code in the video doesn't fully implement the reparameterization trick (to save space) but check the GitHub repo for details on that.\n\n## More Learning resources:\n* https://jaan.io/what-is-variational-autoencoder-vae-tutorial/\n* http://kvfrans.com/variational-autoencoders-explained/\n* http://blog.fastforwardlabs.com/2016/08/12/introducing-variational-autoencoders-in-prose-and.html\n* http://blog.fastforwardlabs.com/2016/08/22/under-the-hood-of-the-variational-autoencoder-in.html\n* http://blog.evjang.com/2016/11/tutorial-categorical-variational.html\n* https://jmetzen.github.io/2015-11-27/vae.html\n\n# Weekly Live Session\nClick [here](https://www.youtube.com/watch?v=iz-TZOEKXzA) for the live session on How to Generate Images with TensorFlow.\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

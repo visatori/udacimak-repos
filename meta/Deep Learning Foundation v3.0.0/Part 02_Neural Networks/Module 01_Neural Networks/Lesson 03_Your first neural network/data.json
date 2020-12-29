@@ -1,0 +1,85 @@
+{
+  "data": {
+    "lesson": {
+      "id": 256030,
+      "key": "9027814e-e801-44f5-a416-fff0504482ed",
+      "title": "Your first neural network",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this project, you'll build and train your own Neural Network from scratch to predict the number of bikeshare users on a given day. Good luck!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/9027814e-e801-44f5-a416-fff0504482ed/256030/1544457159519/Your+first+neural+network+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/9027814e-e801-44f5-a416-fff0504482ed/256030/1544457157277/Your+first+neural+network+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "5583cf03-c34d-432f-84c1-2401d0407500",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 20160,
+        "semantic_type": "Project",
+        "title": "Your first neural network",
+        "description": "# Your First Neural Network\n\n### Introduction\n\nIn this project, you'll get to build a neural network from scratch to carry out a prediction problem on a real dataset! By building a neural network from the ground up, you'll have a much better understanding of gradient descent, backpropagation, and other concepts that are important to know before we move to higher level tools such as Tensorflow. You'll also get to see how to apply these networks to solve real prediction problems!\n\nThe data comes from the [UCI Machine Learning Database](https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset).\n\n### Instructions \n\n1. Download the project materials from [our GitHub repository](https://github.com/udacity/deep-learning). You can get download the repository with `git clone https://github.com/udacity/deep-learning.git`. Our files in the GitHub repo are the most up to date, so it's the best place to get the project files.\n2. cd into the `first-neural-network` directory.\n3. Download anaconda or miniconda based on the instructions in the [Anaconda lesson](https://classroom.udacity.com/nanodegrees/nd101/parts/2a9dba0b-28eb-4b0e-acfa-bdcf35680d90/modules/aba54606-cf35-4a77-b643-efec6a90bfa1/lessons/9e9ed61d-20c3-4431-95aa-a1099f28d601/concepts/4cdc5a26-1e54-4a69-8eb4-f15e37aaab7b).\n4. Create a new conda environment:\n```bash\nconda create --name dlnd python=3\n```\n5. Enter your new environment:\n   * Mac/Linux: `>> source activate dlnd`\n   * Windows: `>> activate dlnd`\n6. Ensure you have `numpy`, `matplotlib`, `pandas`, and `jupyter notebook` installed by doing the following:\n```bash\nconda install numpy matplotlib pandas jupyter notebook\n```\n7. Run the following to open up the notebook server:\n```bash\njupyter notebook\n```\n8. In your browser, open `Your_first_neural_network.ipynb`\n9. Follow the instructions in the notebook; they will lead you through the project.  You'll ultimately be editing the `my_answers.py` python file, whose components are imported into the notebook at various places.\n10. Ensure you've passed the unit tests in the notebook and have taken a look at [the rubric](https://review.udacity.com/#!/rubrics/700/view) before you submit the project!\n\nIf you need help running the notebook file, check out the [Jupyter notebook lesson](https://classroom.udacity.com/nanodegrees/nd101/parts/2a9dba0b-28eb-4b0e-acfa-bdcf35680d90/modules/aba54606-cf35-4a77-b643-efec6a90bfa1/lessons/13f4b7d6-92a9-468d-9008-084fc8b53a23/concepts/75e1eee0-5f81-4d5b-a1ca-eaebe3c91759).\n\n\n### Submission\n\nBefore submitting your solution to a reviewer, you are required to submit your project to Udacity's Project Assistant, which will provide some initial feedback.  It will give you feedback within a minute or two on whether your project will meet all specifications. \nIt is possible to submit projects which do not pass all tests; you can expect to get feedback from your Udacity reviewer on these within 3-4 days.\n\nThe setup for the project assistant is simple. If you have not installed the client tool from a different Nanodegree program already, then you may do so with the command `pip install udacity-pa`.\n\nTo submit your code to the project assistant, run `udacity submit` from within the top-level directory of the project. You will be prompted for a username and password. If you login using google or facebook, visit [this link](https://project-assistant.udacity.com/login) for alternate login instructions.\n\nThis process will create a zipfile in your top-level directory named `first_neural_network-result-.zip`, where there will be a number between `result-` and `.zip`.  This is the file that you should submit to the Udacity reviews system.\n\nUpload that file into the system and hit Submit Project below! \n\nIf you run into any issues using the project assistant, please check [this page](https://knowledge.udacity.com/questions/6299) to troubleshoot; feel free to post your problem in [Knowledge](https://knowledge.udacity.com) if it isn't covered by one of the displayed cases!\n\n### What to do afterwards\n\nIf you're waiting for new content or to get the review back, here's a [great video from Frank Chen](https://vimeo.com/170189199) about the history of deep learning. It's a 45 minute video, sort of a short documentary, starting in the 1950s and bringing us to the current boom in deep learning and artificial intelligence.\n\n[![AI and Deep Learning](https://s3.amazonaws.com/content.udacity-data.com/nd101/Screen+Shot+2017-01-27+at+11.38.54+AM.png)](https://vimeo.com/170189199)\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "c/nd101-Project-1/nd101-your-first-neural-network",
+        "rubric_id": "700",
+        "terminal_project_id": null,
+        "resources": {
+          "files": [],
+          "google_plus_link": null,
+          "career_resource_center_link": null,
+          "coaching_appointments_link": null,
+          "office_hours_link": null,
+          "aws_provisioning_link": null
+        },
+        "image": {
+          "url": "https://d17h27t6h515a5.cloudfront.net/topher/2017/January/588bccf2_project-page-dark-overlay/project-page-dark-overlay.jpg",
+          "width": 1200,
+          "height": 900
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 262262,
+          "key": "39304932-50c9-4560-80dc-3d5eeeb4c85d",
+          "title": "Introduction to the Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 262263,
+              "key": "93929692-2425-43c2-977d-f6a083d2754e",
+              "title": "Introduction to the Project",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dOwEDeJp8yw",
+                "china_cdn_id": "dOwEDeJp8yw.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,576 @@
+{
+  "data": {
+    "lesson": {
+      "id": 256138,
+      "key": "9e9ed61d-20c3-4431-95aa-a1099f28d601",
+      "title": "Anaconda",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Anaconda is a package and environment manager built specifically for data. Learn how to use Anaconda to improve your data analysis workflow.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/9e9ed61d-20c3-4431-95aa-a1099f28d601/256138/1544457696754/Anaconda+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/9e9ed61d-20c3-4431-95aa-a1099f28d601/256138/1544457694541/Anaconda+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 568665,
+          "key": "7c19de13-b185-4a06-bb64-0ff778a0be2a",
+          "title": "Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 568666,
+              "key": "5c4b027e-459d-4881-bab3-147d410b92c7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5ab0322b_screen-shot-2018-03-19-at-2.49.57-pm/screen-shot-2018-03-19-at-2.49.57-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5c4b027e-459d-4881-bab3-147d410b92c7",
+              "caption": "_Mat Leonard_",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 1080668,
+              "key": "2c22e17e-3491-4370-95e1-07b5bf5c3fa8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Meet your Instructor\nMat will be your instructor!  Mat is a former physicist, research neuroscientist, and data scientist. He did his Ph.D. and Postdoctoral Fellowship at the University of California, Berkeley.\n\n---\n\n# Course Overview\nIn this course, you will learn to use Python packages for Data Science, such as Numpy, Pandas, Matplotlib, and Seaborn. Below is an overview of the lessons:\n1. **Lesson: Anaconda** - Learn to use Anaconda to manage packages and environments to use with Python. \n\n2. **Lesson: Jupyter Notebooks** - Until now, you have been practicing Python programming in the Udacity provided workspaces. Moving forward, you will learn to use interactive editor **jupyter-notebook**  to code Python programs. In Jupyter notebooks, you'll be able to view the mark-up text, code, videos, equations, and graphical output all on the same page. \n3. **Lesson: NumPy** - Learn to use the functions defined in the Numpy package for numerical calculations. \n4. **Lesson: Pandas** - Learn to analyze and manipulate data with the Pandas package\n5. **Lesson: Matplotlib and Seaborn** - Learn to draw attractive and informative statistical visualizations using the Matplotlib and Seaborn package. This lesson is split into two parts -  Part 1 and 2. \n\n--- \n\n# Lesson Objectives\nIn this lesson, you will acquire the ability to use Anaconda to manage packages and environments for Python. Specifically, you will learn to:\n1. Install and navigate through the Anaconda\n2. Download Python packages in the terminal/Anaconda prompt.\n3. Setup and manage one or more environments\n\n\n--- \n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 219874,
+          "key": "4cdc5a26-1e54-4a69-8eb4-f15e37aaab7b",
+          "title": "Demonstration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1082000,
+              "key": "eaf0cb03-de28-40e9-b7ed-5c0c0d0278a3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The video below is a demonstration of the concepts that you are going to learn in this lesson. It will show you the significance of creating virtual environments, introduce you to the Anaconda distribution, and demonstrate the use of `conda`  to create a virtual environment and install packages into it. **It's alright if you are viewing all these steps for the first time.**\n\nIn the next few pages, you'll learn the fundamentals of all the tasks demonstrated here. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262233,
+              "key": "b1d32c61-bc95-4dbf-947e-c0d699ab9490",
+              "title": "Why Anaconda?",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "[Anaconda](https://anaconda.org/) is a distribution of packages built for data science. It comes with conda, a package and environment manager. You'll be using conda to create environments for isolating your projects that use different versions of Python and/or different packages. You'll also use it to install, uninstall, and update packages in your environments. Using Anaconda has made my life working with data much more pleasant.\n\n",
+              "video": {
+                "youtube_id": "VXukXZv7SCQ",
+                "china_cdn_id": "VXukXZv7SCQ.mp4"
+              }
+            },
+            {
+              "id": 1081999,
+              "key": "f91d8d58-7bd4-433f-9350-b941365cd620",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The list of commands used are in the video above are:\n\n```bash\nconda create -n tea_facts python=3\nsource activate tea_facts\nconda list\nconda install numpy pandas matplotlib \n```\n\n\nAnaconda comes with the Jupyter notebook package. If you are using Miniconda, you can install [Jupyter notebook](https://jupyter.org/install) as:\n```bash\nconda install jupyter notebook\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 160250,
+          "key": "02b53153-d18d-46dd-86c0-b19632bfeda1",
+          "title": "What is Anaconda?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1082001,
+              "key": "6a886298-2e91-4e41-85f5-b33f1afa536f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#  What is Anaconda Distribution?\nAnaconda is a program to manage (*install, upgrade, or uninstall*) packages and environments to use with Python. It's simple to install packages with Anaconda and create virtual environments to work on multiple projects conveniently. \n\n\nEven if you already have Python installed, it will be beneficial to use Anaconda/Miniconda because:\n1. Anaconda comes with a bunch of data science packages; you'll be all set to start working with data. \n2. Using `conda` to manage your packages and environments will reduce future issues dealing with the various libraries you'll be using.\n\n\n## Python Packages\nA package is a bunch of modules, where each module consists of a set of classes and function definitions. After installing a particular package, you can `import` and use the functions defined in that package. \n\nIf we install Anaconda, then a basic few packages are installed by default. However, you can install any more packages, if needed.  \n\n## Anaconda Distribution\nAnaconda is a fairly large download (~500 MB) because it comes with Python's most common data science packages. [Anaconda](https://docs.anaconda.com/anaconda/navigator/overview/) is a software distribution that includes the following:\n\n* **Anaconda Navigator** - It is a graphical user interface that helps open up any installed applications, such as Jupyter notebook or VS code editor. We will learn more about the notebook in the next lesson. See a snapshot of Anaconda Navigator below:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1082002,
+              "key": "416ed72a-ed2e-4537-bc43-968042630d5f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f741d48_screenshot-2020-09-26-at-5.03.28-pm/screenshot-2020-09-26-at-5.03.28-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/416ed72a-ed2e-4537-bc43-968042630d5f",
+              "caption": "Anaconda Navigator GUI, same in both macOS/Linux and Windows. We will learn to code in the Jupyter Notebook in the next lesson. ",
+              "alt": "",
+              "width": 3166,
+              "height": 1538,
+              "instructor_notes": null
+            },
+            {
+              "id": 1082003,
+              "key": "00786671-ccc9-4c01-b92f-1823e50ed5f5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* **`conda`** - A command-line utility for package and environment management. Mac/Linux users can use the Terminal, and Windows users can use the \"**Anaconda Prompt**\" to execute `conda` commands. Windows users must run the Anaconda Prompt as an Administrator. Your first command should be \n```\nconda --version\n```\nIf you are not comfortable on the command line, check out the [command prompt tutorial for Windows](https://www.lynda.com/-tutorials/Windows-command-line-basics/497312/513424-4.html) or our [Linux Command Line Basics](https://www.udacity.com/course/linux-command-line-basics--ud595) course for OSX/Linux.\n\n* **Python** - The latest version of Python gets installed as an individual package. \n* Over 160 scientific packages and their dependencies are also installed. \n\nIf you don't need all the packages or need to conserve bandwidth or storage space,  there is an option for you -  **Miniconda**.\n\n--- \n\n## Miniconda\n**Either Anaconda or Miniconda is adequate for this course.** [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a smaller distribution as compared to Anaconda, which includes only `conda` and Python. Miniconda can do everything Anaconda is capable of, but **doesn't have the preinstalled packages**. You can still install any of the available packages using `conda install PACKAGENAME` on the terminal/Anaconda Prompt. Interestingly, you can anytime upgrade from Miniconda to Anaconda by using the command:\n```\nconda install anaconda\n```\nIn the command above, did you notice that we followed the same `conda install PACKAGENAME` syntax? See an example below to install the Numpy package with conda on the Terminal/Anaconda Prompt. You will see a demonstration soon after understanding the setup. \n\n--- \n\n## Overview - Managing Packages using either `pip` or `conda`\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 198025,
+              "key": "0297fa6e-5bd3-48c9-b06b-1ef3046d4de7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/58114536_conda-install/conda-install.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0297fa6e-5bd3-48c9-b06b-1ef3046d4de7",
+              "caption": "Installing numpy with conda",
+              "alt": null,
+              "width": 697,
+              "height": 548,
+              "instructor_notes": null
+            },
+            {
+              "id": 198019,
+              "key": "dde92b9f-c267-45de-bdf6-9c5f47cc808a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The `conda` and `pip` both are the Python package managers. Package managers are used to installing libraries and other software on your computer. `pip` is the default package manager for Python libraries, whereas `conda` focuses only on the packages that are available from the Anaconda distribution. \n\n>**Update Note** <br>\nIn the newer version of Anaconda/Miniconda, both `pip` and `conda` package managers are included by default, so you do not need to install them separately.\n\n\nBoth `pip` and `conda` gets installed when you install either Anaconda or Miniconda. On the next page, we will see details to install Anaconda/Miniconda. However, the `pip` also comes preinstalled with the Python 2 >=2.7.9 or Python 3 >=3.4. \n\nIn case if you have Anaconda/Miniconda already installed, and don't have `pip` in your system, there are two ways:\n\n1. Refer to the [Pip installation instructions](https://pip.pypa.io/en/stable/installing/) \n2. Install `conda` first and then install pip using conda. We will see commands for this step on the very next page because we will learn to install Anaconda/Miniconda next. \n\n\n### Which one should I prefer - `pip` or `conda`?\nThere are two points you can consider before making a choice:\n1. The available packages available from the Anaconda distribution in `conda` focus on data science, whereas `pip` is for general use. Conda installs precompiled packages. For example, the Anaconda distribution comes with Numpy, Scipy, and Scikit-learn compiled with the [MKL library](https://docs.continuum.io/mkl-optimizations/), speeding up various math operations. **But, sometimes, you may need packages other than the ones listed on the Anaconda distribution.**\n2. Pip can install both Python and non-Python packages. Pip can install any package listed on the [Python Package Index](https://pypi.org/) (PyPI). \n\n**You can (and will) still use `pip` alongside `conda` to install packages.**\n\n--- \n\n## Environments\nA Python environment comprises a particular version of each of the following:\n* Python interpreter, \n* Python-packages, and\n* The utility scripts, such as pip.  \nIt is possible to have two or more environments residing on the same computer *virtually*.  If you are using Anaconda, you are in the `base(root)` environment by-default. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1082004,
+              "key": "5cb24661-d9d2-4999-b0c0-9eceb29dd02f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/September/5f741e67_screenshot-2020-09-26-at-5.04.55-pm/screenshot-2020-09-26-at-5.04.55-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5cb24661-d9d2-4999-b0c0-9eceb29dd02f",
+              "caption": "The default `base(root)` environment in Anaconda",
+              "alt": "The default `base(root)` environment in Anaconda",
+              "width": 2072,
+              "height": 966,
+              "instructor_notes": null
+            },
+            {
+              "id": 198028,
+              "key": "d24c14d1-62bc-42da-8d40-9eca1b8401c8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/58114552_conda-create-env/conda-create-env.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d24c14d1-62bc-42da-8d40-9eca1b8401c8",
+              "caption": "Creating an environment with conda",
+              "alt": null,
+              "width": 697,
+              "height": 548,
+              "instructor_notes": null
+            },
+            {
+              "id": 198020,
+              "key": "60a51f93-51d1-4b96-ad14-370deb1e6a9a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Along with managing packages, Conda is also a virtual environment manager. It's similar to [virtualenv](https://virtualenv.pypa.io/en/stable/) and [pyenv](https://github.com/yyuu/pyenv), other popular environment managers. \n\n### Why do  you need a Virtual Environment?\nEach virtual environment remains isolated from other virtual environments, and the default “system”  environment.  **Environments allow you to separate and isolate the packages you are using for different projects.** Often you’ll be working with code that depends on different versions of some library. For example, you could have code that uses new features in Numpy, or code that uses old features that have been removed. It’s practically impossible to have two versions of Numpy installed at once. Instead, you should make an environment for each version of Numpy then work in the appropriate environment for the project.\n\nThis issue also happens a lot when dealing with Python 2 and Python 3. You might be working with old code that doesn’t run in Python 3 and new code that doesn’t run in Python 2. Having both installed can lead to a lot of confusion and bugs. It’s much better to have separate environments.\n\nYou can also export the list of packages in an environment to a file, then include that file with your code. This allows other people to easily load all the dependencies for your code. Pip has similar functionality with `pip freeze > requirements.txt`.\n\n## Where we go from here\nNext, I'll get into the details of using Anaconda. First I'll cover installing it, then using the package manager, and finally creating and managing environments.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1082007,
+              "key": "672cd95a-c6ed-46e6-89ad-839095a15aff",
+              "title": "Miniconda",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What all things get installed when you install Miniconda?",
+                "answers": [
+                  {
+                    "id": "a1601450138276",
+                    "text": "Python, Conda, and its dependencies",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1601450162921",
+                    "text": "Python, Conda, and its dependencies, Jupyter",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1601450177865",
+                    "text": "Python, Conda, and its dependencies, Numpy, and Pandas",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1601450196588",
+                    "text": "Python, Conda, and its dependencies, and Spyder",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 160253,
+          "key": "d45d6e48-ff3a-4192-b377-f0264723f92e",
+          "title": "Installing Anaconda",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1082005,
+              "key": "c9610c7f-56d9-4c95-8e30-e2af58079d95",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Installing Anaconda\n\nAnaconda is available for Windows, Mac OS X, and Linux. Follow the links below to get started:\n1. Download the installer from  [https://www.anaconda.com/download/](https://www.anaconda.com/download/). Choose the Python 3.7 or higher version, and the appropriate 64/32-bit installer. If you already have Python installed on your computer, this won't break anything. Instead, the default Python used by your scripts and programs will be the one that comes with Anaconda.\n\n\n2. Refer the installation instructions [here](https://docs.anaconda.com/anaconda/install/)\n\n3. Verify the installation [here](https://docs.anaconda.com/anaconda/install/verify-install/) for your respective OS\n\n\n\nAfter installation, you’re automatically in the default conda environment with all packages installed which you can see below. You can check out your own install by entering the following command into your terminal.\n```\nconda list\n```\n\n<video loop autoplay>\n  <source src=\"https://s3.amazonaws.com/content.udacity-data.com/courses/ud1111/conda_default_install.mp4\" type=\"video/mp4\">\n</video>\n\n\n## List of Applications Installed with Anaconda\nAs we read on the previous page, the following packages will get installed with Anaconda:\n* **Anaconda Navigator** - a GUI for managing your environments and packages\n* **`conda`** - a command-line utility\n* **Python** - The latest version of Python gets installed as an individual package. \n* **Anaconda Prompt** - [Only for Windows] a terminal where you can use the command-line interface to manage your environments and packages\n* A bunch of applications, such as **Spyder**. It is an IDE geared toward scientific development. In total, over 160 scientific packages and their dependencies are also installed. \n\n\n\n\nTo avoid errors later, it's best to update all the packages in the default environment. Open the Terminal/ Anaconda Prompt application. In the prompt, run the following commands:\n\n    conda upgrade conda\n    conda upgrade --all\n\nand answer yes when asked if you want to install the packages. The packages that come with the initial install tend to be out of date, so updating them now will prevent future errors from out of date software.\n\n>**Note:** In the previous step, running `conda upgrade conda` should not be necessary because `--all` includes the conda package itself, but some users have encountered errors without it.\n\n---\n \nIn the rest of this lesson, you'll learn to use commands in your Terminal/Anaconda Prompt. I highly suggest you start working with command-line utility first, then later use the GUI if you'd like. Once you get acquainted with the command-line utility, refer to the [Starter Guide for Anaconda distribution (GUI)](https://docs.anaconda.com/_downloads/9ee215ff15fde24bf01791d719084950/Anaconda-Starter-Guide.pdf).\n\n## Troubleshooting Resources\nIf you are facing difficulty in installing and running conda, refer to the FAQ - [Should I add Anaconda to the macOS/Linux/Windows PATH?](https://docs.anaconda.com/anaconda/user-guide/faq/). Additionally, the following links might be useful:\n1. Linux/macOS - \n * If you are seeing the \"conda command not found\" and are using ZShell, you have to add `export PATH=\"/Users/USERNAME/opt/anaconda/bin:$PATH\"` to your .zsh_config file.\n\n2. Windows users - \n * ['export' is not recognized as an internal or external command](https://stackoverflow.com/questions/26368306/export-is-not-recognized-as-an-internal-or-external-command)\n * ['Conda' is not recognized as internal or external command](https://stackoverflow.com/questions/44515769/conda-is-not-recognized-as-internal-or-external-command)\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1082009,
+              "key": "340fb6df-b6dc-47dc-91d5-894e886f3da3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## How to Install `pip` Package Manager\nIf you have successfully installed Anaconda/Miniconda, possibly you will have conda (and pip) automatically installed on your system. If pip is not there, we recommend you install the `pip` as well because you will be able to run `pip` commands only after installing it. \n```bash\n# Check if pip is already installed, by running this command on Terminal/Anaconda Prompt\npip --version\n\n# Once you have conda installed, run the command below on Terminal/Anaconda Prompt\nconda install pip\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1082010,
+              "key": "f606dc8f-18f5-4412-bed9-f7c6cced1b0e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">**Update Note** <br>\nIn newer version of Anaconda/Miniconda, both `pip` and `conda` package managers are included by default, so you do not need to install them separately.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 198064,
+          "key": "9310a67f-9b23-449e-8949-4312dc718ef9",
+          "title": "Managing Packages",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1082006,
+              "key": "c19e059d-892e-4262-8711-9b0fcfa64dc3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Managing Packages\n\n## Install Packages\nOnce you have Anaconda installed, managing packages is fairly straightforward. To install a package, type the following command in your terminal. \n```\nconda install PACKAGE_NAME\n```\nFor example, to install numpy, type `conda install numpy`.\n\n<video controls loop autoplay>\n  <source src=\"https://s3.amazonaws.com/content.udacity-data.com/courses/ud1111/conda_install.mp4\" type=\"video/mp4\">\n</video>\n\nYou can install multiple packages at the same time. For example, the command below will install all three packages simultaneously.\n```\nconda install numpy scipy pandas\n```\nIt's also possible to specify which version of a package you want by adding the version number such as `conda install numpy=1.10`.\n\nConda also automatically installs dependencies for you. For example `scipy` uses and requires `numpy`. If you install just `scipy` (`conda install scipy`), Conda will also install `numpy` if it isn't already installed.\n\n## Remove Packages\nMost of the commands are pretty intuitive. To uninstall, use \n```\nconda remove PACKAGE_NAME\n``` \n\n## Update Packages\nTo update a package, use \n```\nconda update package_name\n``` \nIf you want to update all packages in an environment, which is often useful, use `conda update --all`. And finally, to list installed packages, it's `conda list` which you've seen before.\n\n## Search a Package to Install\nIf you don't know the exact name of the package you're looking for, you can try searching with `conda search *SEARCH_TERM*`. For example, I know I want to install [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/), but I'm not sure of the exact package name. So, I try `conda search *beautifulsoup*`. Note that your shell might expand the wildcard `*` before running the conda command. To fix this, wrap the search string in single or double quotes like `conda search '*beautifulsoup*'`.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627880,
+              "key": "c28f045f-de8a-430d-9ddf-42070b335667",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/May/5afae640_conda-search/conda-search.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c28f045f-de8a-430d-9ddf-42070b335667",
+              "caption": "",
+              "alt": "",
+              "width": 2064,
+              "height": 1374,
+              "instructor_notes": null
+            },
+            {
+              "id": 199395,
+              "key": "0590196a-afb7-49b4-b327-cac9aeafe0b9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "It returns a list of the Beautiful Soup packages available with the appropriate package name, `beautifulsoup4`.\n\n\n## Additional Resource\nRefer to the [Conda Command reference guide](https://conda.io/projects/conda/en/latest/commands.html) to know more about conda commands, and compare them with `pip` and `virtualenv` commands.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217480,
+              "key": "4790ec2e-b281-4bc9-b577-da5678a07e50",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "**Multiple Choice Question** - Which of these commands would you use to install the packages `numpy` and `pandas` with conda? (More than one might be correct - select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1480541673069",
+                    "text": "`conda install numpy`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1480541700965",
+                    "text": "`conda install pandas`",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1480541709026",
+                    "text": "`conda install numpy pandas`",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1082008,
+              "key": "bb144e54-3832-4554-8250-ff36cdf8f0d4",
+              "title": "Single Choice Question",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What are the prerequisites to run the command `conda install package_name` that will install a package?",
+                "answers": [
+                  {
+                    "id": "a1601450375485",
+                    "text": "The system must have `pip` already installed on it. ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1601450400036",
+                    "text": "The system must have any version of Python and `conda` package manager already installed on it (using either Miniconda or Anaconda).",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1601450415945",
+                    "text": "The system must have Jupyter already installed on it. ",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 198077,
+          "key": "14783a82-d656-436b-bc3f-12f7abe03529",
+          "title": "Managing Environments",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 199482,
+              "key": "30eae4d4-6020-42ae-adb8-f3b6d9a30e2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Managing Environments\nAs you saw on the previous page, `conda` can be used to create environments to isolate your projects. To create an environment, use the following command in your Terminal/Anaconda Prompt. \n```\nconda create -n env_name [python=X.X] [LIST_OF_PACKAGES]\n``` \nHere `-n env_name` sets the name of your environment (`-n` for name) and `LIST_OF_PACKAGES` is the list of packages you want to be installed in the environment. If you wish to install a specific version of Python to be installed, say 3.7, use `python=3.7`. For example, to create an environment named `my_env` with Python 3.7, and install NumPy and Keras in it, use the command below. \n```\nconda create -n my_env python=3.7 numpy Keras\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 198079,
+              "key": "79e661e6-eb59-45da-be67-77a217cd7da1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/58114552_conda-create-env/conda-create-env.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/79e661e6-eb59-45da-be67-77a217cd7da1",
+              "caption": "Create `my_env` environment with the NumPy package in it. ",
+              "alt": "",
+              "width": 697,
+              "height": 548,
+              "instructor_notes": null
+            },
+            {
+              "id": 198080,
+              "key": "125c2e3a-6249-4059-8abb-c53065a205bb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When creating an environment, you can specify which version of Python to install in the environment. This is useful when you're working with code in both Python 2.x and Python 3.x. To create an environment with a specific Python version, use either of the following commands:\n```\nconda create -n py3_env python=3\n``` \nor \n```\nconda create -n py2_env python=2\n```\nI actually have both of these environments on my personal computer. I use them as general environments not tied to any specific project, but rather for general work with each Python version easily accessible. These commands will install the most recent version of Python 3 and 2, respectively. To install a specific version, use `conda create -n py python=3.6` for Python 3.6.\n\n## Entering (Activate) an environment\nOnce you have an environment created, you can enter into it by using: \n```bash\n# For  conda 4.6 and later versions on Linux/macOS/Windows, use\nconda activate my_env\n#For conda versions prior to 4.6 on Linux/macOS, use \nsource activate my_env\n#For conda versions prior to 4.6 on Windows, use \nactivate my_env\n```\n\n<video controls loop autoplay>\n<source src=\"https://s3.amazonaws.com/content.udacity-data.com/courses/ud1111/conda_enter.mp4\" type=\"video/mp4\">\n</video>\n\nWhen you're in the environment, you'll see the environment name in the terminal prompt. Something like `(my_env) ~ $`. \n\n## List the Installed Packages in the Current Environment\nThe environment has only a few packages installed by default, plus the ones you installed when creating it. You can check this out with \n```\nconda list\n```\nInstalling packages in the environment is the same as before: `conda install package_name`. Only this time, the specific packages you install will only be available when you're in the environment. \n\n## Deactivate an Environment\nTo leave the environment, type `conda deactivate` (on OSX/Linux) or `deactivate` (Windows).\n\n```bash\n# For  conda 4.6 and later versions on Linux/macOS/Windows, use\nconda deactivate\n#For conda versions prior to 4.6 on Linux/macOS, use \nsource deactivate\n#For conda versions prior to 4.6 on Windows, use \ndeactivate\n```\n\n## Additional Resources\n* [Managing virtual environments and packages with `pip` ](https://docs.python.org/3/tutorial/venv.html) \n* [Managing virtual environments with `conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#managing-environments)\n* [A comprehensive cheat sheet of **Conda 4.6** commands](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf)  \n* [A comprehensive cheat sheet of Conda version prior to 4.6 commands](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf) ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199392,
+              "key": "afec9eb2-40a8-466d-97f5-3c20ed89919c",
+              "title": "Create environment quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "What command would you use to create an environment named `data` installed with Python 3.6, numpy, and pandas?",
+                "answers": [
+                  {
+                    "id": "a1477602911049",
+                    "text": "conda env create -n data python=3.6 numpy pandas",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1477603599067",
+                    "text": "conda create data python=3.6 numpy pandas",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1477603600155",
+                    "text": "conda create -n data python=3.6",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1477603618435",
+                    "text": "conda create -n data python=3.6 numpy pandas",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 199478,
+          "key": "f1806e9a-8728-4e31-a3d4-254255755a86",
+          "title": "More Environment Actions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 199479,
+              "key": "251e5d35-2a97-45d4-acf9-acc1e893d196",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Saving and loading environments\n\nA really useful feature is sharing environments so others can install all the packages used in your code, with the correct versions. Let's see all the package-names, including the Python  version present in the current environment, using the command:\n```\nconda env export\n```\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 199480,
+              "key": "dc56d0e3-27d7-4ab5-b403-b35546119556",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/5811639e_conda-env-export/conda-env-export.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dc56d0e3-27d7-4ab5-b403-b35546119556",
+              "caption": "Exported environment printed to the terminal",
+              "alt": null,
+              "width": 767,
+              "height": 548,
+              "instructor_notes": null
+            },
+            {
+              "id": 199481,
+              "key": "295cd449-e2a2-4c0c-b7c0-e2aee0e5b8fc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the above image, you can see the name of the environment, and all the dependencies (*along with versions*) are listed. You can save all the above information to a [YAML](http://www.yaml.org/) file, `environment.yaml`, and later share this file with other users over GitHub or other means. This file will get created (or overwritten) in your current directory. \n```\nconda env export > environment.yaml\n```\n\n\nThe second part of the export command above, `> environment.yaml` writes the exported text to the `environment.yaml`. This file can now be shared using Github repository (or any other means), and others will be able to create the same environment you used for the project.\n\n## Create an environment\nTo create an environment from an environment file, use the following command:\n```\nconda env create -f environment.yaml\n```\nThe above command will create a new environment with the same name listed in `environment.yaml`.\n\n## Listing environments\n\nIf you forget what your environments are named (happens to me sometimes), use *either* of the commands below to list out all the environments you've created.\n```\nconda env list\nconda info --envs\n``` \nYou should see a list of environments, there will be an asterisk next to the environment you're currently in. The default environment is called `base`. \n\n## List the packages inside an environment\nTo view the list of packages, run the following command in your terminal / Anaconda Prompt,:\n```\n# If the environment is not activated\nconda list -n env_name\n\n# If the environment is activated\nconda list\n\n# To see if a specific package, say `scipy` is installed in an environment\nconda list -n env_name scipy\n```\n\n## Removing an environment\nIf there are environments you don't use anymore, use the command below to remove the specified environment (here, named `env_name`).\n```\nconda env remove -n env_name\n```\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 199219,
+          "key": "d3a31501-0991-4235-a68b-73721e7b64e7",
+          "title": "Summary and Best Practices",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 199220,
+              "key": "19e377f6-7780-44c8-877e-21b8d6fc3052",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Summary\nAt this moment, you must have completed the following steps before moving to the next lesson:\n1. Install and navigate through the Anaconda\n2. Download Python packages in Anaconda Terminal\n3. Setup and manage one or more environments\n\nBelow are a few best practices that you can consider to incorporate in your programming habit.  \n\n## Using Environments\nOne thing that’s helped me tremendously is having separate environments for Python 2 and Python 3. I used the commands below to create two separate environments - `py2_env` and `py3_env`, \n```bash\nconda create -n py2_env python=2\nconda create -n py3_env python=3`\n```\n \nNow, I have a general use environment for each Python version. In each of those environments, I've installed most of the standard data science packages (NumPy, SciPy, Pandas, etc.). Remember that when you set up an environment initially, you'll only start with the standard packages in addition to whatever packages you specify in your `conda create` statement.\n\nI’ve also found it useful to create environments for each project I’m working on. It works great for non-data related projects too, like web apps with Flask. For example, I have an environment for my personal blog using [Pelican](http://docs.getpelican.com/en/stable/). \n\n## Sharing Environments\nWhen sharing your code on GitHub, it's good practice to make an environment file and include it in the repository. You can do this using `conda` as: \n```\nconda env export > environment.yaml\n```\n\n\n## Share the List of Dependencies\nFor users not using conda, you may want to share the list of packages installed in the current environment. You can use `pip` to generate such a list as `requirements.txt` file using:\n```bash\npip freeze > requirements.txt\n```\nLater, you can share this `requirements.txt` file with other users over Github. Once a user (or yourself) switches to another environment, you can install all the packages mentioned in the `requirements.txt` file using:\n```bash\npip install -r requirements.txt\n```\n\nYou can [learn more here](https://pip.pypa.io/en/stable/reference/pip_freeze/) about using `pip` instead of `conda`. This will make it easier for people to install all the dependencies for your code. \n\n## Recommended Read\n* To learn more about conda and how it fits in the Python ecosystem, check out this article by Jake Vanderplas: [Conda myths and misconceptions](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/). \n* Here's the [conda glossary documentation](https://docs.conda.io/projects/conda/en/latest/glossary.html) for your reference.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 229233,
+          "key": "5e87a70d-c147-422b-b120-f89a392ba154",
+          "title": "Python versions at Udacity",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": {
+            "files": [],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 229252,
+              "key": "13650963-1313-43c2-acd1-d73531aaaa5d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Python versions at Udacity\n\nMost Nanodegree programs at Udacity will be (or are already) using Python 3 almost exclusively. \n\n## Why we're using Python 3\n\n* Jupyter is [switching to Python 3 only](https://ipython.readthedocs.io/en/stable/whatsnew/version6.html#python-3-only-codebase)\n* Python 2.7 is [being retired](https://pythonclock.org/)\n* Python 3 has been out for almost 10 years, and there are very few dependencies (and none in this Nanodegree)  that are incompatible.\n\nAt this point, there are enough new features in Python 3 that it doesn't make much sense to stick with Python 2. You should write Python code for version 3. Read more [here](https://wiki.python.org/moin/Python2orPython3).\n\n## The main breakage between Python 2 and 3\n\nFor the most part, the Python 2 code will work with Python 3. Of course, most new features introduced with Python 3 versions won't be backward compatible. The place where your Python 2 code will fail most often is the `print` statement. See the change in the syntax below:\n\n```python\n# Print statement in Python 2\nprint \"Hello\", \"world!\"\n\n# Print statement in Python 3\nprint(\"Hello\", \"world!\")\n```\n    \nIf you want your `print()` function to work in both Python 2 and 3 versions, you'll need to import the `print_function` in your Python 2.6+ code. The `print()` function was backported to Python 2.6+ through the `__future__` module:\n```python\n# Python 3 `print()` function can run in Python 2.6+ after an `import` statement.\n# In Python 2.6+\nfrom __future__ import print_function\nprint(\"Hello\", \"world!\")\n\n# Python 2 `print` statement cannot run in Python 3.\n# The following line of code will NOT work in Python 3\nprint \"Hello\", \"world!\"\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

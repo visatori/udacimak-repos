@@ -1,0 +1,78 @@
+{
+  "data": {
+    "lesson": {
+      "id": 261231,
+      "key": "73b70610-a6ae-494e-92e6-a4d2e2d301fa",
+      "title": "Image Classification",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Classify images from the CIFAR-10 dataset using a convolutional neural network.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/73b70610-a6ae-494e-92e6-a4d2e2d301fa/261231/1516696576110/Image%20Classification%20Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/73b70610-a6ae-494e-92e6-a4d2e2d301fa/261231/1516696572580/Image%20Classification%20Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "b84e525e-be41-4da8-83ae-6108b2b7b2a2",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 40320,
+        "semantic_type": "Project",
+        "title": "Image Classification",
+        "description": "# Image Classification\n### Introduction\nIn this project, you'll classify images from the [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html).  The dataset consists of airplanes, dogs, cats, and other objects.  The dataset will need to be preprocessed, then train a convolutional neural network on all the samples.  You'll normalize the images, one-hot encode the labels, build a convolutional layer, max pool layer, and fully connected layer.  At then end, you'll see their predictions on the sample images. \n\n### Getting the project files\nThe project files can be found in our [public GitHub repo](https://github.com/udacity/deep-learning), in the `image-classification` folder. You can download the files from there, but it's better to clone the repository to your computer\n\nThis way you can stay up to date with any changes we make by pulling the changes to your local repository with `git pull`. Please note this project is written in Python 3.x.\n\n### Submission\n1. Ensure you've passed all the unit tests in the notebook.\n2. Ensure you pass all points on [the rubric](https://review.udacity.com/#!/rubrics/723/view).\n3. When you're done with the project, please save the notebook as an HTML file. You can do this by going to the **File** menu in the notebook and choosing \"Download as\" > HTML. ** Ensure you submit both the Jupyter Notebook and it's HTML version together. **\n4. Package the \"dlnd_image_classification.ipynb\", \"helper.py\", \"problem_unittests.py\", and the HTML file into a zip archive, or push the files from your GitHub repo.\n5. Hit Submit Project below! ",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "c/nd101-Project-2",
+        "rubric_id": "723",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58b4c4f9_project2-bird-hero1200x900/project2-bird-hero1200x900.jpg",
+          "width": 1200,
+          "height": 900
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 279235,
+          "key": "9c91a410-9836-42ac-b39c-c4e70c529709",
+          "title": "Introduction to the Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 279236,
+              "key": "5e37bff4-a96f-4d4a-bf55-b6a57c94488c",
+              "title": "Project Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "awEYy2Df3hg",
+                "china_cdn_id": "awEYy2Df3hg.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "id": 725,
+  "project_id": 286,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "",
+  "hide_criteria": false,
+  "created_at": "2017-01-24T21:21:36.823Z",
+  "updated_at": "2019-03-26T21:12:57.735Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "available_for_cert_project": false,
+  "language": "en-us",
+  "ndkeys": [
+    "nd101-cn-advanced-ent",
+    "nd101-cn-advanced-vip",
+    "nd101-cn-advanced",
+    "nd101",
+    "nd101-cn",
+    "nd101-ent",
+    "nd101-infn2",
+    "nd101-innl"
+  ],
+  "coursekeys": [],
+  "is_career": false,
+  "sections": [
+    {
+      "id": 2048,
+      "name": "Required Files and Tests",
+      "created_at": "2017-03-06T02:37:22.097Z",
+      "updated_at": "2017-03-06T02:37:33.033Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 725,
+      "rubric_items": [
+        {
+          "id": 6088,
+          "section_id": 2048,
+          "passed_description": "The project submission contains the project notebook, called “dlnd_tv_script_generation.ipynb”.",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T02:37:33.148Z",
+          "updated_at": "2017-03-06T02:38:45.575Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Have all project files been included with the submission?",
+          "exceedable": false
+        },
+        {
+          "id": 6089,
+          "section_id": 2048,
+          "passed_description": "All the unit tests in project have passed.",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T02:38:45.703Z",
+          "updated_at": "2017-03-06T02:39:08.824Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Have all the unit tests in the project passed?",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 2049,
+      "name": "Preprocessing",
+      "created_at": "2017-03-06T02:39:21.784Z",
+      "updated_at": "2017-03-06T02:39:26.571Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 725,
+      "rubric_items": [
+        {
+          "id": 6090,
+          "section_id": 2049,
+          "passed_description": "The function `create_lookup_tables` create two dictionaries:\n- Dictionary to go from the words to an id, we'll call vocab_to_int\n- Dictionary to go from the id to word, we'll call int_to_vocab\n\nThe function `create_lookup_tables` return these dictionaries in the a tuple (vocab_to_int, int_to_vocab)",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T02:39:26.683Z",
+          "updated_at": "2017-03-14T00:14:37.573Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does the `create_lookup_tables` function correctly create lookup dictionaries?",
+          "exceedable": false
+        },
+        {
+          "id": 6091,
+          "section_id": 2049,
+          "passed_description": "The function `token_lookup` returns a dict that can correctly tokenizes the provided symbols.",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:18:05.827Z",
+          "updated_at": "2017-03-14T00:14:37.588Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Does the project correctly create a token dictionary?",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 2050,
+      "name": "Build the Neural Network",
+      "created_at": "2017-03-06T04:18:17.105Z",
+      "updated_at": "2017-03-06T04:18:26.823Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 725,
+      "rubric_items": [
+        {
+          "id": 6092,
+          "section_id": 2050,
+          "passed_description": "Implemented the `get_inputs` function to create TF Placeholders for the Neural Network with the following placeholders:\n- Input text placeholder named \"input\" using the TF Placeholder name parameter.\n- Targets placeholder\n- Learning Rate placeholder\n\nThe `get_inputs` function return the placeholders in the following the tuple (Input, Targets, LearingRate)",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:18:26.944Z",
+          "updated_at": "2017-03-14T00:25:51.424Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does the project create the correct input tensors?",
+          "exceedable": false
+        },
+        {
+          "id": 6093,
+          "section_id": 2050,
+          "passed_description": "The `get_init_cell` function does the following:\n- Stacks one or more BasicLSTMCells in a MultiRNNCell using the RNN size `rnn_size`.\n- Initializes Cell State using the MultiRNNCell's `zero_state` function\n- The name \"initial_state\" is applied to the initial state.\n- The `get_init_cell` function return the cell and initial state in the following tuple (Cell, InitialState)",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:18:43.643Z",
+          "updated_at": "2017-03-14T00:24:40.137Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Does the project correctly create a RNN Cell and initialize it?",
+          "exceedable": false
+        },
+        {
+          "id": 6094,
+          "section_id": 2050,
+          "passed_description": "The function `get_embed` applies embedding to `input_data` and returns embedded sequence.",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:19:06.081Z",
+          "updated_at": "2017-03-14T00:24:40.146Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Does the project correctly apply word embeddings?",
+          "exceedable": false
+        },
+        {
+          "id": 6095,
+          "section_id": 2050,
+          "passed_description": "The function `build_rnn` does the following:\n- Builds the RNN using the `tf.nn.dynamic_rnn`.\n- Applies the name \"final_state\" to the final state.\n- Returns the outputs and final_state state in the following tuple (Outputs, FinalState)",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:19:16.666Z",
+          "updated_at": "2017-03-14T00:28:01.054Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "Does the project correctly build a RNN using the RNN Cell?",
+          "exceedable": false
+        },
+        {
+          "id": 6096,
+          "section_id": 2050,
+          "passed_description": "The `build_nn` function does the following in order:\n- Apply embedding to `input_data` using `get_embed` function.\n- Build RNN using cell using `build_rnn` function.\n- Apply a fully connected layer with a linear activation and `vocab_size` as the number of outputs.\n- Return the logits and final state in the following tuple (Logits, FinalState)",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:19:24.354Z",
+          "updated_at": "2017-03-14T00:24:40.153Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 4,
+          "criteria": "Does the project correctly build the neural network?",
+          "exceedable": false
+        },
+        {
+          "id": 6097,
+          "section_id": 2050,
+          "passed_description": "The `get_batches` function create batches of input and targets using `int_text`. The batches should be a Numpy array of tuples. Each tuple is (batch of input, batch of target).\n- The first element in the tuple is a single batch of input with the shape [batch size, sequence length]\n- The second element in the tuple is a single batch of targets with the shape [batch size, sequence length]",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:19:33.031Z",
+          "updated_at": "2017-03-14T00:24:40.161Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 5,
+          "criteria": "Does the project correctly batch the data?",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 2051,
+      "name": "Neural Network Training",
+      "created_at": "2017-03-06T04:19:47.711Z",
+      "updated_at": "2017-03-06T04:19:55.138Z",
+      "deleted_at": null,
+      "position": 3,
+      "rubric_id": 725,
+      "rubric_items": [
+        {
+          "id": 6098,
+          "section_id": 2051,
+          "passed_description": "- Enough epochs to get near a minimum in the training loss, no real upper limit on this. Just need to make sure the training loss is low and not improving much with more training.\n- Batch size is large enough to train efficiently, but small enough to fit the data in memory. No real “best” value here, depends on GPU memory usually.\n- Size of the RNN cells (number of units in the hidden layers) is large enough to fit the data well. Again, no real “best” value.\n- The sequence length (seq_length) here should be about the size of the length of sentences you want to generate. Should match the structure of the data.\nThe learning rate shouldn’t be too large because the training algorithm won’t converge. But needs to be large enough that training doesn’t take forever.\nSet show_every_n_batches to the number of batches the neural network should print progress.",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:19:55.252Z",
+          "updated_at": "2017-03-14T00:26:59.579Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does the project use reasonable hyperparameters?",
+          "exceedable": false
+        },
+        {
+          "id": 6099,
+          "section_id": 2051,
+          "passed_description": "The project gets a loss less than 1.0",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:20:06.887Z",
+          "updated_at": "2017-03-07T03:49:22.056Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Does the project achieve a good loss?",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 2052,
+      "name": "Generate TV Script",
+      "created_at": "2017-03-06T04:20:21.382Z",
+      "updated_at": "2017-03-06T04:20:30.861Z",
+      "deleted_at": null,
+      "position": 4,
+      "rubric_id": 725,
+      "rubric_items": [
+        {
+          "id": 6100,
+          "section_id": 2052,
+          "passed_description": "\"input:0\", \"initial_state:0\", \"final_state:0\", and \"probs:0\" are all returned by `get_tensor_by_name`, in that order, and in a tuple",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:20:30.986Z",
+          "updated_at": "2017-03-14T00:24:40.175Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does the project load the correct tensors?",
+          "exceedable": false
+        },
+        {
+          "id": 6102,
+          "section_id": 2052,
+          "passed_description": "The `pick_word` function predicts the next word correctly.",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:20:46.023Z",
+          "updated_at": "2017-03-07T03:49:57.822Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Does the project predict reasonable words?",
+          "exceedable": false
+        },
+        {
+          "id": 6103,
+          "section_id": 2052,
+          "passed_description": "The generated script looks similar to the TV script in the dataset.\n\nIt doesn’t have to be grammatically correct or make sense.",
+          "exceeded_description": null,
+          "created_at": "2017-03-06T04:20:55.361Z",
+          "updated_at": "2017-03-07T03:49:57.832Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "Does the project generate a TV script?",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 286,
+    "name": "Generate TV Scripts",
+    "nanodegree_key": "nd101",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 2899,
+    "entitlement_required": null,
+    "is_career": null,
+    "recruitment_family_id": 1,
+    "created_at": "2017-03-06T20:09:19.818Z",
+    "updated_at": "2020-12-29T00:05:00.518Z",
+    "price": "7.0",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}

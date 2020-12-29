@@ -1,0 +1,308 @@
+{
+  "data": {
+    "lesson": {
+      "id": 501664,
+      "key": "5b2d11fe-6d94-4d16-8c69-453bf9beb1e8",
+      "title": "Solve OpenAI Gym's Taxi-v2 Task",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "With reinforcement learning now in your toolbox, you're ready to explore a mini project using OpenAI Gym!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 598966,
+          "key": "ddb32ccb-2ae0-4c9d-82b0-f45e07271beb",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 598980,
+              "key": "2a2e905c-d5c9-46f1-9b02-a5e69a979954",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ad260ed_screen-shot-2018-04-14-at-3.13.15-pm/screen-shot-2018-04-14-at-3.13.15-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2a2e905c-d5c9-46f1-9b02-a5e69a979954",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 227,
+              "instructor_notes": null
+            },
+            {
+              "id": 598981,
+              "key": "c36592a6-53b5-4798-b4cd-e01f283b2d13",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Introduction",
+              "instructor_notes": ""
+            },
+            {
+              "id": 598967,
+              "key": "a7e13fed-0d78-473e-929c-033356ae9a01",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For this coding exercise, you will use OpenAI Gym's `Taxi-v2` environment to design an algorithm to teach a taxi agent to navigate a small gridworld.  The goal is to adapt all that you've learned in the previous lessons to solve a new environment!  \n\nBefore proceeding, read the description of the environment in subsection 3.1 of [this paper](https://arxiv.org/pdf/cs/9905014.pdf).\n\nYou can verify that the description in the paper matches the OpenAI Gym environment by peeking at the code [here](https://github.com/openai/gym/blob/master/gym/envs/toy_text/taxi.py).\n\nAnswer the quiz questions below to check your understanding of the environment.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 598977,
+              "key": "294ccdd1-1615-4703-b704-e98b52294597",
+              "title": "Question 1",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How large is the state space?",
+                "answers": [
+                  {
+                    "id": "a1523735885135",
+                    "text": "There are 25 possible states, corresponding to each grid in the 5x5 grid world.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1523735940504",
+                    "text": "There are 100 possible states, corresponding to each grid in the 5x5 grid world and each of the four possible starting locations.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1523736030046",
+                    "text": "There are 500 possible states, corresponding to 25 possible grid locations, 5 locations for the passenger, and 4 destinations.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 598978,
+              "key": "de96bf0f-378d-46a6-8c56-39c257ea8fc3",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "How many actions are available to the agent?",
+                "answers": [
+                  {
+                    "id": "a1523736247351",
+                    "text": "There are 4 possible actions, corresponding to moving North, East, South, or West.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1523736275314",
+                    "text": "There are 6 possible actions, corresponding to moving North, East, South, or West, picking up the passenger, and dropping off the passenger.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1523736343628",
+                    "text": "There are 4 possible actions, corresponding to increasing or decreasing the speed of the taxi, dropping off the passenger, and picking up the passenger.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 501665,
+          "key": "8e2b7375-7af9-4aee-9589-be17029935bd",
+          "title": "Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501667,
+              "key": "e0e8c162-21d0-406d-b348-c101361a7648",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 501668,
+              "key": "da2db731-bf17-4200-86c6-936fbdb94436",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Open the workspace in the next concept in a new window.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 669633,
+              "key": "433ebf57-050f-4196-bd71-7f83a9d69e16",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b3bb055_new-tab/new-tab.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/433ebf57-050f-4196-bd71-7f83a9d69e16",
+              "caption": "Open the workspace in a new window.",
+              "alt": "Open the workspace in a new window.",
+              "width": 316,
+              "height": 230,
+              "instructor_notes": null
+            },
+            {
+              "id": 501673,
+              "key": "0e2ae0a3-a72b-42d8-a1db-b931594804cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next, open a terminal by clicking on **NEW TERMINAL**.  You will notice some output as the environment is configured.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 501674,
+              "key": "02adcb88-be31-4932-918b-bd939a4af8ca",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a556990_open-terminal/open-terminal.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/02adcb88-be31-4932-918b-bd939a4af8ca",
+              "caption": "Open a new terminal.",
+              "alt": "",
+              "width": 736,
+              "height": 268,
+              "instructor_notes": null
+            },
+            {
+              "id": 501675,
+              "key": "8717d777-4bd0-4731-9fa1-9b1299515c50",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The workspace contains three files:\n- `agent.py`: Develop your reinforcement learning agent here.  This is the only file that you should modify.\n- `monitor.py`: The `interact` function tests how well your agent learns from interaction with the environment.\n- `main.py`: Run this file in the terminal to check the performance of your agent.\n\nOpen all three of these files in the workspace.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 501676,
+              "key": "1ee3112a-c661-4f1e-85f7-1f510a403b14",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a5569ce_open-agent-monitor-main/open-agent-monitor-main.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1ee3112a-c661-4f1e-85f7-1f510a403b14",
+              "caption": "Open `agent.py`, `Monitor.py`, and `main.py`.",
+              "alt": "",
+              "width": 976,
+              "height": 578,
+              "instructor_notes": null
+            },
+            {
+              "id": 501677,
+              "key": "b7d5b94a-90fb-43bd-9238-b54f8b3fb216",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next, run `main.py` by executing `python main.py` in the terminal.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 501678,
+              "key": "392b9a7b-1193-43a8-9990-e9abbc6ed9f6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a556a14_run-main/run-main.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/392b9a7b-1193-43a8-9990-e9abbc6ed9f6",
+              "caption": "Run `python main.py` in the terminal.",
+              "alt": "",
+              "width": 588,
+              "height": 240,
+              "instructor_notes": null
+            },
+            {
+              "id": 501679,
+              "key": "77f58f44-b8c5-408a-991a-a005f3c01f6e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When you run `main.py`, the agent that you specify in `agent.py` interacts with the environment for 20,000 episodes.  The details of the interaction are specified in `monitor.py`, which returns two variables: `avg_rewards` and `best_avg_reward`.\n- `avg_rewards` is a deque where `avg_rewards[i]` is the average (undiscounted) return collected by the agent from episodes `i+1` to episode `i+100`, inclusive.  So, for instance, `avg_rewards[0]` is the average return collected by the agent over the first 100 episodes.\n- `best_avg_reward` is the largest entry in `avg_rewards`.  This is the final score that you should use when determining how well your agent performed in the task.\n\nYour assignment is to modify the `agents.py` file to improve the agent's performance.\n- Use the `__init__()` method to define any needed instance variables.  Currently, we define the number of actions available to the agent (`nA`) and initialize the action values (`Q`) to an empty dictionary of arrays.  Feel free to add more instance variables; for example, you may find it useful to define the value of epsilon if the agent uses an epsilon-greedy policy for selecting actions.\n- The `select_action()` method accepts the environment state as input and returns the agent's choice of action.  The default code that we have provided randomly selects an action.\n- The `step()` method accepts a (`state`, `action`, `reward`, `next_state`) tuple as input, along with the `done` variable, which is `True` if the episode has ended.  The default code (which you should certainly change!) increments the action value of the previous state-action pair by 1.  You should change this method to use the sampled tuple of experience to update the agent's knowledge of the problem.\n\nOnce you have modified the function, you need only run `python main.py` to test your new agent.\n\nWhile you are welcome to implement any algorithm of your choosing, note that it is possible to achieve satisfactory performance using some of the approaches that we have covered in the lessons.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 501681,
+              "key": "3fbe961a-c034-4bf7-8cd9-57f9a9a43b19",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Evaluate your Performance\n---\nOpenAI Gym [defines \"solving\"](https://gym.openai.com/envs/Taxi-v1/) this task as getting average return of 9.7 over 100 consecutive trials.  \n\nWhile this coding exercise is ungraded, we recommend that you try to attain an average return of at least 9.1 over 100 consecutive trials (`best_avg_reward` > 9.1).  \n\n### Not sure where to start?\n---\n_Note that this exercise is intentionally open-ended, and we won't provide an official solution_.  For help with this exercise, please reach out to your instructors and fellow students!  As a first step, you should figure out how to adapt your implementation in the **Temporal-Difference Methods** lesson to implement an agent to learn in this new environment. The code will likely be very similar to the notebook from the **Temporal-Difference Methods** lesson, where you need only modify very few things to fit this slightly different format.\n\n### Share your Results\n---\nIf you arrive at an implementation that you are proud of, please share your results with the student community!  You can also reach out to ask questions, get implementation hints, share ideas, or find collaborators! \n\nAs a final step, towards sharing your ideas with the wider RL community, you may like to create a write-up and submit it to the [OpenAI Gym Leaderboard](https://github.com/openai/gym/wiki/Leaderboard)!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 501666,
+          "key": "ec8239b7-2ebb-49c0-a375-eb9f966559dc",
+          "title": "Mini Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501684,
+              "key": "c5d28fd3-cef4-4591-9e4c-7fa2fbf0cb60",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view996c10b8",
+              "pool_id": "webterminal",
+              "view_id": "996c10b8-b4bd-447e-b376-f6ea81eaa98a",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "pip install numpy scipy gym",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false
+                  },
+                  "kind": "generic"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

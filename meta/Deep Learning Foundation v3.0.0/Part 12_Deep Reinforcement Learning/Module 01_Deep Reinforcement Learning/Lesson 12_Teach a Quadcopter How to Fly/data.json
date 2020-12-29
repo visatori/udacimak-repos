@@ -1,0 +1,56 @@
+{
+  "data": {
+    "lesson": {
+      "id": 553600,
+      "key": "f1268e28-a315-4021-9d0e-7ef9bb741ffd",
+      "title": "Teach a Quadcopter How to Fly",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Build a quadcopter flying agent that learns to take off, hover and land using reinforcement learning.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/f1268e28-a315-4021-9d0e-7ef9bb741ffd/553600/1544186469924/Teach+a+Quadcopter+How+to+Fly+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/f1268e28-a315-4021-9d0e-7ef9bb741ffd/553600/1544186467590/Teach+a+Quadcopter+How+to+Fly+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 553601,
+          "key": "d9b84691-1588-43d5-9daf-eaf4d3f542ff",
+          "title": "Project Description",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 553602,
+              "key": "3159245a-3949-4319-86d8-f02024c8a9a8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this project, you will design an agent that can fly a quadcopter, and then train it using a reinforcement learning algorithm of your choice! Try to apply the techniques you have learnt in this module to find out what works best, but also feel free to come up with innovative ideas and test them.\n\nThe project is broken down into the following sections:\n\n- Task 1: Takeoff\n- Task 2: Hover\n- Task 3: Landing\n- Task 4: Combined\n- Reflections\n\nTo get started, clone this GitHub repo and follow the instructions in the README: https://github.com/udacity/RL-Quadcopter\n\nThe setup for the project environment is somewhat difficult; if you have questions, ask them in the [forums](https://discussions.udacity.com/c/nd101-part-6-deep-reinforcement-learning/nd101-teach-quad-to-fly).  If this is your first time using the forums, first enter them through the forums link in the resources tab (on the upper left of your screen), as this will generate the necessary permissions for your forums account.\n\nWhile you are working on the project, test individual skills against a suite of scenarios. When you are happy with your agent's performance on these skills, think about how you would combine them into an end-to-end flying system. Finally, we want you compare different parameter settings, variations, or even completely different algorithms, and present your findings in the reflections section.\n\nYou can find the project specifications in [this rubric](https://review.udacity.com/#!/rubrics/1189/view).\n\n__THIS PROJECT IS NOT FOR SUBMISSION.__\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

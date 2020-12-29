@@ -1,0 +1,68 @@
+{
+  "data": {
+    "lesson": {
+      "id": 278908,
+      "key": "36ac8cf8-0dfe-4a94-9d97-76e1946ba942",
+      "title": "Siraj's Style Transfer",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Siraj will show you how to generate art with deep learning networks. He'll also talk about the history of computer generated art, and why deep learning models are so good at making art.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/36ac8cf8-0dfe-4a94-9d97-76e1946ba942/278908/1544457275487/Siraj%27s+Style+Transfer+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/36ac8cf8-0dfe-4a94-9d97-76e1946ba942/278908/1544457272494/Siraj%27s+Style+Transfer+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 278955,
+          "key": "2e93165d-69ce-4cb2-9631-553d457d29cf",
+          "title": "How to Generate Art",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 278957,
+              "key": "dc9341e3-40be-4794-8d83-097f8b2c72fc",
+              "title": "How to Generate Art - Intro to Deep Learning #8",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Oex0eWoU7AQ",
+                "china_cdn_id": "Oex0eWoU7AQ.mp4"
+              }
+            },
+            {
+              "id": 278958,
+              "key": "bf100c1d-a143-4bf2-8935-4e5ec63ea262",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We're going to learn how to use deep learning to convert an image into the style of an artist that we choose. We'll go over the history of computer generated art, then dive into the details of how this process works and why deep learning does it so well.\n\nCoding challenge for this video:\n[https://github.com/llSourcell/How-to-...](https://github.com/llSourcell/How-to-Generate-Art-Demo)\n\nItai's winning code:\n[https://github.com/etai83/lstm_stock_...](https://github.com/etai83/lstm_stock_prediction)\n\nAndreas' runner up code:\n[https://github.com/AndysDeepAbstracti...](https://github.com/AndysDeepAbstractions/How-to-Predict-Stock-Prices-Easily-Demo/blob/master/stockdemo.ipynb)\n\nMore learning resources:\n\n* [https://harishnarayanan.org/writing/a...](https://harishnarayanan.org/writing/artistic-style-transfer/)\n* [https://ml4a.github.io/ml4a/style_tra...](https://ml4a.github.io/ml4a/style_transfer/)\n* [http://genekogan.com/works/style-tran...](http://genekogan.com/works/style-transfer/)\n* https://arxiv.org/abs/1508.06576\n* [https://jvns.ca/blog/2017/02/12/neura...](https://jvns.ca/blog/2017/02/12/neural-style/)\n\nStyle transfer apps:\n\n* http://www.pikazoapp.com/\n* http://deepart.io/\n* https://artisto.my.com/\n* https://prisma-ai.com/\n\n### Link to Live Stream:\n\n[How to do Style Transfer With Tensorflow](https://www.youtube.com/watch?v=YoBEGQD3LCc)",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

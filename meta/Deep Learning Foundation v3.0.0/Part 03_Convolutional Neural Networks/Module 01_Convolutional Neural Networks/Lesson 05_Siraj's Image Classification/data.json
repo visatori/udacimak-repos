@@ -1,0 +1,107 @@
+{
+  "data": {
+    "lesson": {
+      "id": 267940,
+      "key": "d54281f8-fa42-4239-946a-ebe61af0751d",
+      "title": "Siraj's Image Classification",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Siraj will go over the history of image classification, then he'll dive into the concepts behind convolutional networks and why they are so amazing.\nHe'll also create an Image Classifier for cats & dogs in 40 lines of Python! \n\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/d54281f8-fa42-4239-946a-ebe61af0751d/267940/1544457247843/Siraj%27s+Image+Classification+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/d54281f8-fa42-4239-946a-ebe61af0751d/267940/1544457244609/Siraj%27s+Image+Classification+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 268069,
+          "key": "ca081f24-90ec-4fe0-aba5-7f9713cb3619",
+          "title": "On Keras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268071,
+              "key": "9db43477-42bf-4f45-877c-3785c10a36c9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9db43477-42bf-4f45-877c-3785c10a36c9",
+              "caption": "Hello!",
+              "alt": null,
+              "width": 200,
+              "height": 200,
+              "instructor_notes": null
+            },
+            {
+              "id": 268070,
+              "key": "c5e3ef7b-c980-4035-b0f4-acc1764f65b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# On Keras\n\nThis week, Siraj uses [Keras](https://keras.io/) to build his model. Keras is a high level library for building neural networks able to use both TensorFlow and Theano as a backend. That is, it can use either library to actually run the networks.\n\nKeras is being rolled into TensorFlow in the [tf.layers module](https://www.tensorflow.org/api_docs/python/tf/layers). So, while we'll be using TensorFlow in the projects, you can build networks the same way you would with Keras. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 267957,
+          "key": "93537ff9-b989-4a6d-8f87-b4bfdcf0a6d9",
+          "title": "How to Make an Image Classifier",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 267958,
+              "key": "64fe0295-752a-4cb5-ad6e-e21fb149e3d9",
+              "title": "How to Make an Image Classifier - Intro to Deep Learning #6",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cAICT4Al5Ow",
+                "china_cdn_id": "cAICT4Al5Ow.mp4"
+              }
+            },
+            {
+              "id": 267961,
+              "key": "63c4a196-4eb5-4f98-8ffd-88b33ae2403f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "[Coding challenge](https://github.com/llSourcell/how_to_make_an_image_classifier) for this video.\n\n\n[Charles-David's winning code](https://github.com/alkaya/TFmyValentine-cotw).\n\n[Dalai's runner-up code](https://github.com/mdalai/Deep-Learning-projects/tree/master/wk5-speed-dating).\n\n### More Learning Resources:\n* http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/\n* https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/\n* http://cs231n.github.io/convolutional-networks/\n* http://deeplearning.net/tutorial/lenet.html\n* https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/\n* http://neuralnetworksanddeeplearning.com/chap6.html\n* http://xrds.acm.org/blog/2016/06/convolutional-neural-networks-cnns-illustrated-explanation/\n* http://andrew.gibiansky.com/blog/machine-learning/convolutional-neural-networks/\n* https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721#.l6i57z8f2\n\n\n# Weekly Live Session\n\nClick [here](https://www.youtube.com/watch?v=APmF6qE3Vjc) for Siraj's weekly live session about Tensorflow image classifier.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "data": {
+    "lesson": {
+      "id": 350715,
+      "key": "7f9a6f80-b67d-4b6c-b59b-91aa2e134734",
+      "title": "RL in Continuous Spaces",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Review the fundamental concepts of reinforcement learning, and learn how to adapt traditional algorithms to work with continuous spaces.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7f9a6f80-b67d-4b6c-b59b-91aa2e134734/350715/1544927044902/RL+in+Continuous+Spaces+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7f9a6f80-b67d-4b6c-b59b-91aa2e134734/350715/1544927040779/RL+in+Continuous+Spaces+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 372736,
+          "key": "a96517cc-a316-43ac-a7ea-51c339c072c2",
+          "title": "Deep Reinforcement Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501539,
+              "key": "23f489fc-9240-4b62-9631-fcabb8c7f107",
+              "title": "Deep Reinforcement Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "**Note**: <span class=\"mathquill\">\\mathcal{R}</span> is the set of all rewards. The reward probability is jointly specified with the transition probability as: <span class=\"mathquill\">p(s', r | s, a) = \\mathbb{P}(S_{t+1}=s', R_{t+1}=r|S_t=s, A_t=a)</span>",
+              "video": {
+                "youtube_id": "GPjK124RU5g",
+                "china_cdn_id": "GPjK124RU5g.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 501634,
+          "key": "7508ac67-a221-447d-b8bd-e9baaf381956",
+          "title": "Resources",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501640,
+              "key": "45e2b46c-b50c-43a3-ae49-6b2e1c6f20c6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Exercises\n\nTo complete the exercises in this lesson, clone the following GitHub repository:\n\n> **[github.com/udacity/reinforcement-learning/](https://github.com/udacity/reinforcement-learning/)**\n\nMake sure you have Python 3 installed, either natively or through Anaconda, along with the following packages:<br />\n**`numpy, scipy, pandas, matplotlib, scikit-learn, tqdm, ipython, jupyter, gym`**\n\nAdditional packages, if needed, may be listed at the beginning of specific exercise notebooks.\n\n## OpenAI Gym\n\nWe'll be using **OpenAI Gym** for coding exercises throughout this class. It is an open-source library and platform for developing and sharing reinforcement learning algorithms. If you haven't used it before, now is a good time to get familiar with it.\n\nRead the instructions in the [OpenAI Gym documentation](https://gym.openai.com/docs/) to learn the basic syntax and usage.\n\n> _The documentation has instructions for installing OpenAI Gym on your computer that might be helpful. Some environments have additional dependencies that you may need to install (e.g. a physics or rendering engine.)_\n\nYou're also encouraged to take the time to check out the [leaderboard](https://github.com/openai/gym/wiki/Leaderboard), which contains the best solutions to each task.\n\nCheck out this [blog post](https://blog.openai.com/openai-gym-beta/) to read more about how OpenAI Gym is used to accelerate reinforcement learning (RL) research.\n\n## Textbook: Sutton & Barto, 2nd Ed.\n\nWe will recommend you to read excerpts from this [classic textbook on reinforcement learning](http://go.udacity.com/rl-textbook). The topics we cover in Deep Reinforcement Learning are discussed in _**Part II: Approximate Solution Methods**_. In addition, we'll refer to important papers that provide further details about specific algorithms and techniques.\n\n> _Note that all of the suggested readings are optional! But they are highly recommended, esp. if you find a topic interesting and want to know more about it, or if something is unclear and you need an alternate explanation._\n\nCheck out this [GitHub repository](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction) to see Python implementations of most of the figures in the book.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 350718,
+          "key": "f59522e8-09d6-48c3-b2f4-747a8ddc4e4f",
+          "title": "Discrete vs. Continuous Spaces",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501570,
+              "key": "b13f1bc0-6429-4e37-b6eb-c014337db589",
+              "title": "Discrete vs. Continuous Spaces",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uHstLeRzaE8",
+                "china_cdn_id": "uHstLeRzaE8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 501641,
+          "key": "8f5b01de-12dd-4a2b-8b3f-feda943af07e",
+          "title": "Quiz: Space Representations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501646,
+              "key": "8aed53aa-2e3f-4496-9140-4ad7207a7e3e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a554674_poker-hand-3-of-a-kind/poker-hand-3-of-a-kind.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8aed53aa-2e3f-4496-9140-4ad7207a7e3e",
+              "caption": "",
+              "alt": "",
+              "width": 400,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 501645,
+              "key": "ff660a92-7624-4941-b0e5-3b6521f68e1c",
+              "title": "Space Representations",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "prompt": "Which of the following state or action spaces can be encoded using **discrete** representations?",
+                "answers": [
+                  {
+                    "id": "a1515533988287",
+                    "text": "A hand of cards when playing Poker",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1515534071720",
+                    "text": "Force applied when grasping with a robotic arm",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1515534347156",
+                    "text": "GPS coordinates for autonomous driving",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1515534474729",
+                    "text": "Board positions for a 9x9 Go game",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1515534637936",
+                    "text": "Keys to play on a musical keyboard",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 355453,
+          "key": "a07fda6d-c75a-4e8f-9c5c-36c2a43d0be7",
+          "title": "Discretization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501571,
+              "key": "f699a410-9312-4412-b040-086512ca23b4",
+              "title": "Discretization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "j2eZyUpy--E",
+                "china_cdn_id": "j2eZyUpy--E.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 594300,
+          "key": "ebb7c349-aaa9-46d3-bccd-d7d9084be11b",
+          "title": "Exercise: Discretization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594301,
+              "key": "9217dac2-06c5-41ef-a9a0-c05d85c356e6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Clone: **[github.com/udacity/reinforcement-learning/](https://github.com/udacity/reinforcement-learning/)**\n\nNavigate to the repository root `reinforcement-learning/` and run:\n\n```bash\njupyter notebook notebooks\n```\n\nNext, open `Discretization.ipynb`, and follow the instructions in the notebook.  Implement code sections marked with a **`TODO`** comment.  You can find the corresponding solution notebook (`Discretization_Solution.ipynb`) in the repository.\n\n_Note: This is not a graded exercise, but completing it will help you better understand the concepts taught in this lesson._",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 355457,
+          "key": "3df727fc-03e8-412a-ad35-37fe0549db26",
+          "title": "Tile Coding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501573,
+              "key": "4762b3e1-3360-423a-af5f-69da1a333352",
+              "title": "Tile Coding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BRs7AnTZ_8k",
+                "china_cdn_id": "BRs7AnTZ_8k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 594302,
+          "key": "e5abf643-aefe-4561-9d33-6988a2ff939a",
+          "title": "Exercise: Tile Coding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594303,
+              "key": "1f6621d6-a103-4532-9104-dd097868060b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Clone: **[github.com/udacity/reinforcement-learning/](https://github.com/udacity/reinforcement-learning/)**\n\nNavigate to the repository root `reinforcement-learning/` and run:\n\n```bash\njupyter notebook notebooks\n```\n\nNext, open `Tile_Coding.ipynb`, and follow the instructions in the notebook.  Implement code sections marked with a **`TODO`** comment.  You can find the corresponding solution notebook (`Tile_Coding_Solution.ipynb`) in the repository.\n\n_Note: This is not a graded exercise, but completing it will help you better understand the concepts taught in this lesson._",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 355458,
+          "key": "5586a1ba-f3ce-4344-a74e-8776645cc626",
+          "title": "Coarse Coding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501574,
+              "key": "a6a0e133-b556-4d8d-a3da-34cf57efa038",
+              "title": "Coarse Coding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Uu1J5KLAfTU",
+                "china_cdn_id": "Uu1J5KLAfTU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 355454,
+          "key": "71f0d234-98fc-4a0f-8416-58f3090feec2",
+          "title": "Function Approximation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501576,
+              "key": "b8ec00ff-7b4d-472f-b1cf-091688db91d5",
+              "title": "Function Approximation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UTGWVY6jEdg",
+                "china_cdn_id": "UTGWVY6jEdg.mp4"
+              }
+            },
+            {
+              "id": 355463,
+              "key": "0400c99c-ae0f-4e62-847a-2232e1a2f686",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Function Approximation\n\nGiven a problem domain with continuous states <span class=\"mathquill\">s \\in \\mathcal{S} = {\\mathbb{R}^{n}}</span>, we wish to find a way to represent the value function <span class=\"mathquill\">v_{\\pi}(s)</span> (for prediction) or <span class=\"mathquill\">q_{\\pi}(s, a)</span> (for control).\n\nWe can do this by choosing a parameterized function that _approximates_ the true value function:\n\n<span class=\"mathquill\">\\hat{v}(s, \\mathbf{w}) \\approx v_{\\pi}(s)</span><br />\n<span class=\"mathquill\">\\hat{q}(s, a, \\mathbf{w}) \\approx q_{\\pi}(s, a)</span>\n\nOur goal then reduces to finding a set of parameters <span class=\"mathquill\">\\mathbf{w}</span> that yield an optimal value function. We can use the general reinforcement learning framework, with a Monte-Carlo or Temporal-Difference approach, and modify the update mechanism according to the chosen function.\n\n## Feature Vectors\n\nA common intermediate step is to compute a feature vector that is representative of the state:\n<span class=\"mathquill\">\\mathbf{x}(s)</span>\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 355455,
+          "key": "9e591e2b-11dc-4c7f-a276-e6f41f6815dc",
+          "title": "Linear Function Approximation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501579,
+              "key": "2490f8d3-412a-4075-8652-7d648bf65e8d",
+              "title": "Linear Function Approximation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OJ5wrB7o-pI",
+                "china_cdn_id": "OJ5wrB7o-pI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 372895,
+          "key": "b98da586-2e59-484d-a0f7-783953890f6d",
+          "title": "Kernel Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501580,
+              "key": "0ec548c1-cca5-46c6-a9c4-abeb4d141a48",
+              "title": "Kernel Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RdkPVYyVOvU",
+                "china_cdn_id": "RdkPVYyVOvU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 355456,
+          "key": "59ebf823-3ef5-4531-a36e-696974845424",
+          "title": "Non-Linear Function Approximation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501583,
+              "key": "8056db9b-57f5-4987-98a3-b2122ecd1569",
+              "title": "Non-Linear Function Approximation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rITnmpD2mN8",
+                "china_cdn_id": "rITnmpD2mN8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 501585,
+          "key": "6191b372-9ea0-4edf-9116-e562b4257fc6",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 501592,
+              "key": "d7dd3a7a-d782-42c1-8f52-9637adb2faf3",
+              "title": "Summary",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MTEBk43oByU",
+                "china_cdn_id": "MTEBk43oByU.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

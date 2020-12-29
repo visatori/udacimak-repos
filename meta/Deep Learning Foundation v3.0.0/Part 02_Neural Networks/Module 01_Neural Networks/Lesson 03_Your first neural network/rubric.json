@@ -1,0 +1,241 @@
+{
+  "id": 700,
+  "project_id": 274,
+  "upload_types": [
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "",
+  "hide_criteria": false,
+  "created_at": "2017-01-13T04:25:35.840Z",
+  "updated_at": "2019-06-14T15:17:16.187Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": "3-4 days",
+  "project_assistant_enabled": true,
+  "available_for_cert_project": false,
+  "language": "en-us",
+  "ndkeys": [
+    "nd002-cn-svip",
+    "nd009t-cn-svip",
+    "nd101-cn-advanced-ent",
+    "nd101-cn-advanced-vip",
+    "nd892-cn",
+    "nd101",
+    "nd101-cn",
+    "nd101-cn-advanced",
+    "nd891-cn",
+    "nd101-ent",
+    "nd101-infn1",
+    "nd022-ent-AA"
+  ],
+  "coursekeys": [],
+  "is_career": false,
+  "sections": [
+    {
+      "id": 1827,
+      "name": "Code Functionality",
+      "created_at": "2017-01-16T21:54:55.609Z",
+      "updated_at": "2017-01-16T21:55:16.951Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 700,
+      "rubric_items": [
+        {
+          "id": 5570,
+          "section_id": 1827,
+          "passed_description": "All the code in the notebook runs in Python 3 without failing, and all unit tests pass.",
+          "exceeded_description": "",
+          "created_at": "2017-01-16T21:55:17.159Z",
+          "updated_at": "2017-03-23T23:40:34.552Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "All code works appropriately and passes all unit tests",
+          "exceedable": false
+        },
+        {
+          "id": 5574,
+          "section_id": 1827,
+          "passed_description": "The sigmoid activation function is implemented correctly",
+          "exceeded_description": "",
+          "created_at": "2017-01-16T22:47:02.410Z",
+          "updated_at": "2017-01-23T19:38:22.118Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Sigmoid activation function",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 1828,
+      "name": "Forward Pass",
+      "created_at": "2017-01-16T22:12:03.099Z",
+      "updated_at": "2017-01-16T22:12:17.072Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 700,
+      "rubric_items": [
+        {
+          "id": 5572,
+          "section_id": 1828,
+          "passed_description": "The forward pass is correctly implemented for the network's training.",
+          "exceeded_description": "",
+          "created_at": "2017-01-16T22:14:40.105Z",
+          "updated_at": "2017-11-06T08:49:40.083Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Forward Pass - Training",
+          "exceedable": false
+        },
+        {
+          "id": 5573,
+          "section_id": 1828,
+          "passed_description": "The run method correctly produces the desired regression output for the neural network.",
+          "exceeded_description": "",
+          "created_at": "2017-01-16T22:34:25.110Z",
+          "updated_at": "2017-11-06T08:49:40.094Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Forward Pass - Run",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 1829,
+      "name": "Backward Pass",
+      "created_at": "2017-01-16T22:12:17.656Z",
+      "updated_at": "2017-01-16T22:12:28.684Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 700,
+      "rubric_items": [
+        {
+          "id": 5578,
+          "section_id": 1829,
+          "passed_description": "The network correctly implements the backward pass for each batch, correctly updating the weight change.",
+          "exceeded_description": "",
+          "created_at": "2017-01-17T21:39:04.028Z",
+          "updated_at": "2017-11-06T08:54:51.215Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Batch Weight Change",
+          "exceedable": false
+        },
+        {
+          "id": 5580,
+          "section_id": 1829,
+          "passed_description": "Updates to both the input-to-hidden and hidden-to-output weights are implemented correctly.",
+          "exceeded_description": "",
+          "created_at": "2017-01-17T21:59:59.404Z",
+          "updated_at": "2017-11-06T09:11:27.526Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Updating the weights",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 1830,
+      "name": "Hyperparameters",
+      "created_at": "2017-01-16T22:12:28.908Z",
+      "updated_at": "2017-01-16T22:14:39.598Z",
+      "deleted_at": null,
+      "position": 3,
+      "rubric_id": 700,
+      "rubric_items": [
+        {
+          "id": 5575,
+          "section_id": 1830,
+          "passed_description": "The number of epochs is chosen such the network is trained well enough to accurately make predictions but is not overfitting to the training data.",
+          "exceeded_description": "",
+          "created_at": "2017-01-16T22:48:32.628Z",
+          "updated_at": "2017-01-25T06:11:54.476Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Number of epochs",
+          "exceedable": false
+        },
+        {
+          "id": 5581,
+          "section_id": 1830,
+          "passed_description": "The number of hidden units is chosen such that the network is able to accurately predict the number of bike riders, is able to generalize, and is not overfitting.",
+          "exceeded_description": "",
+          "created_at": "2017-01-17T22:29:55.773Z",
+          "updated_at": "2017-10-16T21:55:58.327Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Number of hidden units",
+          "exceedable": false
+        },
+        {
+          "id": 5582,
+          "section_id": 1830,
+          "passed_description": "The learning rate is chosen such that the network successfully converges, but is still time efficient.",
+          "exceeded_description": "",
+          "created_at": "2017-01-17T22:30:03.768Z",
+          "updated_at": "2017-10-16T21:55:58.340Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Learning rate",
+          "exceedable": false
+        },
+        {
+          "id": 7964,
+          "section_id": 1830,
+          "passed_description": "The number of output nodes is properly selected to solve the desired problem.",
+          "exceeded_description": "",
+          "created_at": "2017-11-06T08:54:51.339Z",
+          "updated_at": "2017-11-12T19:32:37.460Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "Output Nodes",
+          "exceedable": false
+        },
+        {
+          "id": 7965,
+          "section_id": 1830,
+          "passed_description": "The training loss is below 0.09 and the validation loss is below 0.18.",
+          "exceeded_description": "",
+          "created_at": "2017-11-06T08:57:57.029Z",
+          "updated_at": "2017-11-12T19:32:37.480Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 4,
+          "criteria": "Final Results",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 274,
+    "name": "Predicting Bike-Sharing Patterns",
+    "nanodegree_key": "nd101",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 2899,
+    "entitlement_required": false,
+    "is_career": false,
+    "recruitment_family_id": 1,
+    "created_at": "2017-01-17T19:34:17.569Z",
+    "updated_at": "2020-12-29T10:25:21.288Z",
+    "price": "7.0",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "data": {
+    "lesson": {
+      "id": 301385,
+      "key": "5b835969-b090-483b-85dd-eedb15430298",
+      "title": "Siraj's Video Generation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Siraj is going to use a Deep Convolutional GAN to generate images of the alien language from the movie arrival that we can then stitch together to animate into video.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/5b835969-b090-483b-85dd-eedb15430298/301385/1544457179554/Siraj%27s+Video+Generation+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/5b835969-b090-483b-85dd-eedb15430298/301385/1544457176217/Siraj%27s+Video+Generation+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 301386,
+          "key": "4126b15d-9a76-4b40-8ccd-171adf9113fe",
+          "title": "How to Generate Video",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301618,
+              "key": "e39ae3fe-ba95-4365-b61a-bedb01769376",
+              "title": "How to Generate Video - Intro to Deep Learning #15",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-E2N1kQc8MM",
+                "china_cdn_id": "-E2N1kQc8MM.mp4"
+              }
+            },
+            {
+              "id": 301389,
+              "key": "7f4c7a58-37d4-4713-8472-1dee6928fc41",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* Code for this video (coding challenge included):\nhttps://github.com/llSourcell/how_to_generate_video\n\n* Nemanja's winning code:\nhttps://github.com/Nemzy/video_generator\n\n* Niyas' Runner up code:\nhttps://github.com/niazangels/vae-pokedex and his blog post:\nhttps://hackernoon.com/how-to-autoencode-your-pok%C3%A9mon-6b0f5c7b7d97\n\n## More Learning Resources:\n* http://blog.aylien.com/introduction-generative-adversarial-networks-code-tensorflow/\n* https://blog.openai.com/generative-models/\n* http://cs.stanford.edu/people/karpathy/gan/\n* https://channel9.msdn.com/Events/Neural-Information-Processing-Systems-Conference/Neural-Information-Processing-Systems-Conference-NIPS-2016/Generative-Adversarial-Networks\n* http://wiseodd.github.io/techblog/2016/09/17/gan-tensorflow/\n* https://www.slideshare.net/ThomasDaSilvaPaula/a-very-gentle-introduction-to-generative-adversarial-networks-aka-gans-71614428\n* http://blog.evjang.com/2016/06/generative-adversarial-nets-in.html\n* https://medium.com/@awjuliani/generative-adversarial-networks-explained-with-a-classic-spongebob-squarepants-episode-54deab2fce39\n\n# Weekly Live Session\n\nClick [here](https://www.youtube.com/watch?v=smcpCHYr9OE) for the live session on Generative Adversarial Networks.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

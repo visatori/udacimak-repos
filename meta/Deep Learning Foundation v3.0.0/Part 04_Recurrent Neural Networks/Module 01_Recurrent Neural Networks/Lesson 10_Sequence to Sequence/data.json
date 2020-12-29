@@ -1,0 +1,397 @@
+{
+  "data": {
+    "lesson": {
+      "id": 290282,
+      "key": "43ccf91e-7055-4833-8acc-0e2cf77696e8",
+      "title": "Sequence to Sequence",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Here you'll learn about a specific architecture of RNNs for generating one sequence from another sequence. These RNNs are useful for chatbots, machine translation, and more!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/43ccf91e-7055-4833-8acc-0e2cf77696e8/290282/1544457702971/Sequence+to+Sequence+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/43ccf91e-7055-4833-8acc-0e2cf77696e8/290282/1544457700260/Sequence+to+Sequence+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 290319,
+          "key": "fde964e8-f819-4f07-ae9e-d2a48428c87d",
+          "title": "Introducing Jay Alammar",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290321,
+              "key": "f24bfdc7-feb9-4b45-985f-0ac3333a35c7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58472d92_mat-headshot/mat-headshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f24bfdc7-feb9-4b45-985f-0ac3333a35c7",
+              "caption": "Guess what? It's Mat!",
+              "alt": null,
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 290347,
+              "key": "a5e84480-d940-4285-85ed-5cb9cb32c94f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This week we're introducing a new Udacity instructor, Jay Alammar. Jay has done some great work in interactive explorations of neural networks, check out [his blog](http://jalammar.github.io/).\n\nJay will be teaching you about a particular RNN architecture called sequence to sequence. In this case, you feed in a sequence of data and the network will output another sequence. This is typically used in problems such as machine translation, where you'd feed in a sentence in English and get out a phrase in Arabic.\n\nWe're just covering the conceptual parts of sequence to sequence networks here. We'll get into implementing them next week. This lesson is important because you'll soon be using a sequence to sequence network to implement a machine translation model in the fourth project.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290322,
+          "key": "ab43e169-e8fb-49c4-b7ca-b677cfa29445",
+          "title": "Jay Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290380,
+              "key": "4b25ec51-acbf-40e9-984d-e425cdc53851",
+              "title": "Jay's Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HPOzAlXhuxQ",
+                "china_cdn_id": "HPOzAlXhuxQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 290381,
+          "key": "83ea44df-25e0-4e6a-9554-5e8ecacc852d",
+          "title": "Applications",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290382,
+              "key": "a7b723d1-b791-4a78-a4fa-6adaedc91c23",
+              "title": "Applications seq2seq",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tDJBDwriJYQ",
+                "china_cdn_id": "tDJBDwriJYQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 290383,
+          "key": "be468484-4bd5-4fb0-82d6-5f5697af07da",
+          "title": "Architectures",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290384,
+              "key": "43c36dd9-7e0d-46cf-81a5-6de93ef5d4ba",
+              "title": "Architecture encoder decoder",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dkHdEAJnV_w",
+                "china_cdn_id": "dkHdEAJnV_w.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 290385,
+          "key": "f999d8f6-b4c1-4cd0-811e-4767b127ae50",
+          "title": "Architectures in More Depth",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290386,
+              "key": "cfcb73a2-9746-4bc3-9adb-dae362fd516f",
+              "title": "Architecture in More Depth",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rdAo4MqLbEk",
+                "china_cdn_id": "rdAo4MqLbEk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 290400,
+          "key": "6349efe8-6433-4101-b610-4dadb8df8180",
+          "title": "Preprocessing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290401,
+              "key": "53b0a8e0-5d10-4caa-b638-74a3236ebd7f",
+              "title": "Preprocessing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ktQW6p9pOS4",
+                "china_cdn_id": "ktQW6p9pOS4.mp4"
+              }
+            },
+            {
+              "id": 290404,
+              "key": "ee1d1192-7730-4548-88b0-f393a9adbf79",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Cornell Movie Dialog Corpus\n\nYou can find the dataset with movie dialogues [here](https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html).\n\n## Stanford Chatbot Exercise\n\nAnd here is the repository for [tf-stanford-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials/tree/master/2017/assignments/chatbot).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290323,
+          "key": "9992eebb-f711-4d21-aa3a-4e6846127f4c",
+          "title": "Sequence to sequence in TensorFlow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290324,
+              "key": "8db5b2b6-8622-4f4a-8519-5ffd8a25177a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Sequence to sequence in Tensorflow\n \nTensorflow has a bunch of APIs that help you build a sequence to sequence model (also called a seq2seq model for short). It’s important to note that these APIs have changed at the end of 2016 (and in a way are still evolving). A lot of the tutorials you’ll find on the web for seq2seq in tensorflow use the now-deprecated tf.contrib.legacy_seq2seq (which was previously called “tf.nn.seq2seq”).\n\nThe modules of note for seq2seq are:\n * [tf.nn](https://www.tensorflow.org/api_guides/python/nn#Recurrent_Neural_Networks), which allows us to construct different kinds of RNNs\n * [tf.contrib.rnn](https://www.tensorflow.org/api_guides/python/contrib.rnn), which defines a number of RNN cells (an RNN cell is a required parameter for the RNNs defined in tf.nn).\n * [tf.contrib.seq2seq](https://www.tensorflow.org/api_docs/python/tf/contrib/seq2seq), which contains seq2seq decoders and loss operations.\n\n## The Main Components\n\nIf we take a high-level view, a seq2seq model has these main components:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290325,
+              "key": "5e5172dd-72eb-43f9-95bb-2fa052ee6792",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e57d4d_sequence-to-sequence-high-level-encoder-decoder/sequence-to-sequence-high-level-encoder-decoder.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5e5172dd-72eb-43f9-95bb-2fa052ee6792",
+              "caption": "",
+              "alt": null,
+              "width": 686,
+              "height": 455,
+              "instructor_notes": null
+            },
+            {
+              "id": 290326,
+              "key": "231a7f93-92b6-4f59-88fb-96a05b5d8a61",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " * Encoder: this is a [tf.nn.dynamic_rnn](https://www.tensorflow.org/api_docs/python/tf/nn/dynamic_rnn).\n * Decoder: this is a [tf.contrib.seq2seq.dynamic_rnn_decoder](https://www.tensorflow.org/versions/r1.0/api_docs/python/tf/contrib/seq2seq/dynamic_rnn_decoder)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290335,
+              "key": "2f8ff411-718c-4c1d-8a8d-0f7da9aee69f",
+              "title": "tf.nn.dynamic_rnn",
+              "semantic_type": "ReflectAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "question": {
+                "title": null,
+                "semantic_type": "TextQuestion",
+                "evaluation_id": null,
+                "text": "Read the documentation of [`tf.nn.dynamic_rnn`](https://www.tensorflow.org/api_docs/python/tf/nn/dynamic_rnn). What inputs will we pass into this function?"
+              },
+              "answer": {
+                "text": "Reading the documentation for `tf.nn.dynamic_rnn`, you'll see \n```tf.nn.dynamic_rnn(cell, inputs, sequence_length=None, initial_state=None, dtype=None, parallel_iterations=None, swap_memory=False, time_major=False, scope=None)```\n\nSo you need to at least pass in the RNN cell you built (for example `tf.contrib.rnn.BasicLSTMCell`). You'll also need to give it the `inputs` tensor, which in this case is the input text data, typically coming from the embedding layer. I also typically pass in an `initial_state` which you've seen in the previous RNN lessons.",
+                "video": null
+              }
+            },
+            {
+              "id": 290389,
+              "key": "8289922b-440e-4574-af23-2d896d0f9764",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### seq2seq module\nRead https://www.tensorflow.org/api_docs/python/tf/contrib/seq2seq to understand its major component. You can ignore everything with “attention” for the time being.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290336,
+          "key": "317ea512-4544-430c-ab1c-5316dc5e1341",
+          "title": "Inputs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290337,
+              "key": "abecf5b4-62b9-474d-8b07-9225a8b3ff29",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Inputs\n\nWhen we want our model to do inference, we need to feed it an input sequence. Let's assume we're building a chatbot, and that our sequences will be words. We need to first convert the words to a proper numeric representation that the network can use for its computations. This conversion is done using [tf.nn.embedding_lookup](https://www.tensorflow.org/api_docs/python/tf/nn/embedding_lookup) which we can use (after some processing of our data) to turn the words into vectors. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290343,
+              "key": "80f71f1a-9d0a-4442-9410-3fb6c048061b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e5893b_sequence-to-sequence-unrolled-encoder-decoder/sequence-to-sequence-unrolled-encoder-decoder.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/80f71f1a-9d0a-4442-9410-3fb6c048061b",
+              "caption": "",
+              "alt": null,
+              "width": 1329,
+              "height": 616,
+              "instructor_notes": null
+            },
+            {
+              "id": 290339,
+              "key": "d501ac1a-a90d-4132-a2b0-7fa1a0752735",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nThese models work a lot better if we feed the decoder our target sequence regardless of what its timesteps actually output in the training run. So unlike in the inference graph, we will not feed the output of the decoder to itself in the next timestep.  Before the model trains on samples, the data needs to be preprocessed.\n \n### Example 1:\nLet's assume we have only two examples in our dataset (example dialog from The Matrix):\n\n| source | target |\n|--|--|\n|Can you fly that thing?| Not yet|\n|Is Morpheus alive?| Is Morpheus still alive, Tank?|\n\nIn the preprocessing stage, say we decide it's not relevant for our bot to know names. So after tokenization, making things lower-case, and replacement of names with &lt;UNK>, our dataset now looks like this:\n\n\n| Source | Target |\n|--|--|\n|can you fly that thing ?| not yet|\n|is &lt;UNK> alive?| is &lt;UNK> still alive , &lt;UNK> ?|\n\nOur input batch is shaping up\n\n| can | you | fly | that | thing | ? |\n|--|--|\n| is | &lt;UNK> | alive | ? | &lt;PAD> | &lt;PAD> |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290344,
+              "key": "bd20d6f8-2e58-4c4f-825d-3f98bbf3ec25",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Because we are using embedding, we have to first compiled a \"vocabulary\" list containing all the words we want our model to be able to use or read. The model inputs will have to be tensors containing the IDs of the words in the sequence.\n\n### Example 2:\nSay we want to train our model on this tiny dataset:\n\n|source | target|\n|--|--|\n|How are you?|I am good|\n\nBefore we can even train the model, we have to first tokenize the dataset, do away with capitalization, then build a vocabulary of all the unique tokens. In our example, this vocabulary would look like this:\n\n|id|word|\n|--|--|\n|0|how|\n|1|are|\n|2|you|\n|3|?|\n|4|i|\n|5|am|\n|6|good|\n\nThere are four symbols, however, that we need our vocabulary to contain. Seq2seq vocabularies usually reserve the first four spots for these elements:\n * **&lt;PAD>**: During training, we'll need to feed our examples to the network in batches. The inputs in these batches all need to be the same width for the network to do its calculation. Our examples, however, are not of the same length. That's why we'll need to pad shorter inputs to bring them to the same width of the batch\n * **&lt;EOS>**: This is another necessity of batching as well, but more on the decoder side. It allows us to tell the decoder where a sentence ends, and it allows the decoder to indicate the same thing in its outputs as well.\n * **&lt;UNK>**: If you're training your model on real data, you'll find you can vastly improve the resource efficiency of your model by ignoring words that don't show up often enough in your vocabulary to warrant consideration. We replace those with &lt;UNK>.\n * **&lt;GO>**: This is the input to the first time step of the decoder to let the decoder know when to start generating output.\n \nNote: Other tags can be used to represent these functions. For example I've seen &lt;s> and &lt;/s> used in place of &lt;GO> and &lt;EOS>. So make sure whatever you use is consistent through preprocessing, and model training/inference.\n\nLet's go ahead and add them to the top of our vocabulary:\n\n|id|word|\n|--|--| \n|0| &lt;PAD>|\n|1| &lt;EOS>|\n|2| &lt;UNK>|\n|3| &lt;GO>|\n|4| how|\n|5|are|\n|6|you|\n|7|?|\n|8|i|\n|9|am|\n|10|good|\n\nNow that we have established our vocabulary, we just replace the words with their ids, and that would be the input tensor into the encoder. So \"how are you ?\" becomes:\n\n|||||\n|--|--|\n|4|5|6|7|\n\nThis is a way to look at the input for inference (where we set 3 as the embedding size, so each word would be represented by a vector of size 3):",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290345,
+              "key": "f7ed22b8-d3b8-483c-af91-9efbeb04dd18",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e589d1_sequence-to-sequence-embedding-encoder-decoder/sequence-to-sequence-embedding-encoder-decoder.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f7ed22b8-d3b8-483c-af91-9efbeb04dd18",
+              "caption": "",
+              "alt": null,
+              "width": 808,
+              "height": 616,
+              "instructor_notes": null
+            },
+            {
+              "id": 290346,
+              "key": "427589be-780d-45cb-a090-d3e58b8df73a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Training inputs\nPreparing the inputs for the training graph is a little more involved for two reasons:\n * These models work a lot better if we feed the decoder our target sequence regardless of what its timesteps actually output in the training run. So unlike in the inference graph, we will not feed the output of the decoder to itself in the next timestep.\n * Batching\n \n### Example:\nLike before, let's assume we have only two examples in our dataset (example dialog from The Matrix):\n\n| source | target |\n|--|--|\n|Can you fly that thing?| Not yet|\n|Is Morpheus alive?| Is Morpheus still alive, Tank?|\n\nIn the preprocessing stage, say we decide it's not relevant for our bot to know names. So after tokenization, making things lower-case, and replacement of names with &lt;UNK>, our dataset now looks like this:\n\n\n| Source | Target |\n|--|--|\n|can you fly that thing ?| not yet|\n|is &lt;UNK> alive?| is &lt;UNK> still alive , &lt;UNK> ?|\n\nOur input batch is shaping up\n\n|can|you|fly|that|thing|?|\n|--|--|\n|is|&lt;UNK>|alive|?|&lt;PAD>|&lt;PAD>|",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290340,
+              "key": "89cb1e95-a7ab-4f2e-a5df-90d02c4846d9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "I created a manual vocabulary. But using it, the proper input tensor is now ready:\n\n|4|5|6|7|8|9|\n|--|--|\n|10|2|11|9|0|0|\n\nOne of the original sequence to sequence papers, [Sutskever et al. 2014](https://arxiv.org/abs/1409.3215), reported better model performance if the inputs are reversed. So you may also choose to reverse the order of words in the input sequence.\n\nNow let's look at our target input tensor\n\n|not|yet||||||\n|--|--|\n|is|&lt;UNK>|still|alive|,|&lt;UNK>|?|\n\nNow we need to:\n 1. Add &lt;GO> to the beginning\n 1. Add &lt;EOS> to the end\n 1. Add padding\n\nWhen we do that, it looks like this:\n\n|&lt;GO>|not|yet|&lt;EOS>|&lt;PAD>|&lt;PAD>|&lt;PAD>|&lt;PAD>|&lt;PAD>|\n|--|--|\n|&lt;GO>|is|&lt;UNK>|still|alive|,|&lt;UNK>|?|&lt;EOS>|\n\nAnd so, our target input tensor emerges:\n\n|3|14|15|1|0|0|0|0|0|\n|--|--|\n|3|10|2|12|11|13|2|9|1|\n\nNote: I'm showing this processing steps here to explain how the shape and values of the tensor. In practice, we stop using words much earlier in the process. During the preprocessing we do the following:\n* we build our vocabulary of unique words (and count the occurrences while we're at it)\n* we replace words with low frequency with &lt;UNK>\n* create a copy of conversations with the words replaced by their IDs\n* we can choose to add the &lt;GO> and &lt;EOS> word ids to the target dataset now, or do it at training time",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290341,
+          "key": "4f920d24-7f14-4832-a67c-d43fb701208e",
+          "title": "Further Reading",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290342,
+              "key": "7369fc59-ca2f-4bd5-b386-df03c00a8b6c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## More resources\n * [tensorflow-seq2seq-tutorials](https://github.com/ematvey/tensorflow-seq2seq-tutorials) has a working version of the current TensorFlow seq2seq APIs\n * [Cornell Movie--Dialogs Corpus](https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html) is a dataset of conversations extracted from movie scripts\n * [tf-stanford-tutorials](https://github.com/chiphuyen/tf-stanford-tutorials/tree/master/assignments/chatbot) has an script that preprocesses the Cornell corpus\n * [DEEP LEARNING FOR CHATBOTS](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)\n * [Sequence to Sequence Deep Learning (Quoc Le, Google)](https://www.youtube.com/watch?v=G5RY_SUJih4) - Incredible talk. Uses a solid example ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 292484,
+          "key": "d2416b0f-28d2-4ff1-9326-aa99c7d82b42",
+          "title": "Sequence to Sequence in TensorFlow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "resources": null,
+          "atoms": [
+            {
+              "id": 292485,
+              "key": "64beef46-be81-4464-9b23-608b8a60503c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Sequence to Sequence in TensorFlow\n\nLet's now look at a sequence to sequence implementation in TensorFlow. It will learn how to sort a sequence of letters alphabetically.\n\n## The lesson notebooks\nAs always, you can find the notebooks used in this lesson in our [public GitHub repository](https://github.com/udacity/deep-learning).\n\n\n```bash\ngit clone https://github.com/udacity/deep-learning.git\n```\nThe notebooks are in the `seq2seq` directory.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
